@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="<? echo base_url()?>assets/frontend/css/style_sb_hd_sdn.css">
     <link rel="stylesheet" href="<? echo base_url()?>assets/frontend/css/style_d_sdn.css">
     <link rel="stylesheet" href="<? echo base_url()?>assets/frontend/css/style_header_d.css">
+    <link rel="stylesheet" href="<? echo base_url()?>assets/frontend/css/daterangepicker.css" />
 
 </head>
 
@@ -34,7 +35,7 @@
                                         <a href="quan-ly-tin-dang-mua-ban.html"
                                             class="dt_khoi2_noidung_khoi_click  click_toggle1 flex align_item_c jus_sb mr_b4px bg_1024">
                                             <div class="dt_khoi2_noidung_khoi_click_text fz16_5 click_muaban_cha color_999">
-                                                Mua bán (12)
+                                                Mua bán (<?= $countPurchase ?>)
                                             </div>
                                             <div class="dt_khoi2_noidung_khoi_click_img ic_bottom_1024">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -49,7 +50,7 @@
                                     <div class="dt_khoi2_noidung_left_one mr_b4px currsor_p">
                                         <a href="quan-ly-tin-dang-cho-thue.html"
                                             class="dt_khoi2_noidung_khoi_click  click_toggle2 flex align_item_c jus_sb mr_b4px bg_1024">
-                                            <div class="dt_khoi2_noidung_khoi_click_text fz16_5 color_999">Cho thuê (21)
+                                            <div class="dt_khoi2_noidung_khoi_click_text fz16_5 color_999">Cho thuê (<?= $countPurchase ?>)
                                             </div>
                                             <div class="dt_khoi2_noidung_khoi_click_img add_stroke2 ic_bottom_1024">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -66,7 +67,7 @@
                                             class="dt_khoi2_noidung_khoi_click  click_toggle5 flex align_item_c jus_sb mr_b4px bg_1024">
                                             <div class="dt_khoi2_noidung_khoi_click_text fz16_5 click_muaban_cha color_999">
                                                 Dự
-                                                án (12)
+                                                án (<?= $countAllProject ?>)
                                             </div>
                                             <div class="dt_khoi2_noidung_khoi_click_img ic_bottom_1024">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -81,7 +82,7 @@
                                     <div class="dt_khoi2_noidung_left_one mr_b4px currsor_p">
                                         <a href="quan-ly-tin-dang-thiet-ke.html"
                                             class="dt_khoi2_noidung_khoi_click  click_toggle3 flex align_item_c jus_sb mr_b4px bg_1024">
-                                            <div class="dt_khoi2_noidung_khoi_click_text fz16_5 color_999">Thiết kế đẹp
+                                            <div class="dt_khoi2_noidung_khoi_click_text fz16_5 color_999">Thiết kế đẹp(<?= $count_all_design ?>)
                                             </div>
                                             <div class="dt_khoi2_noidung_khoi_click_img add_stroke3 ic_bottom_1024">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -96,7 +97,7 @@
                                     <div class="dt_khoi2_noidung_left_one dt_khoi2_noidung_left_one_tinluu mr_b4px currsor_p">
                                         <div class="dt_khoi2_noidung_left_one_tinluu">
                                             <div class="dt_khoi2_noidung_khoi_click bg_click click_toggle4 flex align_item_c jus_sb mr_b4px">
-                                                <a href="quan-ly-tin-dang-tin-luu.html" class="dt_khoi2_noidung_khoi_click_text fz16_5 main_color">Tin đã lưu (12)</a>
+                                                <a href="quan-ly-tin-dang-tin-luu.html" class="dt_khoi2_noidung_khoi_click_text fz16_5 main_color">Tin đã lưu (<?= $count_AllSave ?>)</a>
                                                 <div
                                                     class="dt_khoi2_noidung_khoi_click_img dt_khoi2_noidung_left_one_tinluu_click add_stroke4 add_stroke remove_stroke">
                                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -107,41 +108,41 @@
                                                 </div>
                                             </div>
                                             <div class="click_con4">
-                                                <div class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px bg_click mr_b4px"
-                                                    onclick="tinluu(this)">
-                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Tất cả (22)</div>
+                                                <div data-id="0" class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px btn_next_page <?= (!isset($_GET['type']) || $_GET['type'] == 0) ? "bg_click" : "" ?> mr_b4px"
+                                                    onclick="tinluu(this);location.href= '/quan-ly-tin-dang-tin-luu.html?type=0'">
+                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Tất cả (<?= $count_AllSave ?>)</div>
                                                 </div>
-                                                <div class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px mr_b4px"
-                                                    onclick="tinluu(this)">
-                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Tin đăng (22)</div>
+                                                <div data-id="4" class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px btn_next_page <?= (isset($_GET['type']) && $_GET['type'] == 4) ? "bg_click" : "" ?> mr_b4px"
+                                                    onclick="tinluu(this);location.href= '/quan-ly-tin-dang-tin-luu.html?type=4'">
+                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Tin đăng (<?= $count_NewsSave ?>)</div>
                                                 </div>
-                                                <div class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px"
-                                                    onclick="tinluu(this)">
-                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Dự án (22)</div>
+                                                <div class="dt_khoi2_noidung_khoi_click_con btn_next_page <?= (isset($_GET['type']) && $_GET['type'] == 1) ? "bg_click" : "" ?>  c_tinluu mr_l24px"
+                                                    onclick="tinluu(this);location.href= '/quan-ly-tin-dang-tin-luu.html?type=1'">
+                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Dự án (<?= $count_NewsProjectSave ?>)</div>
                                                 </div>
-                                                <div class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px"
-                                                    onclick="tinluu(this)">
-                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Thiết kế đẹp (22)
+                                                <div data-id="3" class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px btn_next_page <?= (isset($_GET['type']) && $_GET['type'] == 3) ? "bg_click" : "" ?>"
+                                                    onclick="tinluu(this);location.href= '/quan-ly-tin-dang-tin-luu.html?type=3'">
+                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub  fz16_4">Thiết kế đẹp (<?= $count_NewsDesignSave ?>)
                                                     </div>
                                                 </div>
         
                                             </div>
                                             <div class="click_con4_4">
-                                                <div class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px bg_click mr_b4px"
+                                                <div class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px btn_next_page <?= (!isset($_GET['type']) || $_GET['type'] == 0) ? "bg_click" : "" ?> bg_click mr_b4px"
                                                     onclick="tinluu(this)">
-                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Tất cả (22)</div>
+                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Tất cả (<?= $count_AllSave ?>)</div>
                                                 </div>
-                                                <div class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px mr_b4px"
+                                                <div class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px btn_next_page <?= (isset($_GET['type']) && $_GET['type'] == 4) ? "bg_click" : "" ?> mr_b4px"
                                                     onclick="tinluu(this)">
-                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Tin đăng (22)</div>
+                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Tin đăng (<?= $count_NewsSave ?>)</div>
                                                 </div>
-                                                <div class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px"
+                                                <div class="dt_khoi2_noidung_khoi_click_con btn_next_page <?= (isset($_GET['type']) && $_GET['type'] == 1) ? "bg_click" : "" ?> c_tinluu mr_l24px"
                                                     onclick="tinluu(this)">
-                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Dự án (22)</div>
+                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Dự án (<?= $count_NewsProjectSave ?>)</div>
                                                 </div>
-                                                <div class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px"
+                                                <div class="dt_khoi2_noidung_khoi_click_con c_tinluu mr_l24px btn_next_page <?= (isset($_GET['type']) && $_GET['type'] == 3) ? "bg_click" : "" ?>"
                                                     onclick="tinluu(this)">
-                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Thiết kế đẹp (22)
+                                                    <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Thiết kế đẹp (<?= $count_NewsDesignSave ?>)
                                                     </div>
                                                 </div>
         
@@ -160,38 +161,57 @@
                                 <div class="them_div_ovflow_x">
                                     <div class="noidung_right_khoi flex noidung_right_khoi_fig_tinl">
                                         <div class="noidung_right_khoi_search_tLuu mr_r24px">
-                                            <input type="text" placeholder="Nhập ID, tiêu đề tin">
-                                            <div class="noidung_right_khoi_icon_search">
+                                            <input type="text" class="input_search" value="<?= isset($_GET['key']) ? $_GET['key'] : ''; ?>" placeholder="Nhập ID, tiêu đề tin">
+                                            <input type="hidden" class="search-pr" value="<?= isset($_GET['key']) ? $_GET['key'] : ''; ?>">
+                                            <div class="noidung_right_khoi_icon_search abs_search">
                                                 <img src="<? echo base_url(); ?>assets/images/img_sdn/search.png" alt="">
                                             </div>
                                         </div>
                                         <div class="div_right_three_select_tluu mr_r24px">
-                                            <select name="" id="" class="select_option js-states form-control">
-                                                <option value="">Thành Phố</option>
-                                                <option value="">Thành Phố</option>
-                                                <option value="">Thành Phố</option>
+                                            <select name="" id="select_city" class="select_option js-states form-control">
+                                                <option disabled selected>Chọn thành phố </option>
+                                                <? foreach($listcity as $opt): ?>
+                                                <option <?= (isset($_GET['id_cit']) && $_GET['id_cit'] == $opt['cit_id']) ? "selected" : "" ?> value="<?= $opt['cit_id'] ?>"><?= $opt['cit_name'] ?></option>
+                                                <? endforeach ?>
                                             </select>
                                         </div>
                                         <div class="div_right_three_search2_tLuu mr_r24px">
-                                            <input type="date" name="date" placeholder="Ngày đăng tin">
+                                            <input type="text" value="<?= isset($_GET['time']) ? $_GET['time'] : ''; ?>" readonly name="dates" placeholder="Ngày đăng tin">
                                         </div>
-                                        <div class="div_right_three_search2_tLuu div_right_three_search2_tLuu_fig_mr mr_r24px">
-                                            <input type="date" name="date" placeholder="Ngày đăng tin">
-                                        </div>
-    
+                                        <button type="button" class="filter_date">Lọc</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="div_right_four_noidung div_right_four_noidung_tinl flex flex_w">
-                                <?php for($i=0;$i<10;$i++):?>
-                                    <div class="div_right_four_noidung_padding div_right_four_noidung_padding_tinl">
+                                <?php foreach($newsSave as $rows):
+                                    $m = date('m',$rows['time_create']);
+                                    $d = date('d',$rows['time_create']);
+                                    $y = date('Y',$rows['time_create']);
+                                    $arr_img = json_decode($rows['arr_img']);    
+                                ?>
+                                    <div data-id="<?= $rows['id_news'] ?>" class="div_right_four_noidung_padding div_right_four_noidung_padding_tinl">
                                         <div class="div_right_four_noidung_img mr_b16px">
-                                            <img src="<? echo base_url(); ?>assets/images/img_sdn/img_tinluu.png" alt="">
+                                                <? if($rows['type'] == 1 || $rows['type'] == 3): ?>
+                                                    <? if($rows['banner_img']!= ""):  ?>
+                                                        <img src="<? echo base_url(); ?>upload/<?= $y ?>/<?= $m ?>/<?= $d ?>/<?= $rows['banner_img'] ?>" alt="">
+                                                    <? else: ?>
+                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/img_tk.png" alt="">
+                                                    <? endif ?>
+                                                <?  else: 
+                                                    $arr_img = json_decode($rows['arr_img']);
+                                                ?>
+                                                    <? if($arr_img != '' && $arr_img[0]!= ""):  ?>
+                                                        <img src="<? echo base_url(); ?>upload/<?= $y ?>/<?= $m ?>/<?= $d ?>/<?= $arr_img[0] ?>" alt="">
+                                                    <? else: ?>
+                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/img_tk.png" alt="">
+                                                    <? endif ?>
+                                                    
+                                                <? endif ?>
                                             <div class="div_right_four_noidung_img_view_text flex align_item_c">
                                                 <div class="div_right_four_noidung_img_view">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/view.png" alt="">
                                                 </div>
-                                                <div class="div_right_four_noidung_img_text">1M</div>
+                                                <div class="div_right_four_noidung_img_text"><?= $rows['news_view'] ?></div>
                                             </div>
                                             <div class="div_right_four_noidung_icon_luu click_huyluu currsor_p">
                                                 <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
@@ -212,45 +232,34 @@
                                         </div>
                                         <div class="div_right_four_noidung_text_info">
                                             <div class="div_right_four_noidung_text elipsis2 mr_b16px">
-                                                Đất thật giá thật, diện tích lớn tại Biển Cát Sổ sẵn
-                                                công chứng trong ngày, ...
+                                                <?= $rows['desc_project'] ?>
                                             </div>
                                             <div class="div_right_four_noidung_div_info flex align_item_c jus_sb">
                                                 <div class="div_right_four_noidung_info flex align_item_c">
                                                     <div class="div_right_four_noidung_info_img mr_r8px">
-                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/user.png" alt="">
+                                                        <? if($rows['user_avt'] != ''): 
+                                                            $mm = date('m',strtotime($rows['updatedDate']));
+                                                            $dd = date('d',strtotime($rows['updatedDate']));
+                                                            $yy = date('Y',strtotime($rows['updatedDate']));
+                                                        ?>
+                                                        <img src="<? echo base_url(); ?>upload/<?= $yy ?>/<?= $mm ?>/<?= $dd ?>/<?= $rows['user_avt']?>" alt="">
+                                                        <? else: ?>
+                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/user_30.png" alt="">
+                                                        <? endif ?>
                                                     </div>
                                                     <div class="div_right_four_noidung_info_text">
-                                                        Nguyễn Ngọc Tuyết Phương
+                                                        <?= $rows['name'] ?>
                                                     </div>
                                                 </div>
                                                 <a href="chi_tiet_du_an.html" class="div_right_four_noidung_info_button main_bg_sub main_color">
-                                                    Dự án
+                                                    <?= $type_news[$rows['type']] ?>
                                                 </a>
                                             </div>
 
                                         </div>
                                     </div>
-                                <?php endfor;?>
-                                
-
-
-                                <div class="body_phantrang padding_unset mr_t32px pd_b_us w100pt">
-                                    <div class="body_phantrang_img flex juss_tify_end">
-                                        <div class="body_phantrang_img_left mr_r16px">
-                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/phantrang_left.png" alt="">
-                                        </div>
-                                        <div class="body_phantrang_number flex">
-                                            <div class="phantrang_number mr_r8px main_bg while_color">1</div>
-                                            <div class="phantrang_number mr_r8px">2</div>
-                                            <div class="phantrang_number mr_r8px">3</div>
-                                            <div class="phantrang_number mr_r8px">4</div>
-                                        </div>
-                                        <div class="body_phantrang_img_left mr_l16px">
-                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/phantrang_right.png" alt="">
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endforeach;?>
+                                <? print_r($pagination) ?>
                             </div>
                         </div>
                     </div>
@@ -267,14 +276,57 @@
 <script type="text/javascript" src="<? echo base_url(); ?>assets/js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript" src="<? echo base_url(); ?>assets/js/select2.min.js"></script>
 <script type="text/javascript" src="<? echo base_url(); ?>assets/js/js_duy.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 
 <script>
+
+var base_url 	= '<?php echo base_url(); ?>';
+
+$('input[name="dates"]').daterangepicker({
+    "autoUpdateInput": false,
+    "locale": {
+        "format": "DD/MM/YYYY"
+    }
+});
+
+$('input[name="dates"]').on('apply.daterangepicker', function (ev, picker) {
+    $(this).val(picker.startDate.format('DD/MM/YYYY') + '-' + picker.endDate.format('DD/MM/YYYY'));
+});
+
+
+$('input[name="dates"]').on('cancel.daterangepicker', function (ev, picker) {
+    $(this).val('');
+});
+
 $('.click_huyluu').click(function() {
     $(this).toggleClass('huyluu1');
     $(this).toggleClass('huyluu2');
     $('.cl_luu').toggleClass('hidden');
     $('.cl_huy').toggleClass('hidden');
+    var type = '';
+    var id_news = $(this).parents('.div_right_four_noidung_padding_tinl').attr('data-id');
+    if($(this).hasClass('huyluu1') == false)
+    {
+        type = 1;
+    }
+    else
+    {
+        type = 0;
+    }
+    $.ajax({
+        type: 'POST',
+        url: 'admin/ManageNews/updateNewsSave',
+        data:{
+            type:type,
+            id_news: id_news,
+        },
+        success: function(response) {
+            console.log(response)
+        }
+    })
 })
+
 $('.dt_khoi2_noidung_left_one_tinluu_click').click(function() {
     $('.click_con4_4').toggleClass('block')
 })
@@ -286,6 +338,89 @@ function tinluu(click_tinluu) {
 $(".select_option").select2({
     width: "100%",
 });
+
+//---------------------search
+var type = "";
+$("#select_city").change(function(){
+    search();
+})
+$("#select_styles").change(function(){
+    search();
+})
+$(".input_search").keypress(function(e){
+    if(e.which == 13) {
+        search();
+    }
+})
+$(".abs_search").click(function(){
+    search();
+})
+$(".filter_date").click(function(){
+    search();
+})
+function search()
+{
+    if(type == "")
+    {
+        type = <?= isset($_GET['type']) ? $_GET['type'] : "0" ?>;
+    }
+    var link = "/quan-ly-tin-dang-tin-luu.html";
+    var id_cit = $("#select_city").val();
+    var keyword = $(".input_search").val();
+    var time = $("input[name='dates']").val();
+    link += "?key=" + keyword;
+    if(id_cit != null)
+    {
+        link += "&id_cit=" + id_cit;
+    }
+    var style = $("#select_styles").val();
+    if(style != null)
+    {
+        link += "&style=" + style;
+    }
+    if(time != "")
+    {
+        link += "&time=" + time;
+    }
+    if(type != "")
+    {
+        link += "&type=" + type;
+    }
+    location.href= link;
+}
+
+//-------------------------
+$(".page-link").each(function() {
+    var id_cit = $("#select_city").val();
+    var keyword = $('.search-pr').val();
+    var time= $("input[name='dates']").val();
+    var type = <?= isset($_GET['type']) ? $_GET['type'] : "0" ?>;
+    var style = $("#select_styles").val();
+    var href = "";
+        if(id_cit != null)
+        {
+            href = "&cit=" + id_cit;
+        }
+        if(time != '')
+        {
+            href += "&time=" + time;
+        }
+        if(type != 0)
+        {
+            href += "&type=" + type;
+        }
+        if(style != null)
+        {
+            href += "&style=" + style;
+        }
+        $(this).find('a').attr("href", $(this).find('a').attr('href') + "?keyword=" + keyword + href);
+});
+
+$('.btn_delete_news').click(function(){
+    $('.popup_xoa_btn1').attr('data_id',$(this).attr('data-id'));
+})
+
+
 </script>
 
 

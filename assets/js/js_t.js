@@ -551,42 +551,6 @@ function change(className, clView, acView) {
 }
 
 
-function sliderBarScroll() {
-  let slide_bar_item = document.querySelectorAll('.filter_item');
-  if (slide_bar_item) {
-
-    slide_bar_item.forEach(e => {
-      $(e).children('.children_menu').css('display', 'none');
-      $(e).children('.filter_name').click((event) => {
-        event.preventDefault();
-        let element = $(e).children('.filter_name');
-        let menu = $(element).siblings('.children_menu');
-
-        if (menu.length <= 0) {
-          $(slide_bar_item).not($(e)).each((i, elem) => {
-            let child = $(elem).children('.acive_mnc1');
-            $(child).removeClass('acive_mnc1');
-          })
-          $(element).addClass('acive_mnc1');
-          return;
-        } else {
-          $(slide_bar_item).not($(e)).each((i, elem) => {
-            let child = $(elem).children('.acive_mnc1');
-            $(child).removeClass('acive_mnc1');
-            let childDrop = $(elem).children('.children_menu');
-            if (childDrop) {
-              $(childDrop).slideUp(300);
-            }
-          })
-          $(element).siblings('.children_menu').slideToggle(300)
-        }
-        $(element).addClass('acive_mnc1');
-      })
-    })
-  }
-}
-sliderBarScroll()
-
 // -----------------------------JS QUANG ------------------
 $('#ds_theodoi').click(function () {
   $('.records_375_img').toggleClass('rotate_icon');

@@ -1,22 +1,9 @@
-<?php
-$y = date('Y', $ire_the_big_one['time_create']);
-$m = date('m', $ire_the_big_one['time_create']);
-$d = date('d', $ire_the_big_one['time_create']);
-$dir = "upload/".$y."/".$m."/".$d."";
-$y3 = date('Y', $ire_newest_the_big_one['time_create']);
-$m3 = date('m', $ire_newest_the_big_one['time_create']);
-$d3 = date('d', $ire_newest_the_big_one['time_create']);
-$dir3 = "upload/".$y3."/".$m3."/".$d3."";
-$y6 = date('Y', $ire_ate_the_big_one['time_create']);
-$m6 = date('m', $ire_ate_the_big_one['time_create']);
-$d6 = date('d', $ire_ate_the_big_one['time_create']);
-$dir6 = "upload/".$y6."/".$m6."/".$d6."";
-?>
+
 <!DOCTYPE html>
 <html lang="vi">
 
 <head>
-    <title><?= $page_title ?></title>
+    <title>Trang chủ</title>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex,nofollow" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -152,8 +139,7 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                         <div class="khung_tindang_padding">
                                             <a href="#" class="khung_tindang_padding_suv flex">
                                                 <div class="khung_tindang_padding_img">
-                                                    <img src="<?php echo base_url(); ?>assets/images/img_du_an/bacsila.jpg"
-                                                        alt="">
+                                                    <img src="<?php echo base_url(); ?>assets/images/img_du_an/bacsila.jpg" alt="">
                                                 </div>
                                                 <div class="khung_tindang_padding_khungtext">
                                                     <div class="khung_tindang_padding_khungtext1">
@@ -163,8 +149,7 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                                     <div
                                                         class="khung_tindang_padding_icon_text khung_tindang_padding_icon_text_mb8px">
                                                         <div class="khung_tindang_padding_icon">
-                                                            <img src="<?php echo base_url(); ?>assets/images/img_du_an/address_hi.png"
-                                                                alt="">
+                                                            <img src="<?php echo base_url(); ?>assets/images/img_du_an/address_hi.png" alt="">
                                                         </div>
                                                         <div class="khung_tindang_padding_text">Định Công, Hoàng Mai,
                                                             Hà
@@ -173,15 +158,13 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                                     <div class="khung_tindang_padding_icon_text_suv">
                                                         <div class="khung_tindang_padding_icon_text ">
                                                             <div class="khung_tindang_padding_icon">
-                                                                <img src="<?php echo base_url(); ?>assets/images/img_du_an/icon_home.png"
-                                                                    alt="">
+                                                                <img src="<?php echo base_url(); ?>assets/images/img_du_an/icon_home.png" alt="">
                                                             </div>
                                                             <div class="khung_tindang_padding_text">200 m2</div>
                                                         </div>
                                                         <div class="khung_tindang_padding_icon_text">
                                                             <div class="khung_tindang_padding_icon">
-                                                                <img src="<?php echo base_url(); ?>assets/images/img_du_an/icon_money.png"
-                                                                    alt="">
+                                                                <img src="<?php echo base_url(); ?>assets/images/img_du_an/icon_money.png" alt="">
                                                             </div>
                                                             <div class="khung_tindang_padding_text_money">1.5 tỷ</div>
                                                         </div>
@@ -195,8 +178,7 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                         <div class="khung_tindang_padding">
                                             <a href="#" class="khung_tindang_padding_suv flex">
                                                 <div class="khung_tindang_padding_img">
-                                                    <img src="<?php echo base_url(); ?>assets/images/img_du_an/bacsila.jpg"
-                                                        alt="">
+                                                    <img src="<?php echo base_url(); ?>assets/images/img_du_an/bacsila.jpg" alt="">
                                                 </div>
                                                 <div class="khung_tindang_padding_khungtext">
                                                     <div class="khung_tindang_padding_khungtext1">
@@ -206,8 +188,7 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                                     <div
                                                         class="khung_tindang_padding_icon_text khung_tindang_padding_icon_text_mb8px">
                                                         <div class="khung_tindang_padding_icon">
-                                                            <img src="<?php echo base_url(); ?>assets/images/img_du_an/address_hi.png"
-                                                                alt="">
+                                                            <img src="<?php echo base_url(); ?>assets/images/img_du_an/address_hi.png" alt="">
                                                         </div>
                                                         <div class="khung_tindang_padding_text">Định Công, Hoàng Mai,
                                                             Hà
@@ -216,15 +197,13 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                                     <div class="khung_tindang_padding_icon_text_suv">
                                                         <div class="khung_tindang_padding_icon_text ">
                                                             <div class="khung_tindang_padding_icon">
-                                                                <img src="<?php echo base_url(); ?>assets/images/img_du_an/icon_home.png"
-                                                                    alt="">
+                                                                <img src="<?php echo base_url(); ?>assets/images/img_du_an/icon_home.png" alt="">
                                                             </div>
                                                             <div class="khung_tindang_padding_text">200 m2</div>
                                                         </div>
                                                         <div class="khung_tindang_padding_icon_text">
                                                             <div class="khung_tindang_padding_icon">
-                                                                <img src="<?php echo base_url(); ?>assets/images/img_du_an/icon_money.png"
-                                                                    alt="">
+                                                                <img src="<?php echo base_url(); ?>assets/images/img_du_an/icon_money.png" alt="">
                                                             </div>
                                                             <div class="khung_tindang_padding_text_money">1.5 tỷ</div>
                                                         </div>
@@ -238,8 +217,7 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                         <div class="khung_tindang_padding">
                                             <a href="#" class="khung_tindang_padding_suv flex">
                                                 <div class="khung_tindang_padding_img">
-                                                    <img src="<?php echo base_url(); ?>assets/images/img_du_an/bacsila.jpg"
-                                                        alt="">
+                                                    <img src="<?php echo base_url(); ?>assets/images/img_du_an/bacsila.jpg" alt="">
                                                 </div>
                                                 <div class="khung_tindang_padding_khungtext">
                                                     <div class="khung_tindang_padding_khungtext1">
@@ -249,8 +227,7 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                                     <div
                                                         class="khung_tindang_padding_icon_text khung_tindang_padding_icon_text_mb8px">
                                                         <div class="khung_tindang_padding_icon">
-                                                            <img src="<?php echo base_url(); ?>assets/images/img_du_an/address_hi.png"
-                                                                alt="">
+                                                            <img src="<?php echo base_url(); ?>assets/images/img_du_an/address_hi.png" alt="">
                                                         </div>
                                                         <div class="khung_tindang_padding_text">Định Công, Hoàng Mai,
                                                             Hà
@@ -259,15 +236,13 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                                     <div class="khung_tindang_padding_icon_text_suv">
                                                         <div class="khung_tindang_padding_icon_text ">
                                                             <div class="khung_tindang_padding_icon">
-                                                                <img src="<?php echo base_url(); ?>assets/images/img_du_an/icon_home.png"
-                                                                    alt="">
+                                                                <img src="<?php echo base_url(); ?>assets/images/img_du_an/icon_home.png" alt="">
                                                             </div>
                                                             <div class="khung_tindang_padding_text">200 m2</div>
                                                         </div>
                                                         <div class="khung_tindang_padding_icon_text">
                                                             <div class="khung_tindang_padding_icon">
-                                                                <img src="<?php echo base_url(); ?>assets/images/img_du_an/icon_money.png"
-                                                                    alt="">
+                                                                <img src="<?php echo base_url(); ?>assets/images/img_du_an/icon_money.png" alt="">
                                                             </div>
                                                             <div class="khung_tindang_padding_text_money">1.5 tỷ</div>
                                                         </div>
@@ -338,38 +313,32 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
             <div class="them_layout_tk_man1024">
                 <div class="them_layout_tk_man102_padding">
                     <a href="danh-sach-du-an-noi-bat.html" class="them_layout_tk_div_icon">
-                        <div class="them_layout_tk_div_icon_img"><img
-                                src="<?php echo base_url(); ?>assets/images/img_du_an/ic_dep_1.svg" alt="">
+                        <div class="them_layout_tk_div_icon_img"><img src="<?php echo base_url(); ?>assets/images/img_du_an/ic_dep_1.svg" alt="">
                         </div>
                         <div class="them_layout_tk_div_icon_text">dự án</div>
                     </a>
                     <a href="mua-ban-truoc-dang-nhap.html" class="them_layout_tk_div_icon">
-                        <div class="them_layout_tk_div_icon_img"><img
-                                src="<?php echo base_url(); ?>assets/images/img_du_an/ic_dep_2.svg" alt="">
+                        <div class="them_layout_tk_div_icon_img"><img src="<?php echo base_url(); ?>assets/images/img_du_an/ic_dep_2.svg" alt="">
                         </div>
                         <div class="them_layout_tk_div_icon_text">Mua bán</div>
                     </a>
                     <a href="cho-thue-truoc-dang-nhap.html" class="them_layout_tk_div_icon">
-                        <div class="them_layout_tk_div_icon_img"><img
-                                src="<?php echo base_url(); ?>assets/images/img_du_an/ic_dep_3.svg" alt="">
+                        <div class="them_layout_tk_div_icon_img"><img src="<?php echo base_url(); ?>assets/images/img_du_an/ic_dep_3.svg" alt="">
                         </div>
                         <div class="them_layout_tk_div_icon_text">Cho thuê</div>
                     </a>
                     <a href="danh-sach-phong-dep.html" class="them_layout_tk_div_icon">
-                        <div class="them_layout_tk_div_icon_img"><img
-                                src="<?php echo base_url(); ?>assets/images/img_du_an/ic_dep_4.svg" alt="">
+                        <div class="them_layout_tk_div_icon_img"><img src="<?php echo base_url(); ?>assets/images/img_du_an/ic_dep_4.svg" alt="">
                         </div>
                         <div class="them_layout_tk_div_icon_text">Phòng đẹp</div>
                     </a>
                     <a href="thiet-ke-nha-dep.html" class="them_layout_tk_div_icon">
-                        <div class="them_layout_tk_div_icon_img"><img
-                                src="<?php echo base_url(); ?>assets/images/img_du_an/ic_dep_5.svg" alt="">
+                        <div class="them_layout_tk_div_icon_img"><img src="<?php echo base_url(); ?>assets/images/img_du_an/ic_dep_5.svg" alt="">
                         </div>
                         <div class="them_layout_tk_div_icon_text">Nhà đẹp</div>
                     </a>
                     <a href="tin-tuc.html" class="them_layout_tk_div_icon">
-                        <div class="them_layout_tk_div_icon_img"><img
-                                src="<?php echo base_url(); ?>assets/images/img_du_an/ic_dep_6.svg" alt="">
+                        <div class="them_layout_tk_div_icon_img"><img src="<?php echo base_url(); ?>assets/images/img_du_an/ic_dep_6.svg" alt="">
                         </div>
                         <div class="them_layout_tk_div_icon_text">Tin tức</div>
                     </a>
@@ -403,8 +372,8 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                                 stroke-linejoin="round" />
                                             <path d="M9 12L12 9L9 6" stroke="#666666" stroke-width="1.2"
                                                 stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M6 9H12" stroke="#666666" stroke-width="1.2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                            <path d="M6 9H12" stroke="#666666" stroke-width="1.2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </span>
                                 </a>
@@ -413,29 +382,66 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
 
                         <div class="outstanding w694_h397 position_r d_themclass_fig4 reveal_fadeInUp">
                             <div class="position_r fig_1520_1 d_themclass_fig3">
-                                <img src="<?= $dir ?>/<?= $ire_the_big_one['banner_img'] ?>" alt="">
+                                <img src="<?php echo base_url(); ?>assets/images/bane_home.png" alt="">
                                 <div class="view">
-									<img src="<?php echo base_url(); ?>/assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                    <span class="ml_8 color_white "><?= $ire_the_big_one['news_view'] ?></span>
+                                    <svg width="20" height="20" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.7998 8.83636C1.7998 8.83636 4.41799 3.6 8.9998 3.6C13.5816 3.6 16.1998 8.83636 16.1998 8.83636C16.1998 8.83636 13.5816 14.0727 8.9998 14.0727C4.41799 14.0727 1.7998 8.83636 1.7998 8.83636Z"
+                                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M8.99977 10.8003C10.0843 10.8003 10.9634 9.9211 10.9634 8.83662C10.9634 7.75213 10.0843 6.87298 8.99977 6.87298C7.91528 6.87298 7.03613 7.75213 7.03613 8.83662C7.03613 9.9211 7.91528 10.8003 8.99977 10.8003Z"
+                                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="ml_8 color_white ">200</span>
                                 </div>
                                 <span class="save">
-									<img src="<? echo base_url(); ?>assets/images/fi-rr-bookmark.svg" alt="">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#filter0_b_1009_89778)">
+                                            <path
+                                                d="M0 8C0 3.58172 3.58172 0 8 0H22C26.4183 0 30 3.58172 30 8V22C30 26.4183 26.4183 30 22 30H8C3.58172 30 0 26.4183 0 22V8Z"
+                                                fill="white" fill-opacity="0.8" />
+                                            <path
+                                                d="M20.9177 23.9974C20.6487 23.9966 20.3825 23.9409 20.1344 23.8334C19.8864 23.726 19.6615 23.5689 19.4727 23.3712L15 18.7864L10.5273 23.3742C10.2401 23.6747 9.87168 23.879 9.47018 23.9605C9.06868 24.042 8.65269 23.9968 8.27644 23.8309C7.89645 23.6733 7.57139 23.4012 7.34369 23.0502C7.11599 22.6992 6.99625 22.2855 7.00009 21.8632V9.74946C7.00009 8.75504 7.3832 7.80135 8.06514 7.09819C8.74709 6.39503 9.672 6 10.6364 6L19.3636 6C19.8411 6 20.314 6.09698 20.7551 6.28541C21.1963 6.47384 21.5972 6.75002 21.9348 7.09819C22.2725 7.44636 22.5404 7.8597 22.7231 8.3146C22.9058 8.76951 22.9999 9.25707 22.9999 9.74946V21.8632C23.004 22.2851 22.8847 22.6986 22.6575 23.0496C22.4303 23.4006 22.1059 23.6728 21.7265 23.8309C21.4703 23.9414 21.1954 23.998 20.9177 23.9974ZM10.6364 7.49978C10.0578 7.49978 9.50282 7.7368 9.09365 8.1587C8.68448 8.58059 8.45462 9.15281 8.45462 9.74946V21.8632C8.45436 21.9882 8.49001 22.1104 8.55709 22.2145C8.62417 22.3185 8.71965 22.3998 8.83148 22.4479C8.94331 22.4961 9.06647 22.509 9.1854 22.485C9.30434 22.461 9.4137 22.4012 9.4997 22.3131L14.4909 17.1981C14.6272 17.0585 14.8115 16.9801 15.0036 16.9801C15.1958 16.9801 15.3801 17.0585 15.5164 17.1981L20.5017 22.3116C20.5877 22.3997 20.6971 22.4595 20.816 22.4835C20.935 22.5075 21.0581 22.4946 21.17 22.4464C21.2818 22.3983 21.3773 22.317 21.4444 22.213C21.5114 22.1089 21.5471 21.9867 21.5468 21.8617V9.74946C21.5468 9.15281 21.317 8.58059 20.9078 8.1587C20.4986 7.7368 19.9437 7.49978 19.365 7.49978H10.6364Z"
+                                                fill="#666666" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_b_1009_89778" x="-10" y="-10" width="50" height="50"
+                                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feGaussianBlur in="BackgroundImage" stdDeviation="5" />
+                                                <feComposite in2="SourceAlpha" operator="in"
+                                                    result="effect1_backgroundBlur_1009_89778" />
+                                                <feBlend mode="normal" in="SourceGraphic"
+                                                    in2="effect1_backgroundBlur_1009_89778" result="shape" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+
                                 </span>
                                 <div class="title_out_overlay"></div>
                                 <div class="title_out">
-                                    <span class="font_s22 line_h30 font_w500 ellipsis_2 wb_br duy_fz14_375px"><?= $ire_the_big_one['project_name'] ?></span>
+                                    <span class="font_s22 line_h30 font_w500 ellipsis_2 wb_br duy_fz14_375px">Đất thật
+                                        giá thật, diện
+                                        tích
+                                        lớn tại Biển Cát Sổ sẵn công chứng trong ngày, gần 2 khu công
+                                    </span>
                                     <div class="duy_lai_them_div">
                                         <div class="duy_lai_them_div1">
                                             <div class="duy_lai_them_div1-1">
                                                 <div class="duy_lai_them_div1-1_sub duy_fz13_375px">Địa chỉ:</div>
-                                                <div class="duy_lai_them_div1-1_sub2 ellipsis_2 duy_fz13_375px"><?= $ire_the_big_one['addr_detail'] ?></div>
+                                                <div class="duy_lai_them_div1-1_sub2 ellipsis_2 duy_fz13_375px">Đường
+                                                    Mỹ
+                                                    Phước Tân Vạn,
+                                                    Xã Chánh Phú Hòa, Huyện Bến Cát, Bình Dương</div>
 
                                             </div>
                                             <div class="duy_lai_them_div1-2">
                                                 <div class="duy_lai_them_div1-2_sub1 duy_fz13_375px">Diện tích:</div>
                                                 <div class="duy_lai_them_div1-2_sub2">
-                                                    <div class="duy_lai_them_div1-2_sub2_1 duy_fz13_375px"><?= $ire_the_big_one['detail_area'] ?> m2</div>
-                                                    <div class="duy_lai_them_div1-2_sub2_2">Giá: <?= ($ire_the_big_one['total_investment'] < 1000000000)?number_format((float)$ire_the_big_one['total_investment']/1000000000, 2, '.', ''):$ire_the_big_one['total_investment'] / 1000000000 ?> tỷ</div>
+                                                    <div class="duy_lai_them_div1-2_sub2_1 duy_fz13_375px">200m2</div>
+                                                    <div class="duy_lai_them_div1-2_sub2_2">Giá: 1.2 tỷ</div>
                                                 </div>
                                             </div>
                                             <a href="" class="duy_lai_them_div1_xemct duy_fz12_375px">Xem chi tiết</a>
@@ -449,59 +455,113 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                 </div>
                 <div class="estate_sider-list pd_lr_80 d_themclass_fig6">
                     <div class="d_flex flex_w slider_js gap_24 mt_40 d_themclass_fig7">
-                        <?php 
-						$count_ire = count($ire_all);
-						for ($i = 1; $i < $count_ire; $i++) {
-							$y1 = date('Y', $ire_all[$i]['avtDate']);
-							$m1 = date('m', $ire_all[$i]['avtDate']);
-							$d1 = date('d', $ire_all[$i]['avtDate']);
-							$dir1 = "upload/".$y1."/".$m1."/".$d1."";
-							$y2 = date('Y', $ire_all[$i]['time_create']);
-							$m2 = date('m', $ire_all[$i]['time_create']);
-							$d2 = date('d', $ire_all[$i]['time_create']);
-							$dir2 = "upload/".$y2."/".$m2."/".$d2."";
-						?>
+                        <?php for ($i = 0; $i < 9; $i++) : ?>
                         <div class="estate_item d_themclass_fig9">
                             <div class="estate_item_img mr_16 d_themclass_fig10">
-                                <img src="<?= $dir2."/".$ire_all[$i]['banner_img'] ?>" alt="">
+                                <img src="<?php echo base_url(); ?>assets/images/test.png" alt="">
                                 <div class="view">
-									<img src="<?php echo base_url(); ?>/assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                    <span class="ml_10 color_white duy_fz12_375px"><?= $ire_all[$i]['news_view'] ?></span>
+                                    <svg width="20" height="20" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.7998 8.83636C1.7998 8.83636 4.41799 3.6 8.9998 3.6C13.5816 3.6 16.1998 8.83636 16.1998 8.83636C16.1998 8.83636 13.5816 14.0727 8.9998 14.0727C4.41799 14.0727 1.7998 8.83636 1.7998 8.83636Z"
+                                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M8.99977 10.8003C10.0843 10.8003 10.9634 9.9211 10.9634 8.83662C10.9634 7.75213 10.0843 6.87298 8.99977 6.87298C7.91528 6.87298 7.03613 7.75213 7.03613 8.83662C7.03613 9.9211 7.91528 10.8003 8.99977 10.8003Z"
+                                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="ml_10 color_white duy_fz12_375px">200</span>
                                 </div>
                                 <span class="save duy_disp_none">
-                                    <img src="<? echo base_url(); ?>assets/images/fi-rr-bookmark.svg" alt="">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#filter0_b_1009_89778)">
+                                            <path
+                                                d="M0 8C0 3.58172 3.58172 0 8 0H22C26.4183 0 30 3.58172 30 8V22C30 26.4183 26.4183 30 22 30H8C3.58172 30 0 26.4183 0 22V8Z"
+                                                fill="white" fill-opacity="0.8" />
+                                            <path
+                                                d="M20.9177 23.9974C20.6487 23.9966 20.3825 23.9409 20.1344 23.8334C19.8864 23.726 19.6615 23.5689 19.4727 23.3712L15 18.7864L10.5273 23.3742C10.2401 23.6747 9.87168 23.879 9.47018 23.9605C9.06868 24.042 8.65269 23.9968 8.27644 23.8309C7.89645 23.6733 7.57139 23.4012 7.34369 23.0502C7.11599 22.6992 6.99625 22.2855 7.00009 21.8632V9.74946C7.00009 8.75504 7.3832 7.80135 8.06514 7.09819C8.74709 6.39503 9.672 6 10.6364 6L19.3636 6C19.8411 6 20.314 6.09698 20.7551 6.28541C21.1963 6.47384 21.5972 6.75002 21.9348 7.09819C22.2725 7.44636 22.5404 7.8597 22.7231 8.3146C22.9058 8.76951 22.9999 9.25707 22.9999 9.74946V21.8632C23.004 22.2851 22.8847 22.6986 22.6575 23.0496C22.4303 23.4006 22.1059 23.6728 21.7265 23.8309C21.4703 23.9414 21.1954 23.998 20.9177 23.9974ZM10.6364 7.49978C10.0578 7.49978 9.50282 7.7368 9.09365 8.1587C8.68448 8.58059 8.45462 9.15281 8.45462 9.74946V21.8632C8.45436 21.9882 8.49001 22.1104 8.55709 22.2145C8.62417 22.3185 8.71965 22.3998 8.83148 22.4479C8.94331 22.4961 9.06647 22.509 9.1854 22.485C9.30434 22.461 9.4137 22.4012 9.4997 22.3131L14.4909 17.1981C14.6272 17.0585 14.8115 16.9801 15.0036 16.9801C15.1958 16.9801 15.3801 17.0585 15.5164 17.1981L20.5017 22.3116C20.5877 22.3997 20.6971 22.4595 20.816 22.4835C20.935 22.5075 21.0581 22.4946 21.17 22.4464C21.2818 22.3983 21.3773 22.317 21.4444 22.213C21.5114 22.1089 21.5471 21.9867 21.5468 21.8617V9.74946C21.5468 9.15281 21.317 8.58059 20.9078 8.1587C20.4986 7.7368 19.9437 7.49978 19.365 7.49978H10.6364Z"
+                                                fill="#666666" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_b_1009_89778" x="-10" y="-10" width="50" height="50"
+                                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feGaussianBlur in="BackgroundImage" stdDeviation="5" />
+                                                <feComposite in2="SourceAlpha" operator="in"
+                                                    result="effect1_backgroundBlur_1009_89778" />
+                                                <feBlend mode="normal" in="SourceGraphic"
+                                                    in2="effect1_backgroundBlur_1009_89778" result="shape" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+
                                 </span>
                             </div>
                             <div class="estate_item_ct duy_fig_width_to">
                                 <!-- chi tiet mua ban hoac chi tiet cho thue -->
                                 <!-- <a href="chi-tiet-mua-ban-truoc-dang-nhap.html" class="estate_item_ct-title font_s17 blue_title ellipsis_2 font_w500 line_h24 duy_font_ct1 d_themclass_fig29"> -->
-                                <a href="chi-tiet-cho-thue-truoc-dang-nhap.html"
-                                    class="estate_item_ct-title font_s17 blue_title ellipsis_2 font_w500 line_h24 duy_font_ct1 d_themclass_fig29">
-                                    <?= $ire_all[$i]['id'] ?>
+                                <a href="chi-tiet-cho-thue-truoc-dang-nhap.html" class="estate_item_ct-title font_s17 blue_title ellipsis_2 font_w500 line_h24 duy_font_ct1 d_themclass_fig29">
+                                    Đất thật giá thật, diện tích lớn tại Biển Cát Sổ sẵn công chứng trong ngày
                                 </a>
                                 <!-- end chi tiet mua ban hoac chi tiet cho thue -->
                                 <div class="item_ct-infor mt_17 d_themclass_fig25">
                                     <div class="infor_address d_flex">
                                         <div class="icon duy_icon_20 d_flex center_center w_16">
-                                            <img src="/assets/images/img_du_an/address_hi.svg" alt="">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M15.4545 8.72727C15.4545 13.1818 9.72727 17 9.72727 17C9.72727 17 4 13.1818 4 8.72727C4 7.20831 4.60341 5.75155 5.67748 4.67748C6.75155 3.60341 8.20831 3 9.72727 3C11.2462 3 12.703 3.60341 13.7771 4.67748C14.8511 5.75155 15.4545 7.20831 15.4545 8.72727Z"
+                                                    stroke="#666666" stroke-width="1.2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M9.72745 10.6363C10.7818 10.6363 11.6365 9.78157 11.6365 8.72721C11.6365 7.67284 10.7818 6.81812 9.72745 6.81812C8.67309 6.81812 7.81836 7.67284 7.81836 8.72721C7.81836 9.78157 8.67309 10.6363 9.72745 10.6363Z"
+                                                    stroke="#666666" stroke-width="1.2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+
                                         </div>
-                                        <span class="font_s16 medium ml_10 ellipsis_2 duy_font_ct2"><?= $ire_all[$i]['addr_detail'] ?></span>
+                                        <span class="font_s16 medium ml_10 ellipsis_2 duy_font_ct2">Định Công, Hoàng
+                                            Mai, Hà
+                                            Nội</span>
                                     </div>
                                     <div class="infor_acreage d_flex align_s mt_9 d_themclass_fig26">
                                         <div class="icon duy_icon_20 d_flex center_center w_16">
-                                            <img src="/assets/images/img_du_an/icon_home.svg" alt="">
+                                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path
+                                                    d="M3.5 8C3.87405 7.62595 6.60919 5.4738 8.18908 4.24212C8.37149 4.09992 8.62738 4.1019 8.80799 4.24639L13.5 8"
+                                                    stroke="#666666" stroke-width="1.2" stroke-linecap="round" />
+                                                <path
+                                                    d="M4.5 8V12.5C4.5 12.7761 4.72386 13 5 13H12C12.2761 13 12.5 12.7761 12.5 12.5V8"
+                                                    stroke="#666666" stroke-width="1.2" stroke-linecap="round" />
+                                                <path
+                                                    d="M16.5 5H16C15.7239 5 15.5 5.22386 15.5 5.5V13.5C15.5 13.7761 15.7239 14 16 14H16.5M3.5 16V15.5C3.5 15.2239 3.72386 15 4 15H13C13.2761 15 13.5 15.2239 13.5 15.5V16"
+                                                    stroke="#666666" stroke-width="1.2" stroke-linecap="round" />
+                                            </svg>
+
                                         </div>
-                                        <span class="font_s16 medium ml_10 ellipsis_2 duy_font_ct2"><?= $ire_all[$i]['detail_area'] ?> m2</span>
+                                        <span class="font_s16 medium ml_10 ellipsis_2 duy_font_ct2">200 m2</span>
                                     </div>
                                     <div class="infor_price d_flex space_b mt_11 d_themclass_fig26">
                                         <div class="price d_flex align_s">
                                             <div class="icon duy_icon_20 w_16">
-                                                <img src="/assets/images/img_du_an/icon_money.svg" alt="">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.98886 5.00007C9.68207 5.00486 9.43726 5.25744 9.44206 5.56422V6.16526C8.37101 6.39899 7.50007 7.17538 7.50007 8.26782C7.50007 9.55951 8.65644 10.5505 9.99754 10.5505C10.8086 10.5505 11.384 11.1011 11.384 11.7222C11.384 12.343 10.8086 12.8917 9.99754 12.8917C9.18649 12.8917 8.61102 12.343 8.61102 11.7222C8.62165 10.971 7.48944 10.971 7.50007 11.7222C7.50007 12.815 8.37016 13.5938 9.44206 13.8269V14.4366C9.43143 15.1878 10.5636 15.1878 10.553 14.4366V13.9419C11.642 13.7129 12.518 12.8325 12.495 11.7243C12.495 10.245 11.5412 9.44169 9.99754 9.44169C9.18649 9.44169 8.61102 8.89078 8.61102 8.26999C8.61102 7.65724 9.17336 7.11932 9.96716 7.10479C9.98808 7.1067 10.0091 7.10743 10.0301 7.10696C10.8225 7.12264 11.384 7.65792 11.384 8.26998C11.3734 9.02116 12.5056 9.02116 12.495 8.26998C12.495 7.16141 11.642 6.27918 10.553 6.05026V5.56422C10.5579 5.25064 10.3024 4.99516 9.98886 5.00007Z"
+                                                        fill="#666666" />
+                                                    <circle cx="10" cy="10" r="7.4" stroke="#666666"
+                                                        stroke-width="1.2" />
+                                                </svg>
+
                                             </div>
-                                            <span class="font_s16 orange ml_10 ellipsis_2 duy_font_ct2"><?= $deal[$ire_all[$i]['Gia_thoa_thuan']] ?></span>
+                                            <span class="font_s16 orange ml_10 ellipsis_2 duy_font_ct2">Có thể thỏa
+                                                thuận</span>
                                         </div>
                                         <div>
-                                            <span class="font_s12 btn_blue-rg pd_4_8 br font_w500 duy_font_ct3"><?= $bds_type[$ire_all[$i]['bds_type']] ?></span>
+                                            <span class="font_s12 btn_blue-rg pd_4_8 br font_w500 duy_font_ct3">Căn hộ
+                                                chung
+                                                cư</span>
                                         </div>
                                     </div>
                                 </div>
@@ -509,13 +569,9 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                     class="estate_item_ct-people mt_6 d_flex space_b pd_t_8 pd_r_7 d_themclass_fig28 duy_disp_none">
                                     <div class="people d_flex align_c">
                                         <div class="avatar">
-										<? if (file_exists($dir1."/".$ire_all[$i]['user_avt'])) { ?>
-										<img src="<?= $dir1."/".$ire_all[$i]['user_avt'] ?>" alt="">
-										<? } else { ?>
-										<img src="/assets/images/default_avt.svg" alt="">
-										<? } ?>
+                                            <img src="<?php echo base_url(); ?>assets/images/avatar_test.png" alt="">
                                         </div>
-                                        <span class="name font_s16 ml_8 duy_font_ct2"><?= ($ire_all[$i]['name'] != '')?$ire_all[$i]['name']:$ire_all[$i]['companyName'] ?></span>
+                                        <span class="name font_s16 ml_8 duy_font_ct2">Nguyễn Ngọc Tuyết Phương</span>
                                     </div>
                                     <div class="inbox">
                                         <img src="<?php echo base_url(); ?>assets/images/chat_30svg.svg" alt="">
@@ -558,23 +614,17 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                     </svg>
 
                                 </div>
-                                <div class="duy_them_div_hien_375_img duy_them_div_hien_375_img_sub">
-									<? if (file_exists($dir1."/".$ire_all[$i]['user_avt'])) { ?>
-									<img src="<?= $dir1."/".$ire_all[$i]['user_avt'] ?>" alt="">
-									<? } else { ?>
-									<img src="/assets/images/default_avt.svg" alt="">
-									<? } ?>
-								</div>
+                                <div class="duy_them_div_hien_375_img duy_them_div_hien_375_img_sub"><img
+                                        src="<?php echo base_url(); ?>assets/images/img_du_an/bacsila.jpg" alt=""></div>
                             </div>
                         </div>
-                        <?php } ?>
+                        <?php endfor; ?>
                     </div>
                 </div>
             </selection>
 
             <selection class="estate_list mt_72">
-                <div class="estate_item_chart"
-                    style="background-image: url(<?php echo base_url(); ?>assets/images/bds_bg_1.png);">
+                <div class="estate_item_chart" style="background-image: url(<?php echo base_url(); ?>assets/images/bds_bg_1.png);">
                     <div class="pd_lr_80 d_flex d_themclass_fig8">
                         <div
                             class="flex_1 pd_r_36 bd_b40 pd_t_20 d_themclass_fig16 d_themclass_fig16_2 reveal fadeInUp  ">
@@ -607,8 +657,8 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                                 stroke-linejoin="round" />
                                             <path d="M9 12L12 9L9 6" stroke="#666666" stroke-width="1.2"
                                                 stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M6 9H12" stroke="#666666" stroke-width="1.2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                            <path d="M6 9H12" stroke="#666666" stroke-width="1.2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
                                     </span>
                                 </a>
@@ -618,29 +668,66 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                         <div
                             class="outstanding w694_h397 position_r pd_t_15 d_themclass_fig3 d_themclass_fig4_2 reveal fadeInRight">
                             <div class="position_r fig_1520_1 d_themclass_fig3">
-                                <img src="<?= $dir3 ?>/<?= $ire_newest_the_big_one['banner_img'] ?>" alt="">
+                                <img src="<?php echo base_url(); ?>assets/images/bane_home.png" alt="">
                                 <div class="view">
-									<img src="<?php echo base_url(); ?>/assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                    <span class="ml_8 color_white "><?= $ire_newest_the_big_one['news_view'] ?></span>
+                                    <svg width="20" height="20" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.7998 8.83636C1.7998 8.83636 4.41799 3.6 8.9998 3.6C13.5816 3.6 16.1998 8.83636 16.1998 8.83636C16.1998 8.83636 13.5816 14.0727 8.9998 14.0727C4.41799 14.0727 1.7998 8.83636 1.7998 8.83636Z"
+                                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M8.99977 10.8003C10.0843 10.8003 10.9634 9.9211 10.9634 8.83662C10.9634 7.75213 10.0843 6.87298 8.99977 6.87298C7.91528 6.87298 7.03613 7.75213 7.03613 8.83662C7.03613 9.9211 7.91528 10.8003 8.99977 10.8003Z"
+                                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="ml_8 color_white ">200</span>
                                 </div>
                                 <span class="save">
-									<img src="<? echo base_url(); ?>assets/images/fi-rr-bookmark.svg" alt="">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#filter0_b_1009_89778)">
+                                            <path
+                                                d="M0 8C0 3.58172 3.58172 0 8 0H22C26.4183 0 30 3.58172 30 8V22C30 26.4183 26.4183 30 22 30H8C3.58172 30 0 26.4183 0 22V8Z"
+                                                fill="white" fill-opacity="0.8" />
+                                            <path
+                                                d="M20.9177 23.9974C20.6487 23.9966 20.3825 23.9409 20.1344 23.8334C19.8864 23.726 19.6615 23.5689 19.4727 23.3712L15 18.7864L10.5273 23.3742C10.2401 23.6747 9.87168 23.879 9.47018 23.9605C9.06868 24.042 8.65269 23.9968 8.27644 23.8309C7.89645 23.6733 7.57139 23.4012 7.34369 23.0502C7.11599 22.6992 6.99625 22.2855 7.00009 21.8632V9.74946C7.00009 8.75504 7.3832 7.80135 8.06514 7.09819C8.74709 6.39503 9.672 6 10.6364 6L19.3636 6C19.8411 6 20.314 6.09698 20.7551 6.28541C21.1963 6.47384 21.5972 6.75002 21.9348 7.09819C22.2725 7.44636 22.5404 7.8597 22.7231 8.3146C22.9058 8.76951 22.9999 9.25707 22.9999 9.74946V21.8632C23.004 22.2851 22.8847 22.6986 22.6575 23.0496C22.4303 23.4006 22.1059 23.6728 21.7265 23.8309C21.4703 23.9414 21.1954 23.998 20.9177 23.9974ZM10.6364 7.49978C10.0578 7.49978 9.50282 7.7368 9.09365 8.1587C8.68448 8.58059 8.45462 9.15281 8.45462 9.74946V21.8632C8.45436 21.9882 8.49001 22.1104 8.55709 22.2145C8.62417 22.3185 8.71965 22.3998 8.83148 22.4479C8.94331 22.4961 9.06647 22.509 9.1854 22.485C9.30434 22.461 9.4137 22.4012 9.4997 22.3131L14.4909 17.1981C14.6272 17.0585 14.8115 16.9801 15.0036 16.9801C15.1958 16.9801 15.3801 17.0585 15.5164 17.1981L20.5017 22.3116C20.5877 22.3997 20.6971 22.4595 20.816 22.4835C20.935 22.5075 21.0581 22.4946 21.17 22.4464C21.2818 22.3983 21.3773 22.317 21.4444 22.213C21.5114 22.1089 21.5471 21.9867 21.5468 21.8617V9.74946C21.5468 9.15281 21.317 8.58059 20.9078 8.1587C20.4986 7.7368 19.9437 7.49978 19.365 7.49978H10.6364Z"
+                                                fill="#666666" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_b_1009_89778" x="-10" y="-10" width="50" height="50"
+                                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feGaussianBlur in="BackgroundImage" stdDeviation="5" />
+                                                <feComposite in2="SourceAlpha" operator="in"
+                                                    result="effect1_backgroundBlur_1009_89778" />
+                                                <feBlend mode="normal" in="SourceGraphic"
+                                                    in2="effect1_backgroundBlur_1009_89778" result="shape" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+
                                 </span>
                                 <div class="title_out_overlay"></div>
                                 <div class="title_out">
-                                    <span class="font_s22 line_h30 font_w500 ellipsis_2 wb_br duy_fz14_375px"><?= $ire_newest_the_big_one['project_name'] ?></span>
+                                    <span class="font_s22 line_h30 font_w500 ellipsis_2 wb_br duy_fz14_375px">Đất thật
+                                        giá thật, diện
+                                        tích
+                                        lớn tại Biển Cát Sổ sẵn công chứng trong ngày, gần 2 khu công
+                                    </span>
                                     <div class="duy_lai_them_div">
                                         <div class="duy_lai_them_div1">
                                             <div class="duy_lai_them_div1-1">
                                                 <div class="duy_lai_them_div1-1_sub duy_fz13_375px">Địa chỉ:</div>
-                                                <div class="duy_lai_them_div1-1_sub2 ellipsis_2 duy_fz13_375px"><?= $ire_newest_the_big_one['addr_detail'] ?></div>
+                                                <div class="duy_lai_them_div1-1_sub2 ellipsis_2 duy_fz13_375px">Đường
+                                                    Mỹ
+                                                    Phước Tân Vạn,
+                                                    Xã Chánh Phú Hòa, Huyện Bến Cát, Bình Dương</div>
 
                                             </div>
                                             <div class="duy_lai_them_div1-2">
                                                 <div class="duy_lai_them_div1-2_sub1 duy_fz13_375px">Diện tích:</div>
                                                 <div class="duy_lai_them_div1-2_sub2">
-                                                    <div class="duy_lai_them_div1-2_sub2_1 duy_fz13_375px"><?= $ire_newest_the_big_one['detail_area'] ?> m2</div>
-                                                    <div class="duy_lai_them_div1-2_sub2_2 duy_fz13_375px">Giá: <?= ($ire_newest_the_big_one['total_investment'] < 1000000000)?number_format((float)$ire_newest_the_big_one['total_investment']/1000000000, 2, '.', ''):$ire_newest_the_big_one['total_investment'] / 1000000000 ?> tỷ
+                                                    <div class="duy_lai_them_div1-2_sub2_1 duy_fz13_375px">200m2</div>
+                                                    <div class="duy_lai_them_div1-2_sub2_2 duy_fz13_375px">Giá: 1.2 tỷ
                                                     </div>
                                                 </div>
                                             </div>
@@ -656,33 +743,51 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
 
                 <div class="pd_lr_80 mt_48 d_themclass_fig17">
                     <div class="row d_flex flex_w duy_fb_2_375px">
-                        <?php 
-						$count_newest = count($ire_newest_all);
-						for ($i = 1; $i < $count_newest; $i++) {
-						$y4 = date('Y', $ire_newest_all[$i]['time_create']);
-						$m4 = date('m', $ire_newest_all[$i]['time_create']);
-						$d4 = date('d', $ire_newest_all[$i]['time_create']);
-						$dir4 = "upload/".$y4."/".$m4."/".$d4."";
-						$y5 = date('Y', $ire_newest_all[$i]['avtDate']);
-						$m5 = date('m', $ire_newest_all[$i]['avtDate']);
-						$d5 = date('d', $ire_newest_all[$i]['avtDate']);
-						$dir5 = "upload/".$y5."/".$m5."/".$d5."";
-						?>
+                        <?php for ($i = 0; $i < 6; $i++) : ?>
                         <div class="estate_item d_themclass_fig18 flex_column col_3">
                             <div class="estate_item_img d_themclass_fig19 mr_6 w_full max_h_234 pd_ltr_8">
-                                <img src="<?= $dir4."/".$ire_newest_all[$i]['banner_img'] ?>" alt="">
+                                <img src="<?php echo base_url(); ?>assets/images/test.png" alt="">
                                 <div class="view">
-									<img src="<?php echo base_url(); ?>/assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                    <span class="ml_10 color_white "><?= $ire_newest_all[$i]['news_view'] ?></span>
+                                    <svg width="20" height="20" viewBox="0 0 18 18" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M1.7998 8.83636C1.7998 8.83636 4.41799 3.6 8.9998 3.6C13.5816 3.6 16.1998 8.83636 16.1998 8.83636C16.1998 8.83636 13.5816 14.0727 8.9998 14.0727C4.41799 14.0727 1.7998 8.83636 1.7998 8.83636Z"
+                                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                        <path
+                                            d="M8.99977 10.8003C10.0843 10.8003 10.9634 9.9211 10.9634 8.83662C10.9634 7.75213 10.0843 6.87298 8.99977 6.87298C7.91528 6.87298 7.03613 7.75213 7.03613 8.83662C7.03613 9.9211 7.91528 10.8003 8.99977 10.8003Z"
+                                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                    <span class="ml_10 color_white ">200</span>
                                 </div>
                                 <span class="save">
-									<img src="<? echo base_url(); ?>assets/images/fi-rr-bookmark.svg" alt="">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#filter0_b_1009_89778)">
+                                            <path
+                                                d="M0 8C0 3.58172 3.58172 0 8 0H22C26.4183 0 30 3.58172 30 8V22C30 26.4183 26.4183 30 22 30H8C3.58172 30 0 26.4183 0 22V8Z"
+                                                fill="white" fill-opacity="0.8" />
+                                            <path
+                                                d="M20.9177 23.9974C20.6487 23.9966 20.3825 23.9409 20.1344 23.8334C19.8864 23.726 19.6615 23.5689 19.4727 23.3712L15 18.7864L10.5273 23.3742C10.2401 23.6747 9.87168 23.879 9.47018 23.9605C9.06868 24.042 8.65269 23.9968 8.27644 23.8309C7.89645 23.6733 7.57139 23.4012 7.34369 23.0502C7.11599 22.6992 6.99625 22.2855 7.00009 21.8632V9.74946C7.00009 8.75504 7.3832 7.80135 8.06514 7.09819C8.74709 6.39503 9.672 6 10.6364 6L19.3636 6C19.8411 6 20.314 6.09698 20.7551 6.28541C21.1963 6.47384 21.5972 6.75002 21.9348 7.09819C22.2725 7.44636 22.5404 7.8597 22.7231 8.3146C22.9058 8.76951 22.9999 9.25707 22.9999 9.74946V21.8632C23.004 22.2851 22.8847 22.6986 22.6575 23.0496C22.4303 23.4006 22.1059 23.6728 21.7265 23.8309C21.4703 23.9414 21.1954 23.998 20.9177 23.9974ZM10.6364 7.49978C10.0578 7.49978 9.50282 7.7368 9.09365 8.1587C8.68448 8.58059 8.45462 9.15281 8.45462 9.74946V21.8632C8.45436 21.9882 8.49001 22.1104 8.55709 22.2145C8.62417 22.3185 8.71965 22.3998 8.83148 22.4479C8.94331 22.4961 9.06647 22.509 9.1854 22.485C9.30434 22.461 9.4137 22.4012 9.4997 22.3131L14.4909 17.1981C14.6272 17.0585 14.8115 16.9801 15.0036 16.9801C15.1958 16.9801 15.3801 17.0585 15.5164 17.1981L20.5017 22.3116C20.5877 22.3997 20.6971 22.4595 20.816 22.4835C20.935 22.5075 21.0581 22.4946 21.17 22.4464C21.2818 22.3983 21.3773 22.317 21.4444 22.213C21.5114 22.1089 21.5471 21.9867 21.5468 21.8617V9.74946C21.5468 9.15281 21.317 8.58059 20.9078 8.1587C20.4986 7.7368 19.9437 7.49978 19.365 7.49978H10.6364Z"
+                                                fill="#666666" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_b_1009_89778" x="-10" y="-10" width="50" height="50"
+                                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feGaussianBlur in="BackgroundImage" stdDeviation="5" />
+                                                <feComposite in2="SourceAlpha" operator="in"
+                                                    result="effect1_backgroundBlur_1009_89778" />
+                                                <feBlend mode="normal" in="SourceGraphic"
+                                                    in2="effect1_backgroundBlur_1009_89778" result="shape" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+
                                 </span>
                             </div>
                             <div class="estate_item_ct mt_16">
-                                <a href="mua-ban-truoc-dang-nhap.html"
-                                    class="estate_item_ct-title font_s17 blue_title ellipsis_2 pd_lr_16 font_w500 line_h24 duy_font_ct1">
-                                    <?= $ire_newest_all[$i]['project_name'] ?>
+                                <a href="mua-ban-truoc-dang-nhap.html" class="estate_item_ct-title font_s17 blue_title ellipsis_2 pd_lr_16 font_w500 line_h24 duy_font_ct1">
+                                    Đất thật giá thật, diện tích lớn tại Biển Cát Sổ sẵn công chứng trong ngày
                                 </a>
                                 <div class="item_ct-infor mt_8 pd_lr_16">
                                     <div class="infor_address d_flex align_s">
@@ -701,16 +806,30 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
 
                                         </div>
                                         <span
-                                            class="font_s16 medium ml_10 ellipsis_2 line_h22 font_w500 duy_fz14_768"><?= $ire_newest_all[$i]['addr_detail'] ?></span>
+                                            class="font_s16 medium ml_10 ellipsis_2 line_h22 font_w500 duy_fz14_768">Đường
+                                            Mỹ Phước
+                                            Tân Vạn, Xã Chánh Phú Hòa, Huyện Bến Cát, Bình Dương </span>
                                     </div>
                                     <div class="infor_price d_flex space_b">
                                         <div class="infor_acreage d_flex w_40 align_s">
                                             <div class="icon d_flex center_center w_16 duy_icon_20">
-                                                <img src="/assets/images/img_du_an/icon_home.svg" alt="">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M3.5 8C3.87405 7.62595 6.60919 5.4738 8.18908 4.24212C8.37149 4.09992 8.62738 4.1019 8.80799 4.24639L13.5 8"
+                                                        stroke="#666666" stroke-width="1.2" stroke-linecap="round" />
+                                                    <path
+                                                        d="M4.5 8V12.5C4.5 12.7761 4.72386 13 5 13H12C12.2761 13 12.5 12.7761 12.5 12.5V8"
+                                                        stroke="#666666" stroke-width="1.2" stroke-linecap="round" />
+                                                    <path
+                                                        d="M16.5 5H16C15.7239 5 15.5 5.22386 15.5 5.5V13.5C15.5 13.7761 15.7239 14 16 14H16.5M3.5 16V15.5C3.5 15.2239 3.72386 15 4 15H13C13.2761 15 13.5 15.2239 13.5 15.5V16"
+                                                        stroke="#666666" stroke-width="1.2" stroke-linecap="round" />
+                                                </svg>
+
                                             </div>
-                                            <span class="font_s16 medium ml_10 wb_br ellipsis_2"><?= $ire_newest_all[$i]['detail_area'] ?> m2</span>
+                                            <span class="font_s16 medium ml_10 wb_br ellipsis_2">200 m2</span>
                                         </div>
-                                        <div class="price d_flex align_c w_45 align_s" style="justify-content: end">
+                                        <div class="price d_flex align_c w_45 align_s">
                                             <div class="icon w_16 d_flex duy_icon_20">
                                                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -721,20 +840,16 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                                         stroke-width="1.2" />
                                                 </svg>
                                             </div>
-                                            <span class="font_s16 orange ml_10 wb_br ellipsis_2"><?= ($ire_newest_all[$i]['total_investment'] < 1000000000)?number_format((float)$ire_newest_all[$i]['total_investment']/1000000000, 2, '.', ''):$ire_newest_all[$i]['total_investment'] / 1000000000 ?> tỷ</span>
+                                            <span class="font_s16 orange ml_10 wb_br ellipsis_2">1.5 tỷ</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="estate_item_ct-people mt_6 d_flex space_b bg_gray pd_8_16 br_lb_br_8">
                                     <div class="people d_flex align_c">
                                         <div class="avatar">
-										<? if (file_exists($dir5."/".$ire_newest_all[$i]['user_avt'])) { ?>
-										<img src="<?= $dir5."/".$ire_newest_all[$i]['user_avt'] ?>" alt="">
-										<? } else { ?>
-										<img src="/assets/images/default_avt.svg" alt="">
-										<? } ?>
+                                            <img src="<?php echo base_url(); ?>assets/images/avatar_test.png" alt="">
                                         </div>
-                                        <span class="name font_s16 ml_8"><?= ($ire_newest_all[$i]['name'] != '')?$ire_newest_all[$i]['name']:$ire_newest_all[$i]['companyName'] ?></span>
+                                        <span class="name font_s16 ml_8">Nguyễn Ngọc Tuyết Phương</span>
                                     </div>
                                     <div class="inbox">
                                         <img src="<?php echo base_url(); ?>assets/images/chat_30svg.svg" alt="">
@@ -742,14 +857,13 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                 </div>
                             </div>
                         </div>
-                        <?php } ?>
+                        <?php endfor ?>
                     </div>
                 </div>
             </selection>
 
             <selection class="estate_list mt_48">
-                <div class="estate_item_chart"
-                    style="background-image: url(<?php echo base_url(); ?>assets/images/bds_bg_1.png);">
+                <div class="estate_item_chart" style="background-image: url(<?php echo base_url(); ?>assets/images/bds_bg_1.png);">
                     <div class="pd_lr_80 d_flex d_themclass_fig20 duy_flb_375">
                         <div class="flex_1 pd_r_36 bd_b40 pd_t_34 d_themclass_fig20_1 reveal fadeInUp ">
                             <div class="title d_flex flex_column align_s">
@@ -771,40 +885,69 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                                 stroke-linejoin="round" />
                                             <path d="M9 12L12 9L9 6" stroke="#666666" stroke-width="1.2"
                                                 stroke-linecap="round" stroke-linejoin="round" />
-                                            <path d="M6 9H12" stroke="#666666" stroke-width="1.2" stroke-linecap="round"
-                                                stroke-linejoin="round" />
+                                            <path d="M6 9H12" stroke="#666666" stroke-width="1.2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
                                         </svg>
+
                                     </span>
                                 </a>
                             </div>
                         </div>
 
-                        <div class="outstanding position_r d_themclass_fig21 d_themclass_fig3 reveal fadeInRight">
-                            <div class="position_r w694_h397 d_themclass_fig22">
-                                <img src="<?= $dir ?>/<?= $ire_the_big_one['banner_img'] ?>" alt="">
+                        <div class="outstanding position_r pd_t_53 d_themclass_fig21 reveal fadeInRight">
+                            <div class="position_r w694_h397 fig_1520_1 d_themclass_fig22">
+                                <img src="<?php echo base_url(); ?>assets/images/bane_home.png" alt="">
                                 <div class="view">
                                     <img src="<?php echo base_url(); ?>assets/images/eye_1.png" alt="">
-                                    <span class="ml_8 color_white "><?= $ire_ate_the_big_one['news_view'] ?></span>
+                                    <span class="ml_8 color_white ">200</span>
                                 </div>
                                 <span class="save">
-								<img src="<?php echo base_url(); ?>assets/images/fi-rr-bookmark.svg" alt="">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#filter0_b_1009_89778)">
+                                            <path
+                                                d="M0 8C0 3.58172 3.58172 0 8 0H22C26.4183 0 30 3.58172 30 8V22C30 26.4183 26.4183 30 22 30H8C3.58172 30 0 26.4183 0 22V8Z"
+                                                fill="white" fill-opacity="0.8" />
+                                            <path
+                                                d="M20.9177 23.9974C20.6487 23.9966 20.3825 23.9409 20.1344 23.8334C19.8864 23.726 19.6615 23.5689 19.4727 23.3712L15 18.7864L10.5273 23.3742C10.2401 23.6747 9.87168 23.879 9.47018 23.9605C9.06868 24.042 8.65269 23.9968 8.27644 23.8309C7.89645 23.6733 7.57139 23.4012 7.34369 23.0502C7.11599 22.6992 6.99625 22.2855 7.00009 21.8632V9.74946C7.00009 8.75504 7.3832 7.80135 8.06514 7.09819C8.74709 6.39503 9.672 6 10.6364 6L19.3636 6C19.8411 6 20.314 6.09698 20.7551 6.28541C21.1963 6.47384 21.5972 6.75002 21.9348 7.09819C22.2725 7.44636 22.5404 7.8597 22.7231 8.3146C22.9058 8.76951 22.9999 9.25707 22.9999 9.74946V21.8632C23.004 22.2851 22.8847 22.6986 22.6575 23.0496C22.4303 23.4006 22.1059 23.6728 21.7265 23.8309C21.4703 23.9414 21.1954 23.998 20.9177 23.9974ZM10.6364 7.49978C10.0578 7.49978 9.50282 7.7368 9.09365 8.1587C8.68448 8.58059 8.45462 9.15281 8.45462 9.74946V21.8632C8.45436 21.9882 8.49001 22.1104 8.55709 22.2145C8.62417 22.3185 8.71965 22.3998 8.83148 22.4479C8.94331 22.4961 9.06647 22.509 9.1854 22.485C9.30434 22.461 9.4137 22.4012 9.4997 22.3131L14.4909 17.1981C14.6272 17.0585 14.8115 16.9801 15.0036 16.9801C15.1958 16.9801 15.3801 17.0585 15.5164 17.1981L20.5017 22.3116C20.5877 22.3997 20.6971 22.4595 20.816 22.4835C20.935 22.5075 21.0581 22.4946 21.17 22.4464C21.2818 22.3983 21.3773 22.317 21.4444 22.213C21.5114 22.1089 21.5471 21.9867 21.5468 21.8617V9.74946C21.5468 9.15281 21.317 8.58059 20.9078 8.1587C20.4986 7.7368 19.9437 7.49978 19.365 7.49978H10.6364Z"
+                                                fill="#666666" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_b_1009_89778" x="-10" y="-10" width="50" height="50"
+                                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feGaussianBlur in="BackgroundImage" stdDeviation="5" />
+                                                <feComposite in2="SourceAlpha" operator="in"
+                                                    result="effect1_backgroundBlur_1009_89778" />
+                                                <feBlend mode="normal" in="SourceGraphic"
+                                                    in2="effect1_backgroundBlur_1009_89778" result="shape" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+
                                 </span>
                             </div>
                             <div class="title_out_overlay"></div>
                             <div class="title_out">
-                                <span class="font_s22 line_h30 font_w500 ellipsis_2 wb_br duy_fz14_375px"><?= $ire_ate_the_big_one['project_name'] ?></span>
+                                <span class="font_s22 line_h30 font_w500 ellipsis_2 wb_br duy_fz14_375px">Đất thật giá
+                                    thật, diện
+                                    tích
+                                    lớn tại Biển Cát Sổ sẵn công chứng trong ngày, gần 2 khu côngf
+                                </span>
                                 <div class="duy_lai_them_div">
                                     <div class="duy_lai_them_div1">
                                         <div class="duy_lai_them_div1-1">
                                             <div class="duy_lai_them_div1-1_sub duy_fz13_375px">Địa chỉ:</div>
-                                            <div class="duy_lai_them_div1-1_sub2 ellipsis_2 duy_fz13_375px"><?= $ire_ate_the_big_one['addr_detail'] ?></div>
+                                            <div class="duy_lai_them_div1-1_sub2 ellipsis_2 duy_fz13_375px">Đường Mỹ
+                                                Phước Tân Vạn,
+                                                Xã Chánh Phú Hòa, Huyện Bến Cát, Bình Dương</div>
 
                                         </div>
                                         <div class="duy_lai_them_div1-2">
                                             <div class="duy_lai_them_div1-2_sub1 duy_fz13_375px">Diện tích:</div>
                                             <div class="duy_lai_them_div1-2_sub2">
-                                                <div class="duy_lai_them_div1-2_sub2_1 duy_fz13_375px"><?= $ire_ate_the_big_one['detail_area'] ?> m2</div>
-                                                <div class="duy_lai_them_div1-2_sub2_2">Giá: <?= ($ire_ate_the_big_one['total_investment'] < 1000000000)?number_format((float)$ire_ate_the_big_one['total_investment']/1000000000, 2, '.', ''):$ire_ate_the_big_one['total_investment'] / 1000000000 ?> tỷ</div>
+                                                <div class="duy_lai_them_div1-2_sub2_1 duy_fz13_375px">200m2</div>
+                                                <div class="duy_lai_them_div1-2_sub2_2">Giá: 1.2 tỷ</div>
                                             </div>
                                         </div>
                                         <a href="" class="duy_lai_them_div1_xemct duy_fz12_375px">Xem chi tiết</a>
@@ -817,33 +960,43 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                 </div>
                 <div class="pd_lr_80 mt_40 d_themclass_fig17 d_themclass_fig17_2">
                     <div class="row d_flex flex_w">
-                        <?php 
-						$count_expired = count($ire_ate_all);
-						for ($i = 1; $i < $count_expired; $i++) {
-						$y7 = date('Y', $ire_ate_all[$i]['avtDate']);
-						$m7 = date('m', $ire_ate_all[$i]['avtDate']);
-						$d7 = date('d', $ire_ate_all[$i]['avtDate']);
-						$dir7 = "upload/".$y7."/".$m7."/".$d7."";
-						$y8 = date('Y', $ire_ate_all[$i]['time_create']);
-						$m8 = date('m', $ire_ate_all[$i]['time_create']);
-						$d8 = date('d', $ire_ate_all[$i]['time_create']);
-						$dir8 = "upload/".$y8."/".$m8."/".$d8."";
-						?>
+                        <?php for ($i = 0; $i < 5; $i++) : ?>
                         <div class="estate_item col_2 d_themclass_fig27">
                             <div class="estate_item_img mr_16 d_themclass_fig24">
-                                <img src="<?= $dir8."/".$ire_ate_all[$i]['banner_img'] ?>" alt="">
+                                <img src="<?php echo base_url(); ?>assets/images/test.png" alt="">
                                 <div class="view">
                                     <img src="<?php echo base_url(); ?>assets/images/eye_1.png" alt="">
-                                    <span class="ml_10 color_white"><?= $ire_ate_all[$i]['news_view'] ?></span>
+                                    <span class="ml_10 color_white">200</span>
                                 </div>
                                 <span class="save duy_disp_none">
-									<img src="<? echo base_url(); ?>assets/images/fi-rr-bookmark.svg" alt="">
+                                    <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <g filter="url(#filter0_b_1009_89778)">
+                                            <path
+                                                d="M0 8C0 3.58172 3.58172 0 8 0H22C26.4183 0 30 3.58172 30 8V22C30 26.4183 26.4183 30 22 30H8C3.58172 30 0 26.4183 0 22V8Z"
+                                                fill="white" fill-opacity="0.8" />
+                                            <path
+                                                d="M20.9177 23.9974C20.6487 23.9966 20.3825 23.9409 20.1344 23.8334C19.8864 23.726 19.6615 23.5689 19.4727 23.3712L15 18.7864L10.5273 23.3742C10.2401 23.6747 9.87168 23.879 9.47018 23.9605C9.06868 24.042 8.65269 23.9968 8.27644 23.8309C7.89645 23.6733 7.57139 23.4012 7.34369 23.0502C7.11599 22.6992 6.99625 22.2855 7.00009 21.8632V9.74946C7.00009 8.75504 7.3832 7.80135 8.06514 7.09819C8.74709 6.39503 9.672 6 10.6364 6L19.3636 6C19.8411 6 20.314 6.09698 20.7551 6.28541C21.1963 6.47384 21.5972 6.75002 21.9348 7.09819C22.2725 7.44636 22.5404 7.8597 22.7231 8.3146C22.9058 8.76951 22.9999 9.25707 22.9999 9.74946V21.8632C23.004 22.2851 22.8847 22.6986 22.6575 23.0496C22.4303 23.4006 22.1059 23.6728 21.7265 23.8309C21.4703 23.9414 21.1954 23.998 20.9177 23.9974ZM10.6364 7.49978C10.0578 7.49978 9.50282 7.7368 9.09365 8.1587C8.68448 8.58059 8.45462 9.15281 8.45462 9.74946V21.8632C8.45436 21.9882 8.49001 22.1104 8.55709 22.2145C8.62417 22.3185 8.71965 22.3998 8.83148 22.4479C8.94331 22.4961 9.06647 22.509 9.1854 22.485C9.30434 22.461 9.4137 22.4012 9.4997 22.3131L14.4909 17.1981C14.6272 17.0585 14.8115 16.9801 15.0036 16.9801C15.1958 16.9801 15.3801 17.0585 15.5164 17.1981L20.5017 22.3116C20.5877 22.3997 20.6971 22.4595 20.816 22.4835C20.935 22.5075 21.0581 22.4946 21.17 22.4464C21.2818 22.3983 21.3773 22.317 21.4444 22.213C21.5114 22.1089 21.5471 21.9867 21.5468 21.8617V9.74946C21.5468 9.15281 21.317 8.58059 20.9078 8.1587C20.4986 7.7368 19.9437 7.49978 19.365 7.49978H10.6364Z"
+                                                fill="#666666" />
+                                        </g>
+                                        <defs>
+                                            <filter id="filter0_b_1009_89778" x="-10" y="-10" width="50" height="50"
+                                                filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                                <feGaussianBlur in="BackgroundImage" stdDeviation="5" />
+                                                <feComposite in2="SourceAlpha" operator="in"
+                                                    result="effect1_backgroundBlur_1009_89778" />
+                                                <feBlend mode="normal" in="SourceGraphic"
+                                                    in2="effect1_backgroundBlur_1009_89778" result="shape" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+
                                 </span>
                             </div>
                             <div class="estate_item_ct estate_item_ct_duy">
-                                <a href="mua-ban-truoc-dang-nhap.html"
-                                    class="estate_item_ct-title font_s17 blue_title ellipsis_2 font_w500 line_h24 wb_br duy_font_ct1 d_themclass_fig29 duy_fz14_375px">
-                                    <?= $ire_ate_all[$i]['project_name'] ?>
+                                <a href="mua-ban-truoc-dang-nhap.html" class="estate_item_ct-title font_s17 blue_title ellipsis_2 font_w500 line_h24 wb_br duy_font_ct1 d_themclass_fig29 duy_fz14_375px">
+                                    Đất thật giá thật, diện tích lớn tại Biển Cát Sổ sẵn công chứng trong ngày
                                 </a>
                                 <div class="item_ct-infor mt_17 d_themclass_fig25">
                                     <div class="infor_address d_flex">
@@ -862,7 +1015,10 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
 
                                         </div>
                                         <span
-                                            class="font_s16 medium ml_10 ellipsis_2 wb_br duy_font_ct2 duy_fz13_375px"><?= $ire_ate_all[$i]['addr_detail'] ?></span>
+                                            class="font_s16 medium ml_10 ellipsis_2 wb_br duy_font_ct2 duy_fz13_375px">Định
+                                            Công,
+                                            Hoàng Mai, Hà
+                                            Nội</span>
                                     </div>
                                     <div class="infor_acreage d_flex align_s mt_9 d_themclass_fig26">
                                         <div class="icon d_flex align_s flex_center w_16 duy_icon_20">
@@ -881,21 +1037,29 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
 
                                         </div>
                                         <span
-                                            class="font_s16 medium ml_10 ellipsis_2 wb_br duy_font_ct2 duy_fz13_375px"><?= $ire_ate_all[$i]['detail_area'] ?>
+                                            class="font_s16 medium ml_10 ellipsis_2 wb_br duy_font_ct2 duy_fz13_375px">200
                                             m2</span>
                                     </div>
                                     <div class="infor_price d_flex space_b mt_11 d_themclass_fig26">
                                         <div class="price d_flex align_s">
                                             <div class="icon w_16 duy_icon_20">
-                                                <img src="/assets/images/img_du_an/icon_money.svg" alt="">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M9.98886 5.00007C9.68207 5.00486 9.43726 5.25744 9.44206 5.56422V6.16526C8.37101 6.39899 7.50007 7.17538 7.50007 8.26782C7.50007 9.55951 8.65644 10.5505 9.99754 10.5505C10.8086 10.5505 11.384 11.1011 11.384 11.7222C11.384 12.343 10.8086 12.8917 9.99754 12.8917C9.18649 12.8917 8.61102 12.343 8.61102 11.7222C8.62165 10.971 7.48944 10.971 7.50007 11.7222C7.50007 12.815 8.37016 13.5938 9.44206 13.8269V14.4366C9.43143 15.1878 10.5636 15.1878 10.553 14.4366V13.9419C11.642 13.7129 12.518 12.8325 12.495 11.7243C12.495 10.245 11.5412 9.44169 9.99754 9.44169C9.18649 9.44169 8.61102 8.89078 8.61102 8.26999C8.61102 7.65724 9.17336 7.11932 9.96716 7.10479C9.98808 7.1067 10.0091 7.10743 10.0301 7.10696C10.8225 7.12264 11.384 7.65792 11.384 8.26998C11.3734 9.02116 12.5056 9.02116 12.495 8.26998C12.495 7.16141 11.642 6.27918 10.553 6.05026V5.56422C10.5579 5.25064 10.3024 4.99516 9.98886 5.00007Z"
+                                                        fill="#666666" />
+                                                    <circle cx="10" cy="10" r="7.4" stroke="#666666"
+                                                        stroke-width="1.2" />
+                                                </svg>
                                             </div>
                                             <span
-                                                class="font_s16 orange ml_10 ellipsis_2 duy_font_ct2 duy_fz13_375px">
-												<?= ($ire_ate_all[$i]['total_investment'] < 1000000000)?number_format((float)$ire_ate_all[$i]['total_investment']/1000000000, 2, '.', ''):$ire_ate_all[$i]['total_investment'] / 1000000000 ?>
+                                                class="font_s16 orange ml_10 ellipsis_2 duy_font_ct2 duy_fz13_375px">1.5
                                                 tỷ</span>
                                         </div>
                                         <div>
-                                            <span class="font_s12 btn_blue-rg pd_4_8 br font_w500 duy_disp_none"><?= $bds_type[$ire_ate_all[$i]['bds_type']] ?></span>
+                                            <span class="font_s12 btn_blue-rg pd_4_8 br font_w500 duy_disp_none">Căn hộ
+                                                chung
+                                                cư</span>
                                         </div>
                                     </div>
                                 </div>
@@ -903,13 +1067,9 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                     class="estate_item_ct-people mt_6 d_flex space_b pd_t_8 pd_r_7 d_themclass_fig28 duy_disp_none">
                                     <div class="people d_flex align_c">
                                         <div class="avatar">
-										<? if (file_exists($dir7."/".$ire_ate_all[$i]['user_avt'])) { ?>
-										<img src="<?= $dir7."/".$ire_ate_all[$i]['user_avt'] ?>" alt="">
-										<? } else { ?>
-										<img src="/assets/images/default_avt.svg" alt="">
-										<? } ?>
+                                            <img src="<?php echo base_url(); ?>assets/images/avatar_test.png" alt="">
                                         </div>
-                                        <span class="name font_s16 ml_8 duy_font_ct2"><?= ($ire_ate_all[$i]['name'] != '')?$ire_ate_all[$i]['name']:$ire_ate_all[$i]['companyName'] ?></span>
+                                        <span class="name font_s16 ml_8 duy_font_ct2">Nguyễn Ngọc Tuyết Phương</span>
                                     </div>
                                     <div class="inbox">
                                         <img src="<?php echo base_url(); ?>assets/images/inbox_green.svg" alt="">
@@ -956,7 +1116,7 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                         src="<?php echo base_url(); ?>assets/images/img_du_an/bacsila.jpg" alt=""></div>
                             </div>
                         </div>
-                        <?php } ?>
+                        <?php endfor; ?>
                     </div>
                 </div>
             </selection>
@@ -982,8 +1142,7 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                 bàn giao</button>
                         </div>
                         <div class="selected_btn d_flex align_e mt_64 flex_end d_themclass_fig33">
-                            <a href="danh-sach-du-an_moi_nhat.html"
-                                class="btn d_flex align_c pd_8_16 br_8 bd-gray gray_1">
+                            <a href="danh-sach-du-an_moi_nhat.html" class="btn d_flex align_c pd_8_16 br_8 bd-gray gray_1">
                                 <span class="color_gray mr_20 duy_fz14_768">Xem tất cả danh sách</span>
                                 <span class="d_flex align_c">
                                     <svg width="20" height="20" viewBox="0 0 18 18" fill="none"
@@ -998,7 +1157,7 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                             stroke-linejoin="round" />
                                     </svg>
                                 </span>
-                            </a>
+                        </a>
                         </div>
                     </div>
 
@@ -1010,7 +1169,8 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                     class="project_item_heading-name w100 font_s24 d_themclass_fig31_tex duy_fz16_375px">Aqua
                                     City</span>
                                 <div class="d_flex mt_8 align_c">
-                                    <span class="white_s_nw mr_8 font_s18 duy_font_ct1 duy_color_fff duy_fz14_375px">1.5
+                                    <span
+                                        class="white_s_nw mr_8 font_s18 duy_font_ct1 duy_color_fff duy_fz14_375px">1.5
                                         tỷ</span>
                                     <span
                                         class="ellipsis_1 white_s_nw address font_s18 duy_font_ct1 duy_color_fff duy_fz14_375px">Phường
@@ -1022,21 +1182,18 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                     </div>
                 </div>
                 <div class="project_slider d_flex flex_w pd_lr_80 mt_24 d_themclass_fig34 d_themclass_fig35">
-                    <?php foreach ($news_pj as $pj) : ?>
-                    <a href="chi-tiet-du-an-<?= $pj['id'] ?>.html" class="project_item hover_img_105">
+                    <?php for ($i = 0; $i < 20; $i++) : ?>
+                    <a href="chi-tiet-du-an.html" class="project_item hover_img_105">
                         <img src="<?php echo base_url(); ?>assets/images/skyscrapers-sunset 1.png" alt="">
-                        <div class="project_item_heading project_item_heading_duy" style="width: 100%">
-                            <span
-                                class="project_item_heading-name w100 ellipsis_1 mw_94"><?= $pj['project_name'] ?></span>
+                        <div class="project_item_heading project_item_heading_duy">
+                            <span class="project_item_heading-name w100 ellipsis_1 mw_94">Aqua City</span>
                             <div class="d_flex mt_8 align_c mw_94">
-                                <span
-                                    class="white_s_nw mr_8 font_s16"><?= ($pj['total_investment'] < 1000000000)?number_format((float)$pj['total_investment']/1000000000, 2, '.', ''):$pj['total_investment'] / 1000000000 ?>
-                                    tỷ</span>
-                                <span class="ellipsis_1 white_s_nw address font_s14"><?= $pj['cdt_addr_com'] ?></span>
+                                <span class="white_s_nw mr_8 font_s16">1.5 tỷ</span>
+                                <span class="ellipsis_1 white_s_nw address font_s14">Phường Đại Mỗ, Quận Nam Từ</span>
                             </div>
                         </div>
                     </a>
-                    <?php endforeach; ?>
+                    <?php endfor; ?>
                 </div>
             </div>
 
@@ -1069,14 +1226,13 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                         </div>
                     </div>
                     <div class="news_hot d_flex mt_64 d_themclass_fig38 duy_flb_375">
-                        <a href="chi-tiet-tin-tuc.html" class="news_hot-thumb duy_nqd_w100pt">
+                    <a href="chi-tiet-tin-tuc.html" class="news_hot-thumb duy_nqd_w100pt">
                             <img src="<?php echo base_url(); ?>assets/images/news_hot_1.png" alt="">
-                        </a>
+                    </a>
                         <div class="news_hot-ct pd_l_19 duy_fig_index1 duy_nqd_w100pt">
-                            <a href="chi-tiet-tin-tuc.html"
-                                class="title font_s16 black_md font_w500 line_h22 duy_fz16_768">
+                        <a href="chi-tiet-tin-tuc.html" class="title font_s16 black_md font_w500 line_h22 duy_fz16_768">
                                 Thị trường bất động sản thương mại TP.HCM đang phục hồi
-                            </a>
+                        </a>
                             <div class="content font_s16 mt_6 gray_1 line_h24 ellipsis_14 duy_fz14_768">
                                 <p>Nếu có kiến thức về xây dựng, hoàn toàn có thể tự thiết kế ngôi nhà cho hoặc tham
                                     khảo những mẫu sẵn có rồi chỉnh sửa cho phù hợp với đặc điểm căn nhà và nhu cầu của
@@ -1102,8 +1258,7 @@ $dir6 = "upload/".$y6."/".$m6."/".$d6."";
                                 <img src="<?php echo base_url(); ?>assets/images/test_2.png" alt="">
                             </a>
                             <div class="im_content pd_l_16 pd_tb_8 pd_r_8 duy_fig_index3 ">
-                                <a href="chi-tiet-tin-tuc.html"
-                                    class="title font_s16 black_md line_h22 font_w500 ellipsis_2">
+                                <a href="chi-tiet-tin-tuc.html" class="title font_s16 black_md line_h22 font_w500 ellipsis_2">
                                     Thị trường bất động sản thương mại TP.HCM đang phục hồi
                                 </a>
                                 <div class="content font_s16 mt_8 gray_1 ellipsis_3 line_h24 nqd">
@@ -1255,7 +1410,7 @@ $('.project_slider').slick({
     rows: 2,
     dots: true,
     slidesToShow: 4,
-    initialSlide: 0,
+    initialSlide: 4,
     slidesToScroll: 1,
     arrow: true,
     autoplaySpeed: 2000,
@@ -1357,13 +1512,13 @@ function MoveScroll(className) {
 }
 
 MoveScroll('.user_sl_none');
-</script>
+ </script>
 
-</html>
-<script>
+ </html>
+ <script>
 anh_xanh('img_xanh');
-</script>
-<style>
+ </script>
+ <style>
 .select2-container--default .select2-selection--single {
     border: none !important;
 }
@@ -1375,10 +1530,10 @@ anh_xanh('img_xanh');
 .select2-selection__rendered {
     background: #FAFAFA;
 }
-</style>
+ </style>
 
 
-<script>
+ <script>
 // di chuột 
 function reveal() {
     var reveals = document.querySelectorAll(".reveal");
@@ -1430,4 +1585,5 @@ $('.btn_filter_click').click(function() {
 function close_popup_filter() {
     $('.duy_select_boloc').toggleClass('hidden')
 }
-</script>
+ </script>
+

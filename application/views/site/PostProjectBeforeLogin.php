@@ -46,14 +46,14 @@
                                         <input type="text" name= "project_name" class="project_name" placeholder="Nhập tên dự án">
                                     </div>
                                 </div>
-                                <div class="khoicon top-21 box_input_infor box_input_infor">
+                                <div class="khoicon top-21 box_input_infor">
                                     <p class="font-medium height-20">Giới thiệu <span class="chudo">*</span></p>
                                     <div class="khungtext top-8 input_infor_tag">
                                         <textarea name="introduce" id="" class="introduce" cols="30" rows="10"
                                             placeholder="Nhập nội dung giới thiệu ngắn"></textarea>
                                     </div>
                                 </div>
-                                <div class="khoicon top-21 box_input_infor box_input_infor">
+                                <div class="khoicon top-21 box_input_infor">
                                     <p class="font-medium height-20">Loại bất động sản <span class="chudo">*</span></p>
                                     <div class="top-8">
                                         <select name="bds_type" class="select_option bds_type js-states form-control">
@@ -69,9 +69,9 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="khoicon top-21 box_input_infor box_input_infor">
+                                <div class="khoicon top-21 box_input_infor">
                                     <div class="font-medium height-20">Tỉnh/ thành phố <span class="chudo">*</span></div>
-                                            <div class="top-8">
+                                    <div class="top-8">
                                         <select onchange="address(this,'districts','ajaxGetListDistricts','Chọn quận huyện','1')" name="city" id="select_city" class="select_option js-states form-control">
                                             <option selected disabled>Chọn tỉnh thành phố</option>
                                             <? foreach($city as $cit): ?>
@@ -80,7 +80,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="khoicon top-21 box_input_infor box_input_infor">
+                                <div class="khoicon top-21 box_input_infor">
                                     <div class="font-medium height-20">Quận huyện <span class="chudo">*</span></div>
                                     <div class="top-8">
                                         <select onchange="address(this,'wards','ajaxGetListWards','Chọn phường xã','2')" name="districts" class="districts select_option js-states form-control">
@@ -88,7 +88,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="khoicon top-21 box_input_infor box_input_infor">
+                                <div class="khoicon top-21 box_input_infor">
                                     <div class="font-medium height-20">Phường xã</div>
                                     <div class="top-8">
                                         <select  onchange="address(this,'street','getStreetBy','Chọn Đường/ phố','3')" name="wards" class="select_option wards js-states form-control">
@@ -96,10 +96,10 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="khoicon top-21 box_input_infor box_input_infor">
+                                <div class="khoicon top-21 box_input_infor">
                                     <div class="font-medium height-20">Ngày đăng</div>
                                     <div class="khunginput top-8">
-                                        <input name="post_time" class="post_time" type="date">
+                                        <input name="post_time" value="<?= date('Y-m-d',time()) ?>" class="post_time" type="date">
                                     </div>
                                 </div>
                             </div>
@@ -107,7 +107,7 @@
                                 <div class="khoicon top-44 khoi-map">
                                     <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d251637.95196238213!2d105.6189045!3d9.779349!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1653901105958!5m2!1svi!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                 </div>
-                                <div class="khoicon top-21 box_input_infor box_input_infor">
+                                <div class="khoicon top-21 box_input_infor">
                                     <div class="font-medium height-20">Đường phố</div>
                                     <div class="top-8">
                                         <select name="street" class="select_option street js-states form-control">
@@ -115,7 +115,7 @@
                                         </select>
                                     </div>
                                 </div>
-                                <div class="khoicon top-21 box_input_infor box_input_infor">
+                                <div class="khoicon top-21 box_input_infor">
                                     <div class="font-medium height-20">Địa chỉ chi tiết</div>
                                     <div class="khunginput top-8">
                                         <input type="text" name="addr_detail" class="addr_detail" placeholder="Nhập địa chỉ chi tiết">
@@ -212,13 +212,13 @@
                             <div class="khoicon top-21 box_input_infor">
                                 <p class="font-medium height-20">Quy mô</p>
                                 <div class="khunginput top-8">
-                                    <input type="text" name="quy_mo" class="quy_mo" placeholder="Nhập quy mô dự án (m2)">
+                                    <input type="number" name="quy_mo" class="quy_mo" placeholder="Nhập quy mô dự án (m2)">
                                 </div>
                             </div>
                             <div class="khoicon top-21 box_input_infor">
                                 <p class="font-medium height-20">Diện tích xây dựng</p>
                                 <div class="khunginput top-8">
-                                    <input type="text" name="detail_area" class="detail_area" placeholder="Nhập diện tích xây dựng">
+                                    <input type="number" name="detail_area" class="detail_area" placeholder="Nhập diện tích xây dựng">
                                 </div>
                             </div>
                         </div>
@@ -270,9 +270,9 @@
                                 <p class="font-medium height-20">Tiến độ</p>
                                 <div class="top-8">
                                     <select name="progress" class="select_option progress js-states form-control">
-                                        <option value="0">Chọn tiến độ</option>
-                                        <option value="1">hehe</option>
-                                        <option value="2">haha</option>
+                                        <option selected disabled>Chọn tiến độ</option>
+                                        <option value="1">Sắp mở bán</option>
+                                        <option value="2">Đang mở bán</option>
                                     </select>
                                 </div>
                             </div>
@@ -280,9 +280,9 @@
                                 <p class="font-medium">Trạng thái</p>
                                 <div class="top-8">
                                     <select name="status" class="select_option status js-states form-control">
-                                        <option value="0">Chọn Đường/ phố</option>
-                                        <option value="1">hehe</option>
-                                        <option value="2">haha</option>
+                                        <option selected disabled>Chọn Đường/ phố</option>
+                                        <option value="1">Đang xây dựng</option>
+                                        <option value="2">Đã hoàn thiện</option>
                                     </select>
                                 </div>
                             </div>
@@ -855,7 +855,7 @@
 
                 <!-- butt dang tin -->
                 <div class="flex space butt_dangtin relative">
-                    <button type="submit" class="butt_xanh flex center-center c-pointer">
+                    <button type="submit" class="butt_xanh btn_post_now flex center-center c-pointer">
                         <p class="font-medium size-16 right-8">Đăng ngay</p>
                         <img src="<? echo base_url(); ?>assets/images/butt_dangngay.svg" alt="" class="wh-20">
                     </button>
@@ -897,33 +897,33 @@
                         trường cho những sản phẩm bất động sản này là rất lớn.</p>
                     blah blah blah...
                 </div>
+                    <!-- popup len lich -->
+                    <div id="popup_lenlich" class="popup chuden size-16 hidden">
+                        <div class="table overflow-hidden">
+                            <div class="lenlich_noidung">
+                                <p class="lenlich_tieude font-medium size-24">Lên lịch đăng tin</p>
+                                <div class="top-24 chuden">Lên lịch đăng tin vào thời gian phù hợp nhất để tương tác với nhiều
+                                    khách hàng hơn hoặc tự chọn ngày giờ đăng tin trong tương lại.</div>
+                                <div class="lenlich_input top-32 flex space">
+                                    <div class="khunginput">
+                                        <input class="date_post_news" type="date">
+                                    </div>
+                                    <div class="khunginput">
+                                        <input class="time_post_news" type="time">
+                                    </div>
+                                </div>
+                                <div class="khoi_butt top-32 flex center-center">
+                                    <button type="button" class="butt_huy font-medium size-16 close c-pointer right-24">Hủy</button>
+                                    <button type="submit" class="butt_luu btn_appointment font-medium size-16 close c-pointer">Lưu</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end popup len lich -->
             </form>
         </div>
     </div>
 
-    <!-- popup len lich -->
-    <div id="popup_lenlich" class="popup chuden size-16 hidden">
-        <div class="table overflow-hidden">
-            <div class="lenlich_noidung">
-                <p class="lenlich_tieude font-medium size-24">Lên lịch đăng tin</p>
-                <div class="top-24 chuden">Lên lịch đăng tin vào thời gian phù hợp nhất để tương tác với nhiều
-                    khách hàng hơn hoặc tự chọn ngày giờ đăng tin trong tương lại.</div>
-                <div class="lenlich_input top-32 flex space">
-                    <div class="khunginput">
-                        <input type="date">
-                    </div>
-                    <div class="khunginput">
-                        <input type="time">
-                    </div>
-                </div>
-                <div class="khoi_butt top-32 flex center-center">
-                    <button class="butt_huy font-medium size-16 close c-pointer right-24">Hủy</button>
-                    <button class="butt_luu font-medium size-16 close c-pointer">Lưu</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- end popup len lich -->
 
     <!-- popup hoan tat thong tin -->
     <div id="popup_thongtin" class="popup chuden size-16 hidden">
@@ -1069,6 +1069,17 @@ $('#thongtin_loaitk').change(function() {
         $('.thongtin_msthue').addClass('hidden');
     }
 });
+var stt_news = '2';
+var date_post_news = '';
+var time_post_news = '';
+$('.btn_post_now').click(function() {
+    stt_news = 2;
+})
+$('.btn_appointment').click(function() {
+    stt_news = 3;
+    date_post_news = $(".date_post_news").val();
+    time_post_news = $(".time_post_news").val();
+})
 $("#post_news_project").validate({
     errorPlacement: function (error, element) {
         error.appendTo(element.parents(".box_input_infor"));
@@ -1263,7 +1274,9 @@ $("#post_news_project").validate({
             data.append('title_img_mbda', title_img_mbda);
             data.append('title_img_utilities', title_img_utilities);
             data.append('title_img_gtda', title_img_gtda);
-
+            data.append('stt_news', stt_news);
+            data.append('date_post_news', date_post_news);
+            data.append('time_post_news', time_post_news);
             $(".mbda_tieude_click_anh").each(function(){
                 data.append('arr_mb_img_project[]', $(this)[0].files[0]);
             });
@@ -1290,7 +1303,7 @@ $("#post_news_project").validate({
 			 	success: function(response) {
                     if (response.status == 1) {
                         alert(response.msg);
-                        window.location.href = base_url+'admin/ManageNews/ManageNewsProject';
+                        window.location.href = 'quan-ly-tin-dang-du-an.html';
                     }
 			 	},
 			 	error: function(xhr) {

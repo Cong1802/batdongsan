@@ -5,18 +5,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" type="text/css" href="../css/slick.css">
-    <link rel="stylesheet" type="text/css" href="../css/select2.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/slick-theme.css">
-    <link rel="stylesheet" href="../css/style_header_d.css">
-    <link rel="stylesheet" href="../css/style_t_quang.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/slick-theme.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/css/style_header_d.css">
+    <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/css/style_t_quang.css">
     <title>Giới thiệu chung</title>
 </head>
 
 <body>
     <div class="container page_chan_trang">
-        <?php include("../includes/header_t.php") ?>
+        <? require_once APPPATH.'views/site/includes/header_t.php' ?>
         <div class="content bg_blue_10 mt_60 pd_b_92 chantrang_introduce">
             <div class="d_flex h_446 mb_gt introduce_banner_khoi1">
                 <div class="bg_white pd_tb_93 pd_l_151 pd_r_95">
@@ -27,7 +27,7 @@
                 </div>
                 <div class="w_720">
                     <div class="w_100 h_100">
-                        <img src="../images/felix-fuchs-P21wf6KAykw-unsplash 3.png" alt="">
+                        <img src="<?= base_url() ?>/assets/images/felix-fuchs-P21wf6KAykw-unsplash 3.png" alt="">
                     </div>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                 <h2 class="font_s50 line_h59 font_w600 black_md txt_center">Về chúng tôi</h2>
                 <div class="mt_48 d_flex pd_lr_50 h_500 ml_a133">
                     <div class="mn_w740">
-                        <img src="../images/goals-target-aspiration-perforated-paper-bullseye 1.png" alt="">
+                        <img src="<?= base_url() ?>/assets/images/goals-target-aspiration-perforated-paper-bullseye 1.png" alt="">
                     </div>
                     <div class="content_infor pd_t_24">
                         <div class="heading">
@@ -66,13 +66,13 @@
                         </div>
                     </div>
                     <div class="mn_w740 h_500 mt_57">
-                        <img src="../images/business-people-partnership-support-team-urban-scene-concept 1.png" alt="">
+                        <img src="<?= base_url() ?>/assets/images/business-people-partnership-support-team-urban-scene-concept 1.png" alt="">
                     </div>
                 </div>
 
                 <div class="mt_80 d_flex pd_lr_50 h_500 ml_a131">
                     <div class="mn_w740">
-                        <img src="../images/teamwork-power-successful-business-meeting-workplace-concept 1.png" alt="">
+                        <img src="<?= base_url() ?>/assets/images/teamwork-power-successful-business-meeting-workplace-concept 1.png" alt="">
                     </div>
                     <div class="content_infor pd_t_24">
                         <div class="heading">
@@ -116,12 +116,12 @@
                         </div>
                     </div>
                     <div class="w_591 fshrink mt_19 h_611">
-                        <img src="../images/teamwork-power-successful-business-meeting-workplace-concept 1.png" alt="" class="img_full">
+                        <img src="<?= base_url() ?>/assets/images/teamwork-power-successful-business-meeting-workplace-concept 1.png" alt="" class="img_full">
                     </div>
                 </div>
             </div>
 
-            <div class="impressive mt_64" style="background-image: url('../images/night-cityscape-high-rise-buildings-metropolis-city-center 1.png');">
+            <div class="impressive mt_64" style="background-image: url('<?= base_url() ?>/assets/images/night-cityscape-high-rise-buildings-metropolis-city-center 1.png');">
                 <div>
                     <h2 class="font_s50 line_h59 font_w600 cl_white txt_center">Những con số ấn tượng</h2>
                     <div class="mt_80">
@@ -148,15 +148,15 @@
 
             <div class="benefits mt_80">
                 <h2 class="font_s50 line_h71 font_w600 black_md txt_center">Phúc lợi công ty</h2>
-                <div class="slider_benefits mt_24" style="background-image: url('../images/felix-fuchs-P21wf6KAykw-unsplash 4.png');">
+                <div class="slider_benefits mt_24" style="background-image: url('<?= base_url() ?>/assets/images/felix-fuchs-P21wf6KAykw-unsplash 4.png');">
                     <div class="list_benefits d_flex" style="height: 700px">
                         <?php for($i=0;$i<6;$i++):?>
                         <div class="slider_benefits-item">
                             <div class="position_r h_100">
                                 <div class="benefits_logo d_flex center_center flex_column">
                                     <div class="d_flex align_c flex_center wh_104 gift">
-                                        <img src="../images/gift_.png" alt="">
-                                        <img src="../images/gift_white.png" alt="" class="hidden">
+                                        <img src="<?= base_url() ?>/assets/images/gift_.png" alt="">
+                                        <img src="<?= base_url() ?>/assets/images/gift_white.png" alt="" class="hidden">
                                     </div>
                                     <span class="font_s24 line_h28 font_w600 cl_blue block mt_16">Giải thưởng</span>
                                 </div>
@@ -170,7 +170,7 @@
                 </div>
             </div>
         </div>
-        <?php include("../includes/da_footer.php") ?>
+        <? require_once APPPATH.'views/site/includes/da_footer.php' ?>
     </div>
     <script src="./js/js_t.js"></script>
     <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
@@ -186,8 +186,8 @@
             slidesToShow: 3,
             slidesToScroll: 3,
             arrow: true,
-            prevArrow: '<button class="slick-prev prev-arrow"><img src="../images/arrow_l_back_white.png" alt="" /></button>',
-            nextArrow: '<button class="slick-next next-arrow"><img src="../images/arrow_r_back_white.png" alt="" /></button>',
+            prevArrow: '<button class="slick-prev prev-arrow"><img src="<?= base_url() ?>/assets/images/arrow_l_back_white.png" alt="" /></button>',
+            nextArrow: '<button class="slick-next next-arrow"><img src="<?= base_url() ?>/assets/images/arrow_r_back_white.png" alt="" /></button>',
             responsive: [
                 {
                     breakpoint: 769,
@@ -275,7 +275,7 @@
             let clientWidth = window.innerWidth;
 
             if(clientWidth <= 768) {
-                elemetImg.setAttribute('src', '../images/gt_2.png');
+                elemetImg.setAttribute('src', '<?= base_url() ?>/assets/images/gt_2.png');
             }
         }
 

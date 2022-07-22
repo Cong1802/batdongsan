@@ -76,7 +76,7 @@ body{color:#474747}
 
 
 /* POPUP USER */
-.popup_user{position:absolute;top:41px;right:0;z-index:10;box-shadow:1px 2px 10px rgba(32,32,32,0.1);border-radius:8px;display:none}
+.popup_user{position:absolute;top:44px;right:0;z-index:10;box-shadow:1px 2px 10px rgba(32,32,32,0.1);border-radius:8px;display:none}
 .popup_user_padding{width:294px;height:291px;background:#FFF;border-radius:8px;padding:10px 10px 0 16px}
 .popup_user_padding_khoi1_img{width:60px;height:60px}
 .popup_user_padding_khoi1_img img{border-radius:50%}
@@ -84,7 +84,7 @@ body{color:#474747}
 .border_user{border-bottom:1px solid #C4C4C4;width:100%}
 .popup_user_padding_khoi2_ul li{list-style-type:none;padding:10px 0 11px}
 .popup_user_padding_khoi2_ul li a{color:#474747;text-decoration:none}
-.dang_xuat{padding-top:9px}
+.dang_xuat{padding:10px 0 11px}
 .khoi_header2_div2_img2:hover .popup_user{display:block}
 
 /* POPUP THÔNG BÁO */

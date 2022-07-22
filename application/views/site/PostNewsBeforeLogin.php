@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="<? echo base_url(); ?>assets/css/slick.css">
     <link rel="stylesheet" type="text/css" href="<? echo base_url(); ?>assets/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="<? echo base_url(); ?>assets/css/slick-theme.css">
-    <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/frontend/css/style_header_d.css">
+    <link rel="stylesheet" type="text/css" href="<? echo base_url(); ?>assets/frontend/css/style_header_d.css">
     <link rel="stylesheet" type="text/css" href="<? echo base_url(); ?>assets/frontend/css/css_q.css">
 </head>
 

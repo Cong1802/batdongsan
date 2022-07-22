@@ -460,6 +460,7 @@ var html_  = '<div class="khoi_add_anh flex space bot-24">'
             data.append('ctrinh_type', ctrinh_type);
             data.append('styles', styles);
             data.append('area', area);
+            data.append('desc_img', desc_img);
             data.append('Perform', Perform);
             data.append('list_color', list_color);
             data.append('price_min', price_min);
@@ -480,7 +481,7 @@ var html_  = '<div class="khoi_add_anh flex space bot-24">'
 			 	success: function(response) {
                     if (response.status == 1) {
                         alert(response.msg);
-                        window.location.href = base_url+'admin/ManageNews/ManageNewsProject';
+                        window.location.href = 'quan-ly-tin-dang-thiet-ke.html';
                     }
 			 	},
 			 	error: function(xhr) {

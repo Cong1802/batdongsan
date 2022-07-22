@@ -16,12 +16,111 @@ class PostNews extends CI_Controller
 		$this->load->helper('images_helper');
 	}
 	public function PostNewsAfterLogin() {
+		$this->_data['city'] = $this->M_PostNews->listProvince();
 		$this->_data['canonical']				= base_url();
 		$this->load->view('site/PostAfterLogin', $this->_data);
 	}
+	public function addNewsAfterLogin() {
+		$data_insert = [
+			'customer'				=> isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : 30,
+			'project_name'			=> $this->input->post('project_name'),
+			'type_news' 			=> $this->input->post('type_news'),
+			'bds_type' 				=> $this->input->post('type_bds'),
+			'select_city' 		    => $this->input->post('city'),
+			'districts' 			=> $this->input->post('districts'),
+			'wards'					=> $this->input->post('wards'),
+			'street' 				=> $this->input->post('street'),
+			'addr_detail' 			=> $this->input->post('desc_addr'),
+			'price_min'				=> $this->input->post('giamin'),
+			'price_max' 			=> $this->input->post('giamax'),
+			'Gia_thoa_thuan' 		=> $this->input->post('radio_button'),
+			'arr_checkbox_detail' 	=> $this->input->post('arr_checkbox_detail'),
+			'Legal_stt' 		    => $this->input->post('Legal_stt'),
+			'area_min' 				=> $this->input->post('area_min'),
+			'area_max'				=> $this->input->post('area_max'),
+			'area_convert'			=> $this->input->post('area_convert'),
+			'title_news' 			=> $this->input->post('title_news'),
+			'desc_project' 			=> $this->input->post('desc_project'),
+			'floor' 				=> $this->input->post('floor'),
+			'detail_bds'			=> $this->input->post('detail_bds'),
+			'Balcony_direction'		=> $this->input->post('Balcony_direction'),
+			'direction'				=> $this->input->post('direction'),
+			'time_expired'			=> strtotime($this->input->post('time_expired')),
+			'corner' 				=> $this->input->post('corner'),
+			'check_bathroom' 		=> $this->input->post('check_bathroom'),
+            'check_bedroom' 		=> $this->input->post('check_bedroom'),
+			'bathroom' 				=> $this->input->post('bathroom'),
+			'elevator_number' 		=> $this->input->post('elevator_number'),
+			'bedroom' 				=> $this->input->post('bedroom'),
+			'Interior'				=> $this->input->post('Interior'),
+			'mattien' 				=> $this->input->post('mattien'),
+			'chieusau'				=> $this->input->post('chieusau'),
+			'duongvao' 				=> $this->input->post('duongvao'),
+			'stt_news' 				=> $this->input->post('stt_news'),
+			'date_post_news'		=> strtotime($this->input->post('date_post_news')),
+			'time_post_news' 		=> strtotime($this->input->post('time_post_news')),
+			'time_create'			=> time(),
+			'type'					=> 4,
+		];
+		//------------
+		// echo "<pre>";
+		// print_r($data_insert);
+		// echo "</pre>";die;
+		if(isset($_FILES['arr_img_desc']))
+		{
+			$data_insert['arr_img'] = upLoadMultipleImg('arr_img_desc');
+		}		
+		$insert = $this->M_PostNews->insertNewsAfterLogin($data_insert);
+		if ($insert > 0) {
+			$response['status'] = 1;
+			$response['msg'] 	= 'Đăng tin thành công';
+		}	
+		echo json_encode($response);
+
+	}
     public function PostHomeDesignBeforeLogin() {
+		$this->_data['city'] = $this->M_PostNews->listProvince();
 		$this->_data['canonical']				= base_url();
 		$this->load->view('site/PostHomeDesignBeforeLogin', $this->_data);
+	}
+	public function addNewsHome() {
+		$data_insert = [
+			'customer'				=> isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : 30,
+			'ctrinh_type'			=> $this->input->post('ctrinh_type'),
+			'styles' 				=> $this->input->post('styles'),
+			'area' 					=> $this->input->post('area'),
+			'perform' 		    	=> $this->input->post('Perform'),
+			'list_color' 			=> $this->input->post('list_color'),
+			'price_min'				=> $this->input->post('price_min'),
+			'title_news' 			=> $this->input->post('title_news'),
+			'price_max' 			=> $this->input->post('price_max'),
+			'type_img'				=> $this->input->post('type_img'),
+			'bedroom' 				=> $this->input->post('bedroom'),
+			'time_build' 			=> $this->input->post('time_build'),
+			'project_name' 		    => $this->input->post('project_name'),
+			'select_city' 			=> $this->input->post('city'),
+			'districts'				=> $this->input->post('district'),
+			'banner_img' 			=> $this->input->post('banner_img'),
+			'title_img' 			=> $this->input->post('title_img'),
+			'time_create'			=> time(),
+			'type'					=> 3,
+		];
+		//--------- chi tiết dự án
+		if(isset($_FILES['desc_img_project']))
+		{
+			$data_insert['desc_project'] 			= upLoadImg('desc_img_project');
+		}
+		else
+		{
+			$data_insert['desc_project']			= $this->input->post('desc_project');
+		}
+		$data_insert['banner_img']					= upLoadImg('banner_img');
+		$insert = $this->M_PostNews->insertNewsHome($data_insert);
+		if ($insert > 0) {
+			$response['status'] = 1;
+			$response['msg'] 	= 'Đăng tin thành công';
+		}	
+		echo json_encode($response);
 	}
     public function PostNewsBeforeLogin() {
 		$this->_data['canonical']				= base_url();
@@ -55,6 +154,7 @@ class PostNews extends CI_Controller
 	public function addNewsProject() {
 
 			$data_insert = [
+				'customer'				=> isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : 30,
 				'project_name'			=> $this->input->post('project_name'),
 				'introduce' 			=> $this->input->post('introduce'),
 				'bds_type' 				=> $this->input->post('bds_type'),
@@ -64,7 +164,7 @@ class PostNews extends CI_Controller
 				'street'				=> $this->input->post('street'),
 				'addr_detail' 			=> $this->input->post('addr_detail'),
 				'post_time' 			=> strtotime($this->input->post('post_time')),
-				'cdt_come_name' 		=> $this->input->post('cdt_come_name'),
+				'cdt_com_name' 			=> $this->input->post('cdt_come_name'),
 				'cdt_founding'		    => strtotime($this->input->post('cdt_founding')),
 				'cdt_phone' 			=> $this->input->post('cdt_phone'),
 				'cdt_addr_com' 			=> $this->input->post('cdt_addr_com'),
@@ -93,6 +193,9 @@ class PostNews extends CI_Controller
 				'time_create'			=> time(),
 				'type'					=> 1,
 				'title_mb_project'		=> $this->input->post('title_mb_project'),
+				'stt_news' 				=> $this->input->post('stt_news'),
+				'date_post_news'		=> strtotime($this->input->post('date_post_news')),
+				'time_post_news' 		=> strtotime($this->input->post('time_post_news')),
 			];
 			$response 		= ['status' => 0, 'msg' => ''];
 			$arr_desc_gtda = json_decode($this->input->post('arr_desc_gtda'));
@@ -180,21 +283,23 @@ class PostNews extends CI_Controller
 	public function addNewsRoom() {
 
 		$data_insert = [
-			'room_ctrinh_type'			=> $this->input->post('ctrinh_type'),
-			'room_styles' 				=> $this->input->post('styles'),
-			'room_area' 				=> $this->input->post('area'),
-			'room_perform' 		    	=> $this->input->post('Perform'),
-			'room_list_color' 			=> $this->input->post('list_color'),
-			'room_price_min'			=> $this->input->post('price_min'),
-			'room_title_news' 			=> $this->input->post('title_news'),
-			'room_price_max' 			=> $this->input->post('price_max'),
-			'time_create'				=> time(),
-			'type'						=> 2,
+			'customer'				=> isset($_COOKIE['user_id']) ? $_COOKIE['user_id'] : 30,
+			'ctrinh_type'			=> $this->input->post('ctrinh_type'),
+			'styles' 				=> $this->input->post('styles'),
+			'area' 					=> $this->input->post('area'),
+			'perform' 		    	=> $this->input->post('Perform'),
+			'desc_img' 		    	=> $this->input->post('desc_img'),
+			'list_color' 			=> $this->input->post('list_color'),
+			'price_min'				=> $this->input->post('price_min'),
+			'title_news' 			=> $this->input->post('title_news'),
+			'price_max' 			=> $this->input->post('price_max'),
+			'time_create'			=> time(),
+			'type'					=> 2,
 		];
 
 		if(isset($_FILES['arr_img']))
 		{
-			$data_insert['room_arr_img'] 				= json_encode(upLoadMultipleImg('arr_img'));
+			$data_insert['arr_img'] 				= upLoadMultipleImg('arr_img');
 		}	
 		$insert = $this->M_PostNews->insertNewsRoom($data_insert);	
 		if ($insert > 0) {

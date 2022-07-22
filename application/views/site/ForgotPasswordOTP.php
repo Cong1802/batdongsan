@@ -68,23 +68,8 @@ $('.digit').keyup(function() {
     }).get().join(''));
 });
 
-$('.account_otp_number').click(function() {
-	var email = '<?= $email ?>';
-	$.ajax ({
-		type: 'POST',
-		url: base_url+'account/sendForgotPasswordOTP',
-		data: {email: email},
-		success: function(response) {
-			console.log('successful');
-		},
-		error: function(xhr) {
-			console.log('error');
-		}
-	})
-});
-
 function otp_form_1() {
-    var id_user = <?= $id_user ?>;
+    var id_user = <?= $id ?>;
 	var otp = $('.the_otp').val();
 
 	$.ajax ({

@@ -400,7 +400,7 @@ $('.butt_xacthuc_otp').click(function() {
 $('.tutorial_phai').click(function() {
     $(this).toggleClass('arrow_rotate');
     $(this).toggleClass('arrow_rotate_reset');
-    $('.khoiduoi_tutorial').toggle(400);
+    $('.khoiduoi_tutorial').toggle(400); 
 });
 
 $('.khoanggia').click(function() {
@@ -413,7 +413,8 @@ $('.khoanggia').click(function() {
     $('.dv_max').removeClass('hidden');
 });
 
-$('.del_iconn').click(function() {
+$('.del_icon').click(function() {
+    $('.giamax').val(0);
     $('.giamax').attr('name','');
     $('.khoi_giamax').addClass('hidden');
     $('.khoanggia').removeClass('hidden');
@@ -438,7 +439,19 @@ $('.giamin').keyup(function() {
     $('.ngansach_tien').html(min);
     $('.ngansach_donvi').html(dv);
 });
-
+var value = $('.giamin').val();
+    if (value < 1000000) {
+        min = value / 1000;
+        dv = "nghìn VNĐ";
+    } else if (value < 1000000000) {
+        min = value / 1000000;
+        dv = "triệu VNĐ";
+    } else {
+        min = value / 1000000000;
+        dv = "tỷ VNĐ";
+    }
+    $('.ngansach_tien').html(min);
+    $('.ngansach_donvi').html(dv);
 $('.giamax').keyup(function() {
     var value = $(this).val();
     if (value < 1000000) {
@@ -454,7 +467,19 @@ $('.giamax').keyup(function() {
     $('.ngansach_max').html(max);
     $('.dv_max').html(dv)
 });
-
+var value = $('.giamax').val();
+    if (value < 1000000) {
+        max = value / 1000;
+        dv = "nghìn VNĐ";
+    } else if (value < 1000000000) {
+        max = value / 1000000;
+        dv = "triệu VNĐ";
+    } else {
+        max = value / 1000000000;
+        dv = "tỷ VNĐ";
+    }
+    $('.ngansach_max').html(max);
+    $('.dv_max').html(dv)
 $('.ttbd_butt_anh').click(function() {
     $('.ttbd_click_anh').click();
 });
@@ -464,6 +489,10 @@ $('.ttbd_click_anh').change(function() {
 });
 
 $('.ttbd_des_text').click(function() {
+    $('.dtnd_click_anh').val('')
+    $('.tdnd_mieuta_anh').hide();
+    $('.title_img').val('');
+    $('.tdnd_des_text').val('');
     $(this).parents('.khoiduoi').find('.des_img').val('');
     $(this).addClass('active_mota');
     $('.ttbd_des_img').removeClass('active_mota');
@@ -472,6 +501,7 @@ $('.ttbd_des_text').click(function() {
 });
 
 $('.ttbd_des_img').click(function() {
+    $('.tdnd_post_anh').attr('src', 'http://localhost:6969/assets/images/anh_rong.png')
     $(this).addClass('active_mota');
     $('.ttbd_des_text').removeClass('active_mota');
     $('.tdnd_des_img').removeClass('hidden');
@@ -517,6 +547,7 @@ $('.tdnd_tieude_anh').click(function() {
     $('.tdnd_mieuta_anh').removeClass('hidden');
 });
 $('.tdnd_tieude_remove').click(function() {
+    $('.title_img').val('');
     $('.tdnd_mieuta_anh').addClass('hidden');
 });
 var sx = 0;
@@ -562,3 +593,4 @@ $('.tida_click').click(function() {
         }
        
     })
+    

@@ -30,7 +30,7 @@
                             <img src="<? echo base_url(); ?>assets/images/avatar_md.png" alt="" class="br_50p">
                         </div>
                         <div class="flex_1 ml_24 name_infor">
-                            <h3 class="font_s36 line_h50 font_w500 black_md">Nguyễn Ngọc Tuyết Phương</h3>
+                            <h3 class="font_s36 line_h50 font_w500 black_md"><?= $Information['name'] ?></h3>
                             <div class="d_flex align_c mt_8">
                                 <span class="font_s20 line_h28 font_w400 black_md block">123 người theo dõi</span>
                                 <button class="btn br_8 btn_blue pd_4_10 h_24 ml_40">
@@ -50,7 +50,7 @@
                                 <div class="wh_24 mr_8">
                                     <img src="<? echo base_url(); ?>assets/images/phone-call_red.png" alt="">
                                 </div>
-                                <span class="font_s16 line_h19 font_w500 cl_red">0333 *** ***</span>
+                                <span class="font_s16 line_h19 font_w500 cl_red"><?= substr($Information['phone'],0,4) ?> *** ***</span>
                             </button>
                         </div>
                     </div>
@@ -61,11 +61,11 @@
                     $arr = [
                         [
                             'fiel' => 'Email:',
-                            'name' => 'ABSX123@gmail.com'
+                            'name' => $Information['email']
                         ],
                         [
                             'fiel' => 'Số điện thoại:',
-                            'name' => '0123456789'
+                            'name' => $Information['phone']
                         ],
                         [
                             'fiel' => 'Giới tính:',
@@ -73,31 +73,31 @@
                         ],
                         [
                             'fiel' => 'Ngày sinh:',
-                            'name' => '04/03/1992'
+                            'name' => ($Information['userBirth'] != 0) ? $Information['userBirth'] : 'Chưa cập nhật'
                         ],
                         [
                             'fiel' => 'Hoạt động:',
-                            'name' => 'Người mua, thuê'
+                            'name' => $UserType[$Information['userType']]
                         ],
                         [
                             'fiel' => 'Bất động sản quan tâm:',
-                            'name' => 'Cho thuê'
+                            'name' => (($Information['email'] == 1) ? 'Mua bán' : 'Cho thuê')
                         ],
                         [
                             'fiel' => 'Loại bất động sản:',
-                            'name' => 'Căn hộ'
+                            'name' =>   $newType[$Information['newTypeInterest']]
                         ],
                         [
                             'fiel' => 'Địa chỉ:',
-                            'name' => 'Định Công, Hoàng Mai. Hà Nội'
+                            'name' => $Information['cit_name'].','.$district.','.$ward
                         ],
                         [
                             'fiel' => 'URL trang profile:',
-                            'name' => 'https://batdongsan3S.com/abc/kkkks'
+                            'name' => $Information['profileURL']
                         ],
                         [
                             'fiel' => 'Giới thiệu:',
-                            'name' => 'Lời giới thiệu chân thật từ đa cấp, đa cấp làm ăn uy tín, đa cấp không lừa đảo'
+                            'name' => $Information['self-describe']
                         ]
                     ]
                     ?>

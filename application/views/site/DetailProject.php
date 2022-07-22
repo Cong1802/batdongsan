@@ -1,9 +1,3 @@
-<?
-$y = date('Y', $detail_project['time_create']);
-$m = date('m', $detail_project['time_create']);
-$d = date('d', $detail_project['time_create']);
-$dir = "upload/".$y."/".$m."/".$d."";
-?>
 <!DOCTYPE html>
 <html lang="vi">
 
@@ -78,28 +72,36 @@ $dir = "upload/".$y."/".$m."/".$d."";
                                 <img src="<? echo base_url(); ?>assets/images/img_du_an/bg_duan.png" alt="">
                             </div>
                             <div class="chitiet_khung_text_padding">
-                                <div class="chitiet_khung_text_1 main_color mr_b8px"><?= $detail_project['project_name'] ?></div>
+                                <div class="chitiet_khung_text_1 main_color mr_b8px">Merry Land Quy Nhơn</div>
                                 <div class="chitiet_khung_text_2">
                                     <div class="chitiet_khung_text_3 mr_b16px">
-                                        <?= $detail_project['introduce'] ?>
+                                        Lorem ipsum dolor sit
+                                        amet, consectetur adipiscing elit ut aliquam, purus s
+                                        it amet luctus
                                     </div>
                                     <div class="chitiet_text_diachi flex mr_b8px">
                                         <div class="chitiet_text_diachi1">Địa chỉ</div>
-                                        <div class="chitiet_text_diachi2"><?= $detail_project['addr_detail'] ?></div>
+                                        <div class="chitiet_text_diachi2">Thôn Hải Giang, Xã Nhơn Hải, TP. Quy nhơn,
+                                            Tỉnh
+                                            Bình Định
+                                        </div>
                                     </div>
                                     <div class="chitiet_text_diachi flex mr_b8px">
                                         <div class="chitiet_text_diachi1">Giá Từ</div>
-                                        <div class="chitiet_text_diachi2 color_money"><?= ($detail_project['nhapmin'] < 1000000000)?number_format((float)$detail_project['nhapmin']/1000000000, 2, '.', ''):$detail_project['nhapmin']/1000000000 ?> - <?= ($detail_project['nhapmax'] < 1000000000)?number_format((float)$detail_project['nhapmax']/1000000000, 2, '.', ''):$detail_project['nhapmax']/1000000000 ?> tỷ
+                                        <div class="chitiet_text_diachi2 color_money">2 - 50 tỷ
                                         </div>
                                     </div>
                                     <div class="chitiet_text_diachi flex mr_b8px">
                                         <div class="chitiet_text_diachi1">Quy mô</div>
-                                        <div class="chitiet_text_diachi2"><?= $detail_project['quy_mo'] ?> m2
+                                        <div class="chitiet_text_diachi2">2.000 m2
                                         </div>
                                     </div>
                                     <div class="chitiet_text_diachi flex mr_b73px">
                                         <div class="chitiet_text_diachi1">Loại BĐS</div>
-                                        <div class="chitiet_text_diachi2"><?= $bds_type[$detail_project['bds_type']] ?></div>
+                                        <div class="chitiet_text_diachi2">Chung cư, Căn hộ, Nhà biệt thự, liền kề, Nhà
+                                            phố
+                                            thương mại, Khách sạn
+                                        </div>
                                     </div>
 
 
@@ -110,16 +112,16 @@ $dir = "upload/".$y."/".$m."/".$d."";
                                             </div>
                                             <div class="chitiet_khung_icon_img flex">
                                                 <div class="img_fig_icon_chiase">
-                                                    <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/icon_link.svg" alt="">
+                                                    <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/icon_link.png" alt="">
                                                 </div>
                                                 <div class="img_fig_icon_chiase">
-                                                    <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/icon_twitter.svg" alt="">
+                                                    <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/icon_twitter.png" alt="">
                                                 </div>
                                                 <div class="img_fig_icon_chiase">
-                                                    <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/icon_facebook.svg" alt="">
+                                                    <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/icon_facebook.png" alt="">
                                                 </div>
                                                 <div class="img_fig_icon_chiase">
-                                                    <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/icon_messenger.svg" alt="">
+                                                    <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/icon_messenger.png" alt="">
                                                 </div>
                                             </div>
                                         </div>
@@ -205,11 +207,13 @@ $dir = "upload/".$y."/".$m."/".$d."";
                     <div class="body_chudautu_left1 mr_b56px">
                         <div class="body_chudautu_left1_heading main_color mr_b32px">Chủ đầu tư</div>
                         <div class="body_chudautu_left1_text">
-                            <div class="body_chudautu_tenct mr_b8px">Tên công ty: <span class="main_color_fw_5"><?= $detail_project['cdt_come_name'] ?></span></div>
-                            <div class="body_chudautu_tenct mr_b8px">Số dự án: <span><?= $detail_project['cdt_project_num'] ?> dự án</span></div>
-                            <div class="body_chudautu_tenct mr_b8px">Thành lập: <span><?= date('d/m/Y', $detail_project['cdt_founding']) ?></span></div>
-                            <div class="body_chudautu_tenct mr_b8px">Trụ sở chính: <span><?= $detail_project['cdt_addr_com'] ?></span></div>
-                            <div class="body_chudautu_tenct">Số điện thoại: <span><?= $detail_project['cdt_phone'] ?></span></div>
+                            <div class="body_chudautu_tenct mr_b8px">Tên công ty: <span class="main_color_fw_5">Công ty
+                                    CP WHAT</span></div>
+                            <div class="body_chudautu_tenct mr_b8px">Số dự án: <span>20 dự án</span></div>
+                            <div class="body_chudautu_tenct mr_b8px">Thành lập: <span>1984</span></div>
+                            <div class="body_chudautu_tenct mr_b8px">Trụ sở chính: <span>Cẩm Thủy, Cẩm Thành, Thanh
+                                    Hóa</span></div>
+                            <div class="body_chudautu_tenct">Số điện thoại: <span>0321456789</span></div>
                         </div>
                     </div>
                     <div class="body_chudautu_left2">
@@ -218,51 +222,85 @@ $dir = "upload/".$y."/".$m."/".$d."";
                             <div class="body_chudautu_left2_text flex mr_b32px">
                                 <div class="body_chudautu_left2_text1 mr_r90px">
                                     <div class="body_chudautu_tenct mr_b8px">Thời gian khởi công:
-                                        <span><?= date('d/m/Y', $detail_project['time_st']) ?></span>
+                                        <span>20/10/2018</span>
                                     </div>
-                                    <div class="body_chudautu_tenct mr_b8px">Các loại diện tích: <span><?= $detail_project['area_type'] ?></span></div>
-                                    <div class="body_chudautu_tenct mr_b8px">Số tòa nhà: <span><?= $detail_project['home_num'] ?></span></div>
-                                    <div class="body_chudautu_tenct mr_b8px">Số sản phẩm: <span><?= $detail_project['product_num'] ?></span></div>
-                                    <div class="body_chudautu_tenct mr_b8px">Quy mô: <span><?= $detail_project['quy_mo'] ?> m2</span></div>
-                                    <div class="body_chudautu_tenct">Diện tích xây dựng: <span><?= $detail_project['detail_area'] ?> m2</span></div>
+                                    <div class="body_chudautu_tenct mr_b8px">Các loại diện tích: <span>10 x 20, 10 x
+                                            25, 15 x 20</span></div>
+                                    <div class="body_chudautu_tenct mr_b8px">Số tòa nhà: <span>2</span></div>
+                                    <div class="body_chudautu_tenct mr_b8px">Số sản phẩm: <span>80</span></div>
+                                    <div class="body_chudautu_tenct mr_b8px">Quy mô: <span>3000 m2</span></div>
+                                    <div class="body_chudautu_tenct">Diện tích xây dựng: <span>3000 m2</span></div>
                                 </div>
                                 <div class="body_chudautu_left2_text2">
                                     <div class="body_chudautu_tenct mr_b8px">Thời gian hoàn thành:
-                                        <span><?= date('d/m/Y', $detail_project['time_done']) ?></span>
+                                        <span>20/10/2023</span>
                                     </div>
-                                    <div class="body_chudautu_tenct mr_b8px">Giá từ: <span><?= ($detail_project['nhapmin'] < 1000000000)?number_format((float)$detail_project['nhapmin']/1000000000, 2, '.', ''):$detail_project['nhapmin']/1000000000 ?> - <?= ($detail_project['nhapmax'] < 1000000000)?number_format((float)$detail_project['nhapmax']/1000000000, 2, '.', ''):$detail_project['nhapmax']/1000000000 ?> tỷ</span></div>
-                                    <div class="body_chudautu_tenct mr_b8px">Tổng số vốn đầu tư: <span><?= ($detail_project['total_investment'] < 1000000000)?number_format((float)$detail_project['total_investment']/1000000000, 2, '.', ''):$detail_project['total_investment']/1000000000 ?>
+                                    <div class="body_chudautu_tenct mr_b8px">Giá từ: <span>5 - 20 tỷ</span></div>
+                                    <div class="body_chudautu_tenct mr_b8px">Tổng số vốn đầu tư: <span>30.000
                                             tỷ</span></div>
-                                    <div class="body_chudautu_tenct mr_b8px">Tiến độ: <span><?= $progress[$detail_project['progress']] ?></span>
+                                    <div class="body_chudautu_tenct mr_b8px">Tiến độ: <span>Đang xây dựng</span>
                                     </div>
-                                    <div class="body_chudautu_tenct">Trạng thái: <span><?= $status[$detail_project['status']] ?></span></div>
+                                    <div class="body_chudautu_tenct">Trạng thái: <span>Sắp mở bán</span></div>
                                 </div>
                             </div>
                             <div class="body_chudautu_left2_img1 mr_b16px">
-								<?
-								$img = $dir."/".$detail_project['desc_project'];
-								if (file_exists($img)) {
-								?>
                                 <div class="body_chudautu_left2_img mr_b16px">
                                     <div class="img_fig_imgbig">
-                                        <img src="<?= $dir ?>/<?= $detail_project['desc_project'] ?>" alt="">
+                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/tt_chitiet_duan.png" alt="">
                                     </div>
-                                    <div class="chuthich_img"><?= $detail_project['title_img_project'] ?></div>
+                                    <div class="chuthich_img">Phối cảnh tòa nhà</div>
                                 </div>
-								<? } else { ?>
-                                <div class="body_chudautu_left2_img_text1 mr_b8px"><?= $detail_project['desc_project'] ?></div>
-								<? } ?>
+                                <div class="body_chudautu_left2_img_text1 mr_b8px">Khu đô thị của Trung Nguyên tại
+                                    Đắk Lắk có tên đầy đủ là dự án Đô thị
+                                    sinh thái cà phê Suối Xanh được triển khai từ cuối năm 2016 do pháp nhân Công ty
+                                    Cổ phần đầu tư Trung Nguyên
+                                    làm chủ đầu tư.
+                                </div>
+                                <div class="body_chudautu_left2_img_text1">Là Tập đoàn dẫn đầu về ngành Cà Phê Việt
+                                    Nam, khởi nghiệp từ Buôn Ma Thuột,
+                                    có tầm nhìn trở thành nhà lãnh đạo cà phê Toàn Cầu, dự án Đô Thị Sinh Thái Cà
+                                    Phê Suối Xanh là điểm hội tụ của những
+                                    người yêu thích và đam mê cà phê, chứa đựng tâm huyết và tinh thần phụng sự, tri
+                                    ân nơi khai nghiệp của Tập Đoàn Trung
+                                    Nguyên Legend.
+                                </div>
                             </div>
-                            <div class="chitiet_thugon c_pointer">
+                            <div class="body_chudautu_left2_img1 mr_b16px ">
+                                <div class="body_chudautu_left2_img mr_b16px">
+                                    <div class="img_fig_imgbig">
+                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/tt_chitiet_duan.png" alt="">
+                                    </div>
+                                    <div class="chuthich_img">Phối cảnh tòa nhà</div>
+                                </div>
+                                <div class="body_chudautu_left2_img_text1 mr_b8px">Khu đô thị của Trung Nguyên tại
+                                    Đắk Lắk có tên đầy đủ là dự án Đô thị
+                                    sinh thái cà phê Suối Xanh được triển khai từ cuối năm 2016 do pháp nhân Công ty
+                                    Cổ phần đầu tư Trung Nguyên
+                                    làm chủ đầu tư.
+                                </div>
+                                <div class="body_chudautu_left2_img_text1">Là Tập đoàn dẫn đầu về ngành Cà Phê Việt
+                                    Nam, khởi nghiệp từ Buôn Ma Thuột,
+                                    có tầm nhìn trở thành nhà lãnh đạo cà phê Toàn Cầu, dự án Đô Thị Sinh Thái Cà
+                                    Phê Suối Xanh là điểm hội tụ của những
+                                    người yêu thích và đam mê cà phê, chứa đựng tâm huyết và tinh thần phụng sự, tri
+                                    ân nơi khai nghiệp của Tập Đoàn Trung
+                                    Nguyên Legend.
+                                </div>
+                            </div>
+                            <div class="chitiet_thugon">
                                 <div class="chitiet_thugon_icon flex"
                                     onclick="toggleClass(this,'.body_chudautu_left2_khung_text','over_active','Xem thêm', 'Thu gọn')">
                                     <span>Thu gọn</span>
                                     <div class="img_icon_thugon">
-                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/thugon.svg" alt="">
+                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/thugon.png" alt="" class="checked">
                                     </div>
                                 </div>
                             </div>
+
+
                         </div>
+
+
                     </div>
                 </div>
 
@@ -271,7 +309,7 @@ $dir = "upload/".$y."/".$m."/".$d."";
                         class="body_chudautu_right_button body_chudautu_right_button_man1366 flex align_items mr_b16px">
                         <div class="body_chudautu_right_button_luu flex mr_r16px">
                             <div class="body_chudautu_right_button_luu_img">
-                                <img src="<? echo base_url(); ?>assets/images/img_du_an/luu_30.svg" alt="">
+                                <img src="<? echo base_url(); ?>assets/images/img_du_an/luu_30.png" alt="">
                             </div>
                             <div class="body_chudautu_right_button_luu_text">
                                 Lưu
@@ -279,7 +317,7 @@ $dir = "upload/".$y."/".$m."/".$d."";
                         </div>
                         <div class="body_chudautu_right_button_tai flex">
                             <div class="body_chudautu_right_button_luu_img">
-                                <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_tai.svg" alt="">
+                                <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_tai.png" alt="">
                             </div>
                             <div class="body_chudautu_right_button_luu_text">
                                 Tải tài liệu chi tiết dự án
@@ -319,7 +357,7 @@ $dir = "upload/".$y."/".$m."/".$d."";
                         Vị trí dự án
                     </div>
                     <div class="body_vitri_all_icon icon_rotate1">
-                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.svg" alt="">
+                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.png" alt="">
                     </div>
                 </div>
 
@@ -790,7 +828,7 @@ $dir = "upload/".$y."/".$m."/".$d."";
                         Mặt bằng dự án
                     </div>
                     <div class="body_vitri_all_icon icon_rotate2">
-                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.svg" alt="">
+                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.png" alt="">
                     </div>
                 </div>
             </div>
@@ -830,14 +868,21 @@ $dir = "upload/".$y."/".$m."/".$d."";
                             </div>
                             <div class="duy_scroll_375">
                                 <div class="body_matbang_khoi1_bg_noidung2_img2 thanh_scroll flex flex_w">
-									<?
-									$mb_img = json_decode($detail_project['img_mb_project']);
-									foreach ($mb_img as $val) {
-									?>
                                     <div class="img_fig_notname img_fig_notname_man768">
-                                        <img class="" src="<?= $dir."/".$val ?>" alt="">
+                                        <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/img_duan_new.png" alt="">
                                     </div>
-									<? } ?>
+                                    <div class="img_fig_notname img_fig_notname_man768">
+                                        <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/img_duan_new.png" alt="">
+                                    </div>
+                                    <div class="img_fig_notname img_fig_notname_man768">
+                                        <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/img_duan_new.png" alt="">
+                                    </div>
+                                    <div class="img_fig_notname img_fig_notname_man768">
+                                        <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/img_duan_new.png" alt="">
+                                    </div>
+                                    <div class="img_fig_notname img_fig_notname_man768">
+                                        <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/img_duan_new.png" alt="">
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -846,34 +891,66 @@ $dir = "upload/".$y."/".$m."/".$d."";
 
 
                 <div class="body_matbang_khoi2">
-					<?
-					$title = json_decode($detail_project['title_mb_project']);
-					$img = json_decode($detail_project['img_mb_project']);
-					foreach ($title as $key => $val) { ?>
                     <div class="body_matbang_khoi2_padding mr_b55px">
-                        <p class="body_matbang_khoi2_padding_text"><?= $val ?>
+                        <p class="body_matbang_khoi2_padding_text">Là Tập đoàn dẫn đầu về ngành Cà Phê Việt Nam, khởi
+                            nghiệp từ Buôn Ma Thuột,
+                            có tầm nhìn trở thành nhà lãnh đạo cà phê Toàn Cầu, dự án Đô Thị Sinh Thái Cà Phê Suối Xanh
+                            là điểm hội tụ của
+                            những người yêu thích và đam mê cà phê, chứa đựng tâm huyết và tinh thần phụng sự, tri ân
+                            nơi khai nghiệp của Tập
+                            Đoàn Trung Nguyên Legend.
                         </p>
                         <div class="body_matbang_khoi2_padding_img mr_t24px">
-                            <img src="<?= $dir."/".$img[$key] ?>" alt="">
+                            <img src="<? echo base_url(); ?>assets/images/img_du_an/mat_bang_duan.png" alt="">
                         </div>
                         <div class="body_matbang_khoi2_padding_img_mota">
                             Phối cảnh tòa nhà
                         </div>
                     </div>
-					<? } ?>
                     <div class="body_matbang_khoi2_padding">
-						<?
-						$describe = $dir."/".$detail_project['desc_mb_project'];
-						if (file_exists($describe)) {
-						?>
-                        <div class="body_matbang_khoi2_padding_img mr_b8px mr_t24px">
-                            <img src="<?= $describe ?>" alt="">
-                        </div>
-						<? } else { ?>
-                        <p class="body_matbang_khoi2_padding_text mr_b8px">
-                            <?= $detail_project['desc_mb_project'] ?>
+                        <p class="body_matbang_khoi2_padding_text mr_b8px">Khu đô thị của Trung Nguyên tại Đắk Lắk có
+                            tên đầy đủ là dự án Đô thị sinh
+                            thái cà phê Suối Xanh được triển khai từ cuối năm 2016 do pháp nhân Công ty Cổ phần đầu tư
+                            Trung Nguyên làm chủ đầu tư.
+
                         </p>
-						<? } ?>
+                        <p class="body_matbang_khoi2_padding_text mr_b8px">Là Tập đoàn dẫn đầu về ngành Cà Phê Việt Nam,
+                            khởi nghiệp từ Buôn Ma Thuột,
+                            có tầm nhìn trở thành nhà lãnh đạo cà phê Toàn Cầu, dự án Đô Thị Sinh Thái Cà Phê Suối Xanh
+                            là điểm hội tụ của
+                            những người yêu thích và đam mê cà phê, chứa đựng tâm huyết và tinh thần phụng sự, tri ân
+                            nơi khai nghiệp của Tập
+                            Đoàn Trung Nguyên Legend.
+                        </p>
+                        <p class="body_matbang_khoi2_padding_text">Là Tập đoàn dẫn đầu về ngành Cà Phê Việt Nam, khởi
+                            nghiệp từ Buôn Ma Thuột,
+                            có tầm nhìn trở thành nhà lãnh đạo cà phê Toàn Cầu, dự án Đô Thị Sinh Thái Cà Phê Suối Xanh
+                            là điểm hội tụ của
+                            những người yêu thích và đam mê cà phê, chứa đựng tâm huyết và tinh thần phụng sự, tri ân
+                            nơi khai nghiệp của Tập
+                            Đoàn Trung Nguyên Legend.
+                        </p>
+                        <div class="body_matbang_khoi2_padding_img mr_b8px mr_t24px">
+                            <img src="<? echo base_url(); ?>assets/images/img_du_an/mat_bang_duan.png" alt="">
+                        </div>
+                        <div class="body_matbang_khoi2_padding_img_mota mr_b24px">
+                            Phối cảnh tòa nhà
+                        </div>
+
+                        <p class="body_matbang_khoi2_padding_text mr_b8px">Khu đô thị của Trung Nguyên tại Đắk Lắk có
+                            tên đầy đủ là dự án Đô thị sinh
+                            thái cà phê Suối Xanh được triển khai từ cuối năm 2016 do pháp nhân Công ty Cổ phần đầu tư
+                            Trung Nguyên làm chủ đầu tư.
+
+                        </p>
+                        <p class="body_matbang_khoi2_padding_text">Là Tập đoàn dẫn đầu về ngành Cà Phê Việt Nam, khởi
+                            nghiệp từ Buôn Ma Thuột,
+                            có tầm nhìn trở thành nhà lãnh đạo cà phê Toàn Cầu, dự án Đô Thị Sinh Thái Cà Phê Suối Xanh
+                            là điểm hội tụ của
+                            những người yêu thích và đam mê cà phê, chứa đựng tâm huyết và tinh thần phụng sự, tri ân
+                            nơi khai nghiệp của Tập
+                            Đoàn Trung Nguyên Legend.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -889,7 +966,7 @@ $dir = "upload/".$y."/".$m."/".$d."";
                         Tiện ích dự án
                     </div>
                     <div class="body_vitri_all_icon icon_rotate3">
-                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.svg" alt="">
+                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.png" alt="">
                     </div>
                 </div>
             </div>
@@ -899,318 +976,235 @@ $dir = "upload/".$y."/".$m."/".$d."";
                         <div class="body_tienich_full_icon_nav_all">
                             <div class="body_tienich_full_icon_nav_all1 flex">
                                 <div class="body_tienich_full_icon_nav_all1_sub mr_r86px">
-									<?
-									$list = explode(",", $detail_project['list_utilities']);
-									$infras = array(1,2,3,4,5,6);
-									if (count(array_intersect($list, $infras)) > 0) {
-									?>
                                     <div class="body_tienich_full_icon_nav_all1_sub1">
                                         <div class="body_tienich_full_icon_nav_all1_sub_hd flex">
                                             <div class="them_div_375_1">
                                                 <span class="border_l2"></span>Cơ sở vật chất
                                             </div>
                                             <div class="them_div_375 show_toggle_TY_375_1">
-                                                <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.svg" alt="">
+                                                <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.png" alt="">
                                             </div>
                                         </div>
                                         <ul class="body_tienich_full_icon_nav_all1_ul hidden_toggle_TY_375_1">
-											<? if (in_array(1, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/congvien.png" alt="">
                                                 </div>
-                                                <p>Công viên</p>
+                                                <a href="">Công viên</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(2, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/hopthu.png" alt="">
                                                 </div>
-                                                <p>Hộp thư dân cư</p>
+                                                <a href="">Hộp thư dân cư</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(3, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/daiphunnuoc.png" alt="">
                                                 </div>
-                                                <p>Đài phun nước</p>
+                                                <a href="">Đài phun nước</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(4, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/ghe.png" alt="">
                                                 </div>
-                                                <p>Ghế công cộng</p>
+                                                <a href="">Ghế công cộng</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(5, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/oto.png" alt="">
                                                 </div>
-                                                <p>Chỗ để xe miễn phí</p>
+                                                <a href="">Chỗ để xe miễn phí</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(6, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/oto.png" alt="">
                                                 </div>
-                                                <p>Để xe công cộng miễn phí</p>
+                                                <a href="">Để xe công cộng miễn phí</a>
                                             </li>
-											<? } ?>
                                         </ul>
                                     </div>
-									<? } ?>
-									<?
-									$entertainment = array(7,8,9,10,11);
-									if (count(array_intersect($list, $entertainment)) > 0) {
-									?>
                                     <div class="body_tienich_full_icon_nav_all1_sub2">
                                         <div class="body_tienich_full_icon_nav_all1_sub_hd">
                                             <div class="them_div_375_1">
                                                 <span class="border_l2"></span>Giải trí
                                             </div>
                                             <div class="them_div_375 show_toggle_TY_375_2">
-                                                <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.svg" alt="">
+                                                <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.png" alt="">
                                             </div>
                                         </div>
                                         <ul class="body_tienich_full_icon_nav_all1_ul hidden_toggle_TY_375_2">
-											<? if (in_array(7, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/chieuphim.png" alt="">
                                                 </div>
-                                                <p>Rạp chiếu phim</p>
+                                                <a href="">Rap chiếu phim</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(8, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/lamdep.png" alt="">
                                                 </div>
-                                                <p>Spa làm đẹp</p>
+                                                <a href="">Spa làm đẹp</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(9, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/khuvuichoi.png" alt="">
                                                 </div>
-                                                <p>Khu vui chơi trẻ em</p>
+                                                <a href="">Khu vui chơi trẻ em</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(10, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/thugian.png" alt="">
                                                 </div>
-                                                <p>Khu thư giãn người già</p>
+                                                <a href="">Khu thư giãn người già</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(11, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/congviennuoc.png" alt="">
                                                 </div>
-                                                <p>Công viên nước</p>
+                                                <a href="">Công viên nước</a>
                                             </li>
-											<? } ?>
                                         </ul>
                                     </div>
-									<? } ?>
                                 </div>
 
                                 <div class="body_tienich_full_icon_nav_all1_sub mr_r109px">
-									<?
-									$health_edu = array(12,13,14,15);
-									if (count(array_intersect($list, $health_edu)) > 0) {
-									?>
                                     <div class="body_tienich_full_icon_nav_all1_sub1">
                                         <div class="body_tienich_full_icon_nav_all1_sub_hd">
                                             <div class="them_div_375_1">
                                                 <span class="border_l2"></span>Y tế, giáo dục
                                             </div>
                                             <div class="them_div_375 show_toggle_TY_375_3">
-                                                <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.svg" alt="">
+                                                <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.png" alt="">
                                             </div>
                                         </div>
                                         <ul class="body_tienich_full_icon_nav_all1_ul hidden_toggle_TY_375_3">
-											<? if (in_array(12, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/nhathuoc.png" alt="">
                                                 </div>
-                                                <p>Nhà thuốc</p>
+                                                <a href="">Nhà thuốc</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(13, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/benhvien.png" alt="">
                                                 </div>
-                                                <p>Bệnh viện</p>
+                                                <a href="">Bệnh viện</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(14, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/truonghoc.png" alt="">
                                                 </div>
-                                                <p>Trường cấp 1, 2, 3</p>
+                                                <a href="">Trường cấp 1, 2, 3</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(15, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/mamnon.png" alt="">
                                                 </div>
-                                                <p>Mầm non</p>
+                                                <a href="">Mầm non</a>
                                             </li>
-											<? } ?>
                                         </ul>
                                     </div>
-									<? } ?>
-									<?
-									$food = array(16,17,18,19,20,21);
-									if (count(array_intersect($list, $food)) > 0) {
-									?>
                                     <div class="body_tienich_full_icon_nav_all1_sub2">
                                         <div class="body_tienich_full_icon_nav_all1_sub_hd">
                                             <div class="them_div_375_1">
                                                 <span class="border_l2"></span>Tiêu dùng, ẩm thực
                                             </div>
                                             <div class="them_div_375 show_toggle_TY_375_4">
-                                                <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.svg" alt="">
+                                                <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.png" alt="">
                                             </div>
                                         </div>
                                         <ul class="body_tienich_full_icon_nav_all1_ul hidden_toggle_TY_375_4">
-											<? if (in_array(16, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/quan3.png" alt="">
                                                 </div>
-                                                <p>Quán bar</p>
+                                                <a href="">Quán bar</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(17, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/nhahang.png" alt="">
                                                 </div>
-                                                <p>Nhà hàng</p>
+                                                <a href="">Nhà hàng</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(18, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/trungtamthuongmai.png"
                                                         alt="">
                                                 </div>
-                                                <p>Trung tâm thương mại</p>
+                                                <a href="">Trung tâm thương mại</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(19, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/cayatm.png" alt="">
                                                 </div>
-                                                <p>Cây ATM</p>
+                                                <a href="">Cây ATM</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(20, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/nganhang.png" alt="">
                                                 </div>
-                                                <p>Ngân hàng</p>
+                                                <a href="">Ngân hàng</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(21, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/coffee.png" alt="">
                                                 </div>
-                                                <p>Coffee shop</p>
+                                                <a href="">Coffee shop</a>
                                             </li>
-											<? } ?>
                                         </ul>
                                     </div>
-									<? } ?>
                                 </div>
+
                                 <div class="body_tienich_full_icon_nav_all1_sub tienich_fig_768_3 flex">
-									<?
-									$safe_hygiene = array(22,23,24,25,26,27);
-									if (count(array_intersect($list, $safe_hygiene)) > 0) {
-									?>
                                     <div class="body_tienich_full_icon_nav_all1_sub1 mr_r158px">
                                         <div class="body_tienich_full_icon_nav_all1_sub_hd">
                                             <div class="them_div_375_1">
                                                 <span class="border_l2"></span>An toàn, vệ sinh
                                             </div>
                                             <div class="them_div_375 show_toggle_TY_375_5">
-                                                <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.svg" alt="">
+                                                <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.png" alt="">
                                             </div>
                                         </div>
                                         <ul class="body_tienich_full_icon_nav_all1_ul hidden_toggle_TY_375_5">
-											<? if (in_array(22, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/maybaokhoi.png" alt="">
                                                 </div>
-                                                <p>Máy báo khói</p>
+                                                <a href="">Máy báo khói</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(23, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/binhchuachay.png" alt="">
                                                 </div>
-                                                <p>Bình chữa cháy</p>
+                                                <a href="">Bình chữa cháy</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(24, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/camera.png" alt="">
                                                 </div>
-                                                <p>Camera an ninh</p>
+                                                <a href="">Camera an ninh</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(25, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/maybaokhi.png" alt="">
                                                 </div>
-                                                <p>Máy báo khí CO</p>
+                                                <a href="">Máy báo khí CO</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(26, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/baove.png" alt="">
                                                 </div>
-                                                <p>Bảo vệ an ninh</p>
+                                                <a href="">Bảo vệ an ninh</a>
                                             </li>
-											<? } ?>
-											<? if (in_array(27, $list)) { ?>
                                             <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                 <div class="img_li_icon">
                                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/baoveanninh.png" alt="">
                                                 </div>
-                                                <p>Bảo vệ an ninh</p>
+                                                <a href="">Bảo vệ an ninh</a>
                                             </li>
-											<? } ?>
                                         </ul>
                                     </div>
-									<? } ?>
-									<?
-									$sport = array(28,29,30,31,32);
-									if (count(array_intersect($list, $sport)) > 0) {
-									?>
                                     <div class="body_tienich_full_icon_nav_all1_sub">
                                         <div class="body_tienich_full_icon_nav_all1_sub1 fig_theo_thao">
                                             <div class="body_tienich_full_icon_nav_all1_sub_hd">
@@ -1218,79 +1212,69 @@ $dir = "upload/".$y."/".$m."/".$d."";
                                                     <span class="border_l2"></span>Thể thao
                                                 </div>
                                                 <div class="them_div_375 show_toggle_TY_375_6">
-                                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.svg" alt="">
+                                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.png" alt="">
                                                 </div>
                                             </div>
                                             <ul class="body_tienich_full_icon_nav_all1_ul hidden_toggle_TY_375_6">
-												<? if (in_array(28, $list)) { ?>
                                                 <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                     <div class="img_li_icon">
                                                         <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/beboi.png" alt="">
                                                     </div>
-                                                    <p>Bể bơi</p>
+                                                    <a href="">Bể bơi</a>
                                                 </li>
-												<? } ?>
-												<? if (in_array(29, $list)) { ?>
                                                 <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                     <div class="img_li_icon">
                                                         <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/bongro.png" alt="">
                                                     </div>
-                                                    <p>Bóng rổ</p>
+                                                    <a href="">Bóng rổ</a>
                                                 </li>
-												<? } ?>
-												<? if (in_array(30, $list)) { ?>
                                                 <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                     <div class="img_li_icon">
                                                         <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/bongda.png" alt="">
                                                     </div>
-                                                    <p>Bóng đá</p>
+                                                    <a href="">Bóng đá</a>
                                                 </li>
-												<? } ?>
-												<? if (in_array(31, $list)) { ?>
                                                 <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                     <div class="img_li_icon">
                                                         <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/caulong.png" alt="">
                                                     </div>
-                                                    <p>Cầu lông</p>
+                                                    <a href="">Cầu lông</a>
                                                 </li>
-												<? } ?>
-												<? if (in_array(32, $list)) { ?>
                                                 <li class="body_tienich_full_icon_nav_all1_li flex align_items">
                                                     <div class="img_li_icon">
                                                         <img src="<? echo base_url(); ?>assets/images/img_du_an/img_icon/golf.png" alt="">
                                                     </div>
-                                                    <p>Sân golf</p>
+                                                    <a href="">Sân golf</a>
                                                 </li>
-												<? } ?>
                                             </ul>
                                         </div>
                                     </div>
-									<? } ?>
                                 </div>
+
+
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="body_tienich_full_icon_nav2">
                     <div class="body_matbang_khoi2">
-                        <div class="body_matbang_khoi2_padding">
-							<?
-							$utilities_desc = $detail_project['desc_utilities_project'];
-							if (file_exists($dir."/".$utilities_desc)) {
-							?>
+                        <div class="body_matbang_khoi2_padding mr_b55px">
+                            <p class="body_matbang_khoi2_padding_text">Là Tập đoàn dẫn đầu về ngành Cà Phê Việt Nam,
+                                khởi nghiệp từ Buôn Ma Thuột,
+                                có tầm nhìn trở thành nhà lãnh đạo cà phê Toàn Cầu, dự án Đô Thị Sinh Thái Cà Phê
+                                Suối Xanh là điểm hội tụ của
+                                những người yêu thích và đam mê cà phê, chứa đựng tâm huyết và tinh thần phụng sự,
+                                tri ân nơi khai nghiệp của Tập
+                                Đoàn Trung Nguyên Legend.
+                            </p>
                             <div class="body_matbang_khoi2_padding_img mr_b8px mr_t24px">
-                                <img src="<?= $dir."/".$utilities_desc ?>" alt="">
+                                <img src="<? echo base_url(); ?>assets/images/img_du_an/mat_bang_duan.png" alt="">
                             </div>
                             <div class="body_matbang_khoi2_padding_img_mota">
-                                <?= $detail_project['title_img_utilities'] ?>
+                                Phối cảnh tòa nhà
                             </div>
-							<? } else { ?>
-                            <p class="body_matbang_khoi2_padding_text">
-								<?= $utilities_desc ?>
-                            </p>
-							<? } ?>
                         </div>
-                        <!-- <div class="body_matbang_khoi2_padding">
+                        <div class="body_matbang_khoi2_padding">
                             <p class="body_matbang_khoi2_padding_text mr_b8px">Khu đô thị của Trung Nguyên tại Đắk
                                 Lắk có tên đầy đủ là dự án Đô thị sinh
                                 thái cà phê Suối Xanh được triển khai từ cuối năm 2016 do pháp nhân Công ty Cổ phần
@@ -1334,7 +1318,7 @@ $dir = "upload/".$y."/".$m."/".$d."";
                                 tri ân nơi khai nghiệp của Tập
                                 Đoàn Trung Nguyên Legend.
                             </p>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1343,46 +1327,229 @@ $dir = "upload/".$y."/".$m."/".$d."";
 
 
         <!-- BODY MẪU DỰ ÁN-->
-		<?
-		$intro_name = explode(",", $detail_project['part_name']);
-		$intro_content = json_decode($detail_project['introduct_project']);
-		$intro_img_note = json_decode($detail_project['title_img_gtda']);
-		$i=0;
-		foreach ($intro_name as $key => $val) {
-			$intro_img = $dir."/".$intro_content[$key];
-		?>
         <div class="body_mau_duan">
             <div class="mau_duan">
                 <div class="body_vitri_all_top show_bg4 flex justify_content_sb mr_b32px align_items">
                     <div class="body_vitri_all_heading main_color">
-                        <?= $val ?>
+                        Mẫu dự án
                     </div>
                     <div class="body_vitri_all_icon icon_rotate4">
-                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.svg" alt="">
+                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.png" alt="">
                     </div>
                 </div>
 
                 <div class="mau_duan_img mat4">
                     <div class="body_matbang_khoi2">
                         <div class="body_matbang_khoi2_padding mr_b55px">
-							<? if (file_exists($intro_img)) {?>
+                            <p class="body_matbang_khoi2_padding_text">Là Tập đoàn dẫn đầu về ngành Cà Phê Việt Nam,
+                                khởi nghiệp từ Buôn Ma Thuột,
+                                có tầm nhìn trở thành nhà lãnh đạo cà phê Toàn Cầu, dự án Đô Thị Sinh Thái Cà Phê
+                                Suối Xanh là điểm hội tụ của
+                                những người yêu thích và đam mê cà phê, chứa đựng tâm huyết và tinh thần phụng sự,
+                                tri ân nơi khai nghiệp của Tập
+                                Đoàn Trung Nguyên Legend.
+                            </p>
                             <div class="body_matbang_khoi2_padding_img mr_b8px mr_t24px">
-                                <img src="<?= $intro_img ?>" alt="">
+                                <img src="<? echo base_url(); ?>assets/images/img_du_an/mat_bang_duan.png" alt="">
                             </div>
                             <div class="body_matbang_khoi2_padding_img_mota">
-                                <?= $intro_img_note[$i];$i++; ?>
+                                Phối cảnh tòa nhà
                             </div>
-							<? } else { ?>
-                            <p class="body_matbang_khoi2_padding_text">
-								<?= $intro_content[$key] ?>
+                        </div>
+                        <div class="body_matbang_khoi2_padding">
+                            <p class="body_matbang_khoi2_padding_text mr_b8px">Khu đô thị của Trung Nguyên tại Đắk
+                                Lắk có tên đầy đủ là dự án Đô thị sinh
+                                thái cà phê Suối Xanh được triển khai từ cuối năm 2016 do pháp nhân Công ty Cổ phần
+                                đầu tư Trung Nguyên làm chủ đầu tư.
+
                             </p>
-							<? } ?>
+                            <p class="body_matbang_khoi2_padding_text mr_b8px">Là Tập đoàn dẫn đầu về ngành Cà Phê
+                                Việt Nam, khởi nghiệp từ Buôn Ma Thuột,
+                                có tầm nhìn trở thành nhà lãnh đạo cà phê Toàn Cầu, dự án Đô Thị Sinh Thái Cà Phê
+                                Suối Xanh là điểm hội tụ của
+                                những người yêu thích và đam mê cà phê, chứa đựng tâm huyết và tinh thần phụng sự,
+                                tri ân nơi khai nghiệp của Tập
+                                Đoàn Trung Nguyên Legend.
+                            </p>
+                            <p class="body_matbang_khoi2_padding_text">Là Tập đoàn dẫn đầu về ngành Cà Phê Việt Nam,
+                                khởi nghiệp từ Buôn Ma Thuột,
+                                có tầm nhìn trở thành nhà lãnh đạo cà phê Toàn Cầu, dự án Đô Thị Sinh Thái Cà Phê
+                                Suối Xanh là điểm hội tụ của
+                                những người yêu thích và đam mê cà phê, chứa đựng tâm huyết và tinh thần phụng sự,
+                                tri ân nơi khai nghiệp của Tập
+                                Đoàn Trung Nguyên Legend.
+                            </p>
+                            <div class="body_matbang_khoi2_padding_img mr_b8px mr_t24px">
+                                <img src="<? echo base_url(); ?>assets/images/img_du_an/mat_bang_duan.png" alt="">
+                            </div>
+                            <div class="body_matbang_khoi2_padding_img_mota mr_b24px">
+                                Phối cảnh tòa nhà
+                            </div>
+
+                            <p class="body_matbang_khoi2_padding_text mr_b8px">Khu đô thị của Trung Nguyên tại Đắk
+                                Lắk có tên đầy đủ là dự án Đô thị sinh
+                                thái cà phê Suối Xanh được triển khai từ cuối năm 2016 do pháp nhân Công ty Cổ phần
+                                đầu tư Trung Nguyên làm chủ đầu tư.
+
+                            </p>
+                            <p class="body_matbang_khoi2_padding_text">Là Tập đoàn dẫn đầu về ngành Cà Phê Việt Nam,
+                                khởi nghiệp từ Buôn Ma Thuột,
+                                có tầm nhìn trở thành nhà lãnh đạo cà phê Toàn Cầu, dự án Đô Thị Sinh Thái Cà Phê
+                                Suối Xanh là điểm hội tụ của
+                                những người yêu thích và đam mê cà phê, chứa đựng tâm huyết và tinh thần phụng sự,
+                                tri ân nơi khai nghiệp của Tập
+                                Đoàn Trung Nguyên Legend.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-		<? } ?>
+        <!-- ----------------------- -->
+
+        <!-- BODY TIẾN ĐỘ-->
+        <div class="body_tiendo">
+            <div class="tien_do">
+                <div class="body_vitri_all_top show_bg5 flex justify_content_sb mr_b32px align_items">
+                    <div class="body_vitri_all_heading main_color">
+                        Tiến độ
+                    </div>
+                    <div class="body_vitri_all_icon icon_rotate5">
+                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.png" alt="">
+                    </div>
+                </div>
+
+                <div class="tien_do_padding mat5">
+                    <div class="tien_do_padding_noidung mr_b24px">
+                        <div class="tien_do_padding_heading mr_b16px">
+                            Tiến độ xây dựng phân khu
+                        </div>
+                        <p class="tien_do_padding_heading_text">
+                            Deluxe Green House đã hoàn thiện và mở cửa đón khách tham quan từ tháng 5/2020,
+                            khu biệt thự mẫu tại khu đô thị sinh thái Aqua City với kiến trúc hiện đại cũng
+                            đã hoàn thiện 70% và dự kiến mở cửa đón khách trải nghiệm vào tháng 09.
+                        </p>
+                    </div>
+                    <div class="tien_do_padding_noidung">
+                        <div class="tien_do_padding_heading mr_b16px">
+                            Tiến độ xây dựng các khu tiện ích
+                        </div>
+                        <p class="tien_do_padding_heading_text mr_b8px">
+                            Cuối tháng tháng 8/2020 vừa qua tập đoàn Novaland đã chính thức khởi công xây dựng
+                            trung tâm thể dục thể thao đa năng Aqua Sport Complex góp phần đem lại giá trị sống
+                            hoàn hảo cho cư dân Aqua City tương lai khi thỏa mãn các nhu cầu về tập luyện thể dục
+                            thể thao, chăm sóc sức khỏe và giải trí thư giãn. Trong sự kiện đặc biệt này, góp mặt
+                            trong lễ động thổ là đội tuyển bóng đá SaigonFC – đội tuyển đang giữ vị trí đầu bảng
+                            V-League với 10 trận liên tục bất bại, tham quan và trải nghiệm sân bóng đạt chuẩn quốc tế.
+                        </p>
+                        <p class="tien_do_padding_heading_text mr_b8px">
+                            Lấy cảm hứng từ Đền Athena Nike – công trình kiến trúc nổi tiếng tại Hy Lạp tượng trưng
+                            cho sự chiến thắng, Aqua Sport Complex được thiết kế theo phong cách kiến trúc Tân cổ điển
+                            kết hợp hiện đại tao nên một hình khối mạnh mẽ thể hiện tinh thần thể thao rõ nét.
+                        </p>
+                        <p class="tien_do_padding_heading_text mr_b8px">
+                            Công trình có tổng diện tích lên đến hơn 8.000m2 với quy mô 5 tầng, đầy đủ tiện ích thể
+                            thao,
+                            giải trí, chăm sóc sức khỏe thời thượng bao gồm bowling, spa, gym, hồ bơi, khu ẩm thực, sân
+                            bóng đá, bóng rổ, sân cầu lông, sân bóng bàn…
+                        </p>
+                        <p class="tien_do_padding_heading_text mr_b8px">
+                            Aqua Sport Complex dự kiến hoàn thiện vào năm 2022 và sẵn sàng chào đón những cư dân đầu
+                            tiên
+                            của Aqua City vào năm 2023.
+                        </p>
+                        <p class="tien_do_padding_heading_text">
+                            Bên cạnh đó, ngày 01/09/2020 chủ đầu tư Novaland công bố CityGym – hệ thống phòng Gym đẳng
+                            cấp
+                            hàng đầu Việt Nam sẽ là đối tác vận hành chính của Aqua Sport Complex.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ----------------------- -->
+
+        <!-- BODY CHÍNH SÁCH BÁN HÀNG-->
+        <div class="body_chinhsach">
+            <div class="chinh_sach them_pd">
+                <div class="body_vitri_all_top show_bg6 flex justify_content_sb mr_b32px align_items">
+                    <div class="body_vitri_all_heading main_color">
+                        Chính sách bán hàng
+                    </div>
+                    <div class="body_vitri_all_icon icon_rotate6">
+                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.png" alt="">
+                    </div>
+                </div>
+
+                <div class="chinh_sach_padding mat6">
+                    <div class="chinh_sach_padding_sub1">
+                        <div class="chinh_sach_padding_noidung mr_b24px">
+                            <div class="chinh_sach_padding_noidung_heading mr_b16px">Chính sách thanh toán</div>
+
+                            <div class="chinh_sach_padding_noidung_text">
+                                <p class="chinh_sach_padding_noidung_text1">
+                                    CHƯƠNG TRÌNH BÁN HÀNG DỰ ÁN AQUA CITY DUY NHẤT THÁNG 11/2020 <br>
+                                    Ưu đãi 100 Triệu sinh nhật Tập Đoàn Novaland <br>
+                                    Gói trải nghiệm đỉnh cao Nova Prince <br>
+                                    Ưu đãi đặc biệt 2% cho các đối tượng là Doanh nghiệp, có hộ khẩu Đồng Nai, Bình
+                                    Dương, Vũng Tàu, Q2, Q9, Thủ Đức hoặc Member Golf CBNV VPBank Khách hàng VPBank.
+                                    <br>
+                                    Tặng gói hoàn thiện nội thất lên đến 1 tỷ - 1,6 tỷ đồng <br>
+                                    Đầu tư chỉ từ 10% <br>
+                                    Tặng gói thiết kế sân vườn trị giá 5 - 9% <br>
+                                    Ưu đãi đến 5% cho khách hàng Novaloyalty <br>
+                                    Thanh toán 30% đến khi nhận nhà <br>
+                                    Ưu Đãi Chung 3 Không: <br>
+                                    Hỗ trợ Lãi suất <br>
+                                    Phí tất toán trước hạn <br>
+                                    Ân hạn nợ gốc <br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="chinh_sach_padding_noidung mr_b24px">
+                            <div class="chinh_sach_padding_noidung_heading mr_b16px">Tiến độ thanh toán</div>
+
+                            <div class="chinh_sach_padding_noidung_text">
+                                <p class="chinh_sach_padding_noidung_text1">
+                                    * Đối với khách hàng vay vốn: <br>
+                                    Đợt 1 Ký VBTT thanh toán 15% <br>
+                                    Đợt 2 15/10/2019 thanh toán 10%. <br>
+                                    Đợt 3 15/12/2019 thanh toán 45%.(Khách hàng 5%, Ngân hàng 40%) <br>
+                                    Đợt 4 Dự kiến giao nhà thanh toán 25% <br>
+                                    Đợt 5 Giao sổ thanh toán 5%. <br>
+                                    * Đối với khách hàng không vay vốn <br>
+                                    Đợt 1 Ký VBTT thanh toán 18% <br>
+                                    Đợt 2 - đợt 8 15/10/2019 - 15/10/2020 thanh toán 21% (Cứ mỗi 2 tháng thanh toán 3%).
+                                    <br>
+                                    Đợt 9 15/12/2020 thanh toán 10% (Ký HĐMB). <br>
+                                    Đợt 10- đợt 19 15/8/2021 - 15/2/2023 thanh toán 20% ( Cứ mỗi 2 tháng thanh toán 2%)
+                                    <br>
+                                    Đợt 20 15/4/2023 thanh toán 1%. <br>
+                                    Đợt 21 Dự kiến giao nhà thanh toán 25% <br>
+                                    Đợt 22 giao sổ thanh toán 5%. <br>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="chinh_sach_padding_noidung mr_b24px">
+                            <div class="chinh_sach_padding_noidung_heading mr_b16px">Hỗ trợ ngân hàng</div>
+                            <div class="chinh_sach_padding_noidung_text">
+                                <p class="chinh_sach_padding_noidung_text1">Dự kiến Ngân hàng thương mại cổ phần Ngoại
+                                    thương Việt Nam (Vietcombank) & Ngân hàng Đầu tư và Phát triển Việt Nam (BIDV)
+                                </p>
+                            </div>
+                        </div>
+                        <div class="chinh_sach_padding_noidung">
+                            <div class="chinh_sach_padding_noidung_heading mr_b16px">Tiêu chuẩn bàn giao</div>
+                            <div class="chinh_sach_padding_noidung_text">
+                                <p class="chinh_sach_padding_noidung_text1">Bàn giao thô</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
         <!-- ----------------------- -->
 
         <!-- TÍNH LÃI XUẤT VAY -->
@@ -1390,7 +1557,7 @@ $dir = "upload/".$y."/".$m."/".$d."";
             <div class="body_vitri_all_top flex align_items justify_content_sb show_bg7 mr_b32px">
                 <div class="lai_xuat_heading main_color">Tính lãi suất vay</div>
                 <div class="body_vitri_all_icon icon_rotate7">
-                    <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.svg" alt="">
+                    <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vitri.png" alt="">
                 </div>
             </div>
             <div class="khung_lai_xuat flex justify_content_sb mat7">
@@ -1492,31 +1659,20 @@ $dir = "upload/".$y."/".$m."/".$d."";
         <!-- ----------------------- -->
 
         <!-- BODY LIÊN HỆ TƯ VẤN-->
-		<?
-		$usery = date('Y', $detail_project['avtDate']);
-		$userm = date('m', $detail_project['avtDate']);
-		$userd = date('d', $detail_project['avtDate']);
-		$dirUser = "upload/".$usery."/".$userm."/".$userd;
-		$avtUser = $dirUser."/".$detail_project['user_avt'];
-		?>
         <div class="body_lienhe">
             <div class="body_lienhe_padding flex">
                 <div class="body_lienhe_padding_info mr_t13px">
                     <div class="body_lienhe_padding_info_hd while_color mr_b45px">Liên hệ tư vấn</div>
                     <div class="body_lienhe_padding_info_img flex justify_content_ct">
                         <div class="img_user_lienhe mr_r32px">
-							<? if (file_exists($avtUser)) { ?>
-                            <img src="<?= $avtUser ?>" alt="">
-							<? } else { ?>
-                            <img src="/assets/images/default_avt.svg" alt="">
-							<? } ?>
+                            <img src="<? echo base_url(); ?>assets/images/img_du_an/user_lienhe.png" alt="">
                             <div class="khung_avata_lh">
                                 <img src="<? echo base_url(); ?>assets/images/img_du_an/khung_avata_lh.png" alt="">
                             </div>
                         </div>
                         <div class="body_lienhe_padding_info_text">
-                            <div class="lienhe_name while_color mr_b8px"><?= $detail_project['name'] ?></div>
-                            <div class="lienhe_ntheodoi while_color mr_b8px"><?= $detail_project['UserFollowed'] ?> người theo dõi</div>
+                            <div class="lienhe_name while_color mr_b8px">Cameron Williamson</div>
+                            <div class="lienhe_ntheodoi while_color mr_b8px">123 người theo dõi</div>
                             <div class="lienhe_sao flex mr_b16px">
                                 <div class="lienhe_sao1">
                                     <img src="<? echo base_url(); ?>assets/images/img_du_an/ngoisao2.png" alt="">
@@ -1536,14 +1692,14 @@ $dir = "upload/".$y."/".$m."/".$d."";
                             </div>
                             <div class="lienhe_theodoi while_color mr_b40px">Theo dõi</div>
                             <div class="lienhe_sdt flex align_items mr_b16px">
-                                <img src="<? echo base_url(); ?>assets/images/img_du_an/phone_lienhe.svg" alt="">
+                                <img src="<? echo base_url(); ?>assets/images/img_du_an/phone_lienhe.png" alt="">
                                 <div class="lienhe_sdt_text while_color mr_l8px">
-                                    <?= $detail_project['phone'] ?>
+                                    0333777***
                                 </div>
                             </div>
                             <div class="lienhe_chat flex align_items">
                                 <div class="img_icon_24">
-                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/chat_lienhe.svg" alt="">
+                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/chat_lienhe.png" alt="">
                                 </div>
                                 <div class="lienhe_chat_text main_color mr_l8px">
                                     Chat ngay
@@ -1578,13 +1734,13 @@ $dir = "upload/".$y."/".$m."/".$d."";
                                 <div class="lienhe_capcha_text mr_r16px">
                                     Bb74K0
                                 </div>
-                                <img class="img_capcha" src="<? echo base_url(); ?>assets/images/img_du_an/capcha.svg" alt="">
+                                <img class="img_capcha" src="<? echo base_url(); ?>assets/images/img_du_an/capcha.png" alt="">
                             </div>
                         </div>
 
-                        <button type="submit" class="lienhe_button c_pointer">
-							Gửi yêu cầu
-                        </button>
+                        <div class="lienhe_button">
+                            <button class="btn_lienhe" type="submit">Gửi yêu cầu</button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -1601,61 +1757,49 @@ $dir = "upload/".$y."/".$m."/".$d."";
                 </div>
 
                 <div class="body_tindang_khung_img body_tindang_khung_img_fig_768 flex flex_w">
-					<? foreach ($news_project as $val) {
-						$cusy = date('Y', $val['avtDate']);
-						$cusm = date('m', $val['avtDate']);
-						$cusd = date('d', $val['avtDate']);
-						$dirCus = "upload/".$cusy."/".$cusm."/".$cusd;
-						$imgCus = $dirCus."/".$val['user_avt'];
-
-						$valy = date('Y', $val['time_create']);
-						$valm = date('m', $val['time_create']);
-						$vald = date('d', $val['time_create']);
-						$dirVal = "upload/".$valy."/".$valm."/".$vald;
-						$imgVal = $dirVal."/".$val['banner_img'];
-					?>
                     <div class="body_tindang_khung_all mr_r24px mr_b24px">
                         <div class="body_tindang_khung_img1">
                             <div class="body_tindang_img">
-                                <img class="tindang_img" src="<?= $imgVal ?>" alt="">
+                                <img class="tindang_img" src="<? echo base_url(); ?>assets/images/img_du_an/mua_cc_1.png" alt="">
                                 <div class="tindang_view flex">
-                                    <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                    <div class="tindang_view_tex mr_l8px"><?= $val['news_view'] ?></div>
+                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/view.png" alt="">
+                                    <div class="tindang_view_tex mr_l8px">12354</div>
                                 </div>
                                 <div class="tindang_like">
-                                    <img src="<? echo base_url(); ?>assets/images/fi-rr-bookmark.svg" alt="">
+                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
                                 </div>
                             </div>
                             <div class="body_tindang_text">
                                 <div class="body_tindang_text1_a elipsis2 main_color mr_b8px color_text">
-                                    <?= $val['introduce'] ?>
+                                    Đất thật giá thật, diện tích lớn tại Biển Cát Sổ sẵn công
+                                    chứng trong ngày, gần 2 khu công. duy và duy
                                 </div>
                                 <div class="body_tindang_text1 flex mr_b8px">
                                     <div class="show_icon_text_img">
-                                        <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/address_hi.svg"
+                                        <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/address_hi.png"
                                             alt="">
                                     </div>
                                     <div class="body_tindang_text2 color_text">
-                                        <?= $val['addr_detail'] ?>
+                                        Đường Kim Mã, Phường Kim Mã, Quận Ba Đình, Hà Nội
                                     </div>
                                 </div>
                                 <div class="body_tindang_text1 flex">
                                     <div class="body_tindang_text1_sub flex align_items mr_r112px">
                                         <div class="show_icon_text_img">
-                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_home.svg"
+                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_home.png"
                                                 alt="">
                                         </div>
                                         <div class="body_tindang_text2 color_text">
-                                            <?= $val['detail_area'] ?> m2
+                                            200 m2
                                         </div>
                                     </div>
                                     <div class="body_tindang_text1_sub flex align_items">
                                         <div class="show_icon_text_img">
-                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_money.svg"
+                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_money.png"
                                                 alt="">
                                         </div>
                                         <div class="body_tindang_text2 color_money">
-										<?= ($val['total_investment'] < 1000000000)?number_format((float)$val['total_investment']/1000000000, 2, '.', ''):$val['total_investment'] / 1000000000 ?> tỷ
+                                            1.5 tỷ
                                         </div>
                                     </div>
                                 </div>
@@ -1664,14 +1808,10 @@ $dir = "upload/".$y."/".$m."/".$d."";
                         <div class="body_tindang_khung_sup flex align_items justify_content_sb">
                             <div class="body_tindang_khung_icon_them_375_sub flex align_items">
                                 <div class="body_tindang_khung_avatar mr_r8px">
-									<? if (file_exists($imgCus)) { ?>
-                                    <img class="tindang_avatar" src="<?= $imgCus ?>" alt="">
-									<? } else { ?>
-									<img src="/assets/images/default_avt.svg" alt="">
-									<? } ?>
+                                    <img class="tindang_avatar" src="<? echo base_url(); ?>assets/images/img_du_an/user.png" alt="">
                                 </div>
                                 <div class="body_tindang_khung_name color_text">
-                                    <?= ($val['name'] != '')?$val['name']:$val['companyName'] ?>
+                                    Nguyễn Ngọc Tuyết Phương
                                 </div>
                             </div>
                             <div class="body_tindang_khung_icon_them_375 flex align_items">
@@ -1679,12 +1819,354 @@ $dir = "upload/".$y."/".$m."/".$d."";
                                     <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/luu_24_2.png" alt="">
                                 </div>
                                 <div class="body_tindang_khung_icon">
-                                    <img class="tindang_chat_new" src="<? echo base_url(); ?>assets/images/chat_30svg.svg" alt="">
+                                    <img class="tindang_chat_new" src="<? echo base_url(); ?>assets/images/img_du_an/chat_new.png" alt="">
                                 </div>
+                                
                             </div>
                         </div>
                     </div>
-					<? } ?>
+                    <div class="body_tindang_khung_all mr_r24px mr_b24px">
+                        <div class="body_tindang_khung_img1">
+                            <div class="body_tindang_img">
+                                <img class="tindang_img" src="<? echo base_url(); ?>assets/images/img_du_an/mua_cc_1.png" alt="">
+                                <div class="tindang_view flex">
+                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/view.png" alt="">
+                                    <div class="tindang_view_tex mr_l8px">12354</div>
+                                </div>
+                                <div class="tindang_like">
+                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
+                                </div>
+                            </div>
+                            <div class="body_tindang_text">
+                                <div class="body_tindang_text1_a elipsis2 main_color mr_b8px color_text">
+                                    Đất thật giá thật, diện tích lớn tại Biển Cát Sổ sẵn công
+                                    chứng trong ngày, gần 2 khu công. duy và duy
+                                </div>
+                                <div class="body_tindang_text1 flex mr_b8px">
+                                    <div class="show_icon_text_img">
+                                        <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/address_hi.png"
+                                            alt="">
+                                    </div>
+                                    <div class="body_tindang_text2 color_text">
+                                        Đường Kim Mã, Phường Kim Mã, Quận Ba Đình, Hà Nội
+                                    </div>
+                                </div>
+                                <div class="body_tindang_text1 flex">
+                                    <div class="body_tindang_text1_sub flex align_items mr_r112px">
+                                        <div class="show_icon_text_img">
+                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_home.png"
+                                                alt="">
+                                        </div>
+                                        <div class="body_tindang_text2 color_text">
+                                            200 m2
+                                        </div>
+                                    </div>
+                                    <div class="body_tindang_text1_sub flex align_items">
+                                        <div class="show_icon_text_img">
+                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_money.png"
+                                                alt="">
+                                        </div>
+                                        <div class="body_tindang_text2 color_money">
+                                            1.5 tỷ
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body_tindang_khung_sup flex align_items justify_content_sb">
+                            <div class="body_tindang_khung_icon_them_375_sub flex align_items">
+                                <div class="body_tindang_khung_avatar mr_r8px">
+                                    <img class="tindang_avatar" src="<? echo base_url(); ?>assets/images/img_du_an/user.png" alt="">
+                                </div>
+                                <div class="body_tindang_khung_name color_text">
+                                    Nguyễn Ngọc Tuyết Phương
+                                </div>
+                            </div>
+                            <div class="body_tindang_khung_icon_them_375 flex align_items">
+                                <div class="body_tindang_khung_icon_them_375_2">
+                                    <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/luu_24_2.png" alt="">
+                                </div>
+                                <div class="body_tindang_khung_icon">
+                                    <img class="tindang_chat_new" src="<? echo base_url(); ?>assets/images/img_du_an/chat_new.png" alt="">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body_tindang_khung_all mr_r24px mr_b24px">
+                        <div class="body_tindang_khung_img1">
+                            <div class="body_tindang_img">
+                                <img class="tindang_img" src="<? echo base_url(); ?>assets/images/img_du_an/mua_cc_1.png" alt="">
+                                <div class="tindang_view flex">
+                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/view.png" alt="">
+                                    <div class="tindang_view_tex mr_l8px">12354</div>
+                                </div>
+                                <div class="tindang_like">
+                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
+                                </div>
+                            </div>
+                            <div class="body_tindang_text">
+                                <div class="body_tindang_text1_a elipsis2 main_color mr_b8px color_text">
+                                    Đất thật giá thật, diện tích lớn tại Biển Cát Sổ sẵn công
+                                    chứng trong ngày, gần 2 khu công. duy và duy
+                                </div>
+                                <div class="body_tindang_text1 flex mr_b8px">
+                                    <div class="show_icon_text_img">
+                                        <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/address_hi.png"
+                                            alt="">
+                                    </div>
+                                    <div class="body_tindang_text2 color_text">
+                                        Đường Kim Mã, Phường Kim Mã, Quận Ba Đình, Hà Nội
+                                    </div>
+                                </div>
+                                <div class="body_tindang_text1 flex">
+                                    <div class="body_tindang_text1_sub flex align_items mr_r112px">
+                                        <div class="show_icon_text_img">
+                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_home.png"
+                                                alt="">
+                                        </div>
+                                        <div class="body_tindang_text2 color_text">
+                                            200 m2
+                                        </div>
+                                    </div>
+                                    <div class="body_tindang_text1_sub flex align_items">
+                                        <div class="show_icon_text_img">
+                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_money.png"
+                                                alt="">
+                                        </div>
+                                        <div class="body_tindang_text2 color_money">
+                                            1.5 tỷ
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body_tindang_khung_sup flex align_items justify_content_sb">
+                            <div class="body_tindang_khung_icon_them_375_sub flex align_items">
+                                <div class="body_tindang_khung_avatar mr_r8px">
+                                    <img class="tindang_avatar" src="<? echo base_url(); ?>assets/images/img_du_an/user.png" alt="">
+                                </div>
+                                <div class="body_tindang_khung_name color_text">
+                                    Nguyễn Ngọc Tuyết Phương
+                                </div>
+                            </div>
+                            <div class="body_tindang_khung_icon_them_375 flex align_items">
+                                <div class="body_tindang_khung_icon_them_375_2">
+                                    <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/luu_24_2.png" alt="">
+                                </div>
+                                <div class="body_tindang_khung_icon">
+                                    <img class="tindang_chat_new" src="<? echo base_url(); ?>assets/images/img_du_an/chat_new.png" alt="">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body_tindang_khung_all mr_r24px mr_b24px">
+                        <div class="body_tindang_khung_img1">
+                            <div class="body_tindang_img">
+                                <img class="tindang_img" src="<? echo base_url(); ?>assets/images/img_du_an/mua_cc_1.png" alt="">
+                                <div class="tindang_view flex">
+                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/view.png" alt="">
+                                    <div class="tindang_view_tex mr_l8px">12354</div>
+                                </div>
+                                <div class="tindang_like">
+                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
+                                </div>
+                            </div>
+                            <div class="body_tindang_text">
+                                <div class="body_tindang_text1_a elipsis2 main_color mr_b8px color_text">
+                                    Đất thật giá thật, diện tích lớn tại Biển Cát Sổ sẵn công
+                                    chứng trong ngày, gần 2 khu công. duy và duy
+                                </div>
+                                <div class="body_tindang_text1 flex mr_b8px">
+                                    <div class="show_icon_text_img">
+                                        <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/address_hi.png"
+                                            alt="">
+                                    </div>
+                                    <div class="body_tindang_text2 color_text">
+                                        Đường Kim Mã, Phường Kim Mã, Quận Ba Đình, Hà Nội
+                                    </div>
+                                </div>
+                                <div class="body_tindang_text1 flex">
+                                    <div class="body_tindang_text1_sub flex align_items mr_r112px">
+                                        <div class="show_icon_text_img">
+                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_home.png"
+                                                alt="">
+                                        </div>
+                                        <div class="body_tindang_text2 color_text">
+                                            200 m2
+                                        </div>
+                                    </div>
+                                    <div class="body_tindang_text1_sub flex align_items">
+                                        <div class="show_icon_text_img">
+                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_money.png"
+                                                alt="">
+                                        </div>
+                                        <div class="body_tindang_text2 color_money">
+                                            1.5 tỷ
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body_tindang_khung_sup flex align_items justify_content_sb">
+                            <div class="body_tindang_khung_icon_them_375_sub flex align_items">
+                                <div class="body_tindang_khung_avatar mr_r8px">
+                                    <img class="tindang_avatar" src="<? echo base_url(); ?>assets/images/img_du_an/user.png" alt="">
+                                </div>
+                                <div class="body_tindang_khung_name color_text">
+                                    Nguyễn Ngọc Tuyết Phương
+                                </div>
+                            </div>
+                            <div class="body_tindang_khung_icon_them_375 flex align_items">
+                                <div class="body_tindang_khung_icon_them_375_2">
+                                    <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/luu_24_2.png" alt="">
+                                </div>
+                                <div class="body_tindang_khung_icon">
+                                    <img class="tindang_chat_new" src="<? echo base_url(); ?>assets/images/img_du_an/chat_new.png" alt="">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body_tindang_khung_all mr_r24px mr_b24px">
+                        <div class="body_tindang_khung_img1">
+                            <div class="body_tindang_img">
+                                <img class="tindang_img" src="<? echo base_url(); ?>assets/images/img_du_an/mua_cc_1.png" alt="">
+                                <div class="tindang_view flex">
+                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/view.png" alt="">
+                                    <div class="tindang_view_tex mr_l8px">12354</div>
+                                </div>
+                                <div class="tindang_like">
+                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
+                                </div>
+                            </div>
+                            <div class="body_tindang_text">
+                                <div class="body_tindang_text1_a elipsis2 main_color mr_b8px color_text">
+                                    Đất thật giá thật, diện tích lớn tại Biển Cát Sổ sẵn công
+                                    chứng trong ngày, gần 2 khu công. duy và duy
+                                </div>
+                                <div class="body_tindang_text1 flex mr_b8px">
+                                    <div class="show_icon_text_img">
+                                        <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/address_hi.png"
+                                            alt="">
+                                    </div>
+                                    <div class="body_tindang_text2 color_text">
+                                        Đường Kim Mã, Phường Kim Mã, Quận Ba Đình, Hà Nội
+                                    </div>
+                                </div>
+                                <div class="body_tindang_text1 flex">
+                                    <div class="body_tindang_text1_sub flex align_items mr_r112px">
+                                        <div class="show_icon_text_img">
+                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_home.png"
+                                                alt="">
+                                        </div>
+                                        <div class="body_tindang_text2 color_text">
+                                            200 m2
+                                        </div>
+                                    </div>
+                                    <div class="body_tindang_text1_sub flex align_items">
+                                        <div class="show_icon_text_img">
+                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_money.png"
+                                                alt="">
+                                        </div>
+                                        <div class="body_tindang_text2 color_money">
+                                            1.5 tỷ
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body_tindang_khung_sup flex align_items justify_content_sb">
+                            <div class="body_tindang_khung_icon_them_375_sub flex align_items">
+                                <div class="body_tindang_khung_avatar mr_r8px">
+                                    <img class="tindang_avatar" src="<? echo base_url(); ?>assets/images/img_du_an/user.png" alt="">
+                                </div>
+                                <div class="body_tindang_khung_name color_text">
+                                    Nguyễn Ngọc Tuyết Phương
+                                </div>
+                            </div>
+                            <div class="body_tindang_khung_icon_them_375 flex align_items">
+                                <div class="body_tindang_khung_icon_them_375_2">
+                                    <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/luu_24_2.png" alt="">
+                                </div>
+                                <div class="body_tindang_khung_icon">
+                                    <img class="tindang_chat_new" src="<? echo base_url(); ?>assets/images/img_du_an/chat_new.png" alt="">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="body_tindang_khung_all mr_r24px mr_b24px">
+                        <div class="body_tindang_khung_img1">
+                            <div class="body_tindang_img">
+                                <img class="tindang_img" src="<? echo base_url(); ?>assets/images/img_du_an/mua_cc_1.png" alt="">
+                                <div class="tindang_view flex">
+                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/view.png" alt="">
+                                    <div class="tindang_view_tex mr_l8px">12354</div>
+                                </div>
+                                <div class="tindang_like">
+                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
+                                </div>
+                            </div>
+                            <div class="body_tindang_text">
+                                <div class="body_tindang_text1_a elipsis2 main_color mr_b8px color_text">
+                                    Đất thật giá thật, diện tích lớn tại Biển Cát Sổ sẵn công
+                                    chứng trong ngày, gần 2 khu công. duy và duy
+                                </div>
+                                <div class="body_tindang_text1 flex mr_b8px">
+                                    <div class="show_icon_text_img">
+                                        <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/address_hi.png"
+                                            alt="">
+                                    </div>
+                                    <div class="body_tindang_text2 color_text">
+                                        Đường Kim Mã, Phường Kim Mã, Quận Ba Đình, Hà Nội
+                                    </div>
+                                </div>
+                                <div class="body_tindang_text1 flex">
+                                    <div class="body_tindang_text1_sub flex align_items mr_r112px">
+                                        <div class="show_icon_text_img">
+                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_home.png"
+                                                alt="">
+                                        </div>
+                                        <div class="body_tindang_text2 color_text">
+                                            200 m2
+                                        </div>
+                                    </div>
+                                    <div class="body_tindang_text1_sub flex align_items">
+                                        <div class="show_icon_text_img">
+                                            <img class="tindang_img_ic mr_r6px" src="<? echo base_url(); ?>assets/images/img_du_an/icon_money.png"
+                                                alt="">
+                                        </div>
+                                        <div class="body_tindang_text2 color_money">
+                                            1.5 tỷ
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body_tindang_khung_sup flex align_items justify_content_sb">
+                            <div class="body_tindang_khung_icon_them_375_sub flex align_items">
+                                <div class="body_tindang_khung_avatar mr_r8px">
+                                    <img class="tindang_avatar" src="<? echo base_url(); ?>assets/images/img_du_an/user.png" alt="">
+                                </div>
+                                <div class="body_tindang_khung_name color_text">
+                                    Nguyễn Ngọc Tuyết Phương
+                                </div>
+                            </div>
+                            <div class="body_tindang_khung_icon_them_375 flex align_items">
+                                <div class="body_tindang_khung_icon_them_375_2">
+                                    <img class="" src="<? echo base_url(); ?>assets/images/img_du_an/luu_24_2.png" alt="">
+                                </div>
+                                <div class="body_tindang_khung_icon">
+                                    <img class="tindang_chat_new" src="<? echo base_url(); ?>assets/images/img_du_an/chat_new.png" alt="">
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+
                 </div>
 
                 <a href="" class="tindang_xemthem flex align_items mr_t16px">
@@ -1713,7 +2195,7 @@ $dir = "upload/".$y."/".$m."/".$d."";
                         <div class="body_duanlancan_khung_img mr_b16px">
                             <img class="duanlancan_img" src="<? echo base_url(); ?>assets/images/img_du_an/mua_cc_1.png" alt="">
                             <div class="tindang_view flex">
-                                <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
+                                <img src="<? echo base_url(); ?>assets/images/img_du_an/view.png" alt="">
                                 <div class="tindang_view_tex mr_l8px">12354</div>
                             </div>
                             <div class="tindang_like">
@@ -2384,10 +2866,6 @@ function click_matbang(matbang) {
 
 
 <script>
-// $('.chitiet_thugon').click(function() {
-// 	$('.ctda_show').toggleClass('xoay');
-// });
-
 // VỊ TRÍ
 $('.icon_rotate1').click(function() {
     $('.show_bg1').toggleClass('bg_thugon');
