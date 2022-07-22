@@ -40,7 +40,7 @@ $year = date('Y', time());
                                             class="dt_khoi2_noidung_khoi_click  click_toggle1 flex align_item_c jus_sb mr_b4px bg_1024">
                                             <div
                                                 class="dt_khoi2_noidung_khoi_click_text fz16_5 click_muaban_cha color_999">
-                                                Mua bán (<?= $count_all_purchase ?>)
+                                                Mua bán (12)
                                             </div>
                                             <div class="dt_khoi2_noidung_khoi_click_img ic_bottom_1024">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -56,7 +56,7 @@ $year = date('Y', time());
                                         <a href="quan-ly-tin-dang-cho-thue.html"
                                             class="dt_khoi2_noidung_khoi_click  click_toggle2 flex align_item_c jus_sb mr_b4px bg_1024">
                                             <div class="dt_khoi2_noidung_khoi_click_text fz16_5 color_999">Cho thuê
-                                                (<?= $count_all_lease ?>)</div>
+                                                (21)</div>
                                             <div class="dt_khoi2_noidung_khoi_click_img add_stroke2 ic_bottom_1024">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +73,7 @@ $year = date('Y', time());
                                             <a href="quan-ly-tin-dang-du-an.html"
                                                 class="dt_khoi2_noidung_khoi_click_text fz16_5 click_muaban_cha fz14_1024 main_color">Dự
                                                 án
-                                                (<?= $countAllProject ?>)
+                                                (12)
                                             </a>
                                             <div
                                                 class="dt_khoi2_noidung_khoi_click_img add_stroke remove_stroke show_click_con5">
@@ -87,26 +87,26 @@ $year = date('Y', time());
                                         <div class="click_con">
                                             <div class="dt_khoi2_noidung_khoi_click_con c_muaban bg_click click_show_dt mr_l24px mr_b4px"
                                                 onclick="muaban(this)">
-                                                <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Tin đăng (<?= $countAllProject ?>)
+                                                <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Tin đăng (22)
                                                 </div>
                                             </div>
                                             <div class="dt_khoi2_noidung_khoi_click_con c_muaban mr_l24px click_show_lich_dt"
                                                 onclick="muaban(this)">
                                                 <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4 ">Lịch đẩy tin
-                                                    (<?= $countAllProject ?>)
+                                                    (22)
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="click_con5 hidden">
                                             <div class="dt_khoi2_noidung_khoi_click_con c_muaban bg_click click_show_dt mr_l24px mr_b4px"
                                                 onclick="muaban(this)">
-                                                <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Tin đăng (<?= $countAllProject ?>)
+                                                <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4">Tin đăng (22)
                                                 </div>
                                             </div>
                                             <div class="dt_khoi2_noidung_khoi_click_con c_muaban mr_l24px click_show_lich_dt"
                                                 onclick="muaban(this)">
                                                 <div class="dt_khoi2_noidung_khoi_click_text_sub fz16_4 ">Lịch đẩy tin
-                                                    (<?= $countAllProject ?>)
+                                                    (22)
                                                 </div>
                                             </div>
                                         </div>
@@ -116,7 +116,7 @@ $year = date('Y', time());
                                         <a href="quan-ly-tin-dang-thiet-ke.html"
                                             class="dt_khoi2_noidung_khoi_click  click_toggle3 flex align_item_c jus_sb mr_b4px bg_1024">
                                             <div class="dt_khoi2_noidung_khoi_click_text fz16_5 color_999">Thiết kế
-                                                đẹp (<?= $count_all_design ?>)</div>
+                                                đẹp</div>
                                             <div class="dt_khoi2_noidung_khoi_click_img add_stroke3 ic_bottom_1024">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -131,7 +131,7 @@ $year = date('Y', time());
                                         <a href="quan-ly-tin-dang-tin-luu.html"
                                             class="dt_khoi2_noidung_khoi_click  click_toggle4 flex align_item_c jus_sb mr_b4px bg_1024">
                                             <div class="dt_khoi2_noidung_khoi_click_text fz16_5 color_999">Tin đã
-                                                lưu (<?= $count_AllSave ?>)</div>
+                                                lưu (12)</div>
                                             <div class="dt_khoi2_noidung_khoi_click_img add_stroke4 ic_bottom_1024">
                                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                                     xmlns="http://www.w3.org/2000/svg">
@@ -154,29 +154,27 @@ $year = date('Y', time());
                             <div class="dt_khoi2_noidung_right_padding1 mr_b24px">
                                 <div class="noidung_right_khoi flex">
                                     <div class="noidung_right_khoi_search mr_r24px">
-                                        <input type="text" class="input_search" value="<?= isset($_GET['key']) ? $_GET['key'] : "" ?>" placeholder="Nhập ID, tiêu đề tin">
-                                        <input type="hidden" class="search-pr" value="<?= isset($_GET['key']) ? $_GET['key'] : ''; ?>">
+                                        <input type="text" placeholder="Nhập ID, tiêu đề tin">
                                         <div class="abs_search">
                                             <img src="<? echo base_url(); ?>assets/images/img_sdn/search_34.png" alt="">
                                         </div>
                                     </div>
                                     <!-- <div class="fig_man375_sdn1 flex"> -->
                                     <div class="noidung_right_khoi_select1 mr_r24px">
-                                        <select name="" id="select_city" class="select_option js-states form-control">
-                                            <option disabled selected>Chọn thành phố </option>
-                                            <? foreach($listcity as $opt): ?>
-                                            <option <?= (isset($_GET['id_cit']) && $_GET['id_cit'] == $opt['cit_id']) ? "selected" : "" ?> value="<?= $opt['cit_id'] ?>"><?= $opt['cit_name'] ?></option>
-                                            <? endforeach ?>
+                                        <select name="" id="" class="select_option js-states form-control">
+                                            <option value="">Thành Phố</option>
+                                            <option value="">Thành Phố</option>
+                                            <option value="">Thành Phố</option>
                                         </select>
                                     </div>
                                     <div class="noidung_right_khoi_select2">
-                                        <select name="" id="select_stt" class="select_option js-states form-control">
-                                            <option disabled selected>Trạng thái</option>
-                                            <option <?= (isset($_GET['stt']) && $_GET['stt'] == 0) ? "selected" : "" ?> value="0">Tất cả</option>
-                                            <option <?= (isset($_GET['stt']) && $_GET['stt'] == 2) ? "selected" : "" ?> value="2">Tin đã đăng</option>
-                                            <option <?= (isset($_GET['stt']) && $_GET['stt'] == 1) ? "selected" : "" ?> value="1">Tin nháp</option>
-                                            <option <?= (isset($_GET['stt']) && $_GET['stt'] == 3) ? "selected" : "" ?> value="3">Tin chờ</option>
-                                            <option <?= (isset($_GET['stt']) && $_GET['stt'] == 4) ? "selected" : "" ?> value="4">Tin hết hạn</option>
+                                        <select name="" id="" class="select_option js-states form-control">
+                                            <option value="">Trạng thái</option>
+                                            <option value="">Tất cả</option>
+                                            <option value="">Tin đã đăng</option>
+                                            <option value="">Tin nháp</option>
+                                            <option value="">Tin chờ</option>
+                                            <option value="">Tin hết hạn</option>
                                         </select>
                                     </div>
                                     <!-- </div> -->
@@ -217,48 +215,43 @@ $year = date('Y', time());
                                     <div class="dt_khoi2_noidung_right_padding2_text2 main_clolor">Thống kê</div>
                                     <div class="dt_khoi2_noidung_right_padding2_text3 main_clolor">Trạng thái</div>
                                 </div>
-                                <? 
-                                    foreach($newsProject as $rows): 
-                                    $m = date('m',$rows['time_create']);
-                                    $d = date('d',$rows['time_create']);
-                                    $y = date('Y',$rows['time_create']);;
-                                ?>
+
                                 <div class="dt_khoi2_noidung_right_padding3">
                                     <div class="dt_khoi2_noidung_right_padding3_sub flex align_item_c jus_sb">
                                         <div class="them_div_de_fig_375">
                                             <div class="them_div_4-6_1 flex align_item_c">
                                                 <!-- khối ảnh, -->
                                                 <div class="dt_khoi2_noidung_right_padding3_sub_2 mr_r16px">
-                                                    <div class="noidung_right_padding3_sub_img noidung_right_padding3_sub_img_da mr_b8px">
-                                                        <? if($rows['banner_img'] != ""): ?>
-                                                            <img src="<? echo base_url(); ?>upload/<?= $y ?>/<?= $m ?>/<?= $d ?>/<?= $rows['banner_img'] ?>" alt="">
-                                                            <? else: ?>
-                                                            <img src="<? echo base_url(); ?>assets/images/img_sdn/bg_none.png" alt="">
-                                                        <? endif ?>
-                                                        <? if($rows['stt_news'] == 3): ?>
-                                                        <div class="ab_dangngay fz16_4 currsor_p">
-                                                            Đăng ngay
-                                                        </div>
-                                                        <? endif ?>
+                                                    <div
+                                                        class="noidung_right_padding3_sub_img noidung_right_padding3_sub_img_da mr_b8px">
+                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/bg_none.png" alt="">
                                                     </div>
-                                                    <? if($rows['stt_news'] == 1): ?>
-                                                        <div class="noidung_right_padding3_div3_button main_bg fz_12_4 currsor_p">Tin nháp</div>
-                                                    <? elseif($rows['stt_news'] == 2): ?>
-                                                        <? if($rows['time_expired'] < time()): ?>
-                                                            <div class="noidung_right_padding3_div3_button bg_errror fz_12_4 currsor_p">Tin hết hạn</div>
-                                                        <? else: ?>
-                                                            <div class="noidung_right_padding3_div3_button bg_success fz_12_4 currsor_p"> Còn hạn</div>
-                                                        <? endif ?>
-                                                    <? elseif($rows['stt_news'] == 3): ?>
-                                                        <div class="noidung_right_padding3_div3_button bg_money fz_12_4 currsor_p">Tin chờ</div>
-                                                    <? endif ?>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button bg_success fz_12_4 currsor_p">
+                                                        Còn hạn</div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button main_bg fz_12_4 currsor_p hidden">
+                                                        Tin nháp</div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button bg_errror fz_12_4 currsor_p hidden">
+                                                        Tin hết hạn</div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button bg_money fz_12_4 currsor_p hidden">
+                                                        Tin chờ
+                                                    </div>
                                                 </div>
                                                 <div class="sua_khoidiv_4_6_fig_7_6">
-                                                    <div class="noidung_right_padding3_div1_hd fz17_5 mr_b8px elipsis1 main_color"><?= $rows['project_name'] ?></div>
+                                                    <div
+                                                        class="noidung_right_padding3_div1_hd fz17_5 mr_b8px elipsis1 main_color">
+                                                        Legacy Central Quảng Ninh
+                                                    </div>
                                                     <div class="sua_khoidiv_4_6 flex jus_sb">
                                                         <!-- Khối nội dung -->
                                                         <div class="noidung_right_padding3_div1">
-                                                            <div class="noidung_right_padding3_div1_tex_id main_clolor mr_b8px">ID: <?= $rows['id_news'] ?></div>
+                                                            <div
+                                                                class="noidung_right_padding3_div1_tex_id main_clolor mr_b8px">
+                                                                ID: 0123456
+                                                            </div>
                                                             <div
                                                                 class="noidung_right_padding3_div1_tex_address flex mr_b8px">
                                                                 <div
@@ -267,24 +260,7 @@ $year = date('Y', time());
                                                                         alt="">
                                                                 </div>
                                                                 <div class="noidung_right_padding3_div1_tex_diachi">
-                                                                    <?php
-                                                                        $CI = &get_instance();
-                                                                        $CI->load->model('M_ManageNews');
-                                                                        if($rows['select_city'] != 0)
-                                                                        {
-                                                                            echo $this->M_ManageNews->getCity($rows['select_city']);  
-                                                                        }
-                                                                        if($rows['districts'] != 0)
-                                                                        {
-                                                                            echo ', '.$this->M_ManageNews->getDistricts($rows['districts']);
-                                                                        }
-                                                                        if($rows['wards'] != 0)
-                                                                        {
-                                                                            echo ', '.$this->M_ManageNews->getWard($rows['wards']);
-                                                                        }
-                                                                        
-                                                                    ?>
-                                                                </div>
+                                                                    Phương Đông, Uông Bí, Quảng Ninh</div>
                                                             </div>
                                                             <div
                                                                 class="noidung_right_padding3_div1_linktinh fig_margin_375 flex mr_b8px">
@@ -293,27 +269,31 @@ $year = date('Y', time());
                                                                         class="noidung_right_padding3_div1_tex_address_img">
                                                                         <img src="<? echo base_url(); ?>assets/images/img_du_an/bag.png" alt="">
                                                                     </div>
-                                                                    <div class="noidung_right_padding3_div1_tex_diachi"><?= $rows['cdt_com_name'] ?></div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        Công ty CP Xây dựng WHAT
+                                                                    </div>
                                                                 </div>
                                                                 <div class="noidung_right_padding3_div1_linktinh1 flex">
-                                                                    <div class="noidung_right_padding3_div1_tex_address_img">
-                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/ic_dang_xd.png" alt="">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/ic_dang_xd.png"
+                                                                            alt="">
                                                                     </div>
                                                                     <div class="noidung_right_padding3_div1_tex_diachi">
-                                                                        <?= ($rows['time_done'] > time()) ? "Đang xây dựng" : "Đã hoàn thành" ?>
+                                                                        Đang xây dựng
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                             <div
                                                                 class="noidung_right_padding3_div1_linktinh fig_margin_375 flex">
                                                                 <div class="noidung_right_padding3_div1_linktinh1 flex">
-                                                                    <div class="noidung_right_padding3_div1_tex_address_img">
-                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_home.png" alt="">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_home.png"
+                                                                            alt="">
                                                                     </div>
                                                                     <div class="noidung_right_padding3_div1_tex_diachi">
-                                                                        <?
-                                                                            echo fomatNumber($rows['detail_area']).' m2';
-                                                                        ?>
+                                                                        2.000 m2
                                                                     </div>
                                                                 </div>
                                                                 <div class="noidung_right_padding3_div1_linktinh1 flex">
@@ -323,52 +303,49 @@ $year = date('Y', time());
                                                                             alt="">
                                                                     </div>
                                                                     <div class="noidung_right_padding3_div1_tex_diachi">
-                                                                        <?
-                                                                            echo fomatMoney($rows['total_investment']).' tỷ';
-                                                                        ?>
+                                                                        100 -
+                                                                        150 tỷ
                                                                     </div>
                                                                 </div>
                                                                 <div class="noidung_right_padding3_div1_linktinh1 flex">
                                                                     <div
                                                                         class="noidung_right_padding3_div1_tex_address_img">
-                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vuong.png" alt="">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vuong.png"
+                                                                            alt="">
                                                                     </div>
                                                                     <div class="noidung_right_padding3_div1_tex_diachi">
-                                                                        <?
-                                                                            $dv = " triệu/m2";
-                                                                            $ketqua = $rows['total_investment'] / $rows['detail_area'];
-                                                                            if ($ketqua < 1000000000) {
-                                                                                $kq = $ketqua / 1000000;
-                                                                            }
-                                                                            echo $kq.$dv;
-                                                                        ?>
+                                                                        1.2 - 20
+                                                                        triệu/m2
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <!-- khối ngày tạo,  -->
                                                         <div class="noidung_right_padding3_div3">
-                                                                <p class="muaban_ngaytao nt">Ngày tạo: <?= date('d/m/Y',$rows['time_create']) ?></p>
-                                                                <p class="muaban_ngaytao nd">Ngày đăng: <?= date('d/m/Y',$rows['post_time']) ?></p>
+                                                            <p class="muaban_ngaytao nt">Ngày tạo: 20/12/2022</p>
+                                                            <p class="muaban_ngaytao nd">Ngày đăng: 20/12/2022</p>
                                                         </div>
                                                         <div class="noidung_right_padding3_div2">
                                                             <div class="noidung_right_padding3_div2_khung flex mr_b8px">
                                                                 <div class="noidung_right_padding3_div2_khung_img">
                                                                     <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_like.png" alt="">
                                                                 </div>
-                                                                <div class="noidung_right_padding3_div2_khung_tex"><?= $count_save_project ?></div>
+                                                                <div class="noidung_right_padding3_div2_khung_tex">
+                                                                    1235</div>
                                                             </div>
                                                             <div class="noidung_right_padding3_div2_khung flex mr_b8px">
                                                                 <div class="noidung_right_padding3_div2_khung_img">
                                                                     <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_view.png" alt="">
                                                                 </div>
-                                                                <div class="noidung_right_padding3_div2_khung_tex"><?= $rows['news_view'] ?></div>
+                                                                <div class="noidung_right_padding3_div2_khung_tex">
+                                                                    1235</div>
                                                             </div>
                                                             <div class="noidung_right_padding3_div2_khung flex">
                                                                 <div class="noidung_right_padding3_div2_khung_img">
                                                                     <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_chat.png" alt="">
                                                                 </div>
-                                                                <div class="noidung_right_padding3_div2_khung_tex"><?= $rows['comment'] ?></div>
+                                                                <div class="noidung_right_padding3_div2_khung_tex">
+                                                                    1235</div>
                                                             </div>
                                                         </div>
 
@@ -406,19 +383,21 @@ $year = date('Y', time());
                                                                     <div class="popup_muaban_padding_div1_text">Ghim
                                                                         tin</div>
                                                                 </div>
-                                                                <div onclick="location.href='cap-nhat-tin-dang-du-an-<?= $rows['id_news'] ?>.html'" class="popup_muaban_padding_div1 flex">
+                                                                <div class="popup_muaban_padding_div1 flex">
                                                                     <div class="popup_muaban_padding_div1_img">
                                                                         <img src="<? echo base_url(); ?>assets/images/img_sdn/chinhsua.png"
                                                                             alt="">
                                                                     </div>
-                                                                    <div  class="popup_muaban_padding_div1_text">
+                                                                    <div class="popup_muaban_padding_div1_text">
                                                                         Chỉnh sửa</div>
                                                                 </div>
-                                                                <div data-id="<?= $rows['id_news'] ?>" class="btn_delete_news popup_muaban_padding_div1 flex show_popup_xoa">
+                                                                <div
+                                                                    class="popup_muaban_padding_div1 flex show_popup_xoa">
                                                                     <div class="popup_muaban_padding_div1_img">
                                                                         <img src="<? echo base_url(); ?>assets/images/img_sdn/xoa.png" alt="">
                                                                     </div>
-                                                                    <div class="popup_muaban_padding_div1_text">Xóa</div>
+                                                                    <div class="popup_muaban_padding_div1_text">Xóa
+                                                                    </div>
                                                                 </div>
 
                                                             </div>
@@ -478,8 +457,752 @@ $year = date('Y', time());
                                     </div>
 
                                 </div>
-                                <? endforeach ?>
-                                <? print_r($pagination) ?>
+                                <div class="dt_khoi2_noidung_right_padding3">
+                                    <div class="dt_khoi2_noidung_right_padding3_sub flex align_item_c jus_sb">
+                                        <div class="them_div_de_fig_375">
+                                            <div class="them_div_4-6_1 flex align_item_c">
+                                                <!-- khối ảnh, -->
+                                                <div class="dt_khoi2_noidung_right_padding3_sub_2 mr_r16px">
+                                                    <div
+                                                        class="noidung_right_padding3_sub_img noidung_right_padding3_sub_img_da mr_b8px">
+                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/bg_none.png" alt="">
+                                                    </div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button bg_success fz_12_4 currsor_p hidden">
+                                                        Còn hạn</div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button main_bg fz_12_4 currsor_p">
+                                                        Tin nháp</div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button bg_errror fz_12_4 currsor_p hidden">
+                                                        Tin hết hạn</div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button bg_money fz_12_4 currsor_p hidden">
+                                                        Tin chờ
+                                                    </div>
+                                                </div>
+                                                <div class="sua_khoidiv_4_6_fig_7_6">
+                                                    <div
+                                                        class="noidung_right_padding3_div1_hd fz17_5 mr_b8px elipsis1 main_color">
+                                                        Legacy Central Quảng Ninh
+                                                    </div>
+                                                    <div class="sua_khoidiv_4_6 flex jus_sb">
+                                                        <!-- Khối nội dung -->
+                                                        <div class="noidung_right_padding3_div1">
+                                                            <div
+                                                                class="noidung_right_padding3_div1_tex_id main_clolor mr_b8px">
+                                                                ID: 0123456
+                                                            </div>
+                                                            <div
+                                                                class="noidung_right_padding3_div1_tex_address flex mr_b8px">
+                                                                <div
+                                                                    class="noidung_right_padding3_div1_tex_address_img">
+                                                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/address_hi.png"
+                                                                        alt="">
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                    Phương Đông, Uông Bí, Quảng Ninh</div>
+                                                            </div>
+                                                            <div
+                                                                class="noidung_right_padding3_div1_linktinh fig_margin_375 flex mr_b8px">
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/bag.png" alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        Công ty CP Xây dựng WHAT
+                                                                    </div>
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/ic_dang_xd.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        Đang xây dựng
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="noidung_right_padding3_div1_linktinh fig_margin_375 flex">
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_home.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        2.000 m2
+                                                                    </div>
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_money.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        100 -
+                                                                        150 tỷ
+                                                                    </div>
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vuong.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        1.2 - 20
+                                                                        triệu/m2
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- khối ngày tạo,  -->
+                                                        <div class="noidung_right_padding3_div3">
+                                                            <p class="muaban_ngaytao nt">Ngày tạo: 20/12/2022</p>
+                                                            <p class="muaban_ngaytao nd">Ngày đăng: 20/12/2022</p>
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div2">
+                                                            <div class="noidung_right_padding3_div2_khung flex mr_b8px">
+                                                                <div class="noidung_right_padding3_div2_khung_img">
+                                                                    <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_like.png" alt="">
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div2_khung_tex">
+                                                                    1235</div>
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung flex mr_b8px">
+                                                                <div class="noidung_right_padding3_div2_khung_img">
+                                                                    <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_view.png" alt="">
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div2_khung_tex">
+                                                                    1235</div>
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung flex">
+                                                                <div class="noidung_right_padding3_div2_khung_img">
+                                                                    <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_chat.png" alt="">
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div2_khung_tex">
+                                                                    1235</div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="border_bottom_1024"></div>
+
+
+                                                        <div class="abs_3cham show_popup_3cham currsor_p">
+                                                            <img src="<? echo base_url(); ?>assets/images/img_sdn/3_cham.png" alt="">
+                                                        </div>
+                                                        <div class="popup_muaban hidden">
+                                                            <div class="popup_muaban_padding currsor_p">
+                                                                <div class="popup_muaban_padding_div1 flex">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/xemchitiet.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">Xem
+                                                                        chi tiết tin
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="popup_muaban_padding_div1 flex click_day_tin">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/arrow-up.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">Đẩy
+                                                                        tin</div>
+                                                                </div>
+                                                                <div
+                                                                    class="popup_muaban_padding_div1 flex show_popup_gimtin">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/ghim.png" alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">Ghim
+                                                                        tin</div>
+                                                                </div>
+                                                                <div class="popup_muaban_padding_div1 flex">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/chinhsua.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">
+                                                                        Chỉnh sửa</div>
+                                                                </div>
+                                                                <div
+                                                                    class="popup_muaban_padding_div1 flex show_popup_xoa">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/xoa.png" alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">Xóa
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="them_div_de_fig_375_1">
+                                                <div class="them_div_de_fig_375_1_suv">
+                                                    <div class="them_div_de_fig_suv flex align_item_c">
+                                                        <div class="noidung_right_padding3_div1_tex_address_img">
+                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/ic_dang_xd.png"alt="">
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div1_tex_diachi">Đang xây dựng</div>
+                                                    </div>
+                                                    <div class="muaban_ngaytao nt">Ngày tạo: 20/12/2022</div>
+                                                    <div class="them_div_de_fig_suv flex align_item_c">
+                                                        <div class="noidung_right_padding3_div1_tex_address_img">
+                                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vuong.png" alt="">
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div1_tex_diachi">1.2 - 20
+                                                            triệu/m2
+                                                        </div>
+                                                    </div>
+                                                    <div class="muaban_ngaytao nd">Ngày đăng: 20/12/2022</div>
+                                                </div>
+                                                <div class="border_bottom_375"></div>
+                                                <div class="them_div_de_fig_375_2_suv">
+                                                    <div class="them_div_de_fig_375_2_sub">
+                                                        <div class="noidung_right_padding3_div2_khung flex mr_b8px">
+                                                            <div class="noidung_right_padding3_div2_khung_img">
+                                                                <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_view.png" alt="">
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung_tex">1235
+                                                            </div>
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div2_khung flex mr_b8px">
+                                                            <div class="noidung_right_padding3_div2_khung_img">
+                                                                <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_like.png" alt="">
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung_tex">
+                                                                1235</div>
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div2_khung flex">
+                                                            <div class="noidung_right_padding3_div2_khung_img">
+                                                                <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_chat.png" alt="">
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung_tex">
+                                                                1235</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="dt_khoi2_noidung_right_padding3">
+                                    <div class="dt_khoi2_noidung_right_padding3_sub flex align_item_c jus_sb">
+                                        <div class="them_div_de_fig_375">
+                                            <div class="them_div_4-6_1 flex align_item_c">
+                                                <!-- khối ảnh, -->
+                                                <div class="dt_khoi2_noidung_right_padding3_sub_2 mr_r16px">
+                                                    <div
+                                                        class="noidung_right_padding3_sub_img noidung_right_padding3_sub_img_da mr_b8px">
+                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/bg_none.png" alt="">
+                                                    </div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button bg_success fz_12_4 currsor_p hidden">
+                                                        Còn hạn</div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button main_bg fz_12_4 currsor_p hidden">
+                                                        Tin nháp</div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button bg_errror fz_12_4 currsor_p">
+                                                        Tin hết hạn</div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button bg_money fz_12_4 currsor_p hidden">
+                                                        Tin chờ
+                                                    </div>
+                                                </div>
+                                                <div class="sua_khoidiv_4_6_fig_7_6">
+                                                    <div
+                                                        class="noidung_right_padding3_div1_hd fz17_5 mr_b8px elipsis1 main_color">
+                                                        Legacy Central Quảng Ninh
+                                                    </div>
+                                                    <div class="sua_khoidiv_4_6 flex jus_sb">
+                                                        <!-- Khối nội dung -->
+                                                        <div class="noidung_right_padding3_div1">
+                                                            <div
+                                                                class="noidung_right_padding3_div1_tex_id main_clolor mr_b8px">
+                                                                ID: 0123456
+                                                            </div>
+                                                            <div
+                                                                class="noidung_right_padding3_div1_tex_address flex mr_b8px">
+                                                                <div
+                                                                    class="noidung_right_padding3_div1_tex_address_img">
+                                                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/address_hi.png"
+                                                                        alt="">
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                    Phương Đông, Uông Bí, Quảng Ninh</div>
+                                                            </div>
+                                                            <div
+                                                                class="noidung_right_padding3_div1_linktinh fig_margin_375 flex mr_b8px">
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/bag.png" alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        Công ty CP Xây dựng WHAT
+                                                                    </div>
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/ic_dang_xd.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        Đang xây dựng
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="noidung_right_padding3_div1_linktinh fig_margin_375 flex">
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_home.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        2.000 m2
+                                                                    </div>
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_money.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        100 -
+                                                                        150 tỷ
+                                                                    </div>
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vuong.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        1.2 - 20
+                                                                        triệu/m2
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- khối ngày tạo,  -->
+                                                        <div class="noidung_right_padding3_div3">
+                                                            <p class="muaban_ngaytao nt">Ngày tạo: 20/12/2022</p>
+                                                            <p class="muaban_ngaytao nd">Ngày đăng: 20/12/2022</p>
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div2">
+                                                            <div class="noidung_right_padding3_div2_khung flex mr_b8px">
+                                                                <div class="noidung_right_padding3_div2_khung_img">
+                                                                    <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_like.png" alt="">
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div2_khung_tex">
+                                                                    1235</div>
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung flex mr_b8px">
+                                                                <div class="noidung_right_padding3_div2_khung_img">
+                                                                    <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_view.png" alt="">
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div2_khung_tex">
+                                                                    1235</div>
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung flex">
+                                                                <div class="noidung_right_padding3_div2_khung_img">
+                                                                    <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_chat.png" alt="">
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div2_khung_tex">
+                                                                    1235</div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="border_bottom_1024"></div>
+
+
+                                                        <div class="abs_3cham show_popup_3cham currsor_p">
+                                                            <img src="<? echo base_url(); ?>assets/images/img_sdn/3_cham.png" alt="">
+                                                        </div>
+                                                        <div class="popup_muaban hidden">
+                                                            <div class="popup_muaban_padding currsor_p">
+                                                                <div class="popup_muaban_padding_div1 flex">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/xemchitiet.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">Xem
+                                                                        chi tiết tin
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="popup_muaban_padding_div1 flex click_day_tin">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/arrow-up.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">Đẩy
+                                                                        tin</div>
+                                                                </div>
+                                                                <div
+                                                                    class="popup_muaban_padding_div1 flex show_popup_gimtin">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/ghim.png" alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">Ghim
+                                                                        tin</div>
+                                                                </div>
+                                                                <div class="popup_muaban_padding_div1 flex">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/chinhsua.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">
+                                                                        Chỉnh sửa</div>
+                                                                </div>
+                                                                <div
+                                                                    class="popup_muaban_padding_div1 flex show_popup_xoa">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/xoa.png" alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">Xóa
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="them_div_de_fig_375_1">
+                                                <div class="them_div_de_fig_375_1_suv">
+                                                    <div class="them_div_de_fig_suv flex align_item_c">
+                                                        <div class="noidung_right_padding3_div1_tex_address_img">
+                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/ic_dang_xd.png"alt="">
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div1_tex_diachi">Đang xây dựng</div>
+                                                    </div>
+                                                    <div class="muaban_ngaytao nt">Ngày tạo: 20/12/2022</div>
+                                                    <div class="them_div_de_fig_suv flex align_item_c">
+                                                        <div class="noidung_right_padding3_div1_tex_address_img">
+                                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vuong.png" alt="">
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div1_tex_diachi">1.2 - 20
+                                                            triệu/m2
+                                                        </div>
+                                                    </div>
+                                                    <div class="muaban_ngaytao nd">Ngày đăng: 20/12/2022</div>
+                                                </div>
+                                                <div class="border_bottom_375"></div>
+                                                <div class="them_div_de_fig_375_2_suv">
+                                                    <div class="them_div_de_fig_375_2_sub">
+                                                        <div class="noidung_right_padding3_div2_khung flex mr_b8px">
+                                                            <div class="noidung_right_padding3_div2_khung_img">
+                                                                <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_view.png" alt="">
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung_tex">1235
+                                                            </div>
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div2_khung flex mr_b8px">
+                                                            <div class="noidung_right_padding3_div2_khung_img">
+                                                                <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_like.png" alt="">
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung_tex">
+                                                                1235</div>
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div2_khung flex">
+                                                            <div class="noidung_right_padding3_div2_khung_img">
+                                                                <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_chat.png" alt="">
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung_tex">
+                                                                1235</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="dt_khoi2_noidung_right_padding3">
+                                    <div class="dt_khoi2_noidung_right_padding3_sub flex align_item_c jus_sb">
+                                        <div class="them_div_de_fig_375">
+                                            <div class="them_div_4-6_1 flex align_item_c">
+                                                <!-- khối ảnh, -->
+                                                <div class="dt_khoi2_noidung_right_padding3_sub_2 mr_r16px">
+                                                    <div
+                                                        class="noidung_right_padding3_sub_img noidung_right_padding3_sub_img_da mr_b8px">
+                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/bg_none.png" alt="">
+                                                        <div class="ab_dangngay fz16_4 currsor_p">
+                                                            Đăng ngay
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button bg_success fz_12_4 currsor_p hidden">
+                                                        Còn hạn</div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button main_bg fz_12_4 currsor_p hidden">
+                                                        Tin nháp</div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button bg_errror fz_12_4 currsor_p hidden">
+                                                        Tin hết hạn</div>
+                                                    <div
+                                                        class="noidung_right_padding3_div3_button bg_money fz_12_4 currsor_p">
+                                                        Tin chờ
+                                                    </div>
+                                                </div>
+                                                <div class="sua_khoidiv_4_6_fig_7_6">
+                                                    <div
+                                                        class="noidung_right_padding3_div1_hd fz17_5 mr_b8px elipsis1 main_color">
+                                                        Legacy Central Quảng Ninh
+                                                    </div>
+                                                    <div class="sua_khoidiv_4_6 flex jus_sb">
+                                                        <!-- Khối nội dung -->
+                                                        <div class="noidung_right_padding3_div1">
+                                                            <div
+                                                                class="noidung_right_padding3_div1_tex_id main_clolor mr_b8px">
+                                                                ID: 0123456
+                                                            </div>
+                                                            <div
+                                                                class="noidung_right_padding3_div1_tex_address flex mr_b8px">
+                                                                <div
+                                                                    class="noidung_right_padding3_div1_tex_address_img">
+                                                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/address_hi.png"
+                                                                        alt="">
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                    Phương Đông, Uông Bí, Quảng Ninh</div>
+                                                            </div>
+                                                            <div
+                                                                class="noidung_right_padding3_div1_linktinh fig_margin_375 flex mr_b8px">
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/bag.png" alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        Công ty CP Xây dựng WHAT
+                                                                    </div>
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/ic_dang_xd.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        Đang xây dựng
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div
+                                                                class="noidung_right_padding3_div1_linktinh fig_margin_375 flex">
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_home.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        2.000 m2
+                                                                    </div>
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_money.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        100 -
+                                                                        150 tỷ
+                                                                    </div>
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div1_linktinh1 flex">
+                                                                    <div
+                                                                        class="noidung_right_padding3_div1_tex_address_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vuong.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="noidung_right_padding3_div1_tex_diachi">
+                                                                        1.2 - 20
+                                                                        triệu/m2
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- khối ngày tạo,  -->
+                                                        <div class="noidung_right_padding3_div3">
+                                                            <p class="muaban_ngaytao nt">Ngày tạo: 20/12/2022</p>
+                                                            <p class="muaban_ngaytao nd">Ngày đăng: 20/12/2022</p>
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div2">
+                                                            <div class="noidung_right_padding3_div2_khung flex mr_b8px">
+                                                                <div class="noidung_right_padding3_div2_khung_img">
+                                                                    <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_like.png" alt="">
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div2_khung_tex">
+                                                                    1235</div>
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung flex mr_b8px">
+                                                                <div class="noidung_right_padding3_div2_khung_img">
+                                                                    <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_view.png" alt="">
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div2_khung_tex">
+                                                                    1235</div>
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung flex">
+                                                                <div class="noidung_right_padding3_div2_khung_img">
+                                                                    <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_chat.png" alt="">
+                                                                </div>
+                                                                <div class="noidung_right_padding3_div2_khung_tex">
+                                                                    1235</div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="border_bottom_1024"></div>
+
+
+                                                        <div class="abs_3cham show_popup_3cham currsor_p">
+                                                            <img src="<? echo base_url(); ?>assets/images/img_sdn/3_cham.png" alt="">
+                                                        </div>
+                                                        <div class="popup_muaban hidden">
+                                                            <div class="popup_muaban_padding currsor_p">
+                                                                <div class="popup_muaban_padding_div1 flex">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/xemchitiet.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">Xem
+                                                                        chi tiết tin
+                                                                    </div>
+                                                                </div>
+                                                                <div
+                                                                    class="popup_muaban_padding_div1 flex click_day_tin">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/arrow-up.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">Đẩy
+                                                                        tin</div>
+                                                                </div>
+                                                                <div
+                                                                    class="popup_muaban_padding_div1 flex show_popup_gimtin">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/ghim.png" alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">Ghim
+                                                                        tin</div>
+                                                                </div>
+                                                                <div class="popup_muaban_padding_div1 flex">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/chinhsua.png"
+                                                                            alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">
+                                                                        Chỉnh sửa</div>
+                                                                </div>
+                                                                <div
+                                                                    class="popup_muaban_padding_div1 flex show_popup_xoa">
+                                                                    <div class="popup_muaban_padding_div1_img">
+                                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/xoa.png" alt="">
+                                                                    </div>
+                                                                    <div class="popup_muaban_padding_div1_text">Xóa
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="them_div_de_fig_375_1">
+                                                <div class="them_div_de_fig_375_1_suv">
+                                                    <div class="them_div_de_fig_suv flex align_item_c">
+                                                        <div class="noidung_right_padding3_div1_tex_address_img">
+                                                        <img src="<? echo base_url(); ?>assets/images/img_sdn/ic_dang_xd.png"alt="">
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div1_tex_diachi">Đang xây dựng</div>
+                                                    </div>
+                                                    <div class="muaban_ngaytao nt">Ngày tạo: 20/12/2022</div>
+                                                    <div class="them_div_de_fig_suv flex align_item_c">
+                                                        <div class="noidung_right_padding3_div1_tex_address_img">
+                                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/icon_vuong.png" alt="">
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div1_tex_diachi">1.2 - 20
+                                                            triệu/m2
+                                                        </div>
+                                                    </div>
+                                                    <div class="muaban_ngaytao nd">Ngày đăng: 20/12/2022</div>
+                                                </div>
+                                                <div class="border_bottom_375"></div>
+                                                <div class="them_div_de_fig_375_2_suv">
+                                                    <div class="them_div_de_fig_375_2_sub">
+                                                        <div class="noidung_right_padding3_div2_khung flex mr_b8px">
+                                                            <div class="noidung_right_padding3_div2_khung_img">
+                                                                <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_view.png" alt="">
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung_tex">1235
+                                                            </div>
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div2_khung flex mr_b8px">
+                                                            <div class="noidung_right_padding3_div2_khung_img">
+                                                                <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_like.png" alt="">
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung_tex">
+                                                                1235</div>
+                                                        </div>
+                                                        <div class="noidung_right_padding3_div2_khung flex">
+                                                            <div class="noidung_right_padding3_div2_khung_img">
+                                                                <img src="<? echo base_url(); ?>assets/images/img_sdn/icon_chat.png" alt="">
+                                                            </div>
+                                                            <div class="noidung_right_padding3_div2_khung_tex">
+                                                                1235</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+
+
+                                <div class="body_phantrang padding_unset mr_t32px">
+                                    <div class="body_phantrang_img flex juss_tify_end">
+                                        <div class="body_phantrang_img_left mr_r16px">
+                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/phantrang_left.png" alt="">
+                                        </div>
+                                        <div class="body_phantrang_number flex">
+                                            <div class="phantrang_number mr_r8px main_bg while_color">1</div>
+                                            <div class="phantrang_number mr_r8px">2</div>
+                                            <div class="phantrang_number mr_r8px">3</div>
+                                            <div class="phantrang_number mr_r8px">4</div>
+                                        </div>
+                                        <div class="body_phantrang_img_left mr_l16px">
+                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/phantrang_right.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!-- -------------------- -->
 
@@ -2877,23 +3600,7 @@ $year = date('Y', time());
             </div>
         </div>
     </div>
-    <!-- POPUP XÓA -->
-    <div class="popup_xoa hidden">
-        <div class="popup_xoa_overlay currsor_p back"></div>
-        <div class="popup_xoa_padding">
-            <div class="img_delete">
-                <img src="<? echo base_url(); ?>assets/images/img_sdn/delete.png" alt="">
-            </div>
-            <div class="popup_xoa_tex">
-                Bạn chắc chắn muốn xóa tin này?
-            </div>
-            <div class="popup_xoa_btn">
-                <div class="popup_xoa_btn1 currsor_p">Đồng ý</div>
-                <div class="popup_xoa_btn2 currsor_p back">Quay lại</div>
-            </div>
-        </div>
-    </div>
-    <!----------------------------------->
+
 
 
 </body>
@@ -3105,78 +3812,6 @@ $(".select_option").select2({
 
 $('.show_click_con5').click(function() {
     $('.click_con5').toggleClass('hidden');
-})
-
-
-//---------------------search
-
-$("#select_city").change(function(){
-    search();
-})
-$("#select_stt").change(function(){
-    search();
-})
-$(".input_search").keypress(function(e){
-    if(e.which == 13) {
-        search();
-    }
-})
-$(".abs_search").click(function(){
-    search();
-})
-
-function search()
-{
-    var link = "quan-ly-tin-dang-du-an.html";
-    var id_cit = $("#select_city").val();
-    var keyword= $(".input_search").val();
-    link += "?key=" + keyword;
-    if(id_cit != null)
-    {
-        link += "&id_cit=" + id_cit;
-    }
-    var id_stt = $("#select_stt").val();
-    if(id_stt != null)
-    {
-        link += "&stt=" + id_stt;
-    }
-    location.href= link;
-}
-
-//-------------------------
-$(".page-link").each(function() {
-    var stt = $("#select_stt").val();
-    var id_cit = $("#select_city").val();
-    var keyword = $('.search-pr').val();
-        if (keyword !== '' || id_cit != null || stt != null) {
-            $(this).find('a').attr("href", $(this).find('a').attr('href') + "?keyword=" + keyword + "&cit=" + citi_id + "&stt=" + stt);
-        }
-});
-
-$('.btn_delete_news').click(function(){
-    $('.popup_xoa_btn1').attr('data_id',$(this).attr('data-id'));
-})
-
-$('.popup_xoa_btn1').click(function(){
-    var id_news = $(this).attr('data_id');
-    var data = new FormData();
-    data.append('id_news', id_news);       
-    $.ajax({
-        type: 'POST',
-        url: "admin/ManageNews/deleteNews",
-        data: data,
-        dataType: "json",
-        cache: false,
-        contentType: false,
-        processData: false,
-        enctype: 'multipart/form-data',
-        success: function(response) {
-            if (response.status == true) {
-                alert("Xóa tin đăng dự án thành công");
-                window.location.reload();
-            }
-        }
-    });
 })
 </script>
 

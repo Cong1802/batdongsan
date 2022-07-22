@@ -97,32 +97,36 @@
                     <div class="text_sub2">
                         <div class="border_t_w79px"></div>
                         <p class="text_dau">Danh sách dự án nổi bật</p>
-                        <p class="text_cuoi">Có 1234 dự án</p>
+                        <p class="text_cuoi">Có <?= $SumOutstandingPJ ?> dự án</p>
                     </div>
                 </div>
 
                 <div class="body_content">
                     <div class="content_dau">
                         <div class="content_img">
-                            <img class="img_duan_1" src="<? echo base_url(); ?>assets/images/img_du_an/img1.png" alt="">
+							<?
+							$y = date('Y', $OutstandingPJ_TBO['time_create']);
+							$m = date('m', $OutstandingPJ_TBO['time_create']);
+							$d = date('m', $OutstandingPJ_TBO['time_create']);
+							$dir = "upload/".$y."/".$m."/".$d;
+							?>
+                            <img class="img_duan_1" src="<?= $dir."/".$OutstandingPJ_TBO['banner_img'] ?>" alt="">
                         </div>
 
                         <div class="content_text">
                             <div class="noidung_text">
-                                <h2 class="text_1">The House Plaza 02</h2>
-                                <p class="text_2">Trần Điền, Hoàng Mai, Định Công, Hà Nội</p>
+                                <h2 class="text_1"><?= $OutstandingPJ_TBO['project_name'] ?></h2>
+                                <p class="text_2"><?= $OutstandingPJ_TBO['addr_detail'] ?></p>
                                 <div class="text_time">
-                                    <p class="text_3">Ngày bàn giao: 20/10/2022</p>
-                                    <p class="text_4">Trạng thái: Đang mở bán</p>
+                                    <p class="text_3">Ngày bàn giao: <?= date('d/m/Y', $OutstandingPJ_TBO['day_of_delivery']) ?></p>
+                                    <p class="text_4">Trạng thái: <?= $status[$OutstandingPJ_TBO['status']] ?></p>
                                 </div>
                                 <p class="text_5">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
-                                    aliquam, purus sit amet luctus venenatis, lectus magna
-                                    fringilla urna, porttitor
+                                    <?= $OutstandingPJ_TBO['desc_project'] ?>
                                 </p>
                                 <div class="text_money">
                                     <div class="text_6">
-                                        <p class="text_6_1">GIá: <span>100 - 150 tỷ</span></p>
+                                        <p class="text_6_1">GIá: <span><?= ($OutstandingPJ_TBO['nhapmin'] < 1000000000)?number_format((float)$OutstandingPJ_TBO['nhapmin']/1000000000, 2, '.', ''):$OutstandingPJ_TBO['nhapmin'] / 1000000000 ?> - <?= ($OutstandingPJ_TBO['nhapmax'] < 1000000000)?number_format((float)$OutstandingPJ_TBO['nhapmax']/1000000000, 2, '.', ''):$OutstandingPJ_TBO['nhapmax'] / 1000000000 ?> tỷ</span></p>
                                     </div>
                                     <a class="text_show" href="">Xem chi tiết</a>
                                 </div>
@@ -131,15 +135,22 @@
                     </div>
                     <div class="content_cuoi">
                         <div class="show_all">
-
+							<?
+							$count_PJ = count($OutstandingPJ_All);
+							for ($i=1;$i<$count_PJ;$i++) {
+								$y = date('Y', $OutstandingPJ_All[$i]['time_create']);
+								$m = date('m', $OutstandingPJ_All[$i]['time_create']);
+								$d = date('d', $OutstandingPJ_All[$i]['time_create']);
+								$dir = "upload/".$y."/".$m."/".$d;
+							?>
                             <div class="show_nha">
                                 <div class="show_nha_img">
-                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/img_vitri.png" alt="">
+                                    <img src="<?= $dir."/".$OutstandingPJ_All[$i]['banner_img'] ?>" alt="">
                                     <div class="abs_view flex">
                                         <div class="abs_view_img">
                                             <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
                                         </div>
-                                        <div class="abs_view_text">13132</div>
+                                        <div class="abs_view_text"><?= $OutstandingPJ_All[$i]['news_view'] ?></div>
                                     </div>
                                     <div class="abs_like">
                                         <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
@@ -147,51 +158,51 @@
                                 </div>
                                 <div class="show_nha_text">
                                     <div class="show_nha_text-sub">
-                                        <p class="show_tex1">The Ocean Villas</p>
-                                        <p class="show_tex2">Định Công, Hoàng Mai, Hà Nội</p>
+                                        <p class="show_tex1"><?= $OutstandingPJ_All[$i]['project_name'] ?></p>
+                                        <p class="show_tex2"><?= $OutstandingPJ_All[$i]['addr_detail'] ?></p>
                                         <div class="show_show">
                                             <div class="show_tex3">
                                                 <div class="show_icon_text mr_b8px">
-                                                    <div class="show_icon_text_img">
+                                                    <div class="show_icon_text_img" title="Tên công ty">
                                                         <img src="<? echo base_url(); ?>assets/images/icon_ul_li/bad_svg.svg" alt="">
                                                     </div>
                                                     <p class="show_text3-1">
-                                                        Công ty CP Xây dựng WHAT
+                                                        <?= $OutstandingPJ_All[$i]['cdt_come_name'] ?>
                                                     </p>
                                                 </div>
                                                 <div class="show_icon_text mr_b16px">
-                                                    <div class="show_icon_text_img">
+                                                    <div class="show_icon_text_img" title="Tiến độ">
                                                         <img src="<? echo base_url(); ?>assets/images/icon_ul_li/dang_xaydung.svg" alt="">
                                                     </div>
                                                     <p class="show_text_xd">
-                                                        Đang xây dựng
+                                                        <?= $progress[$OutstandingPJ_All[$i]['progress']] ?>
                                                     </p>
                                                 </div>
                                                 <div class="show_icon_text">
-                                                    <div class="show_icon_text_img">
+                                                    <div class="show_icon_text_img"  title="Khoảng giá">
                                                         <img src="<? echo base_url(); ?>assets/images/icon_ul_li/price_svg.svg" alt="">
                                                     </div>
                                                     <p class="show_text5-1">
-                                                        100 - 150 tỷ
+													<?= ($OutstandingPJ_All[$i]['nhapmin'] < 1000000000)?number_format((float)$OutstandingPJ_All[$i]['nhapmin']/1000000000, 2, '.', ''):$OutstandingPJ_All[$i]['nhapmin'] / 1000000000 ?> - <?= ($OutstandingPJ_All[$i]['nhapmax'] < 1000000000)?number_format((float)$OutstandingPJ_All[$i]['nhapmax']/1000000000, 2, '.', ''):$OutstandingPJ_All[$i]['nhapmax'] / 1000000000 ?> tỷ
                                                     </p>
                                                 </div>
                                             </div>
                                             <div class="show_tex4">
                                                 <div class="show_icon_text mr_b8px">
-                                                    <div class="show_icon_text_img">
+                                                    <div class="show_icon_text_img" title="Diện tích">
                                                         <img src="<? echo base_url(); ?>assets/images/icon_ul_li/kich_thuc_svg.svg "alt="">
                                                     </div>
                                                     <p class="show_text3-2">
-                                                        2.000 m2
+                                                        <?= number_format($OutstandingPJ_All[$i]['detail_area'],0,",",".") ?> m2
                                                     </p>
                                                 </div>
 
                                                 <div class="show_icon_text mr_b16px">
-                                                    <div class="show_icon_text_img">
+                                                    <div class="show_icon_text_img" title="Thời gian hoàn thành">
                                                         <img src="<? echo base_url(); ?>assets/images/icon_ul_li/time_svg.svg" alt="">
                                                     </div>
                                                     <p class="show_text4-2 ">
-                                                        20/10/2022
+                                                        <?= date('d/m/Y', $OutstandingPJ_All[$i]['time_done']) ?>
                                                     </p>
                                                 </div>
                                                 <div class="show_text5-2">
@@ -205,372 +216,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="show_nha">
-                                <div class="show_nha_img">
-                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/img_vitri.png" alt="">
-                                    <div class="abs_view flex">
-                                        <div class="abs_view_img">
-                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                        </div>
-                                        <div class="abs_view_text">13132</div>
-                                    </div>
-                                    <div class="abs_like">
-                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="show_nha_text">
-                                    <div class="show_nha_text-sub">
-                                        <p class="show_tex1">The Ocean Villas</p>
-                                        <p class="show_tex2">Định Công, Hoàng Mai, Hà Nội</p>
-                                        <div class="show_show">
-                                            <div class="show_tex3">
-                                                <div class="show_icon_text mr_b8px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/bad_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text3-1">
-                                                        Công ty CP Xây dựng WHAT
-                                                    </p>
-                                                </div>
-                                                <div class="show_icon_text mr_b16px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/dang_xaydung.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text_xd">
-                                                        Đang xây dựng
-                                                    </p>
-                                                </div>
-                                                <div class="show_icon_text">
-                                                    <div class="show_icon_text_img">
-                                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/price_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text5-1">
-                                                        100 - 150 tỷ
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="show_tex4">
-                                                <div class="show_icon_text mr_b8px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/kich_thuc_svg.svg "alt="">
-                                                    </div>
-                                                    <p class="show_text3-2">
-                                                        2.000 m2
-                                                    </p>
-                                                </div>
-
-                                                <div class="show_icon_text mr_b16px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/time_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text4-2 ">
-                                                        20/10/2022
-                                                    </p>
-                                                </div>
-                                                <div class="show_text5-2">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/so_sanh_svg.svg" alt="">
-                                                    </div>
-                                                    <p>So sánh</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="show_nha">
-                                <div class="show_nha_img">
-                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/img_vitri.png" alt="">
-                                    <div class="abs_view flex">
-                                        <div class="abs_view_img">
-                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                        </div>
-                                        <div class="abs_view_text">13132</div>
-                                    </div>
-                                    <div class="abs_like">
-                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="show_nha_text">
-                                    <div class="show_nha_text-sub">
-                                        <p class="show_tex1">The Ocean Villas</p>
-                                        <p class="show_tex2">Định Công, Hoàng Mai, Hà Nội</p>
-                                        <div class="show_show">
-                                            <div class="show_tex3">
-                                                <div class="show_icon_text mr_b8px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/bad_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text3-1">
-                                                        Công ty CP Xây dựng WHAT
-                                                    </p>
-                                                </div>
-                                                <div class="show_icon_text mr_b16px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/dang_xaydung.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text_xd">
-                                                        Đang xây dựng
-                                                    </p>
-                                                </div>
-                                                <div class="show_icon_text">
-                                                    <div class="show_icon_text_img">
-                                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/price_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text5-1">
-                                                        100 - 150 tỷ
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="show_tex4">
-                                                <div class="show_icon_text mr_b8px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/kich_thuc_svg.svg "alt="">
-                                                    </div>
-                                                    <p class="show_text3-2">
-                                                        2.000 m2
-                                                    </p>
-                                                </div>
-
-                                                <div class="show_icon_text mr_b16px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/time_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text4-2 ">
-                                                        20/10/2022
-                                                    </p>
-                                                </div>
-                                                <div class="show_text5-2">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/so_sanh_svg.svg" alt="">
-                                                    </div>
-                                                    <p>So sánh</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="show_nha">
-                                <div class="show_nha_img">
-                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/img_vitri.png" alt="">
-                                    <div class="abs_view flex">
-                                        <div class="abs_view_img">
-                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                        </div>
-                                        <div class="abs_view_text">13132</div>
-                                    </div>
-                                    <div class="abs_like">
-                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="show_nha_text">
-                                    <div class="show_nha_text-sub">
-                                        <p class="show_tex1">The Ocean Villas</p>
-                                        <p class="show_tex2">Định Công, Hoàng Mai, Hà Nội</p>
-                                        <div class="show_show">
-                                            <div class="show_tex3">
-                                                <div class="show_icon_text mr_b8px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/bad_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text3-1">
-                                                        Công ty CP Xây dựng WHAT
-                                                    </p>
-                                                </div>
-                                                <div class="show_icon_text mr_b16px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/dang_xaydung.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text_xd">
-                                                        Đang xây dựng
-                                                    </p>
-                                                </div>
-                                                <div class="show_icon_text">
-                                                    <div class="show_icon_text_img">
-                                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/price_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text5-1">
-                                                        100 - 150 tỷ
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="show_tex4">
-                                                <div class="show_icon_text mr_b8px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/kich_thuc_svg.svg "alt="">
-                                                    </div>
-                                                    <p class="show_text3-2">
-                                                        2.000 m2
-                                                    </p>
-                                                </div>
-
-                                                <div class="show_icon_text mr_b16px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/time_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text4-2 ">
-                                                        20/10/2022
-                                                    </p>
-                                                </div>
-                                                <div class="show_text5-2">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/so_sanh_svg.svg" alt="">
-                                                    </div>
-                                                    <p>So sánh</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="show_nha">
-                                <div class="show_nha_img">
-                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/img_vitri.png" alt="">
-                                    <div class="abs_view flex">
-                                        <div class="abs_view_img">
-                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                        </div>
-                                        <div class="abs_view_text">13132</div>
-                                    </div>
-                                    <div class="abs_like">
-                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="show_nha_text">
-                                    <div class="show_nha_text-sub">
-                                        <p class="show_tex1">The Ocean Villas</p>
-                                        <p class="show_tex2">Định Công, Hoàng Mai, Hà Nội</p>
-                                        <div class="show_show">
-                                            <div class="show_tex3">
-                                                <div class="show_icon_text mr_b8px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/bad_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text3-1">
-                                                        Công ty CP Xây dựng WHAT
-                                                    </p>
-                                                </div>
-                                                <div class="show_icon_text mr_b16px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/dang_xaydung.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text_xd">
-                                                        Đang xây dựng
-                                                    </p>
-                                                </div>
-                                                <div class="show_icon_text">
-                                                    <div class="show_icon_text_img">
-                                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/price_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text5-1">
-                                                        100 - 150 tỷ
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="show_tex4">
-                                                <div class="show_icon_text mr_b8px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/kich_thuc_svg.svg "alt="">
-                                                    </div>
-                                                    <p class="show_text3-2">
-                                                        2.000 m2
-                                                    </p>
-                                                </div>
-
-                                                <div class="show_icon_text mr_b16px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/time_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text4-2 ">
-                                                        20/10/2022
-                                                    </p>
-                                                </div>
-                                                <div class="show_text5-2">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/so_sanh_svg.svg" alt="">
-                                                    </div>
-                                                    <p>So sánh</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="show_nha">
-                                <div class="show_nha_img">
-                                    <img src="<? echo base_url(); ?>assets/images/img_du_an/img_vitri.png" alt="">
-                                    <div class="abs_view flex">
-                                        <div class="abs_view_img">
-                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                        </div>
-                                        <div class="abs_view_text">13132</div>
-                                    </div>
-                                    <div class="abs_like">
-                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="show_nha_text">
-                                    <div class="show_nha_text-sub">
-                                        <p class="show_tex1">The Ocean Villas</p>
-                                        <p class="show_tex2">Định Công, Hoàng Mai, Hà Nội</p>
-                                        <div class="show_show">
-                                            <div class="show_tex3">
-                                                <div class="show_icon_text mr_b8px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/bad_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text3-1">
-                                                        Công ty CP Xây dựng WHAT
-                                                    </p>
-                                                </div>
-                                                <div class="show_icon_text mr_b16px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/dang_xaydung.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text_xd">
-                                                        Đang xây dựng
-                                                    </p>
-                                                </div>
-                                                <div class="show_icon_text">
-                                                    <div class="show_icon_text_img">
-                                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/price_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text5-1">
-                                                        100 - 150 tỷ
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <div class="show_tex4">
-                                                <div class="show_icon_text mr_b8px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/kich_thuc_svg.svg "alt="">
-                                                    </div>
-                                                    <p class="show_text3-2">
-                                                        2.000 m2
-                                                    </p>
-                                                </div>
-
-                                                <div class="show_icon_text mr_b16px">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/time_svg.svg" alt="">
-                                                    </div>
-                                                    <p class="show_text4-2 ">
-                                                        20/10/2022
-                                                    </p>
-                                                </div>
-                                                <div class="show_text5-2">
-                                                    <div class="show_icon_text_img">
-                                                        <img src="<? echo base_url(); ?>assets/images/icon_ul_li/so_sanh_svg.svg" alt="">
-                                                    </div>
-                                                    <p>So sánh</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+							<? } ?>
                         </div>
                     </div>
 
@@ -578,7 +224,7 @@
                         <div class="xemthem_text">
                             <a href="danh-sach-du-an-moi-nhat.html">Xem Thêm</a>
                         </div>
-                        <img src="<? echo base_url(); ?>assets/images/img_du_an/next.png" alt="">
+                        <img src="<? echo base_url(); ?>assets/images/img_du_an/next.svg" alt="">
                     </div>
                 </div>
             </div>
@@ -594,135 +240,36 @@
                                 Dự án theo khu vực
                             </div>
                             <div class="noidung_text_khuvuc">
-                                <div class="noidung_text_khuvuc_1">
-                                    <ul class="noidung_text_khuvuc_sub">
-                                        <li><a href="">Hà Nội (12)</a></li>
-                                        <li><a href="">Bình Dương (20)</a></li>
-                                        <li><a href="">Hải Phòng (123)</a></li>
-                                        <li><a href="">Bà Rịa Vũng Tàu (45)</a></li>
-                                        <li><a href="">Bắc Giang (20)</a></li>
-                                        <li><a href="">Hưng Yên (20)</a></li>
-                                        <li><a href="">Bến Tre (20)</a></li>
-                                        <li><a href="">Bình Phước (20)</a></li>
-                                        <li><a href="">Cà Mau (20)</a></li>
-                                        <li><a href="">Quảng Ninh (20)</a></li>
-                                    </ul>
-                                </div>
-                                <div class="noidung_text_khuvuc_2">
-                                    <ul class="noidung_text_khuvuc_sub">
-                                        <li><a href="">TP Hồ Chí Minh (20)</a></li>
-                                        <li><a href="">Đà Nẵng (20)</a></li>
-                                        <li><a href="">Long An (20)</a></li>
-                                        <li><a href="">An Giang (20)</a></li>
-                                        <li><a href="">Bắc Cạn (20)</a></li>
-                                        <li><a href="">Bắc Ninh (20)</a></li>
-                                        <li><a href="">Nam Định (20)</a></li>
-                                        <li><a href="">Bình Thuận (20)</a></li>
-                                        <li><a href="">Cần Thơ (20)</a></li>
-                                        <li><a href="">Thanh Hóa (20)</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="noidung_text_khuvuc_1">
-                                    <ul class="noidung_text_khuvuc_sub">
-                                        <li><a href="">Hòa Bình (20)</a></li>
-                                        <li><a href="">Sơn La (20)</a></li>
-                                        <li><a href="">Điện Biên (20)</a></li>
-                                        <li><a href="">Lai Châu (20)</a></li>
-                                        <li><a href="">Lào Cai (20)</a></li>
-                                        <li><a href="">Yên Bái (20)</a></li>
-                                        <li><a href="">Phú Thọ (20)</a></li>
-                                        <li><a href="">Hà Giang (20)</a></li>
-                                        <li><a href="">Tuyên Quang (20)</a></li>
-                                        <li><a href="">Thái Nguyên (20)</a></li>
-                                    </ul>
-                                </div>
-                                <div class="noidung_text_khuvuc_2">
-                                    <ul class="noidung_text_khuvuc_sub">
-                                        <li><a href="">Cao Bằng (20)</a></li>
-                                        <li><a href="">Lạng Sơn (20)</a></li>
-                                        <li><a href="">Ninh Bình (20)</a></li>
-                                        <li><a href="">Hà Nam (20)</a></li>
-                                        <li><a href="">Hải Dương (20)</a></li>
-                                        <li><a href="">Thái Bình (20)</a></li>
-                                        <li><a href="">Vĩnh Phúc (20)</a></li>
-                                        <li><a href="">Nghệ An (20)</a></li>
-                                        <li><a href="">Hà Tĩnh (20)</a></li>
-                                        <li><a href="">Quảng Bình (20)</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="noidung_text_khuvuc_1">
-                                    <ul class="noidung_text_khuvuc_sub">
-                                        <li><a href="">Quảng Trị (20)</a></li>
-                                        <li><a href="">Thừa Thiên Huế (20)</a></li>
-                                        <li><a href="">Quảng Nam (20)</a></li>
-                                        <li><a href="">Quảng Ngãi (20)</a></li>
-                                        <li><a href="">Bình Định (20)</a></li>
-                                        <li><a href="">Phú Yên (20)</a></li>
-                                        <li><a href="">Khánh Hòa (20)</a></li>
-                                        <li><a href="">Ninh Thuận (20)</a></li>
-                                        <li><a href="">Kon Tum (20)</a></li>
-                                        <li><a href="">Gia Lai (20)</a></li>
-                                    </ul>
-                                </div>
-                                <div class="noidung_text_khuvuc_2">
-                                    <ul class="noidung_text_khuvuc_sub">
-                                        <li><a href="">Đăk Lăk (20)</a></li>
-                                        <li><a href="">Đăk Nông (20)</a></li>
-                                        <li><a href="">Lâm Đồng (20)</a></li>
-                                        <li><a href="">Bình Phước (20)</a></li>
-                                        <li><a href="">Đồng Nai (20)</a></li>
-                                        <li><a href="">Tây Ninh (20)</a></li>
-                                        <li><a href="">Bạc Liêu (20)</a></li>
-                                        <li><a href="">Đồng Tháp (20)</a></li>
-                                        <li><a href="">Hậu Giang (20)</a></li>
-                                        <li><a href="">Kiên Giang (20)</a></li>
-                                    </ul>
-                                </div>
-
-                                <div class="noidung_text_khuvuc_1">
-                                    <ul class="noidung_text_khuvuc_sub">
-                                        <li><a href="">Sóc Trăng (20)</a></li>
-                                        <li><a href="">Tiền Giang (20)</a></li>
-                                        <li><a href="">Trà Vinh (20)</a></li>
-                                        <li><a href="">Vĩnh Long (20)</a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                    </ul>
-                                </div>
-                                <div class="noidung_text_khuvuc_2">
-                                    <ul class="noidung_text_khuvuc_sub">
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                        <li><a href=""></a></li>
-                                    </ul>
-                                </div>
-
+								<? foreach ($list_city as $val) {
+									$num_rows = 0;
+									foreach ($citynews as $num) {
+										if ($num['select_city'] == $val['cit_id']) {
+											$num_rows++;
+										}
+									}
+								?>
+								<div class="noidung_text_khuvuc_1">
+									<p class="noidung_text_khuvuc_sub"><?= $val['cit_name'] ?> (<?= $num_rows ?>)</p>
+								</div>
+								<? } ?>
                             </div>
                         </div>
                         
                         <div class="body_padding_noidung_img">
                             <div class="noidung_img_DATKV1 js_slider_img">
-                                <?php for($i = 0; $i < 8; $i++) :?>
+                                <?php foreach($citynews as $val) {
+									$y = date('Y', $val['time_create']);
+									$m = date('m', $val['time_create']);
+									$d = date('d', $val['time_create']);
+									$dir = "upload/".$y."/".$m."/".$d;
+								?>
                                     <div class="fig_da_theokv">
-                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/DATKV1.png" alt="">
+                                        <img src="<?= $dir."/".$val['banner_img'] ?>" alt="">
                                         <div class="noidung_img_absolute">
-                                            Grand Sentosa
+                                            <?= $val['project_name'] ?>
                                         </div>
                                     </div>
-                                <?php endfor;?>
+                                <?php } ?>
                             </div>
                         </div>
 
@@ -740,33 +287,40 @@
                     </div>
 
                     <div class="body_DSdasmb_sub_button">
-                        <div class="DSdasmb_dang_mo_ban">
-                            <div class="DSdasmb_dang_mo_ban_a">Đang mở bán</div>
+                        <div class="DSdasmb_dang_sap_mo_ban mr_r16px" style="cursor: pointer;">
+                            <div class="DSdasmb_dang_sap_mo_ban_a status2 status_active">Đang mở bán</div>
                         </div>
-                        <div class="DSdasmb_sap_mo_ban">
-                            <div class="DSdasmb_sap_mo_ban_a">Sắp mở bán</div>
+                        <div class="DSdasmb_dang_sap_mo_ban" style="cursor: pointer;">
+                            <div class="DSdasmb_dang_sap_mo_ban_a status1">Sắp mở bán</div>
                         </div>
                     </div>
 
                     <div class="body_DSdasmb_image">
-                        <div class="body_DSdasmb_image_bg slick_480_1 w_100">
-
+                        <div class="body_DSdasmb_image_bg slick_480_1 w_100 status2_loop">
+							<?
+							$count_status2 = count($OutstandingPJ_Status2);
+							for ($i=0;$i<$count_status2;$i++) {
+                                $y = date('Y', $OutstandingPJ_Status2[$i]['time_create']);
+                                $m = date('m', $OutstandingPJ_Status2[$i]['time_create']);
+                                $d = date('d', $OutstandingPJ_Status2[$i]['time_create']);
+								$dir = "upload/".$y."/".$m."/".$d;
+							?>
                             <div class="body_DSdasmb_image_bg_sub">
                                 <div class="body_DSdasmb_img">
                                     <div class="body_DSdasmb_img_fig">
-                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/fig1.png" alt="">
+                                        <img src="<?= $dir."/".$OutstandingPJ_Status2[$i]['banner_img'] ?>" alt="">
                                         <div class="abs_view flex">
                                             <div class="abs_view_img">
                                                 <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
                                             </div>
-                                            <div class="abs_view_text">13132</div>
+                                            <div class="abs_view_text"><?= $OutstandingPJ_Status2[$i]['news_view'] ?></div>
                                         </div>
                                         <div class="abs_like">
-                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
+                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/like.svg" alt="">
                                         </div>
                                     </div>
                                     <div class="body_DSdasmb_position">
-                                        One Piece 1020
+                                        <?= $OutstandingPJ_Status2[$i]['project_name'] ?>
                                     </div>
                                 </div>
                                 <div class="body_DSdasmb_all">
@@ -775,7 +329,7 @@
                                             <img src="<? echo base_url(); ?>assets/images/icon_ul_li/vitri_svg.svg" alt="">
 
                                         </div>
-                                        <div class="body_DSdasmb_text">Định Công, Hoàng Mai, Hà Nội</div>
+                                        <div class="body_DSdasmb_text"><?= $OutstandingPJ_Status2[$i]['addr_detail'] ?></div>
                                     </div>
                                     <div class="not_name">
                                         <div class="het_ten1">
@@ -783,13 +337,13 @@
                                                 <div class="show_icon_text_img">
                                                     <img src="<? echo base_url(); ?>assets/images/icon_ul_li/bad_svg.svg" alt="">
                                                 </div>
-                                                <div class="body_DSdasmb_text">Công ty CP Xây dựng WHAT</div>
+                                                <div class="body_DSdasmb_text"><?= $OutstandingPJ_Status2[$i]['cdt_come_name'] ?></div>
                                             </div>
                                             <div class="body_DSdasmb_text_icon">
                                                 <div class="show_icon_text_img">
                                                 <img src="<? echo base_url(); ?>assets/images/icon_ul_li/dang_xaydung.svg" alt="">
                                                 </div>
-                                                <div class="body_DSdasmb_text">Đang xây dựng</div>
+                                                <div class="body_DSdasmb_text"><?= $progress[$OutstandingPJ_Status2[$i]['progress']] ?></div>
                                             </div>
                                         </div>
                                         <div class="het_ten2">
@@ -797,13 +351,13 @@
                                                 <div class="show_icon_text_img">
                                                     <img src="<? echo base_url(); ?>assets/images/icon_ul_li/kich_thuc_svg.svg "alt="">
                                                 </div>
-                                                <div class="body_DSdasmb_text">200 m2</div>
+                                                <div class="body_DSdasmb_text"><?= $OutstandingPJ_Status2[$i]['detail_area'] ?> m2</div>
                                             </div>
                                             <div class="body_DSdasmb_text_icon">
                                                 <div class="show_icon_text_img">
                                                     <img src="<? echo base_url(); ?>assets/images/icon_ul_li/time_svg.svg" alt="">
                                                 </div>
-                                                <div class="body_DSdasmb_text">20/10/2022</div>
+                                                <div class="body_DSdasmb_text"><?= date('d/m/Y', $OutstandingPJ_Status2[$i]['time_done']) ?></div>
                                             </div>
                                         </div>
                                     </div>
@@ -812,26 +366,37 @@
                                         <div class="show_icon_text_img">
                                                 <img src="<? echo base_url(); ?>assets/images/icon_ul_li/price_svg.svg" alt="">
                                         </div>
-                                        <div class="body_DSdasmb_text">100 - 150 tỷ</div>
+                                        <div class="body_DSdasmb_text"><?= ($OutstandingPJ_Status2[$i]['nhapmin'] < 1000000000)?number_format((float)$OutstandingPJ_Status2[$i]['nhapmin']/1000000000, 2, '.', ''):$OutstandingPJ_Status2[$i]['nhapmin'] / 1000000000 ?> - <?= ($OutstandingPJ_Status2[$i]['nhapmax'] < 1000000000)?number_format((float)$OutstandingPJ_Status2[$i]['nhapmax']/1000000000, 2, '.', ''):$OutstandingPJ_Status2[$i]['nhapmax'] / 1000000000 ?> tỷ</div>
                                     </div>
                                 </div>
                             </div>
+							<? } ?>
+                        </div>
+                        <div class="body_DSdasmb_image_bg slick_480_1 w_100 status1_loop hidden">
+							<?
+							$count_status1 = count($OutstandingPJ_Status1);
+							for ($i=0;$i<$count_status1;$i++) {
+                                $y = date('Y', $OutstandingPJ_Status1[$i]['time_create']);
+                                $m = date('m', $OutstandingPJ_Status1[$i]['time_create']);
+                                $d = date('d', $OutstandingPJ_Status1[$i]['time_create']);
+								$dir = "upload/".$y."/".$m."/".$d;
+							?>
                             <div class="body_DSdasmb_image_bg_sub">
                                 <div class="body_DSdasmb_img">
                                     <div class="body_DSdasmb_img_fig">
-                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/fig1.png" alt="">
+                                        <img src="<?= $dir."/".$OutstandingPJ_Status1[$i]['banner_img'] ?>" alt="">
                                         <div class="abs_view flex">
                                             <div class="abs_view_img">
                                                 <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
                                             </div>
-                                            <div class="abs_view_text">13132</div>
+                                            <div class="abs_view_text"><?= $OutstandingPJ_Status1[$i]['news_view'] ?></div>
                                         </div>
                                         <div class="abs_like">
-                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
+                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/like.svg" alt="">
                                         </div>
                                     </div>
                                     <div class="body_DSdasmb_position">
-                                        One Piece 1020
+                                        <?= $OutstandingPJ_Status1[$i]['project_name'] ?>
                                     </div>
                                 </div>
                                 <div class="body_DSdasmb_all">
@@ -840,7 +405,7 @@
                                             <img src="<? echo base_url(); ?>assets/images/icon_ul_li/vitri_svg.svg" alt="">
 
                                         </div>
-                                        <div class="body_DSdasmb_text">Định Công, Hoàng Mai, Hà Nội</div>
+                                        <div class="body_DSdasmb_text"><?= $OutstandingPJ_Status1[$i]['addr_detail'] ?></div>
                                     </div>
                                     <div class="not_name">
                                         <div class="het_ten1">
@@ -848,13 +413,13 @@
                                                 <div class="show_icon_text_img">
                                                     <img src="<? echo base_url(); ?>assets/images/icon_ul_li/bad_svg.svg" alt="">
                                                 </div>
-                                                <div class="body_DSdasmb_text">Công ty CP Xây dựng WHAT</div>
+                                                <div class="body_DSdasmb_text"><?= $OutstandingPJ_Status1[$i]['cdt_come_name'] ?></div>
                                             </div>
                                             <div class="body_DSdasmb_text_icon">
                                                 <div class="show_icon_text_img">
                                                 <img src="<? echo base_url(); ?>assets/images/icon_ul_li/dang_xaydung.svg" alt="">
                                                 </div>
-                                                <div class="body_DSdasmb_text">Đang xây dựng</div>
+                                                <div class="body_DSdasmb_text"><?= $progress[$OutstandingPJ_Status1[$i]['progress']] ?></div>
                                             </div>
                                         </div>
                                         <div class="het_ten2">
@@ -862,13 +427,13 @@
                                                 <div class="show_icon_text_img">
                                                     <img src="<? echo base_url(); ?>assets/images/icon_ul_li/kich_thuc_svg.svg "alt="">
                                                 </div>
-                                                <div class="body_DSdasmb_text">200 m2</div>
+                                                <div class="body_DSdasmb_text"><?= $OutstandingPJ_Status1[$i]['detail_area'] ?> m2</div>
                                             </div>
                                             <div class="body_DSdasmb_text_icon">
                                                 <div class="show_icon_text_img">
                                                     <img src="<? echo base_url(); ?>assets/images/icon_ul_li/time_svg.svg" alt="">
                                                 </div>
-                                                <div class="body_DSdasmb_text">20/10/2022</div>
+                                                <div class="body_DSdasmb_text"><?= date('d/m/Y', $OutstandingPJ_Status1[$i]['time_done']) ?></div>
                                             </div>
                                         </div>
                                     </div>
@@ -877,271 +442,11 @@
                                         <div class="show_icon_text_img">
                                                 <img src="<? echo base_url(); ?>assets/images/icon_ul_li/price_svg.svg" alt="">
                                         </div>
-                                        <div class="body_DSdasmb_text">100 - 150 tỷ</div>
+                                        <div class="body_DSdasmb_text"><?= ($OutstandingPJ_Status1[$i]['nhapmin'] < 1000000000)?number_format((float)$OutstandingPJ_Status1[$i]['nhapmin']/1000000000, 2, '.', ''):$OutstandingPJ_Status1[$i]['nhapmin'] / 1000000000 ?> - <?= ($OutstandingPJ_Status1[$i]['nhapmax'] < 1000000000)?number_format((float)$OutstandingPJ_Status1[$i]['nhapmax']/1000000000, 2, '.', ''):$OutstandingPJ_Status1[$i]['nhapmax'] / 1000000000 ?> tỷ</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="body_DSdasmb_image_bg_sub">
-                                <div class="body_DSdasmb_img">
-                                    <div class="body_DSdasmb_img_fig">
-                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/fig1.png" alt="">
-                                        <div class="abs_view flex">
-                                            <div class="abs_view_img">
-                                                <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                            </div>
-                                            <div class="abs_view_text">13132</div>
-                                        </div>
-                                        <div class="abs_like">
-                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="body_DSdasmb_position">
-                                        One Piece 1020
-                                    </div>
-                                </div>
-                                <div class="body_DSdasmb_all">
-                                    <div class="body_DSdasmb_text_icon">
-                                        <div class="show_icon_text_img">
-                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/vitri_svg.svg" alt="">
-
-                                        </div>
-                                        <div class="body_DSdasmb_text">Định Công, Hoàng Mai, Hà Nội</div>
-                                    </div>
-                                    <div class="not_name">
-                                        <div class="het_ten1">
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                    <img src="<? echo base_url(); ?>assets/images/icon_ul_li/bad_svg.svg" alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">Công ty CP Xây dựng WHAT</div>
-                                            </div>
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                <img src="<? echo base_url(); ?>assets/images/icon_ul_li/dang_xaydung.svg" alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">Đang xây dựng</div>
-                                            </div>
-                                        </div>
-                                        <div class="het_ten2">
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                    <img src="<? echo base_url(); ?>assets/images/icon_ul_li/kich_thuc_svg.svg "alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">200 m2</div>
-                                            </div>
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                    <img src="<? echo base_url(); ?>assets/images/icon_ul_li/time_svg.svg" alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">20/10/2022</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="body_DSdasmb_text_cuoi">
-                                        <div class="show_icon_text_img">
-                                                <img src="<? echo base_url(); ?>assets/images/icon_ul_li/price_svg.svg" alt="">
-                                        </div>
-                                        <div class="body_DSdasmb_text">100 - 150 tỷ</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="body_DSdasmb_image_bg_sub">
-                                <div class="body_DSdasmb_img">
-                                    <div class="body_DSdasmb_img_fig">
-                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/fig1.png" alt="">
-                                        <div class="abs_view flex">
-                                            <div class="abs_view_img">
-                                                <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                            </div>
-                                            <div class="abs_view_text">13132</div>
-                                        </div>
-                                        <div class="abs_like">
-                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="body_DSdasmb_position">
-                                        One Piece 1020
-                                    </div>
-                                </div>
-                                <div class="body_DSdasmb_all">
-                                    <div class="body_DSdasmb_text_icon">
-                                        <div class="show_icon_text_img">
-                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/vitri_svg.svg" alt="">
-
-                                        </div>
-                                        <div class="body_DSdasmb_text">Định Công, Hoàng Mai, Hà Nội</div>
-                                    </div>
-                                    <div class="not_name">
-                                        <div class="het_ten1">
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                    <img src="<? echo base_url(); ?>assets/images/icon_ul_li/bad_svg.svg" alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">Công ty CP Xây dựng WHAT</div>
-                                            </div>
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                <img src="<? echo base_url(); ?>assets/images/icon_ul_li/dang_xaydung.svg" alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">Đang xây dựng</div>
-                                            </div>
-                                        </div>
-                                        <div class="het_ten2">
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                    <img src="<? echo base_url(); ?>assets/images/icon_ul_li/kich_thuc_svg.svg "alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">200 m2</div>
-                                            </div>
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                    <img src="<? echo base_url(); ?>assets/images/icon_ul_li/time_svg.svg" alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">20/10/2022</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="body_DSdasmb_text_cuoi">
-                                        <div class="show_icon_text_img">
-                                                <img src="<? echo base_url(); ?>assets/images/icon_ul_li/price_svg.svg" alt="">
-                                        </div>
-                                        <div class="body_DSdasmb_text">100 - 150 tỷ</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="body_DSdasmb_image_bg_sub">
-                                <div class="body_DSdasmb_img">
-                                    <div class="body_DSdasmb_img_fig">
-                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/fig1.png" alt="">
-                                        <div class="abs_view flex">
-                                            <div class="abs_view_img">
-                                                <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                            </div>
-                                            <div class="abs_view_text">13132</div>
-                                        </div>
-                                        <div class="abs_like">
-                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="body_DSdasmb_position">
-                                        One Piece 1020
-                                    </div>
-                                </div>
-                                <div class="body_DSdasmb_all">
-                                    <div class="body_DSdasmb_text_icon">
-                                        <div class="show_icon_text_img">
-                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/vitri_svg.svg" alt="">
-
-                                        </div>
-                                        <div class="body_DSdasmb_text">Định Công, Hoàng Mai, Hà Nội</div>
-                                    </div>
-                                    <div class="not_name">
-                                        <div class="het_ten1">
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                    <img src="<? echo base_url(); ?>assets/images/icon_ul_li/bad_svg.svg" alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">Công ty CP Xây dựng WHAT</div>
-                                            </div>
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                <img src="<? echo base_url(); ?>assets/images/icon_ul_li/dang_xaydung.svg" alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">Đang xây dựng</div>
-                                            </div>
-                                        </div>
-                                        <div class="het_ten2">
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                    <img src="<? echo base_url(); ?>assets/images/icon_ul_li/kich_thuc_svg.svg "alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">200 m2</div>
-                                            </div>
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                    <img src="<? echo base_url(); ?>assets/images/icon_ul_li/time_svg.svg" alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">20/10/2022</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="body_DSdasmb_text_cuoi">
-                                        <div class="show_icon_text_img">
-                                                <img src="<? echo base_url(); ?>assets/images/icon_ul_li/price_svg.svg" alt="">
-                                        </div>
-                                        <div class="body_DSdasmb_text">100 - 150 tỷ</div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="body_DSdasmb_image_bg_sub">
-                                <div class="body_DSdasmb_img">
-                                    <div class="body_DSdasmb_img_fig">
-                                        <img src="<? echo base_url(); ?>assets/images/img_du_an/fig1.png" alt="">
-                                        <div class="abs_view flex">
-                                            <div class="abs_view_img">
-                                                <img src="<? echo base_url(); ?>assets/images/icon_ul_li/eye_white_svg.svg" alt="">
-                                            </div>
-                                            <div class="abs_view_text">13132</div>
-                                        </div>
-                                        <div class="abs_like">
-                                            <img src="<? echo base_url(); ?>assets/images/img_du_an/like.png" alt="">
-                                        </div>
-                                    </div>
-                                    <div class="body_DSdasmb_position">
-                                        One Piece 1020
-                                    </div>
-                                </div>
-                                <div class="body_DSdasmb_all">
-                                    <div class="body_DSdasmb_text_icon">
-                                        <div class="show_icon_text_img">
-                                            <img src="<? echo base_url(); ?>assets/images/icon_ul_li/vitri_svg.svg" alt="">
-
-                                        </div>
-                                        <div class="body_DSdasmb_text">Định Công, Hoàng Mai, Hà Nội</div>
-                                    </div>
-                                    <div class="not_name">
-                                        <div class="het_ten1">
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                    <img src="<? echo base_url(); ?>assets/images/icon_ul_li/bad_svg.svg" alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">Công ty CP Xây dựng WHAT</div>
-                                            </div>
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                <img src="<? echo base_url(); ?>assets/images/icon_ul_li/dang_xaydung.svg" alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">Đang xây dựng</div>
-                                            </div>
-                                        </div>
-                                        <div class="het_ten2">
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                    <img src="<? echo base_url(); ?>assets/images/icon_ul_li/kich_thuc_svg.svg "alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">200 m2</div>
-                                            </div>
-                                            <div class="body_DSdasmb_text_icon">
-                                                <div class="show_icon_text_img">
-                                                    <img src="<? echo base_url(); ?>assets/images/icon_ul_li/time_svg.svg" alt="">
-                                                </div>
-                                                <div class="body_DSdasmb_text">20/10/2022</div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="body_DSdasmb_text_cuoi">
-                                        <div class="show_icon_text_img">
-                                                <img src="<? echo base_url(); ?>assets/images/icon_ul_li/price_svg.svg" alt="">
-                                        </div>
-                                        <div class="body_DSdasmb_text">100 - 150 tỷ</div>
-                                    </div>
-                                </div>
-                            </div>
-
+							<? } ?>
                         </div>
                     </div>
                 </div>
@@ -1152,7 +457,7 @@
                             Xem thêm
                         </div>
                         <div class="img_fig_xemthem">
-                            <img src="<? echo base_url(); ?>assets/images/img_du_an/next.png" alt="">
+                            <img src="<? echo base_url(); ?>assets/images/img_du_an/next.svg" alt="">
                         </div>
                     </a>
                 </div>
@@ -1257,7 +562,7 @@
                                 Xem thêm
                             </div>
                             <div class="img_fig_xemthem">
-                                <img src="<? echo base_url(); ?>assets/images/img_du_an/next.png" alt="">
+                                <img src="<? echo base_url(); ?>assets/images/img_du_an/next.svg" alt="">
                             </div>
                         </div>
                     </div>
@@ -1277,81 +582,17 @@
                         Chủ đầu tư nổi bật
                     </h1>
                     <div class="body_CDT_content_img">
-
+						<? foreach ($Invester as $val) { ?>
                         <div class="body_CDT_content_img_1">
                             <div class="test_img">
                                 <img src="<? echo base_url(); ?>assets/images/img_du_an/bacsila.jpg" alt="">
                             </div>
                             <div class="body_CDT_content_text">
-                                <div class="body_CDT_content_text1 elipsis1">Công ty TNHH Liên doanh Phú</div>
-                                <div class="body_CDT_content_text2">1123 người theo dõi</div>
+                                <div class="body_CDT_content_text1 elipsis1"><?= $val['companyName'] ?></div>
+                                <div class="body_CDT_content_text2"><?= $val['UserFollowed'] ?> người theo dõi</div>
                             </div>
                         </div>
-                        <div class="body_CDT_content_img_1">
-                            <div class="test_img">
-                                <img src="<? echo base_url(); ?>assets/images/img_du_an/CDT_img2.png" alt="">
-                            </div>
-                            <div class="body_CDT_content_text">
-                                <div class="body_CDT_content_text1 elipsis1">Công ty TNHH Liên doanh Phú</div>
-                                <div class="body_CDT_content_text2">1123 người theo dõi</div>
-                            </div>
-                        </div>
-                        <div class="body_CDT_content_img_1">
-                            <div class="test_img">
-                                <img src="<? echo base_url(); ?>assets/images/img_du_an/CDT_img2.png" alt="">
-                            </div>
-                            <div class="body_CDT_content_text">
-                                <div class="body_CDT_content_text1 elipsis1">Công ty TNHH Liên doanh Phú</div>
-                                <div class="body_CDT_content_text2">1123 người theo dõi</div>
-                            </div>
-                        </div>
-                        <div class="body_CDT_content_img_1">
-                            <div class="test_img">
-                                <img src="<? echo base_url(); ?>assets/images/img_du_an/CDT_img2.png" alt="">
-                            </div>
-                            <div class="body_CDT_content_text">
-                                <div class="body_CDT_content_text1 elipsis1">Công ty TNHH Liên doanh Phú</div>
-                                <div class="body_CDT_content_text2">1123 người theo dõi</div>
-                            </div>
-                        </div>
-
-                        <div class="body_CDT_content_img_1">
-                            <div class="test_img">
-                                <img src="<? echo base_url(); ?>assets/images/img_du_an/CDT_img.png" alt="">
-                            </div>
-                            <div class="body_CDT_content_text">
-                                <div class="body_CDT_content_text1 elipsis1">Công ty TNHH Liên doanh Phú</div>
-                                <div class="body_CDT_content_text2">1123 người theo dõi</div>
-                            </div>
-                        </div>
-                        <div class="body_CDT_content_img_1">
-                            <div class="test_img">
-                                <img src="<? echo base_url(); ?>assets/images/img_du_an/CDT_img2.png" alt="">
-                            </div>
-                            <div class="body_CDT_content_text">
-                                <div class="body_CDT_content_text1 elipsis1">Công ty TNHH Liên doanh Phú</div>
-                                <div class="body_CDT_content_text2">1123 người theo dõi</div>
-                            </div>
-                        </div>
-                        <div class="body_CDT_content_img_1">
-                            <div class="test_img">
-                                <img src="<? echo base_url(); ?>assets/images/img_du_an/CDT_img2.png" alt="">
-                            </div>
-                            <div class="body_CDT_content_text">
-                                <div class="body_CDT_content_text1 elipsis1">Công ty TNHH Liên doanh Phú</div>
-                                <div class="body_CDT_content_text2">1123 người theo dõi</div>
-                            </div>
-                        </div>
-                        <div class="body_CDT_content_img_1">
-                            <div class="test_img">
-                                <img src="<? echo base_url(); ?>assets/images/img_du_an/CDT_img2.png" alt="">
-                            </div>
-                            <div class="body_CDT_content_text">
-                                <div class="body_CDT_content_text1 elipsis1">Công ty TNHH Liên doanh Phú</div>
-                                <div class="body_CDT_content_text2">1123 người theo dõi</div>
-                            </div>
-                        </div>
-
+						<? } ?>
                     </div>
 
                 </div>
@@ -1361,7 +602,7 @@
                             Xem thêm
                         </div>
                         <div class="img_fig_xemthem">
-                            <img src="<? echo base_url(); ?>assets/images/img_du_an/next.png" alt="">
+                            <img src="<? echo base_url(); ?>assets/images/img_du_an/next.svg" alt="">
                         </div>
                     </div>
                 </div>
@@ -1514,6 +755,7 @@ $('.ketthuc_xemthem').click(function() {
 })
 active_single_header('duan');
 $('.noidung_text_khuvuc').slick({
+	rows: 10,
     dots: true,
     slidesToShow: 2,
     slidesToScroll: 2,
@@ -1590,9 +832,22 @@ $('.js_slider_img').slick({
     dots: true,
     rows: row,
     slidesToShow: showNumber,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     arrow: true,
     prevArrow: '<button class="slick-prev prev-arrow"><img src="<? echo base_url(); ?>assets/images/img_du_an/icon_DATKV_left.png" alt=""></button>',
     nextArrow: '<button class="slick-next next-arrow"><img src="<? echo base_url(); ?>assets/images/img_du_an/icon_DATKV_right.png" alt=""></button>',
+});
+
+$('.status2').click(function() {
+	$(this).addClass('status_active');
+	$('.status1').removeClass('status_active');
+	$('.status2_loop').removeClass('hidden');
+	$('.status1_loop').addClass('hidden');
+});
+$('.status1').click(function() {
+	$(this).addClass('status_active');
+	$('.status2').removeClass('status_active');
+	$('.status1_loop').removeClass('hidden');
+	$('.status2_loop').addClass('hidden');
 });
 </script>

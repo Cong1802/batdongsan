@@ -4,6 +4,7 @@
   } else {
     $user_info = $_SESSION['user_admin'];
   }
+	echo $userdata;
 ?>
 <!DOCTYPE html>
 <html>

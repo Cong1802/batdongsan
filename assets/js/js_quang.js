@@ -63,9 +63,7 @@ $('#clode_overlay').click(function () {
 })
 // --------------------Dang tin radio 
 $('#radio_button').click(function () {
-
   if ($('#radio_button').is(':checked')) {
-    $('#number').removeAttr('name');
     $('#gia_open_khoanggia').off('click');
     $('.btn_opacity').addClass('opacity_click');
     $('.btn_nhap_gia input').attr('readonly', true);
@@ -74,9 +72,7 @@ $('#radio_button').click(function () {
     $('.btn_gia_max').addClass('hidden');
     $('#number').attr('placeholder', 'Nhập giá cố định');
   } else {
-    $('#number').attr('name','giamin');
     $('#gia_open_khoanggia').on('click', function () {
-      $('#number_max').attr('name','giamax');
       $('.btn_tat_khoanggia ').toggleClass('hidden');
       $('.btn_gia_max').toggleClass('hidden');
       $('#number').attr('placeholder', 'Giá min');
@@ -87,14 +83,12 @@ $('#radio_button').click(function () {
 });
 // -------
 $('#gia_open_khoanggia').click(function () {
-  $('#number_max').attr('name','giamax')
   $('.btn_tat_khoanggia ').toggleClass('hidden');
   $('#number').val('')
   $('#number').attr('placeholder', 'Giá min');
   $('.btn_gia_max').toggleClass('hidden');
 });
 $('.img_delete_mo').click(function () {
-  $('#number_max').attr('name','')
   $('#number').val('')
   $('#number').attr('placeholder', 'Nhập giá cố định');
   $('.btn_tat_khoanggia').toggleClass('hidden');
@@ -108,12 +102,10 @@ $('.img_dt_delete').click(function () {
   $('.btn_dt').removeClass('hidden');
   $('.btn_dt_mo').addClass('hidden');
   $('#number_dt_1').val('')
-  $('#number_dt_2').attr('name','')
   $('#number_dt_1').attr('placeholder', 'Nhập diện tích');
   $('#number_dt_2').val('')
 })
 $('#btn_dt_dong').click(function () {
-  $('#number_dt_2').attr('name','area_max')
   $('.btn_dt').addClass('hidden');
   $('.btn_dt_mo').removeClass('hidden');
   $('#number_dt_1').val('')
@@ -485,7 +477,7 @@ function myFunction_quan(x) {
       var value = $(this).val();
       if (value == 1) {
         $('#the-input_quan').addClass('the_input_quan_res')
-      } else if (value == 2 || value == 3 || value == 4 || value == 5) {
+      } else if (value == 2) {
         $('#the-input_quan').addClass('the_input_quan_res')
       }
       else {
@@ -514,7 +506,7 @@ function myFunction(y) {
     var value = $(this).val();
     if (value == 1) {
       $('#the-input--res-mot').addClass('the-input--res')
-    } else if (value == 2 || value == 3 || value == 4 || value == 5) {
+    } else if (value == 2) {
       $('#the-input--res-mot').addClass('the-input--res')
     }
     else {
@@ -546,236 +538,43 @@ $('#check_mua').click(function () {
   }
 });
 // --------------đang tin  sau  đăng nhập chọn phòng
-$('.radio_bathroom').click(function () {
-  $('.radio_bathroom').each(function(){
-    $(this).removeClass('chutrang_nenxanh');
-  })
-  $(this).toggleClass('chutrang_nenxanh')
-});
-$('.radio_bedroom').click(function () {
-  $('.radio_bedroom').each(function(){
-    $(this).removeClass('chutrang_nenxanh');
-  })
-  $(this).toggleClass('chutrang_nenxanh')
+$('.dong-numbers-rom-value-item').on('click', function () {
+  $(this).parent().children().removeClass('chutrang_nenxanh');
+  $(this).toggleClass('chutrang_nenxanh');
 });
 
 // ----------------- đăng tin sau chọn loại bất động sản 
 
 $('#onclick_chonloai_after').change(function () {
   var value = $(this).val();
-  var type_news = $('input[name="type_news"]:checked').val();
-  if(type_news != 2 && value != 7)
-  {
+  if (value == 1) {
+    $('.dangtin_form-after').removeClass('hidden');
+    $('.dangtin_mo_ta_dong7').toggleClass('hidden')
+    $('.dangtin_mota-dong8').addClass('hidden')
+    $('.dangtin_mota-dong9').addClass('hidden')
     $('.dangtin_khunginput_chonloai').removeClass('w_100');
     $('.dangtin_khunginput_chonloai').addClass('w_50');
     $('.dangtin_khunginput_chonloai').addClass('mr_r_12');
+    $('.dangtin_khunginput_chonloai-hien').removeClass('hidden');
+  } else if (value == 2) {
+    $('.dangtin_form-after').removeClass('hidden');
+    $('.dangtin_mota-dong8').removeClass('hidden')
+    $('.dangtin_mo_ta_dong7').addClass('hidden')
+    $('.dangtin_mota-dong9').addClass('hidden')
+    $('.dangtin_khunginput_chonloai').removeClass('w_100');
+    $('.dangtin_khunginput_chonloai').addClass('w_50');
+    $('.dangtin_khunginput_chonloai').addClass('mr_r_12');
+    $('.dangtin_khunginput_chonloai-hien').removeClass('hidden');
   }
-  if(type_news == 1)
-  {
-    if (value == 1) {
-      $('.dangtin_form-after').removeClass('hidden');
-      $('.dangtin_mo_ta_dong7').removeClass('hidden')
-      $('.dangtin_mota-dong10').addClass('hidden')
-      $('.dangtin_mo_ta_dong11').addClass('hidden')
-      $('.dangtin_mota-dong8').addClass('hidden')
-      $('.dangtin_mota-dong9').addClass('hidden')
-      $('.dangtin_khunginput_chonloai-hien').removeClass('hidden');
-    }
-    if (value == 2 || value == 3 || value == 4 || value == 5) {
-      $('.dangtin_form-after').removeClass('hidden');
-      $('.dangtin_mota-dong10').addClass('hidden')
-      $('.dangtin_mo_ta_dong11').addClass('hidden')
-      $('.dangtin_mota-dong8').removeClass('hidden')
-      $('.dangtin_mo_ta_dong7').addClass('hidden')
-      $('.dangtin_mota-dong9').addClass('hidden')
-      $('.dangtin_khunginput_chonloai-hien').removeClass('hidden');
-      $('.dangtin_mota-dong9').find('.mattien').attr('disabled', true);
-      $('.dangtin_mota-dong9').find('.duongvao').attr('disabled', true);
-      $('.dangtin_mota-dong8').find('.mattien').attr('disabled', false);
-      $('.dangtin_mota-dong8').find('.duongvao').attr('disabled', false);
-    }
-    if(value == 6 || value == 7 || value == 8) {
-      $('.dangtin_form-after').addClass('hidden');
-      $('.dangtin_mota-dong9').removeClass('hidden')
-      $('.dangtin_mota-dong10').addClass('hidden')
-      $('.dangtin_mo_ta_dong11').addClass('hidden')
-      $('.dangtin_mota-dong8').addClass('hidden')
-      $('.dangtin_mo_ta_dong7').addClass('hidden')
-      $('.dangtin_khunginput_chonloai-hien').removeClass('hidden');
-      $('.dangtin_mota-dong8').find('.mattien').attr('disabled', true);
-      $('.dangtin_mota-dong8').find('.duongvao').attr('disabled', true);
-      $('.dangtin_mota-dong9').find('.mattien').attr('disabled', false);
-      $('.dangtin_mota-dong9').find('.duongvao').attr('disabled', false);
-    }
-    if(value == 1 || value == 2 || value == 3 || value == 4)
-    {
-      var option_desc_bds = '<option selected disabled >Bất động sản chi tiết</option>'
-      option_desc_bds += '<option value="Căn hộ mini">Căn hộ mini</option>'
-      option_desc_bds +='<option value="Căn hộ trung cấp">Căn hộ trung cấp</option>'
-      option_desc_bds +='<option value="Căn hộ cao cấp">Căn hộ cao cấp</option>'
-      option_desc_bds +='<option value="Căn hộ Penthouse">Căn hộ Penthouse</option>'
-      option_desc_bds +='<option value="Căn hộ Duplex">Căn hộ Duplex</option>'
-      option_desc_bds +='<option value="Căn hộ Skyvilla">Căn hộ Skyvilla</option>'
-      option_desc_bds +='<option value="Căn hộ loft house">Căn hộ loft house</option>'
-      option_desc_bds +='<option value="Căn hộ Studio">Căn hộ Studio</option>'
-      option_desc_bds +='<option value="Căn hộ Condotel">Căn hộ Condotel</option>'
-      option_desc_bds +='<option value="Căn hộ officetel">Căn hộ officetel</option>'
-      $('#onclick_chonloai_bds').children().remove();
-      $('.div_office').addClass('hidden')
-      $('#onclick_chonloai_bds').append(option_desc_bds);
-    }
-    if(value == 5)
-    {
-      var option_desc_bds = '<option selected disabled >Bất động sản chi tiết</option>'
-      option_desc_bds += '<option value="Biệt thự nghỉ dưỡng">Biệt thự nghỉ dưỡng</option>'
-      option_desc_bds +='<option value="Biệt thự đơn lập">Biệt thự đơn lập</option>'
-      option_desc_bds +='<option value="Biệt thự song lập">Biệt thự song lập</option>'
-      option_desc_bds +='<option value="Biệt thự tứ lập">Biệt thự tứ lập</option>'
-      $('#onclick_chonloai_bds').children().remove();
-      $('.div_office').addClass('hidden')
-      $('#onclick_chonloai_bds').append(option_desc_bds);
-    }
-    if(value == 6 || value == 7)
-    {
-      var option_desc_bds = '<option selected disabled >Bất động sản chi tiết</option>'
-      option_desc_bds += '<option value="Đất thổ cư">Đất thổ cư</option>'
-      option_desc_bds +='<option value="Đất công nghiệp">Đất công nghiệp</option>'
-      option_desc_bds +='<option value="Đất nông, lâm nghiệp">Đất nông, lâm nghiệp</option>'
-      $('#onclick_chonloai_bds').children().remove();
-      $('#onclick_chonloai_bds').append(option_desc_bds);
-    }
-    if(value == 8)
-    {
-      var option_desc_bds = '<option selected disabled >Bất động sản chi tiết</option>'
-      option_desc_bds += '<option value="Nhà xưởng kho bãi">Nhà xưởng kho bãi</option>'
-      option_desc_bds +='<option value="Khách sạn">Khách sạn</option>'
-      option_desc_bds +='<option value="Trang trại">Trang trại</option>'
-      option_desc_bds += '<option value="Nhà trọ, phòng trọ">Nhà trọ, phòng trọ</option>'
-      option_desc_bds +='<option value="Mặt bằng văn phòng">Mặt bằng văn phòng</option>'
-      $('#onclick_chonloai_bds').children().remove();
-      $('#onclick_chonloai_bds').append(option_desc_bds);
-    }
-  }
-  if(type_news == 2)
-  {
-    if (value == 1 || value == 2) {
-      $('.dangtin_form-after').removeClass('hidden');
-      $('.dangtin_mo_ta_dong7').removeClass('hidden')
-      $('.dangtin_mota-dong8').addClass('hidden')
-      $('.dangtin_mota-dong10').addClass('hidden')
-      $('.dangtin_mo_ta_dong11').addClass('hidden')
-      $('.dangtin_mota-dong9').addClass('hidden')
-      $('.dangtin_khunginput_chonloai-hien').removeClass('hidden');
-    }
-    if (value == 6 || value == 3 || value == 4 || value == 5) {
-      $('.dangtin_form-after').removeClass('hidden');
-      $('.dangtin_mota-dong8').removeClass('hidden')
-      $('.dangtin_mo_ta_dong7').addClass('hidden')
-      $('.dangtin_mo_ta_dong11').addClass('hidden')
-      $('.dangtin_mota-dong10').addClass('hidden')
-      $('.dangtin_mota-dong9').addClass('hidden')
-      $('.dangtin_khunginput_chonloai-hien').removeClass('hidden');
-      $('.dangtin_mota-dong9').find('.mattien').attr('disabled', true);
-      $('.dangtin_mota-dong9').find('.duongvao').attr('disabled', true);
-      $('.dangtin_mota-dong8').find('.mattien').attr('disabled', false);
-      $('.dangtin_mota-dong8').find('.duongvao').attr('disabled', false);
-    }
-    if (value == 8) {
-      $('.dangtin_form-after').removeClass('hidden');
-      $('.dangtin_mota-dong10').removeClass('hidden')
-      $('.dangtin_mota-dong8').addClass('hidden')
-      $('.dangtin_mo_ta_dong11').addClass('hidden')
-      $('.dangtin_mota-dong9').addClass('hidden')
-      $('.dangtin_mo_ta_dong7').addClass('hidden')
-      $('.dangtin_khunginput_chonloai-hien').removeClass('hidden');
-      $('.dangtin_mota-dong8').find('.mattien').attr('disabled', true);
-      $('.dangtin_mota-dong8').find('.duongvao').attr('disabled', true);
-      $('.dangtin_mota-dong9').find('.mattien').attr('disabled', false);
-      $('.dangtin_mota-dong9').find('.duongvao').attr('disabled', false);
-    }
-    if (value == 9) {
-      $('.dangtin_form-after').addClass('hidden');
-      $('.dangtin_mota-dong10').addClass('hidden')
-      $('.dangtin_mota-dong8').addClass('hidden')
-      $('.dangtin_mo_ta_dong11').addClass('hidden')
-      $('.dangtin_mota-dong9').addClass('hidden')
-      $('.dangtin_mo_ta_dong7').addClass('hidden')
-      $('.dangtin_khunginput_chonloai-hien').removeClass('hidden');
-      $('.dangtin_mota-dong8').find('.mattien').attr('disabled', true);
-      $('.dangtin_mota-dong8').find('.duongvao').attr('disabled', true);
-      $('.dangtin_mota-dong9').find('.mattien').attr('disabled', false);
-      $('.dangtin_mota-dong9').find('.duongvao').attr('disabled', false);
-    }
-    if (value == 7) {
-      $('.dangtin_form-after').addClass('hidden');
-      $('.dangtin_mota-dong10').addClass('hidden')
-      $('.dangtin_mota-dong8').addClass('hidden')
-      $('.dangtin_mota-dong9').addClass('hidden')
-      $('.dangtin_mo_ta_dong11').removeClass('hidden')
-      $('.dangtin_mo_ta_dong7').addClass('hidden')
-      $('.dangtin_khunginput_chonloai-hien').removeClass('hidden');
-      $('.dangtin_mota-dong8').find('.mattien').attr('disabled', true);
-      $('.dangtin_mota-dong8').find('.duongvao').attr('disabled', true);
-      $('.dangtin_mota-dong9').find('.mattien').attr('disabled', false);
-      $('.dangtin_mota-dong9').find('.duongvao').attr('disabled', false);
-    }
-    if(value == 10 || value == 11) {
-      $('.dangtin_form-after').addClass('hidden');
-      $('.dangtin_mota-dong9').removeClass('hidden')
-      $('.dangtin_mota-dong8').addClass('hidden')
-      $('.dangtin_mo_ta_dong11').addClass('hidden')
-      $('.dangtin_mota-dong10').addClass('hidden')
-      $('.dangtin_mo_ta_dong7').addClass('hidden')
-      $('.dangtin_khunginput_chonloai-hien').removeClass('hidden');
-      $('.dangtin_mota-dong8').find('.mattien').attr('disabled', true);
-      $('.dangtin_mota-dong8').find('.duongvao').attr('disabled', true);
-      $('.dangtin_mota-dong9').find('.mattien').attr('disabled', false);
-      $('.dangtin_mota-dong9').find('.duongvao').attr('disabled', false);
-    }
-    if(value == 1 || value == 2 || value == 3 || value == 4 || value == 5)
-    {
-      var option_desc_bds = '<option selected disabled >Bất động sản chi tiết</option>'
-      option_desc_bds += '<option value="Căn hộ mini">Căn hộ mini</option>'
-      option_desc_bds +='<option value="Căn hộ trung cấp">Căn hộ trung cấp</option>'
-      option_desc_bds +='<option value="Căn hộ cao cấp">Căn hộ cao cấp</option>'
-      option_desc_bds +='<option value="Căn hộ Penthouse">Căn hộ Penthouse</option>'
-      option_desc_bds +='<option value="Căn hộ Duplex">Căn hộ Duplex</option>'
-      option_desc_bds +='<option value="Căn hộ Skyvilla">Căn hộ Skyvilla</option>'
-      option_desc_bds +='<option value="Căn hộ loft house">Căn hộ loft house</option>'
-      option_desc_bds +='<option value="Căn hộ Studio">Căn hộ Studio</option>'
-      option_desc_bds +='<option value="Căn hộ Condotel">Căn hộ Condotel</option>'
-      option_desc_bds +='<option value="Căn hộ officetel">Căn hộ officetel</option>'
-      $('.div_office').addClass('hidden')
-      $('#onclick_chonloai_bds').children().remove();
-      $('#onclick_chonloai_bds').append(option_desc_bds);
-    }
-    if(value == 6)
-    {
-      var option_desc_bds = '<option selected disabled >Bất động sản chi tiết</option>'
-      option_desc_bds += '<option value="Biệt thự nghỉ dưỡng">Biệt thự nghỉ dưỡng</option>'
-      option_desc_bds +='<option value="Biệt thự đơn lập">Biệt thự đơn lập</option>'
-      option_desc_bds +='<option value="Biệt thự song lập">Biệt thự song lập</option>'
-      option_desc_bds +='<option value="Biệt thự tứ lập">Biệt thự tứ lập</option>'
-      $('#onclick_chonloai_bds').children().remove();
-      $('.div_office').addClass('hidden')
-      $('#onclick_chonloai_bds').append(option_desc_bds);
-    }
-    if(value == 7 || value == 9 || value == 10 || value == 11)
-    {
-      $('.dangtin_khunginput_chonloai-hien').addClass('hidden');
-      $('.dangtin_khunginput_chonloai').addClass('w_100');
-      $('.dangtin_khunginput_chonloai').removeClass('w_50');
-      $('.dangtin_khunginput_chonloai').removeClass('mr_r_12');
-      $('.div_office').addClass('hidden')
-    }
-    if(value == 8)
-    {
-      var option_desc_bds = '<option selected disabled >Bất động sản chi tiết</option>'
-      option_desc_bds += '<option value="Co-working Space">Co-working Space</option>'
-      $('#onclick_chonloai_bds').children().remove();
-      $('.checkboxes_room').addClass('hidden')
-      $('#onclick_chonloai_bds').append(option_desc_bds);
-    }
+  else {
+    $('.dangtin_form-after').addClass('hidden');
+    $('.dangtin_mota-dong9').removeClass('hidden')
+    $('.dangtin_mota-dong8').addClass('hidden')
+    $('.dangtin_mo_ta_dong7').addClass('hidden')
+    $('.dangtin_khunginput_chonloai').removeClass('w_100');
+    $('.dangtin_khunginput_chonloai').addClass('w_50');
+    $('.dangtin_khunginput_chonloai').addClass('mr_r_12');
+    $('.dangtin_khunginput_chonloai-hien').removeClass('hidden');
   }
 })
 function btn_dangngay(g) {

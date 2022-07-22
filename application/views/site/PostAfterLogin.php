@@ -8,12 +8,12 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/frontend/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/slick.css">
     <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/select2.min.css">
     <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/slick-theme.css">
-    <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/frontend/css/style_header_d.css">
-    <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/frontend/css/css_q.css">
+    <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/style_header_d.css">
+    <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/css_q.css">
 </head>
 
 <body>
@@ -45,1096 +45,837 @@
                     </div>
                 </div>
             </div>
-
             <div class="dangtin_input_thongtin mr_t_24">
-                <form action="" method="" onsubmit="return false" id="postNews">
-                    <div class="dangtin_input_item pa_24_32 back_w border_r_8">
-                        <div class="">
-                            <p class="color_green font_w500 line_h24 font_s16">Thông tin cơ bản</p>
-                        </div>
-                        <div class="thongtin_input_map d_flex mr_t_29 pl_pr_22">
-                            <div class="input_map-left w_50 ">
-                                <div class="the-input mr_r_54 box_input_infor">
-                                    <p class="line_h20 font_s16 font_w500 color_grey">Tên dự án <span class="chudo">*</span>
-                                    </p>
-                                    <div class="khung_input mr_t_8 input_infor_tag">
-                                        <input name="project_name" class="project_name " type="text" placeholder="Nhập tên dự án">
-                                    </div>
-                                </div>
-                                <div class="mr_t_17 flex_w box_input_infor">
-                                    <div class="d_flex align_c">
-                                        <span class="mr_r_17 font_s14 line_h16 font_w500 color_grey">Loại hình <span class="chudo">*</span></span>
-                                        <span class="dangtin-left-radio d_flex align_c mr_r_17">
-                                            <input type="radio" value="1" checked name="type_news" id="check_mua">
-                                            <span class="mr_l_9 font_s14 line_h16 font_w500 color_grey">Mua bán</span>
-                                        </span>
-                                        <span class="dangtin-left-radio d_flex align_c">
-                                            <input type="radio" value="2" name="type_news" id="check_thue">
-                                            <span class="mr_l_9 font_s14 line_h16 font_w500 color_grey">Cho thuê</span>
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="the-input d_flex mr_r_54 the-input_xuong_res ">
-                                    <div class="dangtin_khunginput_chonloai  mr_t_17 w_100 box_input_infor">
-                                        <p class="line_h20 font_s16 font_w500 color_grey">Loại bất động sản<span class="chudo">*</span></p>
-                                        <div class="khung_input mr_t_8">
-                                            <select name="type_bds" id="onclick_chonloai_after" class="size-14 type_bds select_option">
-                                                <option selected disabled>Chọn loại bất động sản</option>
-                                                <option value="1">Căn hộ</option>
-                                                <option value="2">Nhà riêng</option>
-                                                <option value="3">Nhà mặt phố</option>
-                                                <option value="4">Shophouse, Nhà phố thương mại</option>
-                                                <option value="5">Biệt thự liền kề</option>
-                                                <option value="6">Đất</option>
-                                                <option value="7">Đất nền dự án</option>
-                                                <option value="8">Bất động sản khác</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class=" mr_t_17 w_50 mr_l_12 dangtin_khunginput_chonloai-hien hidden box_input_infor">
-                                        <p class="line_h20 font_s16 font_w500 color_grey">Bất động sản chi tiết <span class="chudo">*</span></p>
-                                        <div class="khung_input mr_t_8">
-                                            <select name="" id="onclick_chonloai_bds" class="size-14 select_option">
-                                                <option selected disabled >Bất động sản chi tiết</option>
-                                                <option value="2">Căn hộ mini</option>
-                                                <option value="3">Căn hộ trung cấp</option>
-                                                <option value="4">Căn hộ cao cấp</option>
-                                                <option value="5">Căn hộ Penthouse</option>
-                                                <option value="6">Căn hộ Duplex</option>
-                                                <option value="7">Căn hộ Skyvilla</option>
-                                                <option value="8">Căn hộ loft house</option>
-                                                <option value="9">Căn hộ Studio</option>
-                                                <option value="10">Căn hộ Condotel</option>
-                                                <option value="11">Căn hộ officetel</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="the-input mr_r_54 mr_t_21 box_input_infor">
-                                    <p class="line_h20 font_s16 font_w500 color_grey">Tỉnh/ thành phố <span class="chudo">*</span></p>
-                                    <div class="khung_input mr_t_8">
-                                        <select onchange="address(this,'districts','ajaxGetListDistricts','Chọn quận huyện','1')" name="city" id="select_city" class="select_option js-states form-control">
-                                            <option selected disabled>Chọn tỉnh thành phố</option>
-                                            <? foreach($city as $cit): ?>
-                                            <option value="<?= $cit['cit_id'] ?>"><?= $cit['cit_name'] ?></option>
-                                            <? endforeach ?>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div id="the-input_quan" class="the-input mr_r_54 mr_t_21 box_input_infor">
-                                    <p class="line_h20 font_s16 font_w500 color_grey">Quận huyện <span class="chudo">*</span></p>
-                                    <div class="khung_input mr_t_8">
-                                        <select onchange="address(this,'wards','ajaxGetListWards','Chọn phường xã','2')" name="districts" class="districts select_option js-states form-control">
-                                            <option disabled selected>Chọn quận huyện</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div id="the-input--res-mot" class="the-input mr_r_54 mr_t_21 box_input_infor">
-                                    <p class="line_h20 font_s16 font_w500 color_grey">Phường, xã</span></p>
-                                    <div class="khung_input mr_t_8">
-                                        <select  onchange="address(this,'street','getStreetBy','Chọn Đường/ phố','3')" name="wards" class="select_option wards js-states form-control">
-                                            <option disabled selected>Chọn phường xã</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="the-input the-input--res mr_r_54 mr_t_21 box_input_infor">
-                                    <p class="line_h20 font_s16 font_w500 color_grey">Đường phố</span></p>
-                                    <div class="khung_input mr_t_8">
-                                        <select name="street" class="select_option street js-states form-control">
-                                            <option disabled selected>Chọn Đường/ phố</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="the-input the-input--res mr_r_54 mr_t_21">
-                                    <p class="line_h20 font_s16 font_w500 color_grey">Địa chỉ chi tiết </span></p>
-                                    <div class="khung_input mr_t_8">
-                                        <input type="text" class="desc_addr" placeholder="Nhập địa chỉ chi tiết">
-                                    </div>
-                                </div>
-                                <div class="the-input the-input--res mr_r_54 mr_t_21 box_input_infor">
-                                    <p class="line_h20 font_s16 font_w500 color_grey">Ngày hết hạn<span class="chudo">*</span></p>
-                                    <div class="khung_input mr_t_8 input_infor_tag">
-                                        <input type="date" name="time_expired" class="time_expired" placeholder="Nhập địa chỉ chi tiết">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="input_map-right w_50 mr_t_20">
-                                <div>
-                                    <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d251637.95196238213!2d105.6189045!3d9.779349!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1653901105958!5m2!1svi!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                            </div>
-                        </div>
+                <div class="dangtin_input_item pa_24_32 back_w border_r_8">
+                    <div class="">
+                        <p class="color_green font_w500 line_h24 font_s16">Thông tin cơ bản</p>
                     </div>
-                    <div class="dangtin_input_item back_w border_r_8 mr_t_24">
-                        <div class="dangtin_input-title pa_24_32_0">
-                            <p class="color_green font_w500 line_h24 font_s16">Thông tin mô tả</p>
-                        </div>
-                        <div class="dangtin_mota pa_0_54_24 mr_t_29">
-                            <div class="dangtin_mota-dong1 d_flex w_100">
-                                <div class="dangtin_mota-dong1-left w_50 mr_r_12">
-                                    <div class="dangtin_mota-cot1-gia d_flex">
-                                        <div class="dangtin_mota-dong1-gia-input w_100">
-                                            <p class="line_h20 font_s16 font_w500 color_grey">Giá tiền (VNĐ)<span class="chudo">*</span></p>
-                                            <div class="d_flex">
-                                                <div class=" mr_t_8 w_60 m_r_16">
-                                                    <div class="box_input_infor">
-                                                        <div class="khung_input input_infor_tag  mr_t_0 btn_opacity btn_tat btn_nhap_gia position_r">
-                                                            <input type="number" id="number" class="" name="giamin" placeholder="Nhập giá cố định">
-                                                            <div class="dangtin_mota-thue-thang position_a font_s14 color_grey3 hidden"><span class="position_r z_index_1">Tháng</span> </div>
-                                                        </div>
-                                                        <div class="btn_opacity mr_t_6 font_s12 line_h14 color_grey">
-                                                            <p class="ren_number">0 triệu</p>
-                                                        </div>
-                                                    </div>
-                                                    <div class="d_flex z_index_100 space_b flex_column_re">
-                                                        <div class="dangtin_mota-thoathuan d_flex mr_t_12 align_c">
-                                                            <div class="" id="radio_click">
-                                                                <input value = "1" type="checkbox" id="radio_button">
-                                                            </div>
-                                                            <div class="color_grey font_s14 line_h16 font_w500 mr_l_9">Giá thỏa thuận</div>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div>
-                                                <div class="dangtin_mota-dong1-khoanggia w_40 mr_t_8">
-                                                    <div class="dangtin_btn-khoanggia btn_tat_khoanggia chuxanh_nentrang pa_10_0 btn_opacity cursor_p" id="gia_open_khoanggia">
-                                                        <p class="font_s16 line_h19 font_w500">Khoảng giá</p>
-                                                    </div>
-                                                    <div>
-                                                    <div class="btn_gia_max hidden mr_t_0 khung_input pos_re box_input_infor input_infor_tag">
-                                                        <input type="number" name="" class="" placeholder="Giá max" id="number_max">
-                                                        <span class="img_delete_mo cursor_p"><img src="<? echo base_url() ?>assets/images/delete.png" alt=""></span>
-                                                        <div class="btn_opacity mr_t_6 font_s12 line_h14 color_grey">
-                                                            <p class="ren_number_max">0 triệu</p>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="dangtin_mota-dong3 mr_t_22">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Diện tích (m2) <span class="chudo">*</span></p>
-                                        <div class="dangtin_mota-dong3-left d_flex">
-                                            <div class="dangtin_mota-dong3_m2 w_60 m_r_16 mr_t_8 box_input_infor">
-                                                <div class="btn_dt_nhap khung_input mr_t_0 input_infor_tag">
-                                                    <input type="text" name="area_min" placeholder="Nhập diện tích" id="number_dt_1">
-                                                </div>
-                                                <!-- <div class="btn_dt_mo hidden khung_input mr_t_0">
-                                                    <input type="text" placeholder="Nhập diện tích từ" id="number_dt_2">
-                                                </div> -->
-                                                <p class="font_s12 line_h14 color_grey mr_t_8 ren_number_dt_2">Quy đổi: <span>00,00 triệu/m2</span></p>
-                                            </div>
-                                            <div class=" dangtin_mota-dong3_khoangm2 w_40 mr_t_8 box_input_infor">
-                                                <div class="dangtin_btn_khoangm2 chuxanh_nentrang pa_10_0 btn_dt cursor_p" id="btn_dt_dong">
-                                                    <p class="font_s16 line_h19 font_w500">Khoảng diện tích</p>
-                                                </div>
-                                                <div class="btn_dt_mo hidden mr_t_0 khung_input pos_re input_infor_tag">
-                                                    <input type="text" placeholder="Đến" id="number_dt_2">
-                                                    <span class="img_dt_delete cursor_p"><img src="<? echo base_url() ?>assets/images/delete.png" alt=""></span>
-                                                    <div class="btn_opacity mr_t_6 font_s12 line_h14 color_grey">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dangtin_mota-dong1-right w_50 mr_l_12 mr_t_3">
-                                    <xdiv class="">
-                                        <p class="color_grey font_w500 line_h20 font_s14">Hướng nhà</p>
-                                        <div class="khung_input mr_t_8">
-                                            <select name="direction" id="" class="size-14 direction select_option">
-                                                <option selected disabled>Chọn hướng nhà</option>
-                                                <option value="Đông">Đông</option>
-                                                <option value="Tây">Tây</option>
-                                                <option value="Nam">Nam</option>
-                                                <option value="Bắc">Bắc</option>
-                                                <option value="Đông bắc">Đông bắc</option>
-                                                <option value="Tây bắc">Tây bắc</option>
-                                                <option value="Đông nam">Đông nam</option>
-                                                <option value="Tây nam">Tây nam</option>
-                                            </select>
-                                        </div>
-                                    </xdiv>
-                                    <div class="mr_t_21">
-                                        <div class="dangtin_mota-dong2 ">
-                                            <p class="color_grey font_s14 font_w500 line_h20">Tình trạng pháp lý</p>
-                                            <div class="khung_select mr_t_8">
-                                                <select name="Legal_stt" id="" class="size-14 Legal_stt select_option">
-                                                    <option selected disabled >Chọn tình trạng pháp lý</option>
-                                                    <option value="Sổ đỏ">Sổ đỏ</option>
-                                                    <option value="Sổ hồng">Sổ hồng</option>
-                                                    <option value="Sổ trắng">Sổ trắng</option>
-                                                    <option value="Giấy chứng nhận quyền sở hữu">Giấy chứng nhận quyền sở hữu</option>
-                                                    <option value="Giấy tờ hợp lệ">Giấy tờ hợp lệ</option>
-                                                    <option value="Giấy phép xây dựng">Giấy phép xây dựng</option>
-                                                    <option value="Giấy phép kinh doanh">Giấy phép kinh doanh</option>
-                                                    <option value="Giấy viết tay">Giấy viết tay</option>
-                                                    <option value=">Đang hợp thức hóa">Đang hợp thức hóa</option>
-                                                    <option value="Chưa xác định">Chưa xác định</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <div class="dangtin_mota-dong4 mr_t_21 box_input_infor">
-                                <p class="font_w500 font_s16 line_h20 color_grey">Tên tiêu đề <span class="chudo">*</span>
+                    <div class="thongtin_input_map d_flex mr_t_29 pl_pr_22">
+                        <div class="input_map-left w_50 ">
+                            <div class="the-input mr_r_54">
+                                <p class="line_h20 font_s16 font_w500 color_grey">Tên dự án <span class="chudo">*</span>
                                 </p>
-                                <div class="khung_input input_infor_tag">
-                                    <input type="text" name="title_news" class="title_news" placeholder="Nhập diện tích">
+                                <div class="khung_input mr_t_8">
+                                    <input type="text" placeholder="Nhập tên dự án">
                                 </div>
+                            </div>
+                            <div class="d_flex align_c mr_t_17 flex_w">
+                                <span class="mr_r_17 font_s14 line_h16 font_w500 color_grey">Loại hình <span class="chudo">*</span></span>
+                                <span class="dangtin-left-radio d_flex align_c mr_r_17">
+                                    <input type="radio" name="radio_dangtin" id="check_mua" checked>
+                                    <span class="mr_l_9 font_s14 line_h16 font_w500 color_grey">Mua bán</span>
+                                </span>
+                                <span class="dangtin-left-radio d_flex align_c">
+                                    <input type="radio" name="radio_dangtin" id="check_thue">
+                                    <span class="mr_l_9 font_s14 line_h16 font_w500 color_grey">Cho thuê</span>
+                                </span>
+                            </div>
+                            <div class="the-input d_flex mr_r_54 the-input_xuong_res">
+                                <div class="dangtin_khunginput_chonloai  mr_t_17 w_100">
+                                    <p class="line_h20 font_s16 font_w500 color_grey">Loại bất động sản<span class="chudo">*</span></p>
+                                    <div class="khung_input mr_t_8">
+                                        <select name="" id="onclick_chonloai_after" class="size-14 select_option">
+                                            <option selected disabled value="" class="">Chọn loại bất động sản</option>
+                                            <option value="1">Căn hộ</option>
+                                            <option value="2">Nhà riêng</option>
+                                            <option value="2">Nhà mặt phố</option>
+                                            <option value="2">Shophouse, Nhà phố thương mại</option>
+                                            <option value="2">Biệt thự liền kề</option>
+                                            <option value="">Đất</option>
+                                            <option value="">Đất nền dự án</option>
+                                            <option value="">Bất động sản khác</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class=" mr_t_17 w_50 mr_l_12 dangtin_khunginput_chonloai-hien hidden">
+                                    <p class="line_h20 font_s16 font_w500 color_grey">Bất động sản chi tiết <span class="chudo">*</span></p>
+                                    <div class="khung_input mr_t_8">
+                                        <select name="" id="onclick_chonloai_bds" class="size-14 select_option">
+                                            <option selected disabled value="" class="">Bất động sản chi tiết</option>
+                                            <option value="">Bất động sản chi tiết</option>
+                                            <option value="">Căn hộ mini</option>
+                                            <option value="">Căn hộ trung cấp</option>
+                                            <option value="">Căn hộ cao cấp</option>
+                                            <option value="">Căn hộ Penthouse</option>
+                                            <option value="">Căn hộ Duplex</option>
+                                            <option value="">Căn hộ Skyvilla</option>
+                                            <option value="">Căn hộ loft house</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="the-input mr_r_54 mr_t_21">
+                                <p class="line_h20 font_s16 font_w500 color_grey">Tỉnh/ thành phố <span class="chudo">*</span></p>
+                                <div class="khung_input mr_t_8">
+                                    <select name="" id="" class="size-14 select_option">
+                                        <option selected disabled value="" class="">Chọn tỉnh/ thành phố</option>
+                                        <option value="">Tỉnh Phú Thọ</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="the-input_quan" class="the-input mr_r_54 mr_t_21 ">
+                                <p class="line_h20 font_s16 font_w500 color_grey">Quận huyện <span class="chudo">*</span></p>
+                                <div class="khung_input mr_t_8">
+                                    <select name="" id="" class="size-14 select_option">
+                                        <option selected disabled value="" class="">Chọn quận huyện</option>
+                                        <option value="">Thanh Thủy</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="the-input--res-mot" class="the-input mr_r_54 mr_t_21">
+                                <p class="line_h20 font_s16 font_w500 color_grey">Phường, xã</span></p>
+                                <div class="khung_input mr_t_8">
+                                    <select name="" id="" class="size-14 select_option">
+                                        <option selected disabled value="" class="">Chọn phường, xã</option>
+                                        <option value="">Thạch Đồng</option>
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="the-input the-input--res mr_r_54 mr_t_21">
+                                <p class="line_h20 font_s16 font_w500 color_grey">Đường phố</span></p>
+                                <div class="khung_input mr_t_8">
+                                    <select name="" id="" class="size-14 select_option">
+                                        <option selected disabled value="" class="">Chọn Đường/ phố</option>
+                                        <option value="">Khu 8</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="the-input the-input--res mr_r_54 mr_t_21">
+                                <p class="line_h20 font_s16 font_w500 color_grey">Địa chỉ chi tiết </span></p>
+                                <div class="khung_input mr_t_8">
+                                    <input type="text" placeholder="Nhập địa chỉ chi tiết">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input_map-right w_50 mr_t_20">
+                            <div>
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d251637.95196238213!2d105.6189045!3d9.779349!3m2!1i1024!2i768!4f13.1!5e0!3m2!1svi!2s!4v1653901105958!5m2!1svi!2s" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dangtin_input_item back_w border_r_8 mr_t_24">
+                    <div class="dangtin_input-title pa_24_32_0">
+                        <p class="color_green font_w500 line_h24 font_s16">Thông tin mô tả</p>
+                    </div>
+                    <div class="dangtin_mota pa_0_54_24 mr_t_29">
+                        <div class="dangtin_mota-dong1 d_flex w_100">
+                            <div class="dangtin_mota-dong1-left w_50 mr_r_12">
+                                <div class="dangtin_mota-cot1-gia d_flex">
+                                    <div class="dangtin_mota-dong1-gia-input w_100">
+                                        <p class="line_h20 font_s16 font_w500 color_grey">Giá tiền (VNĐ)<span class="chudo">*</span></p>
+                                        <div class="d_flex">
+                                            <div class=" mr_t_8 w_60 m_r_16">
+                                                <div onclick="giacodinh(this)" class="khung_input mr_t_0 btn_opacity btn_tat btn_nhap_gia position_r">
+                                                    <input type="text" id="number" placeholder="Nhập giá cố định">
+                                                    <div class="dangtin_mota-thue-thang position_a font_s14 color_grey3 hidden"><span class="position_r z_index_1">Tháng</span> </div>
+                                                </div>
+                                                <div class="d_flex z_index_100 space_b flex_column_re">
+                                                    <div class="dangtin_mota-thoathuan d_flex mr_t_12 align_c">
+                                                        <div class="" id="radio_click">
+                                                            <input type="checkbox" id="radio_button">
+                                                        </div>
+                                                        <div class="color_grey font_s14 line_h16 font_w500 mr_l_9">Giá
+                                                            thỏa thuận</div>
+                                                    </div>
+                                                    <div class="btn_opacity mr_t_6 font_s12 line_h14 color_grey">
+                                                        <p class="ren_number">0 triệu</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="dangtin_mota-dong1-khoanggia w_40 mr_t_8">
+                                                <div class="dangtin_btn-khoanggia btn_tat_khoanggia chuxanh_nentrang pa_10_0 btn_opacity cursor_p" id="gia_open_khoanggia">
+                                                    <p class="font_s16 line_h19 font_w500">Khoảng giá</p>
+                                                </div>
+                                                <div class="btn_gia_max hidden mr_t_0 khung_input pos_re">
+                                                    <input type="text" placeholder="Giá max" id="number_max">
+                                                    <span class="img_delete_mo cursor_p"><img src="<? echo base_url() ?>assets/images/delete.png" alt=""></span>
+                                                    <div class="btn_opacity mr_t_6 font_s12 line_h14 color_grey float_r">
+                                                        <p class="ren_number_max">0 triệu</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="dangtin_mota-dong3 mr_t_22">
+                                    <p class="font_w500 font_s16 line_h20 color_grey">Diện tích (m2) <span class="chudo">*</span></p>
+                                    <div class="dangtin_mota-dong3-left d_flex">
+                                        <div class="dangtin_mota-dong3_m2 w_60 m_r_16 mr_t_8">
+                                            <div class="btn_dt_nhap khung_input mr_t_0">
+                                                <input type="text" placeholder="Nhập diện tích" id="number_dt_1">
+                                            </div>
+                                            <!-- <div class="btn_dt_mo hidden khung_input mr_t_0">
+                                                <input type="text" placeholder="Nhập diện tích từ" id="number_dt_2">
+                                            </div> -->
+                                            <p class="font_s12 line_h14 color_grey mr_t_8 ren_number_dt_2">Quy đổi: 00,00 triệu/m2</p>
+                                        </div>
+                                        <div class=" dangtin_mota-dong3_khoangm2 w_40 mr_t_8">
+                                            <div class="dangtin_btn_khoangm2 chuxanh_nentrang pa_10_0 btn_dt cursor_p" id="btn_dt_dong">
+                                                <p class="font_s16 line_h19 font_w500">Khoảng diện tích</p>
+                                            </div>
+                                            <div class="btn_dt_mo hidden mr_t_0 khung_input pos_re">
+                                                <input type="text" placeholder="Đến" id="number_dt_2">
+                                                <span class="img_dt_delete cursor_p"><img src="<? echo base_url() ?>assets/images/delete.png" alt=""></span>
+                                                <div class="btn_opacity mr_t_6 font_s12 line_h14 color_grey">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dangtin_mota-dong1-right w_50 mr_l_12 mr_t_3">
+                                <xdiv class="">
+                                    <p class="color_grey font_w500 line_h20 font_s14">Hướng nhà</p>
+                                    <div class="khung_input mr_t_8">
+                                        <select name="" id="" class="size-14 select_option">
+                                            <option selected disabled value="" class="">Chọn hướng nhà</option>
+                                            <option value="">HTSKDDL</option>
+                                        </select>
+                                    </div>
+                                </xdiv>
+                                <div class="mr_t_21">
+                                    <div class="dangtin_mota-dong2 ">
+                                        <p class="color_grey font_s14 font_w500 line_h20">Tình trạng pháp lý</p>
+                                        <div class="khung_select mr_t_8">
+                                            <select name="" id="" class="size-14 select_option">
+                                                <option selected disabled value="" class="">Chọn tình trạng pháp lý
+                                                </option>
+                                                <option value="">HTSKDDL</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
 
+                        </div>
+                        <div class="dangtin_mota-dong4 mr_t_21">
+                            <p class="font_w500 font_s16 line_h20 color_grey">Tên tiêu đề <span class="chudo">*</span>
+                            </p>
+                            <div class="khung_input">
+                                <input type="text" placeholder="Nhập diện tích">
                             </div>
-                            <div class="dangtin_mota-dong5 mr_t_21 box_input_infor">
-                                <p class="font_w500 font_s16 line_h20 color_grey">Mô tả <span class="chudo">*</span></p>
-                                <div class="mr_t_8 dangtin_mota_textarea">
-                                    <textarea name="tdn_mota" class="tdn_mota" id="" cols="30" rows="5" placeholder="Nhập nội dung"></textarea>
-                                </div>
+
+                        </div>
+                        <div class="dangtin_mota-dong5 mr_t_21">
+                            <p class="font_w500 font_s16 line_h20 color_grey">Mô tả <span class="chudo">*</span></p>
+                            <div class="mr_t_8 dangtin_mota_textarea textarea">
+                                <textarea name="tdn_mota" id="" cols="30" rows="5" placeholder="Nhập nội dung"></textarea>
                             </div>
-                            <div class="dangtin_mota-gachchan mr_t_16 position_r"></div>
-                            <div class="dangtin_mo_ta_dong7 d_flex space_b mr_t_45 w_100">
-                                <div class="dangtin_mo_ta_dong7-trai dangtin_mo_ta_dong_chung">
-                                    <div class="dangtin_mo_ta_dong7-tang">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Tầng căn hộ</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="number" class="apartment_floor" placeholder="Nhập số tầng căn hộ">
-                                        </div>
-                                    </div>
-                                    <div class="dangtin_mo_ta_dong7-balcony mr_t_21">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Hướng ban công</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="text" class="Balcony_direction" placeholder="Nhập hướng ban công">
-                                        </div>
-                                    </div>
-                                    <div class="dangtin_mo_ta_dong7-corner d_flex mr_t_26 align_c">
-                                        <div class="font_w500 font_s14 line_h16 color_grey mr_r_55">Căn góc</div>
-                                        <div class="dong7-corner-true d_flex align_c mr-50 ">
-                                            <div><input type="radio" class="corner" value="1" name="corner"></div>
-                                            <div class="font_w500 font_s14 line_h16 color_grey mr_l_9">có</div>
-                                        </div>
-                                        <div class="dong7-corner-false d_flex align_c">
-                                            <div><input type="radio" value="2" class="corner" name="corner"></div>
-                                            <div class="font_w500 font_s14 line_h16 color_grey mr_l_9">không</div>
-                                        </div>
+                        </div>
+                        <div class="dangtin_mota-gachchan mr_t_16 position_r"></div>
+                        <div class="dangtin_mo_ta_dong7 d_flex space_b mr_t_45 w_100">
+                            <div class="dangtin_mo_ta_dong7-trai dangtin_mo_ta_dong_chung">
+                                <div class="dangtin_mo_ta_dong7-tang">
+                                    <p class="font_w500 font_s16 line_h20 color_grey">Tầng căn hộ</p>
+                                    <div class="khung_input mr_t_8">
+                                        <input type="text" placeholder="Nhập số tầng căn hộ">
                                     </div>
                                 </div>
-                                <div class="dangtin_mo_ta_dong7-right dangtin_mo_ta_dong_chung">
-                                    <div class="dangtin_mo_ta_dong7-numbers-rom d_flex space_b">
-                                        <div class="dong7-numbers-rom_left">
-                                            <p class="font_w500 font_s16 line_h20 color_grey">Số phòng tắm</p>
-                                            <div class="dong7-numbers-rom_left-value d_flex mr_t_8">
-                                                <div data-id="1" class="dong-numbers-rom-value-item radio_bathroom cursor_p">1</div>
-                                                <div data-id="2" class="dong-numbers-rom-value-item radio_bathroom cursor_p">2</div>
-                                                <div data-id="3" class="dong-numbers-rom-value-item radio_bathroom cursor_p">3</div>
-                                                <div data-id="4+" class="dong-numbers-rom-value-item radio_bathroom cursor_p">4+</div>
-                                            </div>
-                                        </div>
-                                        <div class="dong7-numbers-rom_right">
-                                            <p class="font_w500 font_s16 line_h20 color_grey">Số phòng ngủ</p>
-                                            <div class="dong7-numbers-rom_right-value d_flex mr_t_8">
-                                                <div data-id="1" class="dong-numbers-rom-value-item radio_bedroom cursor_p">1</div>
-                                                <div data-id="2" class="dong-numbers-rom-value-item radio_bedroom cursor_p">2</div>
-                                                <div data-id="3" class="dong-numbers-rom-value-item radio_bedroom cursor_p">3</div>
-                                                <div data-id="4+" class="dong-numbers-rom-value-item radio_bedroom cursor_p">4+</div>
-                                            </div>
-                                        </div>
+                                <div class="dangtin_mo_ta_dong7-balcony mr_t_21">
+                                    <p class="font_w500 font_s16 line_h20 color_grey">Hướng ban công</p>
+                                    <div class="khung_input mr_t_8">
+                                        <input type="text" placeholder="Nhập hướng ban công">
                                     </div>
-                                    <div class="dong7-numbers-rom_right_furniture mr_t_21">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Nội thất</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="text" class='Interior7' placeholder="Nhập">
-                                        </div>
+                                </div>
+                                <div class="dangtin_mo_ta_dong7-corner d_flex mr_t_26 align_c">
+                                    <div class="font_w500 font_s14 line_h16 color_grey mr_r_55">Căn góc</div>
+                                    <div class="dong7-corner-true d_flex align_c mr-50 ">
+                                        <div><input type="radio" name="corner" checked></div>
+                                        <div class="font_w500 font_s14 line_h16 color_grey mr_l_9">có</div>
+                                    </div>
+                                    <div class="dong7-corner-false d_flex align_c">
+                                        <div><input type="radio" name="corner"></div>
+                                        <div class="font_w500 font_s14 line_h16 color_grey mr_l_9">không</div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="dangtin_mota-dong8 d_flex space_b  mr_t_45 w_100 hidden">
-                                <div class="dangtin_mota-dong8-left dangtin_mo_ta_dong_chung">
-                                    <div class="dangtin_mota-dong8-facade">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Mặt tiền (m)</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="text" class="mattien8" placeholder="Nhập">
-                                        </div>
-                                    </div>
-                                    <div class="dangtin_mota-dong8-facade mr_t_21">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Đường vào (m)</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="text" class="duongvao8" placeholder="Nhập">
-                                        </div>
-                                    </div>
-                                    <div class="dangtin_mota-dong8-facade mr_t_21">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Số tầng</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="text" class="floor8" placeholder="Nhập">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dangtin_mota-dong8-right dangtin_mo_ta_dong_chung">
-                                    <div class="dong-numbers-rom_left">
+                            <div class="dangtin_mo_ta_dong7-right dangtin_mo_ta_dong_chung">
+                                <div class="dangtin_mo_ta_dong7-numbers-rom d_flex space_b">
+                                    <div class="dong7-numbers-rom_left">
                                         <p class="font_w500 font_s16 line_h20 color_grey">Số phòng tắm</p>
-                                        <div class="dong8-numbers-rom_left-value d_flex mr_t_8">
-                                            <div  data-id="1" class="dong-numbers-rom-value-item radio_bathroom cursor_p">1</div>
-                                            <div  data-id="2" class="dong-numbers-rom-value-item radio_bathroom cursor_p">2</div>
-                                            <div  data-id="3" class="dong-numbers-rom-value-item radio_bathroom cursor_p">3</div>
-                                            <div  data-id="4+" class="dong-numbers-rom-value-item radio_bathroom cursor_p">4+</div>
+                                        <div class="dong7-numbers-rom_left-value d_flex mr_t_8">
+                                            <div class="dong-numbers-rom-value-item cursor_p">1</div>
+                                            <div class="dong-numbers-rom-value-item cursor_p">2</div>
+                                            <div class="dong-numbers-rom-value-item cursor_p">3</div>
+                                            <div class="dong-numbers-rom-value-item cursor_p">4+</div>
                                         </div>
                                     </div>
-                                    <div class="dong-numbers-rom_right mr_t_21">
+                                    <div class="dong7-numbers-rom_right">
                                         <p class="font_w500 font_s16 line_h20 color_grey">Số phòng ngủ</p>
-                                        <div class="dong8-numbers-rom_right-value d_flex mr_t_8">
-                                            <div  data-id="1" class="dong-numbers-rom-value-item radio_bedroom cursor_p">1</div>
-                                            <div  data-id="2" class="dong-numbers-rom-value-item radio_bedroom cursor_p">2</div>
-                                            <div  data-id="3" class="dong-numbers-rom-value-item radio_bedroom cursor_p">3</div>
-                                            <div  data-id="4+" class="dong-numbers-rom-value-item radio_bedroom cursor_p">4+</div>
-                                        </div>
-                                    </div>
-                                    <div class="dong7-numbers-rom_right_furniture mr_t_21">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Nội thất</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="text" class="Interior8" placeholder="Nhập">
+                                        <div class="dong7-numbers-rom_right-value d_flex mr_t_8">
+                                            <div class="dong-numbers-rom-value-item cursor_p">1</div>
+                                            <div class="dong-numbers-rom-value-item cursor_p">2</div>
+                                            <div class="dong-numbers-rom-value-item cursor_p">3</div>
+                                            <div class="dong-numbers-rom-value-item cursor_p">4+</div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="dangtin_mota-dong9 d_flex space_b  mr_t_45 w_100 hidden">
-                                <div class="dangtin_mota-dong8-left dangtin_mo_ta_dong_chung">
-                                    <div class="dangtin_mota-dong8-facade">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Mặt tiền (m)</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="number" class="mattien9" placeholder="Nhập">
-                                        </div>
-                                    </div>
-                                    <div class="dangtin_mota-dong8-facade mr_t_21">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Đường vào (m)</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="number" class="duongvao9" placeholder="Nhập">
-                                        </div>
+                                <div class="dong7-numbers-rom_right_furniture mr_t_21">
+                                    <p class="font_w500 font_s16 line_h20 color_grey">Nội thất</p>
+                                    <div class="khung_input mr_t_8">
+                                        <input type="text" placeholder="Nhập">
                                     </div>
                                 </div>
-                                <div class="dangtin_mota-dong8-right dangtin_mo_ta_dong_chung">
-                                    <div class="dong7-numbers-rom_right_furniture">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Chiều sâu</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="number" class="chieusau" placeholder="Nhập">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dangtin_mota-dong10 d_flex space_b  mr_t_45 w_100 hidden">
-                                <div class="dangtin_mota-dong8-left dangtin_mo_ta_dong_chung">
-                                    <div class="dangtin_mota-dong8-facade">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Tầng văn phòng</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="number" class="floor10" placeholder="Nhập">
-                                        </div>
-                                    </div>
-                                    <div class="dangtin_mota-dong8-facade mr_t_21">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Nội thất</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="text" class="Interior10" placeholder="Nhập">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dangtin_mota-dong8-right dangtin_mo_ta_dong_chung">
-                                    <div class="dong7-numbers-rom_right_furniture">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Số thang máy</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="number" class="elevator_number" placeholder="Nhập">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dangtin_mo_ta_dong11 d_flex space_b mr_t_45 w_100 hidden">
-                                <div class="dangtin_mo_ta_dong7-trai dangtin_mo_ta_dong_chung">
-                                    <div class="dangtin_mo_ta_dong7-tang">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Tầng</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="text" class="floor11" placeholder="Nhập">
-                                        </div>
-                                    </div>
-                                    <div class="dangtin_mo_ta_dong7-balcony mr_t_21">
-                                        <p class="font_w500 font_s16 line_h20 color_grey">Nội thất</p>
-                                        <div class="khung_input mr_t_8">
-                                            <input type="text" class="Interior11" placeholder="Nhập">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="dangtin_mo_ta_dong7-right dangtin_mo_ta_dong_chung">
-                                    <div class="dangtin_mo_ta_dong7-numbers-rom">
-                                        <div class="dong7-numbers-rom_left">
-                                            <p class="font_w500 font_s16 line_h20 color_grey">phòng tắm</p>
-                                            <div class="dong7-numbers-rom_left-value d_flex mr_t_18">
-                                                <div class="dangtin_mo_ta_dong7-corner d_flex align_c">
-                                                    <div class="dong7-corner-true d_flex align_c mr-50 ">
-                                                        <div><input type="radio" class="check_bathroom" value="1" name="check_bathroom"></div>
-                                                        <div class="font_w500 font_s14 line_h16 color_grey mr_l_9">có</div>
-                                                    </div>
-                                                    <div class="dong7-corner-false d_flex align_c">
-                                                        <div><input type="radio" value="2" class="check_bathroom" name="check_bathroom"></div>
-                                                        <div class="font_w500 font_s14 line_h16 color_grey mr_l_9">không</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="dong7-numbers-rom_right mr_t_21">
-                                            <p class="font_w500 font_s16 line_h20 color_grey">phòng ngủ</p>
-                                            <div class="dong7-numbers-rom_right-value d_flex mr_t_18">
-                                                <div class="dangtin_mo_ta_dong7-corner d_flex align_c">
-                                                    <div class="dong7-corner-true d_flex align_c mr-50 ">
-                                                        <div><input type="radio" class="check_bedroom" value="1" name="check_bedroom"></div>
-                                                        <div class="font_w500 font_s14 line_h16 color_grey mr_l_9">có</div>
-                                                    </div>
-                                                    <div class="dong7-corner-false d_flex align_c">
-                                                        <div><input type="radio" value="2" class="check_bedroom" name="check_bedroom"></div>
-                                                        <div class="font_w500 font_s14 line_h16 color_grey mr_l_9">không</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="dangtin_mota-dong6 mr_t_24 khung_input">
-                                <select name="" id="" class="size-14 select_option">
-                                    <option selected disabled value="" class="">Chọn tag</option>
-                                    <option value="">Dữ liệu cập nhật sau</option>
-                                </select>
-                                <img src="<? echo base_url() ?>assets/images/tag.png" alt="">
                             </div>
                         </div>
-                    </div>
-                    <div class="dangtin_input_item back_w border_r_8 mr_t_24">
-                        <div class="dangtin_img pa_24_32">
-                            <div class="dangtin_img-title">
-                                <p class="font_w500 font_s16 line_h24 color_green">Thông tin hình ảnh</p>
-                                <p class="font_s14 line_h16 color_grey mr_t_8">Thêm ít nhất 3 ảnh cho bài đăng để đạt hiệu
-                                    quả tốt hơn.</p>
-                            </div>
-                            <div class="dangtin_img_input border_r_8 d_flex align_c flex_center pa_t_b_16 mr_t_24">
-                                <div class="dangtin_img_input-text text_a_c">
-                                    <p class="font_s14 line_h16 color_grey">Tin đăng có hình ảnh thường hiệu quả hơn tới 59%
-                                        so với tin đăng không có hình ảnh.<br>
-                                        (Tối đã 10 ảnh)
-                                    </p>
-                                    <!-- div thêm ảnh  -->
-                                    <div class="test">
-                                        <div class="dangtin-upload-img d_flex flex_center" id="images">
-                                            <!-- <div class="dangtin-upload-img-hover">
-                                            <div class="d_flex space_B">
-                                                <div class="dangtin-upload-img-hover-trai">
-                                                    <img src="<? echo base_url() ?>assets/images/xoay_trai.png" alt="">
-                                                    <img src="<? echo base_url() ?>assets/images/xoay_phai.png" alt="">
-                                                </div>
-                                                <div class="dangtin-upload-img-hover-trai">
-                                                    <img src="<? echo base_url() ?>assets/images/xoa.png" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="dangtin-upload-img-hover-text">
-                                                <p class="font_s14 line_h16 color_white">Đặt ảnh đại diện</p>
-                                            </div>
-                                        </div> -->
-                                        </div>
+                        <div class="dangtin_mota-dong8 d_flex space_b  mr_t_45 w_100 hidden">
+                            <div class="dangtin_mota-dong8-left dangtin_mo_ta_dong_chung">
+                                <div class="dangtin_mota-dong8-facade">
+                                    <p class="font_w500 font_s16 line_h20 color_grey">Mặt tiền (m)</p>
+                                    <div class="khung_input mr_t_8">
+                                        <input type="text" placeholder="Nhập">
                                     </div>
-                                    <input type="file" onchange="preview()" id="file_input" accept="image/png,image/jpeg" multiple class="input_an">
-                                    <div class="flex butt_add_pic" id="dangtin_butt_add_pic">
-                                        <img src="<? echo base_url() ?>assets/images/camera.png" class="wh_22_18 right-8" alt="">
-                                        <p class="color_green">Thêm Ảnh</p>
-                                    </div>
-                                    <!-- <label for="upload_file" id="" class="d_flex flex_center align_c mr_t_16">
-                                        <div class="dangtin_img-nhap chuxanh_nentrang pa_11_0">
-                                            <img src="<? echo base_url() ?>assets/images/camera.png" alt="">
-                                            <input type="file" id="upload_file">
-                                            <div class="font_w500 font_s16 line_h22 color_green mr_l_9 ">Thêm ảnh</div>
-                                        </div>
-                                    </label> -->
-                                    <p class="text_a_c mr_t_51 font_s14 line_h16 color_reb_2 ">Lưu ý: Hình ảnh không được là
-                                        ảnh sao chép trên Internet, không chứa logo, thông tin của website khác, kích thước
-                                        tối thiểu 300 X 300 Px</p>
                                 </div>
+                                <div class="dangtin_mota-dong8-facade mr_t_21">
+                                    <p class="font_w500 font_s16 line_h20 color_grey">Đường vào (m)</p>
+                                    <div class="khung_input mr_t_8">
+                                        <input type="text" placeholder="Nhập">
+                                    </div>
+                                </div>
+                                <div class="dangtin_mota-dong8-facade mr_t_21">
+                                    <p class="font_w500 font_s16 line_h20 color_grey">Số tầng</p>
+                                    <div class="khung_input mr_t_8">
+                                        <input type="text" placeholder="Nhập">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dangtin_mota-dong8-right dangtin_mo_ta_dong_chung">
+                                <div class="dong-numbers-rom_left">
+                                    <p class="font_w500 font_s16 line_h20 color_grey">Số phòng tắm</p>
+                                    <div class="dong8-numbers-rom_left-value d_flex mr_t_8">
+                                        <div class="dong-numbers-rom-value-item cursor_p">1</div>
+                                        <div class="dong-numbers-rom-value-item cursor_p">2</div>
+                                        <div class="dong-numbers-rom-value-item cursor_p">3</div>
+                                        <div class="dong-numbers-rom-value-item cursor_p">4+</div>
+                                    </div>
+                                </div>
+                                <div class="dong-numbers-rom_right mr_t_21">
+                                    <p class="font_w500 font_s16 line_h20 color_grey">Số phòng ngủ</p>
+                                    <div class="dong8-numbers-rom_right-value d_flex mr_t_8">
+                                        <div class="dong-numbers-rom-value-item cursor_p">1</div>
+                                        <div class="dong-numbers-rom-value-item cursor_p">2</div>
+                                        <div class="dong-numbers-rom-value-item cursor_p">3</div>
+                                        <div class="dong-numbers-rom-value-item cursor_p">4+</div>
+                                    </div>
+                                </div>
+                                <div class="dong7-numbers-rom_right_furniture mr_t_21">
+                                    <p class="font_w500 font_s16 line_h20 color_grey">Nội thất</p>
+                                    <div class="khung_input mr_t_8">
+                                        <input type="text" placeholder="Nhập">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dangtin_mota-dong9 d_flex space_b  mr_t_45 w_100 hidden">
+                            <div class="dangtin_mota-dong8-left dangtin_mo_ta_dong_chung">
+                                <div class="dangtin_mota-dong8-facade">
+                                    <p class="font_w500 font_s16 line_h20 color_grey">Mặt tiền (m)</p>
+                                    <div class="khung_input mr_t_8">
+                                        <input type="text" placeholder="Nhập">
+                                    </div>
+                                </div>
+                                <div class="dangtin_mota-dong8-facade mr_t_21">
+                                    <p class="font_w500 font_s16 line_h20 color_grey">Đường vào (m)</p>
+                                    <div class="khung_input mr_t_8">
+                                        <input type="text" placeholder="Nhập">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dangtin_mota-dong8-right dangtin_mo_ta_dong_chung">
+                                <div class="dong7-numbers-rom_right_furniture">
+                                    <p class="font_w500 font_s16 line_h20 color_grey">Chiều sâu</p>
+                                    <div class="khung_input mr_t_8">
+                                        <input type="text" placeholder="Nhập">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dangtin_mota-dong6 mr_t_24 khung_input">
+                            <select name="" id="" class="size-14 select_option">
+                                <option selected disabled value="" class="">Chọn tag</option>
+                                <option value="">Dữ liệu cập nhật sau</option>
+                            </select>
+                            <img src="<? echo base_url() ?>assets/images/tag.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="dangtin_input_item back_w border_r_8 mr_t_24">
+                    <div class="dangtin_img pa_24_32">
+                        <div class="dangtin_img-title">
+                            <p class="font_w500 font_s16 line_h24 color_green">Thông tin hình ảnh</p>
+                            <p class="font_s14 line_h16 color_grey mr_t_8">Thêm ít nhất 3 ảnh cho bài đăng để đạt hiệu
+                                quả tốt hơn.</p>
+                        </div>
+                        <div class="dangtin_img_input border_r_8 d_flex align_c flex_center pa_t_b_16 mr_t_24">
+                            <div class="dangtin_img_input-text text_a_c">
+                                <p class="font_s14 line_h16 color_grey">Tin đăng có hình ảnh thường hiệu quả hơn tới 59%
+                                    so với tin đăng không có hình ảnh.<br>
+                                    (Tối đã 10 ảnh)
+                                </p>
+                                <!-- div thêm ảnh  -->
+                                <div class="test">
+                                    <div class="dangtin-upload-img d_flex flex_center" id="images">
+                                        <!-- <div class="dangtin-upload-img-hover">
+                                        <div class="d_flex space_B">
+                                            <div class="dangtin-upload-img-hover-trai">
+                                                <img src="<? echo base_url() ?>assets/images/xoay_trai.png" alt="">
+                                                <img src="<? echo base_url() ?>assets/images/xoay_phai.png" alt="">
+                                            </div>
+                                            <div class="dangtin-upload-img-hover-trai">
+                                                <img src="<? echo base_url() ?>assets/images/xoa.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="dangtin-upload-img-hover-text">
+                                            <p class="font_s14 line_h16 color_white">Đặt ảnh đại diện</p>
+                                        </div>
+                                    </div> -->
+                                    </div>
+                                </div>
+                                <input type="file" onchange="preview()" id="file_input" accept="image/png,image/jpeg" multiple class="input_an">
+                                <div class="flex butt_add_pic" id="dangtin_butt_add_pic">
+                                    <img src="<? echo base_url() ?>assets/images/camera.png" class="wh_22_18 right-8" alt="">
+                                    <p class="color_green">Thêm Ảnh</p>
+                                </div>
+                                <!-- <label for="upload_file" id="" class="d_flex flex_center align_c mr_t_16">
+                                    <div class="dangtin_img-nhap chuxanh_nentrang pa_11_0">
+                                        <img src="<? echo base_url() ?>assets/images/camera.png" alt="">
+                                        <input type="file" id="upload_file">
+                                        <div class="font_w500 font_s16 line_h22 color_green mr_l_9 ">Thêm ảnh</div>
+                                    </div>
+                                </label> -->
+                                <p class="text_a_c mr_t_51 font_s14 line_h16 color_reb_2 ">Lưu ý: Hình ảnh không được là
+                                    ảnh sao chép trên Internet, không chứa logo, thông tin của website khác, kích thước
+                                    tối thiểu 300 X 300 Px</p>
+                            </div>
 
-                            </div>
                         </div>
                     </div>
-                    <div class="dangtin_form dangtin_form-after back_w border_r_8 mr_t_24 pa_24_32 box_shadow_10 hidden">
-                        <p class="font_w500 font_s16 line_h24 color_green">Thông tin bổ sung</p>
-                        <div class="font_s16 line_h24 color_grey mr_t_8">Bài đăng thông tim bổ sung thường có hiệu quả hơn 40% sơ với bài đăng thường</div>
-                        <div class="dangtin_after_bosung d_flex flex_w">
-                            <div class="dangtin_after_bosung-item_dong checkboxes_room d_flex">
-                                <div class="post_additional_total--left">
-                                    <p class="font_w500  font_s18 line_h24 color_grey">Phòng khách</p>
-                                    <div class="detail__post_additional_total additional_hidden ">
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="1.1" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                </div>
+                <div class="dangtin_form dangtin_form-after back_w border_r_8 mr_t_24 pa_24_32 box_shadow_10 hidden">
+                    <p class="font_w500 font_s16 line_h24 color_green">Thông tin bổ sung</p>
+                    <div class="font_s16 line_h24 color_grey mr_t_8">Bài đăng thông tim bổ sung thường có hiệu quả hơn 40% sơ với bài đăng thường</div>
+                    <div class="dangtin_after_bosung d_flex space_b flex_w">
+                        <div class="dangtin_after_bosung-item_dong d_flex">
+                            <div class="post_additional_total--left">
+                                <p class="font_w500 font_s18 line_h24 color_grey">Phòng khách</p>
+                                <div class="detail__post_additional_total additional_hidden ">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
                                         </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="1.2" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Tivi</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="1.3" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Bàn ghế P.khách </p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="1.4" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Toilet chung</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post_additional_total--right">
-                                    <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
-                                </div>
-                            </div>
-                            <div class="dangtin_after_bosung-item_dong checkboxes_room d_flex">
-                                <div class="post_additional_total--left">
-                                    <p class="font_w500 font_s18  line_h24 color_grey">Phòng ngủ</p>
-                                    <div class="detail__post_additional_total additional_hidden ">
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="2.1" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Giường</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="2.2" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Bàn phấn</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="2.3" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Tủ quần áo</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="2.4" class="checkbox_detail" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post_additional_total--right">
-                                    <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
-                                </div>
-                            </div>
-                            <div class="dangtin_after_bosung-item_dong checkboxes_room d_flex">
-                                <div class="post_additional_total--left">
-                                    <p class="font_w500 font_s18 line_h24  color_grey">Phòng bếp</p>
-                                    <div class="detail__post_additional_total additional_hidden ">
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="3.1" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Bàn ăn</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="3.2" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Máy hút mùi</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="3.3" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Tủ bếp</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="3.4" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Tủ lạnh</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="post_additional_total--right">
-                                    <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
-                                </div>
-                            </div>
-                            <div class="dangtin_after_bosung-item_dong checkboxes_room d_flex">
-                                <div class="post_additional_total--left">
-                                    <p class="font_w500 font_s18  line_h24 color_grey">Phòng tắm</p>
-                                    <div class="detail__post_additional_total additional_hidden ">
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="4.1" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="4.2" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Bồn rửa mặt</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="4.3" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Vòi hoa sen</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="4.4" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Bồn tắm</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="4.5" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Bình nóng lạnh</p>
-                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
                                     </div>
                                     <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
                                         <div class="checkbox-container mr_r_9">
                                             <label class="checkbox-label-phanquyen">
-                                                <input value="4.6" class="checkbox_detail" type="checkbox">
+                                                <input type="checkbox">
                                                 <span class="checkbox-custom"></span>
                                             </label>
                                         </div>
-                                        <p class="font_s16 line_h24 color_grey">Bồn cầu</p>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
                                     </div>
-                                </div>
-                                <div class="post_additional_total--right">
-                                    <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="dangtin_after_bosung-item_dong d_flex">
-                                <div class="post_additional_total--left">
-                                    <p class="font_w500 font_s18 line_h24 color_grey">An toàn nhà ỏ</p>
-                                    <div class="detail__post_additional_total additional_hidden ">
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="5.1" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Máy báo khói</p>
+                            <div class="post_additional_total--right">
+                                <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                            </div>
+                        </div>
+                        <div class="dangtin_after_bosung-item_dong d_flex">
+                            <div class="post_additional_total--left">
+                                <p class="font_w500 font_s18 line_h24 color_grey">Phòng khách</p>
+                                <div class="detail__post_additional_total additional_hidden ">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
                                         </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="5.2" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Bình chữa cháy</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="5.3" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Camera an ninh</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="5.4" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Máy báo khí CO</p>
-                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
                                     </div>
-                                </div>
-                                <div class="post_additional_total--right">
-                                    <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="dangtin_after_bosung-item_dong d_flex">
-                                <div class="post_additional_total--left">
-                                    <p class="font_w500 font_s18 line_h24 color_grey">Tiêu dùng, ẩm thực</p>
-                                    <div class="detail__post_additional_total additional_hidden ">
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="10.1" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Quán bar</p>
+                            <div class="post_additional_total--right">
+                                <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                            </div>
+                        </div>
+                        <div class="dangtin_after_bosung-item_dong d_flex">
+                            <div class="post_additional_total--left">
+                                <p class="font_w500 font_s18 line_h24 color_grey">Phòng khách</p>
+                                <div class="detail__post_additional_total additional_hidden ">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
                                         </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="10.2" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Nhà hàng</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="10.3" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Trung tâm thương mai</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="10.4" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Cây ATM</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="10.5" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Ngân hàng</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="10.6" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Coffee shop</p>
-                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
                                     </div>
-                                </div>
-                                <div class="post_additional_total--right">
-                                    <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="dangtin_after_bosung-item_dong d_flex">
-                                <div class="post_additional_total--left">
-                                    <p class="font_w500 font_s18 line_h24 color_grey">Thể thao</p>
-                                    <div class="detail__post_additional_total additional_hidden ">
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="6.1" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Bể bơi</p>
+                            <div class="post_additional_total--right">
+                                <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                            </div>
+                        </div>
+                        <div class="dangtin_after_bosung-item_dong d_flex">
+                            <div class="post_additional_total--left">
+                                <p class="font_w500 font_s18 line_h24 color_grey">Phòng khách</p>
+                                <div class="detail__post_additional_total additional_hidden ">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
                                         </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="6.2" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Bóng rổ</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="6.3" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Bóng đá</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="6.4" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Cầu lông</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="6.5" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Sân golf</p>
-                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
                                     </div>
-                                </div>
-                                <div class="post_additional_total--right">
-                                    <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="dangtin_after_bosung-item_dong d_flex">
-                                <div class="post_additional_total--left">
-                                    <p class="font_w500 font_s18 line_h24 color_grey">Tiện nghi khác</p>
-                                    <div class="detail__post_additional_total additional_hidden ">
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="7.1" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Ban công</p>
+                            <div class="post_additional_total--right">
+                                <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                            </div>
+                        </div>
+                        <div class="dangtin_after_bosung-item_dong d_flex">
+                            <div class="post_additional_total--left">
+                                <p class="font_w500 font_s18 line_h24 color_grey">Phòng khách</p>
+                                <div class="detail__post_additional_total additional_hidden ">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
                                         </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="7.2" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Thang máy</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="7.3" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Lối đi cho người khuyết tật</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="7.4" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Chỗ để xe miễn phí</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="7.5" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Để xe công cộng miễn phí</p>
-                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
                                     </div>
-                                </div>
-                                <div class="post_additional_total--right">
-                                    <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="dangtin_after_bosung-item_dong d_flex">
-                                <div class="post_additional_total--left">
-                                    <p class="font_w500 font_s18 line_h24 color_grey">Giải trí</p>
-                                    <div class="detail__post_additional_total additional_hidden ">
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="8.1" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Rạp chiếu phim</p>
+                            <div class="post_additional_total--right">
+                                <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                            </div>
+                        </div>
+                        <div class="dangtin_after_bosung-item_dong d_flex">
+                            <div class="post_additional_total--left">
+                                <p class="font_w500 font_s18 line_h24 color_grey">Phòng khách</p>
+                                <div class="detail__post_additional_total additional_hidden ">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
                                         </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="8.2" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Spa làm đẹp</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="8.3" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Khu vui chơi trẻ em</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="8.4" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Khu thư giãn người già</p>
-                                        </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="8.5" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Công viên nước</p>
-                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
                                     </div>
-                                </div>
-                                <div class="post_additional_total--right">
-                                    <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="dangtin_after_bosung-item_dong d_flex">
-                                <div class="post_additional_total--left div_office">
-                                    <p class="font_w500 font_s18 line_h24 color_grey">Văn phòng</p>
-                                    <div class="detail__post_additional_total additional_hidden ">
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="9.1" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Điều hòa</p>
+                            <div class="post_additional_total--right">
+                                <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                            </div>
+                        </div>
+                        <div class="dangtin_after_bosung-item_dong d_flex">
+                            <div class="post_additional_total--left">
+                                <p class="font_w500 font_s18 line_h24 color_grey">Phòng khách</p>
+                                <div class="detail__post_additional_total additional_hidden ">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
                                         </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="9.2" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Máy phát điện</p>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
                                         </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="9.3" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Rèm cửa</p>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
                                         </div>
-                                        <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
-                                            <div class="checkbox-container mr_r_9">
-                                                <label class="checkbox-label-phanquyen">
-                                                    <input value="9.4" class="checkbox_detail" type="checkbox">
-                                                    <span class="checkbox-custom"></span>
-                                                </label>
-                                            </div>
-                                            <p class="font_s16 line_h24 color_grey">Trần thả</p>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
                                         </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
                                     </div>
                                 </div>
-                                <div class="post_additional_total--right">
-                                    <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                            </div>
+                            <div class="post_additional_total--right">
+                                <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
+                            </div>
+                        </div>
+                        <div class="dangtin_after_bosung-item_dong d_flex">
+                            <div class="post_additional_total--left">
+                                <p class="font_w500 font_s18 line_h24 color_grey">Phòng khách</p>
+                                <div class="detail__post_additional_total additional_hidden ">
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_19 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
+                                    <div class="dangtin_after_bosung-item_dong-name d_flex mr_t_22 align_c">
+                                        <div class="checkbox-container mr_r_9">
+                                            <label class="checkbox-label-phanquyen">
+                                                <input type="checkbox">
+                                                <span class="checkbox-custom"></span>
+                                            </label>
+                                        </div>
+                                        <p class="font_s16 line_h24 color_grey">Tủ trang trí</p>
+                                    </div>
                                 </div>
+                            </div>
+                            <div class="post_additional_total--right">
+                                <img src="<? echo base_url() ?>assets/images/arrow_updown.png" alt="">
                             </div>
                         </div>
                     </div>
-                    <div class="dangtin_btn-dang-hen">
-                        <div class="dangtin_btn-luu-dang d_flex align_c flex_center mr_t_32">
-                            <button type="submit" class="dangtin_btn-dang chutrang_nenxanh pa_11_0 d_flex cursor_p">
-                                <p class="font_s16 line_h19 font_w500 mr_r_8">Đăng ngay</p>
-                                <div class="d_flex">
-                                    <img src="<? echo base_url() ?>assets/images/mui_ten_xanh.png" alt="">
-                                </div>
-                            </button>
-                            <div class="dangtin_btn_chon mr_t_0 mr_l_16 position_r">
-                                <div onclick="anhien(this)" class="dangtin_btn_chon-cha d_flex back_w border_r_8 flex_center align_c mr_r_8  cursor_p">
-                                    <p class="color_grey3 font_s14 line_h16">Chọn</p>
-                                    <span><img src="<? echo base_url() ?>assets/images/mui_ten_xuong.png" alt=""></span>
-                                </div>
-                                <div class="dangtin_btn_chon-con dangtin_btn_chon-con-after back_w border_r_8 cursor_p position_a hidden pa_0">
-                                    <button type="submit" class="pa_12_8 btn_draft font_s14 color_grey3 line_h16">Lưu nháp</button>
-                                    <p onclick="henlichdt(this)" class="pa_12_8 d_flex align_c font_s14 color_grey3 line_h16">Hẹn lịch đăng tin</p>
-                                </div>
+                </div>
+                <div class="dangtin_btn-dang-hen">
+                    <div class="dangtin_btn-luu-dang d_flex align_c flex_center mr_t_32">
+                        <div class="dangtin_btn-dang chutrang_nenxanh pa_11_0 d_flex cursor_p" onclick="btn_dangngay(this)">
+                            <p class="font_s16 line_h19 font_w500 mr_r_8">Đăng ngay</p>
+                            <div class="d_flex">
+                                <img src="<? echo base_url() ?>assets/images/mui_ten_xanh.png" alt="">
+                            </div>
+                        </div>
+                        <div class="dangtin_btn_chon mr_t_0 mr_l_16 position_r">
+                            <div onclick="anhien(this)" class="dangtin_btn_chon-cha d_flex back_w border_r_8 flex_center align_c mr_r_8  cursor_p">
+                                <p class="color_grey3 font_s14 line_h16">Chọn</p>
+                                <span><img src="<? echo base_url() ?>assets/images/mui_ten_xuong.png" alt=""></span>
+                            </div>
+                            <div class="dangtin_btn_chon-con dangtin_btn_chon-con-after back_w border_r_8 cursor_p position_a hidden pa_0">
+                                <p class="pa_12_8 font_s14 color_grey3 line_h16">Lưu nháp</p>
+                                <p onclick="henlichdt(this)" class="pa_12_8 d_flex align_c font_s14 color_grey3 line_h16">Hẹn lịch đăng tin</p>
                             </div>
                         </div>
                     </div>
-                    <div class="box_shadow_10 back_w border_r_8 mr_t_32 pa_32"></div>
-                    <div class="popup_dangtin_lenlich d_flex align_c flex_center hidden">
-                    <div class="popup_dangtin_lenlich-ovelay" id="btn_dangtin_lenlich"></div>
-                        <div class="popup_dangtin_lenlich-wrapper border_r_8 back_w z_index_1 box_shadow_10">
-                            <div class="popup_dangtin_lenlich-title">
-                                <p class="font_w600 font_s24 line_h28 color_grey">Lên lịch đăng tin</p>
-                            </div>
-                            <div class="popup_dangtin_lenlich-text mr_t_24">
-                                <p class="font_s16 line_h24 color_grey">Lên lịch đăng tin vào thời gian phù hợp nhất để tương
-                                    tác với nhiều khách hàng hơn hoặc tự chọn ngày giờ đăng tin trong tương lai.</p>
-                            </div>
-                            <div class="popup_dangtin_input d_flex mr_t_32">
-                                <div class="popup_dangtin_input_left khung_input pos_re mr_r_12 mr_t_0">
-                                    <input class ="date_post_news" type="date">
-                                </div>
-                                <div class="popup_dangtin_input_right khung_input pos_re mr_l_12 mr_t_0">
-                                    <input type="time" class="time_post_news" value="<?= date('H:i',time()) ?>">
-                                </div>
-                            </div>
-                            <div class="popup_dangtin-lenlich-btn d_flex w_100 flex_center mr_t_32">
-                                <div class="dangtin-lenlich-btn chuxanh_nentrang pa_11_0 mr_r_12 cursor_p" id="huy_lenlich">
-                                    <p>Hủy</p>
-                                </div>
-                                <button type="submit" class="dangtin-lenlich-btn btn_appointment chutrang_nenxanh pa_11_0 mr_l_12 cursor_p">
-                                    <p>Lưu</p>
-                                </button>
-                            </div>
+                </div>
+                <div class="box_shadow_10 back_w border_r_8 mr_t_32 pa_32"></div>
+            </div>
+            <div class="popup_dangtin_lenlich d_flex align_c flex_center hidden">
+                <div class="popup_dangtin_lenlich-ovelay" id="btn_dangtin_lenlich"></div>
+                <div class="popup_dangtin_lenlich-wrapper border_r_8 back_w z_index_1 box_shadow_10">
+                    <div class="popup_dangtin_lenlich-title">
+                        <p class="font_w600 font_s24 line_h28 color_grey">Lên lịch đăng tin</p>
+                    </div>
+                    <div class="popup_dangtin_lenlich-text mr_t_24">
+                        <p class="font_s16 line_h24 color_grey">Lên lịch đăng tin vào thời gian phù hợp nhất để tương
+                            tác với nhiều khách hàng hơn hoặc tự chọn ngày giờ đăng tin trong tương lai.</p>
+                    </div>
+                    <div class="popup_dangtin_input d_flex mr_t_32">
+                        <div class="popup_dangtin_input_left khung_input pos_re mr_r_12 mr_t_0">
+                            <input type="date">
+                        </div>
+                        <div class="popup_dangtin_input_right khung_input pos_re mr_l_12 mr_t_0">
+                            <input type="time" value="16:21">
                         </div>
                     </div>
-                </form>
+                    <div class="popup_dangtin-lenlich-btn d_flex w_100 flex_center mr_t_32">
+                        <div class="dangtin-lenlich-btn chuxanh_nentrang pa_11_0 mr_r_12 cursor_p" id="huy_lenlich">
+                            <p>Hủy</p>
+                        </div>
+                        <div class="dangtin-lenlich-btn chutrang_nenxanh pa_11_0 mr_l_12 cursor_p" id="luu_lenlich_sau">
+                            <p>Lưu</p>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="popup_dangtin_lenlich_doi-time d_flex align_c flex_center hidden">
                 <div class="popup_dangtin_lenlich-ovelay" id="btn_dangtin_capnhat"></div>
@@ -1221,39 +962,6 @@
     CKEDITOR.replace('tdn_mota');
 </script>
 <script>
-    $('input[name="type_news"]').click(function() {
-        if($(this).val() == 1)
-        {
-            var otions_bds = '<option selected disabled>Chọn loại bất động sản</option>';
-                otions_bds += '<option value="1">Căn hộ</option>'                            
-                otions_bds += '<option value="2">Nhà riêng</option>'                               
-                otions_bds += '<option value="3">Nhà mặt phố</option>'                                
-                otions_bds += '<option value="4">Shophouse, Nhà phố thương mại</option>'                                
-                otions_bds += '<option value="5">Biệt thự liền kề</option>'                                 
-                otions_bds += '<option value="6">Đất</option>'                                 
-                otions_bds += '<option value="7">Đất nền dự án</option>'                             
-                otions_bds += '<option value="8">Bất động sản khác</option>'
-            $('select[name="type_bds"]').children().remove(); 
-            $('select[name="type_bds"]').append(otions_bds);                                                                                                                        
-        }
-        else
-        {
-            var otions_bds = '<option selected disabled>Chọn loại bất động sản</option>';
-                otions_bds += '<option value="1">Căn hộ</option>'                            
-                otions_bds += '<option value="2">Căn hộ dịch vụ</option>'                               
-                otions_bds += '<option value="3">Nhà riêng</option>'                                
-                otions_bds += '<option value="4">Nhà mặt phố</option>'                                
-                otions_bds += '<option value="5">Shophouse, Nhà phố thương mại</option>'                                 
-                otions_bds += '<option value="6">Biệt thự liền kề</option>'                                 
-                otions_bds += '<option value="7">Nhà trọ, phòng trọ</option>'                             
-                otions_bds += '<option value="8">Văn phòng</option>'
-                otions_bds += '<option value="9">Cửa hàng, mặt bằng bán lẻ</option>'                                 
-                otions_bds += '<option value="10">Đất, nhà xưởng, kho bãi</option>'                                                             
-                otions_bds += '<option value="11">Bất động sản khác</option>'
-            $('select[name="type_bds"]').children().remove(); 
-            $('select[name="type_bds"]').append(otions_bds);     
-        }
-    })
     $(".select_option").select2({
         width: "100%",
     });
@@ -1300,7 +1008,7 @@
                     createImg('img', '<? echo base_url() ?>assets/images/xoay_phai.png', 'dangtin_icon_upload_phai', div);
                     let div2 = document.createElement('div');
                     figcap.appendChild(div2);
-                    createImg('img', '<?= base_url(); ?>assets/images/xoa.png', 'dangtin_icon_upload_xoa', div2);
+                    createImg('img', '/images/xoa.png', 'dangtin_icon_upload_xoa', div2);
                     createImg('p', '', 'dangtin_icon_upload_nutbam', figcap, 'Đặt ảnh đại diện');
 
                     // --xoay
@@ -1439,13 +1147,13 @@
                     var dv = " triệu/m2/tháng";
                     var ketqua = 0;
                     ketqua = giacodinh / dientich1;
-                    $('.ren_number_dt_2 span').html(ketqua + dv);
+                    $('.ren_number_dt_2').html(tieude + ketqua + dv);
                     if (ketqua < 1000000000) {
                         kq1 = ketqua / 1000000;
                     } else if (ketqua < 1000000000) {
                         kq1 = ketqua / 10000000;
                     }
-                    $('.ren_number_dt_2 span').html(kq1 + dv);
+                    $('.ren_number_dt_2').html(tieude + kq1 + dv);
                 }
                 var number_max = Number($('#number_max').val());
                 if (number_max != 0 || number_max != '') {
@@ -1461,9 +1169,9 @@
                     };
 
                     if (kq1 < kq2) {
-                        $('.ren_number_dt_2 span').html(kq1 + ' - ' + kq2 + dv);
+                        $('.ren_number_dt_2').html(tieude + kq1 + ' - ' + kq2 + dv);
                     } else {
-                        $('.ren_number_dt_2 span').html(kq2 + ' - ' + kq1 + dv);
+                        $('.ren_number_dt_2').html(tieude + kq2 + ' - ' + kq1 + dv);
                     }
                 }
                 var dientich2 = Number($('#number_dt_2').val());
@@ -1479,9 +1187,9 @@
                         kq2 = ketqua2 / 1000000;
                     }
                     if (kq1 < kq2) {
-                        $('.ren_number_dt_2 span').html(kq1 + ' - ' + kq2 + dv);
+                        $('.ren_number_dt_2').html(tieude + kq1 + ' - ' + kq2 + dv);
                     } else {
-                        $('.ren_number_dt_2 span').html(kq2 + ' - ' + kq1 + dv);
+                        $('.ren_number_dt_2').html(tieude + kq2 + ' - ' + kq1 + dv);
                     }
                 }
             });
@@ -1496,13 +1204,13 @@
             var dv = " triệu/m2";
             var ketqua = 0;
             ketqua = giacodinh / dientich1;
-            $('.ren_number_dt_2 span').html(ketqua + dv);
+            $('.ren_number_dt_2').html(tieude + ketqua + dv);
             if (ketqua < 1000000000) {
                 kq1 = ketqua / 1000000;
             } else if (ketqua < 1000000000) {
                 kq1 = ketqua / 10000000;
             }
-            $('.ren_number_dt_2 span').html(kq1 + dv);
+            $('.ren_number_dt_2').html(tieude + kq1 + dv);
         }
         var number_max = Number($('#number_max').val());
         if (number_max != 0 || number_max != '') {
@@ -1519,9 +1227,9 @@
                 kq2 = ketqua2 / 1000000;
             };
             if (kq1 < kq2) {
-                $('.ren_number_dt_2 span').html(kq1 + ' - ' + kq2 + dv);
+                $('.ren_number_dt_2').html(tieude + kq1 + ' - ' + kq2 + dv);
             } else {
-                $('.ren_number_dt_2 span').html(kq2 + ' - ' + kq1 + dv);
+                $('.ren_number_dt_2').html(tieude + kq2 + ' - ' + kq1 + dv);
             }
         }
         var dientich2 = Number($('#number_dt_2').val());
@@ -1537,301 +1245,13 @@
                 kq2 = ketqua2 / 1000000;
             }
             if (kq1 <= kq2) {
-                $('.ren_number_dt_2 span').html(kq1 + ' - ' + kq2 + dv);
+                $('.ren_number_dt_2').html(tieude + kq1 + ' - ' + kq2 + dv);
             } else {
-                $('.ren_number_dt_2 span').html(kq2 + ' - ' + kq1 + dv);
+                $('.ren_number_dt_2').html(tieude + kq2 + ' - ' + kq1 + dv);
             }
         }
     });
-    var base_url = "<? echo base_url()?>";
-    //-------------------
-    function address(value1,value2,value3,value4,value5)
-    {
-        var city_id = $(value1).val();
-        if (city_id > 0) {
-            $.ajax({
-                url: base_url+'PostNews/'+value3,
-                type: 'POST',
-                dataType: 'json',
-                data: {city: city_id},
-                success: function (response) {
-                    $html 	   = '<option value="">'+value4+'</option>';
-                    $.each(response, function(index, val) {
-                        if(value5 == 1)
-                        {
-                            $html += '<option value="'+val.cit_id+'">'+val.cit_name+'</option>'
-                        }
-                        else if(value5 == 2)
-                        {
-                            $html += '<option value="'+val.ward_id+'">'+val.ward_name+'</option>'
-                        }
-                        else if(value5 == 3)
-                        {
-                            $html += '<option value="'+val.street_id+'">'+val.street_name+'</option>'
-                        }
-                    });
-                    $("."+value2).html($html);
-                },
-            });
-        }  
-    }
-    //--------------------validate
-    jQuery.validator.addMethod("comparison", function (value, element) {
-        var number = $("#number").val();
-        return this.optional(element) || value > number;
-    });
-    jQuery.validator.addMethod("comparisons", function (value, element) {
-        var number_dt_1 = $("#number_dt_1").val();
-        return this.optional(element) || value > number_dt_1;
-    });
-
-    var stt_news = 0;
-    var time_post_news = 0;
-    var date_post_news = 0;
-
-    $('.dangtin_btn-dang').click(function(){
-        stt_news = 2;
-        time_post_news = 0;
-        date_post_news = 0;
-    })
-    $('.btn_draft').click(function() {
-        stt_news = 1;
-        time_post_news = 0;
-        date_post_news = 0;
-    })
-    $('.btn_appointment').click(function() {
-        stt_news = 3;
-        date_post_news = $(".date_post_news").val();
-        time_post_news = $(".time_post_news").val();
-    })
-    $("#postNews").validate({
-        errorPlacement: function (error, element) {
-        error.appendTo(element.parents(".box_input_infor"));
-        error.wrap("<span class='errors'>");
-        element.parents('.box_input_infor').addClass('validate_input');
-        },
-        ignore: [],
-        debug: false,
-        rules: {
-            project_name:       "required",
-            type_news:          "required",
-            type_bds:           "required",
-            city:               "required",
-            districts:          "required",
-            price_min:          "required",
-            title_news:         "required",
-            time_expired:           "required",
-            giamax:             {
-                                    required: true,
-                                    number: true,
-                                    comparison: true
-                                },
-            giamin:             "required",
-            tdn_mota:           {
-                                    required: function() 
-                                    {
-                                    CKEDITOR.instances.tdn_mota.updateElement();
-                                    },
-
-                                    minlength:10
-                                },
-            area_min:           "required",
-            area_max:           {
-                                    required: true,
-                                    number: true,
-                                    comparisons: true
-                                },
-        },
-        messages: {
-            project_name:       "Vui lòng nhập tên dự án",
-            type_news:          "Vui lòng chọn loại hình dự án",
-            type_bds:           "Vui lòng chọn loại hình bất động sản",
-            city:               "Vui lòng chọn tỉnh / thành phố",
-            districts:          "Vui lòng chọn quận / huyện",
-            price_min:          "Vui lòng nhập giá min",
-            price_min:           "Vui lòng chọn loại ảnh",
-            title_news:         "Vui lòng nhập tiêu đề bài viết",
-            time_expired:       "Vui lòng chọn ngày hết hạn",
-            giamax:              {
-                                    required: "Vui lòng nhập giá tiền",
-                                    comparison: 'Giá trị max phải lớn hơn giá trị min'
-                                },
-            giamin:             "Vui lòng nhập giá tiền",
-            tdn_mota:           {
-                                    required :"Vui lòng nhập thông tin dự án",
-                                    minlength:"Mô tả tối thiểu 10 kí tự"
-                                },
-            area_min:           "Vui lòng nhập diện tích mong muốn",
-            area_max:           {
-                                    required: "Vui lòng nhập diện tích mong muốn",
-                                    comparisons: 'Giá trị diện tích phải lớn hơn giá trị diện tích ban đầu'
-                                },
-
-        },
-        submitHandler: function() {
-            var project_name  = $(".project_name").val();
-            var type_news     = $("input[name='type_news']:checked").val();
-            var type_bds      = $(".type_bds").val();
-            var city          = $("#select_city").val();
-            var districts     = $(".districts").val();
-            var wards         = $(".wards").val();
-            var street        = $(".street").val();
-            var elevator_number = $('.elevator_number').val();
-            var desc_addr     = $(".desc_addr").val();
-            var giamin        = $("input[name='giamin']").val();
-            var giamax        = $("input[name='giamax']").val();
-            var radio_button  = $("#radio_button:checked").val();
-            var direction     = $(".direction").val();
-            var Legal_stt     = $(".Legal_stt").val();
-            var area_min      = $("input[name='area_min']").val();
-            var area_max      = $("input[name='area_max']").val();
-            var title_news    = $(".title_news").val();
-            var desc_project  = CKEDITOR.instances['tdn_mota'].getData();
-            var Balcony_direction = $(".Balcony_direction").val();
-            var corner        = $(".corner").val();
-            var check_bathroom= $(".check_bathroom:checked").val();
-            var check_bedroom = $(".check_bedroom:checked").val();
-            var bathroom      = $(".radio_bathroom.chutrang_nenxanh").attr('data-id');
-            var bedroom       = $(".radio_bedroom.chutrang_nenxanh").attr('data-id');
-            var Interior      = $(".Interior").val();
-            var arr_img_desc  = $("#file_input").prop('files');
-
-            if(type_news == 1)
-            {
-                if(type_bds == 1)
-                {
-                    var floor         = $('.apartment_floor').val();
-                    var Interior      = $(".Interior7").val();
-                }
-
-                if(type_bds == 2 || type_bds == 3 || type_bds == 4 || type_bds == 5)
-                {
-                    var Interior      = $(".Interior8").val();
-                    var floor         = $(".floor8").val();
-                    var mattien       = $(".mattien8").val();
-                    var duongvao      = $(".duongvao8").val();
-                }
-                else
-                {
-                    var mattien       = $(".mattien9").val();
-                    var duongvao      = $(".duongvao9").val();
-                }
-            }
-            else if(type_news == 2)
-            {
-                if(type_bds == 1 || type_bds == 2)
-                {
-                    var floor         = $('.apartment_floor').val();
-                    var Interior      = $(".Interior7").val();
-                }
-                if(type_bds == 6 || type_bds == 3 || type_bds == 4 || type_bds == 5)
-                {
-                    var mattien       = $(".mattien8").val();
-                    var duongvao      = $(".duongvao8").val();
-                    var floor         = $('.floor8').val();
-                    var Interior      = $(".Interior8").val();
-                }
-                else if(type_bds == 7)
-                {
-                    var Interior      = $(".Interior11").val();
-                    var floor         = $(".floor11").val();
-                }
-                else if(type_bds == 8)
-                {
-                    var Interior      = $(".Interior10").val();
-                    var floor         = $(".floor10").val();
-                }
-                else
-                {
-                    var mattien       = $(".mattien9").val();
-                    var duongvao      = $(".duongvao9").val();
-                }
-            }
-
-
-
-            var chieusau      = $(".chieusau").val();
-            var area_convert  = $(".ren_number_dt_2 span").text();
-            var time_expired  = $(".time_expired").val();
-            var detail_bds      = $("#onclick_chonloai_bds").val(); 
-
-            var arr_checkbox_detail = [];
-            $('.checkbox_detail').each(function(){
-                if($(this).is(':checked'))
-                {
-                    arr_checkbox_detail.push($(this).val());
-                }
-            })
-            var data = new FormData();
-            data.append('project_name', project_name);
-            data.append('arr_checkbox_detail', JSON.stringify(arr_checkbox_detail));
-            data.append('type_news', type_news);
-            data.append('type_bds', type_bds);
-            data.append('detail_bds', detail_bds);
-            data.append('city', city);
-            data.append('districts', districts);
-            data.append('wards', wards);
-            data.append('street', street);
-            data.append('desc_addr', desc_addr);
-            data.append('giamin', giamin);
-            data.append('giamax', giamax);
-            data.append('radio_button', radio_button);
-            data.append('Legal_stt', Legal_stt);
-            data.append('area_min', area_min);
-            data.append('area_max', area_max);
-            data.append('title_news', title_news);
-            data.append('desc_project', desc_project);
-            data.append('floor', floor);
-            data.append('Balcony_direction', Balcony_direction);
-            data.append('direction', direction);
-            data.append('elevator_number', elevator_number);
-            data.append('corner', corner);
-            data.append('time_expired',time_expired);
-            data.append('bathroom', bathroom);
-            data.append('bedroom', bedroom);
-            data.append('Interior', Interior);
-            data.append('stt_news', stt_news);
-            data.append('date_post_news', date_post_news);
-            data.append('time_post_news', time_post_news);
-            data.append('area_convert', area_convert);
-            data.append('check_bathroom' ,check_bathroom);
-            data.append('check_bedroom' ,check_bedroom);
-            $.each(arr_img_desc, function( index, value ) {
-                data.append('arr_img_desc[]' ,value);
-            });
-            data.append('mattien' ,mattien);
-            data.append('chieusau',chieusau);
-            data.append('duongvao',duongvao);
-
-            $.ajax({
-			 	url: base_url+'PostNews/addNewsAfterLogin',
-			 	type: 'post',
-			 	cache: false,
-			 	contentType: false,
-			 	processData: false,
-			 	dataType: 'json',
-			 	data:data,
-			 	enctype: 'multipart/form-data',
-			 	success: function(response) {
-                    if (response.status == 1) {
-                        alert(response.msg);
-                        if(type_news == 1)
-                        {
-                            window.location.href = 'quan-ly-tin-dang-mua-ban.html';
-                        }
-                        else
-                        {
-                            window.location.href = 'quan-ly-tin-dang-cho-thue.html'; 
-                        }
-                        
-                    }
-			 	},
-			 	error: function(xhr) {
-			 		alert('Error');
-			 	}
-			});
-		}
-    });
+</script>
 
 </script>
 

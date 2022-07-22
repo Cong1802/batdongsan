@@ -52,7 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 //account
 $route['default_controller'] 							= 'home';
 $route['trang-tai-khoan-dang-nhap.html']        		= 'Account/AccountLogin';
-$route['trang-dang-nhap.html']							= 'Account/Login';
+$route['trang-dang-nhap-(:num).html']					= 'Account/Login/$1';
+$route['dang-xuat.html']								= 'Account/LogOut';
 $route['trang-tai-khoan-dang-ky.html'] 		    		= 'Account/AccountRegister';
 $route['trang-dang-ky-nguoi-mua-thue.html']				= 'Account/AccountRegisterBuyer';
 $route['trang-dang-ky-nha-moi-gioi.html']  				= 'Account/AccountRegisterBroker';
@@ -62,12 +63,8 @@ $route['trang-nhan-ma-otp-(:num).html']  				= 'Account/PageOTP/$1';
 $route['quen-mat-khau-nhan-otp-(:num).html']  			= 'Account/ForgotPasswordOTP/$1/$2';
 $route['quen-mat-khau-nhap-email.html']         		= 'Account/ForgotPasswordEmail';
 $route['quen-mat-khau-update-mat-khau-(:num).html']   	= 'Account/UpdatePassword/$1';
-$route['thong-tin-ca-nhan.html']   	                    = 'Account/UpdatePassword/$1';
-$route['quan-ly-ho-so.html']		                    = 'Account/ProfileManagement';
-$route['quan-ly-ho-so.html/(:any)']		                = 'Account/ProfileManagement/$1';
-$route['khach-hang-tiem-nang.html']		                = 'Account/PotentialCustomers';
-$route['khach-hang-tiem-nang.html/(:any)']		        = 'Account/PotentialCustomers/$1';
-$route['thong-tin-nguoi-mua-thue-(:num).html']		    = 'Account/TenantInformation/$1';
+$route['thong-tin-ca-nhan.html']			    		= 'Account/Profile';
+$route['thay-doi-mat-khau.html']						= 'Account/ChangePassword';
 
 //PostNews
 $route['dang-tin-truoc-dang-nhap.html'] 				= 'PostNews/PostNewsBeforeLogin';
@@ -77,12 +74,6 @@ $route['tin-dang-nha-dep.html'] 		        		= 'PostNews/PostHomeDesignBeforeLogi
 $route['tin-dang-phong-dep.html'] 		        		= 'PostNews/PostRoomdesignBeforeLogin';
 $route['loai-dang-tin-sau-dang-nhap.html']				= 'PostNews/PostTypeAfterLogin';
 
-//UpdateNews
-$route['cap-nhat-dang-tin-truoc-dang-nhap-(:num).html'] = 'admin/ManageNews/UpdateNewsBeforeLogin/$1';
-$route['cap-nhat-dang-tin-sau-dang-nhap-(:num).html']   = 'admin/ManageNews/UpdateNewsAfterLogin/$1';
-$route['cap-nhat-tin-dang-du-an-(:num).html'] 		    = 'admin/ManageNews/UpdateNewsProject/$1';
-$route['cap-nhat-tin-dang-nha-dep-(:num).html'] 		= 'admin/ManageNews/UpdateNewsHome/$1';
-$route['cap-nhat-tin-dang-phong-dep-(:num).html'] 		= 'admin/ManageNews/UpdateNewsRoom/$1';
 
 //Cho thuê
 $route['cho-thue-truoc-dang-nhap.html']					= 'Lease/LeaseBeforeLogin';
@@ -94,8 +85,8 @@ $route['chi-tiet-mua-ban-truoc-dang-nhap.html']			= 'Purchase/DetailPurchaseBefo
 
 //Dự án
 $route['danh-sach-du-an-noi-bat.html']		    		= 'Project/ListOutstandingProject';
-$route['danh-sach-du-an-moi-nhat.html']		    		= 'Project/ListProjectNew';
-$route['chi-tiet-du-an.html']		            		= 'Project/DetailProject';
+$route['danh-sach-du-an_moi_nhat.html']		    		= 'Project/ListProjectNew';
+$route['chi-tiet-du-an-(:num).html']		            = 'Project/DetailProject/$1';
 
 //chuyên gia
 $route['chuyen-gia-doanh-nghiep.html']					= 'Expert/BusinessExpert';
@@ -132,23 +123,24 @@ $route['quy-dinh-bao-mat.html']				    		= 'Connect/PrivacyPolicy';
 $route['quy-trinh-giai-quyet-tranh-chap.html']  		= 'Connect/DisputeResolutionProcess';
 
 //----------------------------admin-------------------
+
 $route['tong-quan.html']		                		= 'admin/Dashboard';
 // ví tiền
-$route['vi-3s.html']		                    		= 'admin/Wallet/Wallet3s'; 
+
+$route['vi-3s.html']		                    		= 'admin/Wallet/Wallet3s';
 $route['nap-tien-vao-vi.html']		            		= 'admin/Wallet/WalletDeposit';
 $route['mua-dich-vu.html']		                		= 'admin/Wallet/BuyService';
 $route['mua-goi-ghim-tin-dang.html']		    		= 'admin/Wallet/BuyPacketNews';
 
+// quản lý
+$route['quan-ly-doi-nhom-nhan-vien.html']				= 'admin/Management/TeamManagement';
+
 // quản lý tin
 $route['quan-ly-tin-dang-mua-ban.html']		    		= 'admin/ManageNews/ManageNewsPurchase';
-$route['quan-ly-tin-dang-mua-ban.html/(:any)']		    = 'admin/ManageNews/ManageNewsPurchase/$1';
 $route['quan-ly-tin-dang-cho-thue.html']				= 'admin/ManageNews/ManageNewsLease';
-$route['quan-ly-tin-dang-cho-thue.html/(:any)']			= 'admin/ManageNews/ManageNewsLease/$1';
 $route['quan-ly-tin-dang-du-an.html']		    		= 'admin/ManageNews/ManageNewsProject';
 $route['quan-ly-tin-dang-thiet-ke.html']				= 'admin/ManageNews/ManageNewsDesign';
-$route['quan-ly-tin-dang-thiet-ke.html/(:any)']			= 'admin/ManageNews/ManageNewsDesign/$1';
 $route['quan-ly-tin-dang-tin-luu.html']		    		= 'admin/ManageNews/ManageNewsSave';
-$route['quan-ly-tin-dang-tin-luu.html/(:any)']		    = 'admin/ManageNews/ManageNewsSave/$1';
 
 $route['404_override'] 									= '';
 $route['translate_uri_dashes'] 							= FALSE;

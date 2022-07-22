@@ -11,7 +11,6 @@ header{background-image:none;min-height:auto}
 .rotate_icon{transform:rotate(180deg)}
 .position_unset{position:unset}
 .flex_1{flex:1}
-.mr_t_18{margin-top:18px}
 .d_inline_flex{display:inline-flex}
 .flex_rows{flex-direction:row}
 .height_40{height:40px}
@@ -620,10 +619,8 @@ slick-dots li{display:flex;align-items:center;justify-content:center;border-radi
 .dangtin_img,.dangtin_img_input-text{width:100%}
 .dangtin_img-nhap{max-width:591px}
 input[type="file"]{display:none}
-.btn_draft {border:none;outline:unset;background:transparent;width:100%;cursor:pointer;text-align: left;}
-.dangtin_btn-dang{width:182px;height:40px;outline:unset;border:none}
+.dangtin_btn-dang{width:182px;height:40px}
 .dangtin_btn_chon{width:97px;height:40px}
-.btn_appointment {border:none}
 .dangtin_btn_chon .select2-container--default .select2-selection--single .select2-selection__arrow{top:7px;right:17px}
 .opacity_click{opacity:.4;cursor:default}
 input#radio_button:checked{background-color:#3691D9;border:3px solid #fff; box-shadow: 0px 0px 1px 1px rgb(54 145 217);}

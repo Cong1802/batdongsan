@@ -409,24 +409,6 @@ function register_form_1() {
 	}
 
 	if (flag == true) {
-		$.ajax({
-			type: 'POST',
-			url: base_url+'account/sendOTP',
-			dataType: 'json',
-			data: {email: acc_email},
-			success: function(response) {
-				if (response == 1) {
-					console.log('success');
-				} else {
-					return false;
-					console.log('error 1');
-				}
-			},
-			error: function(xhr) {
-				console.log('error 2');
-			}
-		})
-		
 		var data = new FormData();
 		data.append('email', acc_email);
 		data.append('password', acc_pw);
@@ -456,6 +438,24 @@ function register_form_1() {
 			error: function(xhr) {
 				console.log('error Register');
 				return false;
+			}
+		})
+		
+		$.ajax({
+			type: 'POST',
+			url: base_url+'account/sendOTP',
+			dataType: 'json',
+			data: {email: acc_email},
+			success: function(response) {
+				if (response == 1) {
+					console.log('success');
+				} else {
+					return false;
+					console.log('error 1');
+				}
+			},
+			error: function(xhr) {
+				console.log('error 2');
 			}
 		})
 		

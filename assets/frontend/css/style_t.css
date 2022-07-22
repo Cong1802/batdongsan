@@ -1876,7 +1876,7 @@ table.table thead tr th {text-align: left}
 input.rs_input::placeholder { color: #999999}
 #popup_add_sussess {z-index: 999;}
 .no_group {height: 100%;}
-.money_ip > input {font-size:16px; line-height: 19px; font-weight:400; color: #6666}
+.money_ip > input {font-size:16px; line-height: 19px; font-weight:400; color: #000}
 .money_ip > input.rs_input::placeholder { color: #6666}
 .staff_result_content > span + span {display: inline-block; margin-top: 8px}
 .staff_result > div {margin-top: 32px}
@@ -1939,7 +1939,6 @@ input[disabled] {background-color: #efefef}
 .rotate_arrow {transform: rotate(-180deg);}
 .filter_name > div {transition: all .3s ease;}
 .popup_img {flex-shrink: 0;}
-.table_person .manage .table.table thead tr th:nth-child(6),.table_person .manage .table.table tbody tr td:nth-child(6) {display: none;}
 .select_controles > div:nth-child(3) {display: none;}
 .w_129 {width: 129px;}
 .table_person :is(.point,.wallet)  table.table tbody tr td {padding-right: 17px;white-space: normal;word-wrap: break-word;}
@@ -1952,7 +1951,7 @@ input[disabled] {background-color: #efefef}
 .header ul li + li {margin-left: 20px;}
 .header ul li a {font-size: 16px;line-height: 19px;font-weight: 400;color: #474747;}
 .header_right > button {padding: 10px;height: 40px;min-width: 120px;}
-.active {color: #3691d9 !important;font-weight: 500 !important;}
+.active {/*color: #3691d9 !important;*/font-weight: 500 !important;}
 .pd_tb_93 {padding-top: 93px;padding-bottom: 93px;}
 .mt_60 {margin-top: 60px;}
 .pd_l_151 {padding-left: 151px;}
@@ -2702,7 +2701,7 @@ input[type="text"]{    width: 100%;
   .personals .table_person .manage table.table{width: 1078px;}
   .information.bg_white.br_8.d_flex.pd_40.mt_24{margin: 0px 32px;margin-top: 24px;}
   .personals.mt_24 h2{padding-left: 32px;}
-  .personals.mt_40{padding: 0px 32px;}
+  /* .personals.mt_40{padding: 0px 32px;} */
   /* -----------ví 3s */
   .wapper{margin-left: 0px;}
   .wapper.pd_tlr_8_24{padding: 0px;width: 100%;}
@@ -3511,7 +3510,6 @@ input[type="text"]{    width: 100%;
  .personals_searching > div + div {margin-left: 16px;}
  .personals_search > .h_40 > button {width: 168px; min-width: 168px; font-size: 14px; line-height: 16px; display: flex; align-items: center; justify-content: center;}
  .manage thead tr th:nth-child(3),.manage tbody tr td:nth-child(3), .manage thead tr th:nth-child(5),.manage tbody tr td:nth-child(5),.manage thead tr th:last-child,.manage tbody tr td:last-child{display: none;}
- .table_person .manage .table.table thead tr th:nth-child(6),.table_person .manage .table.table tbody tr td:nth-child(6) {display: table-cell;}
  .table_person table.table tbody tr td {font-size: 14px;line-height: 24px;}
  .information_img {width: 100px;height: 100px;}
  .information_personal > h2 {font-size: 26px;line-height: 40px;}
@@ -3804,18 +3802,19 @@ input[type="text"]{    width: 100%;
     .ql_tien_nv .personals_search {flex-wrap: wrap;}
     .ql_tien_nv .personals_searching > .w_188_h40{width: calc(50% - 8px);margin-left: 0px;}
     .ql_tien_nv .personals_searching{flex-wrap: wrap;width: 100%;}
-    .ql_tien_nv .personals_search > .h_40 .btn{width: calc(50% - 8px );min-width: unset;padding: 12px;}
+    /* .ql_tien_nv .personals_search > .h_40 .btn{width: calc(50% - 8px );min-width: unset;padding: 12px;} */
     .ql_tien_nv .personals_search > .h_40 .btn span{font-size: 14px;}
     .ql_nhom_status_select{display: none;}
-    .ql_nhom_status_select_375{display: block;width: calc(50% - 8px );}
-    .ql_nhom_status_menu{display: flex;width: 100%;justify-content: space-between;margin-top: 16px;}
+    .ql_nhom_status_select_375{display: block !important;width:164px;/*width: calc(50% - 8px );*/}
+		.personals_search > .h_40 > button{width:164px}
+    .ql_nhom_status_menu{display: flex;width: 100% !important;justify-content: space-between;margin-top: 16px;}
     input[type="text"]{font-size: 14px;}
     .select2-container--default .select2-selection--single .select2-selection__rendered{font-size: 14px;}
     .search_ip > input:placeholder-shown {
       padding-left: 0px;
     }
     .information.bg_white.br_8.d_flex.pd_40.mt_24{padding: 16px;margin-left: -16px;margin-right: -16px;}
-    .ql_dn > :is(.no_members,.pd_b_96){padding: 0px 16px;padding-bottom: 70px;}
+    .ql_dn > :is(.no_members,.pd_b_96){padding: unset;padding-bottom: 70px;}
     .information_img{width: 64px;height: 64px;}
     .information_personal {padding-left: 8px;}
     .information_personal > div > div+div{display: flex;}
@@ -3823,6 +3822,7 @@ input[type="text"]{    width: 100%;
     .information_personal > h2{font-size: 20px;line-height: 23px;}
     .information_personal > div > div > span + span{line-height: 17px;}
     .personals.mt_40{margin-top: 16px;}
+		.personals.mt_40{padding: 0px 16px;}
     .ql_tien_nv .table_person{margin-top: 16px;}
     input[type="text"]::placeholder {
       font-size: 14px;
@@ -4015,7 +4015,7 @@ input[type="text"]{    width: 100%;
 .title_out_overlay{border-radius: 8px; opacity: 0; position: absolute; top: 0;right: 0;left: 0;bottom: 0; background: linear-gradient(0deg, rgba(0, 0, 0, 0.8) 0%, rgba(255, 255, 255, 0) 175.19%);backdrop-filter: blur(2px);}
 .duy_lai_them_div{margin-top: 16px; display: none;}
 .duy_lai_them_div1-1{color: #FFF; line-height: 22px; display: flex; margin-bottom: 8px; display: flex; }
-.duy_lai_them_div1-1_sub{margin-right: 16px; width: 8%;}
+.duy_lai_them_div1-1_sub{margin-right: 16px; width: 9%;}
 .duy_lai_them_div1-1_sub2 {width: 90%;}
 .duy_lai_them_div1-2{display: flex; color: #FFF; margin-bottom: 8px;}
 .duy_lai_them_div1-2_sub1{margin-right: 16px;}

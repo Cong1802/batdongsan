@@ -36,12 +36,16 @@
                     </div>
                     <div class="account_otp-beside-otp">
                         <form id="form_dk1" onsubmit="otp_form_1(); return false;" type="post" class="digit-group digit-group-otp font_s24 d_flex space_b">
-                            <input type="text" class="digit" id="digit-1" name="digit-1" data-next="digit-2" />
-                            <input type="text" class="digit" id="digit-2" name="digit-2" data-next="digit-3" />
-                            <input type="text" class="digit" id="digit-3" name="digit-3" data-next="digit-4" />
-                            <input type="text" class="digit" id="digit-4" name="digit-4" data-next="digit-5" />
-                            <input type="text" class="digit" id="digit-5" name="digit-5" data-next="digit-6" />
-                            <input type="text" class="digit" id="digit-6" name="digit-6" />
+                            <input type="text" class="digit" id="digit-1" name="digit-1" data-next="digit-2" maxlength="1">
+                            <input type="text" class="digit" id="digit-2" name="digit-2" data-next="digit-3" data-previous="digit-1"
+                                maxlength="1">
+                            <input type="text" class="digit" id="digit-3" name="digit-3" data-next="digit-4" data-previous="digit-2"
+                                maxlength="1">
+                            <input type="text" class="digit" id="digit-4" name="digit-4" data-next="digit-5" data-previous="digit-3"
+                                maxlength="1">
+                            <input type="text" class="digit" id="digit-5" name="digit-5" data-next="digit-6" data-previous="digit-4"
+                                maxlength="1">
+                            <input type="text" class="digit" id="digit-6" name="digit-6" data-previous="digit-5" maxlength="1">
                     </div>
 					<input type="hidden" class="the_otp">
                     <div class="account_otp_number d_flex flex_end mt_20 align_c ">

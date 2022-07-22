@@ -8,9 +8,9 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/frontend/css/style.css">
-    <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/frontend/css/style_header_d.css">
-    <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/frontend/css/css_q.css">
+    <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/style_header_d.css">
+    <link rel="stylesheet" type="text/css" href="<? echo base_url();?>assets/css/css_q.css">
 </head>
 
 <body>

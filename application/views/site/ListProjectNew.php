@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="robots" content="noindex,nofollow" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Danh sách dự án mới nhất</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<? echo base_url();?>assets/frontend/css/style.css">
     <link rel="stylesheet" href="<? echo base_url();?>assets/css/select2.min.css">
@@ -68,7 +69,7 @@
                         <div class="text_sub1_fig_icon">
                             <img src="<? echo base_url(); ?>assets/images/img_du_an/duy_ic_right.png" alt="" class="checked">
                         </div>
-                        <span class="main_color">Căn hộ</span>
+                        <!-- <span class="main_color">Căn hộ</span> -->
                     </div>
                     <div class="them_div_480_suv">
                         <div class="loc_480 flex align_items loc_480_page2">

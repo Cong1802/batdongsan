@@ -68,7 +68,7 @@
                                         <option value="4">Sàn giao dịch bất động sản</option>
                                         <option value="5">Trang trí nội thất</option>
                                         <option value="6">Vật liệu xây dựng</option>
-                                        <option value="7">Tư vấn thiết kế</option>
+                                        <option value="7">Các lĩnh vực khác</option>
                                     </select>
                                 </div>
                             </div>

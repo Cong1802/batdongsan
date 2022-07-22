@@ -1,0 +1,14 @@
+.content_list .item_ct+.item_ct {margin-top: 40px;}
+.pd_b_9 {padding-bottom: 9px;}
+.left {padding-right: 161px;}
+.mn_h768 {min-height: 768px}
+.h_376 {height: 376px}
+.content_ft > div:not(.viewsActivePeople) {display: none;}
+.banner_infor {--mr-top-a: -100px;--mr-top: 100px;}
+.infor_people {margin-top: var(--mr-top-a)}
+.name_infor,.contact_infor {padding-top: calc(var(--mr-top) + 16px)}
+.personal > div + div {margin-top: 24px}
+.personal > div:not(:last-child) {border-bottom: 1px solid #C4C4C4; padding-bottom: 16px;}
+.mn_w265 {min-width: 265px;}
+.filter_item  span {cursor: pointer;}
+.filter_item {overflow: hidden;position: relative;}

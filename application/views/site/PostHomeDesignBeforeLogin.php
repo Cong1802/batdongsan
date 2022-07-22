@@ -64,22 +64,21 @@
             <div class="thongtinbaidang top-24">
                 <p class="tieude chuxanh font-medium">Thông tin bài đăng</p>
                 <div class="ttbd_noidung flex space wrap top-8 center-height">
-                    <div class="khoicon top-21 box_input_infor">
+                    <div class="khoicon top-21">
                         <p class="title chuden font-medium height-20">Loại công trình <span class="chudo">*</span></p>
                         <div class="top-8">
-                            <select name="ctrinh_type" id="" class="select_option ctrinh_type js-states form-control">
-                                <option disabled selected >Chọn loại công trình</option>
+                            <select name="" id="" class="select_option js-states form-control">
+                                <option value="0">Chọn loại công trình</option>
                                 <option value="1">Biệt thự</option>
                                 <option value="2">Chung cư</option>
                             </select>
                         </div>
                     </div>
-                    <div class="khoicon top-21 box_input_infor">
-                        <div class="flex space">
+                    <div class="khoicon flex space top-21">
                         <div class="khoibe relative">
-                            <p class="chuden font-medium height-20 size-14">Ngân sách (VNĐ) <span class="chudo">*</span></p>
-                            <div class="khunginput khoi_gia_min top-8 input_infor_tag">
-                                <input type="number" name="price_min" id="pcompra" class="giamin" placeholder="Nhập giá cố định">
+                            <p class="title chuden font-medium height-20">Ngân sách (VNĐ) <span class="chudo">*</span></p>
+                            <div class="khunginput khoi_gia_min top-8">
+                                <input type="text" class="giamin" placeholder="Nhập giá cố định">
                             </div>
                             <p class="ngansach_gia absolute size-12">
                                 <span class="ngansach_tien">0</span> <span class="ngansach_donvi">triệu VNĐ</span>
@@ -88,191 +87,188 @@
                             </p>
                         </div>
                         <div class="khoibe">
-                            <p class="chutrang height-20 size-14 dontlook">Don't Look</p>
-                            <button type="button" class="khoanggia font-medium size-16 c-pointer top-8">Khoảng giá</button>
-                            <div class="khunginput khoi_giamax top-8 input_infor_tag relative hidden">
-                                <input type="number" name="" id="pventa" class="giamax " placeholder="Giá max">
+                            <p class="title chutrang height-20 dontlook">Don't Look</p>
+                            <button class="khoanggia font-medium size-16 c-pointer top-8">Khoảng giá</button>
+                            <div class="khunginput khoi_giamax top-8 relative hidden">
+                                <input type="text" class="giamax" placeholder="Giá max">
                                 <img src="<? echo base_url(); ?>assets/images/delete.png" alt="" class="del_icon absolute wh-18">
                             </div>
                         </div>
-                        </div>
                     </div>
-                    <div class="khoicon top-21 box_input_infor">
+                    <div class="khoicon top-21">
                         <p class="title chuden font-medium height-20">Phong cách <span class="chudo">*</span></p>
                         <div class="top-8">
-                            <select name="styles" id="" class="select_option styles js-states form-control">
-                                <option selected disabled>Chọn phong cách</option>
-                                <option value="Đương đại">Đương đại</option>
-                                <option value="Hiện đại">Hiện đại</option>
-                                <option value="Tối giản">Tối giản</option>
-                                <option value="Truyền thống">Truyền thống</option>
-                                <option value="Cổ điển">Cổ điển</option>
-                                <option value="Tân cổ điển">Tân cổ điển</option>
-                                <option value="Scanvindinavian">Scanvindinavian</option>
-                                <option value="Vintage">Vintage</option>
-                                <option value="Retro">Retro</option>
-                                <option value="Bohemia">Bohemia</option>
-                                <option value="Indochine">Indochine</option>
-                                <option value="Khác">Khác</option>
+                            <select name="" id="" class="select_option js-states form-control">
+                                <option value="0">Chọn phong cách</option>
+                                <option value="1">Đương đại</option>
+                                <option value="2">Hiện đại</option>
+                                <option value="3">Tối giản</option>
+                                <option value="4">Truyền thống</option>
+                                <option value="5">Cổ điển</option>
+                                <option value="6">Tân cổ điển</option>
+                                <option value="7">Scanvindinavian</option>
+                                <option value="8">Vintage</option>
+                                <option value="9">Retro</option>
+                                <option value="10">Bohemia</option>
+                                <option value="11">Indochine</option>
+                                <option value="12">Khác</option>
                             </select>
                         </div>
                     </div>
                     <div class="khoicon top-21">
                         <p class="title chuden font-medium height-20">Số phòng ngủ</p>
                         <div class="khoi_phongngu top-8 flex">
-                            <label onclick="active_div(this)" for='1th_bedroom' class="cursor_p radio_bedroom">
-                                1
+                            <label for='1th_bedroom' class="cursor_p radio_bedroom">
+                                <div>1</div>
                                 <input value="1" id="1th_bedroom" class="hidden" name="bedroom" type="radio">
                             </label>
-                            <label onclick="active_div(this)" for='2th_bedroom' class="cursor_p radio_bedroom">
-                                2
+                            <label for='2th_bedroom' class="cursor_p radio_bedroom">
+                                <div>2</div>
                                 <input value="2" id="2th_bedroom" class="hidden" name="bedroom" type="radio">
                             </label>
-                            <label onclick="active_div(this)" for='3th_bedroom' class="cursor_p radio_bedroom">
-                                3
+                            <label for='3th_bedroom' class="cursor_p radio_bedroom">
+                                <div>3</div>
                                 <input value="3" id="3th_bedroom" class="hidden" name="bedroom" type="radio">
                             </label>
-                            <label onclick="active_div(this)" for='4th_bedroom' class="cursor_p radio_bedroom">
-                                4
+                            <label for='4th_bedroom' class="cursor_p radio_bedroom">
+                                <div>4</div>
                                 <input value="4+" id="4th_bedroom" class="hidden" name="bedroom" type="radio">
                             </label>
                         </div>
                     </div>
-                    <div class="khoicon top-21 box_input_infor">
-                        <div class="flex center-height">
-                            <p class="title chuden font-medium height-20 right-16">Thực hiện bởi <span class="chudo">*</span></p>
-                            <div class="flex center-center right-44">
-                                <input value = "1" type="radio" name="Perform" class="right-8">
-                                <p class="title chuden font-medium height-20">Tự làm</p>
-                            </div>
-                            <div class="flex center-center">
-                                <input value = "2" type="radio" name="Perform" class="right-8 Perform">
-                                <p class="title chuden font-medium height-20">Chuyên gia</p>
-                            </div>
+                    <div class="khoicon top-21 flex center-height">
+                        <p class="title chuden font-medium height-20 right-16">Thực hiện bởi <span class="chudo">*</span></p>
+                        <div class="flex center-center right-44">
+                            <input type="radio" name="thuchien" class="right-8">
+                            <p class="title chuden font-medium height-20">Tự làm</p>
+                        </div>
+                        <div class="flex center-center">
+                            <input type="radio" name="thuchien" class="right-8">
+                            <p class="title chuden font-medium height-20">Chuyên gia</p>
                         </div>
                     </div>
-                    <div class="khoicon top-21 box_input_infor">
+                    <div class="khoicon top-21">
                         <p class="title chuden font-medium height-20">Thời gian thi công</p>
                         <div class="top-8">
-                            <select name="time_build" id="" class="select_option time_build js-states form-control">
-                                <option disabled selected >Chọn thời gian thi công</option>
+                            <select name="" id="" class="select_option js-states form-control">
+                                <option value="0">Chọn thời gian thi công</option>
                                 <option value="1">Dưới 1 tháng</option>
                                 <option value="2">1 - 3 tháng</option>
                                 <option value="3">3 - 6 năm</option>
-                                <option value="4">9 - 1 năm</option>
-                                <option value="5">Trên 1 năm</option>
+                                <option value="3">9 - 1 năm</option>
+                                <option value="4">Trên 1 năm</option>
                             </select>
                         </div>
                     </div>
-                    <div class="khoicon top-21 box_input_infor">
-                        <p class="chuden font-medium height-20 size-14">Diện tích <span class="chudo">*</span></p>
+                    <div class="khoicon top-21">
+                        <p class="title chuden font-medium height-20">Diện tích <span class="chudo">*</span></p>
                         <div class="top-8">
-                            <select name="area" id="" class="select_option area js-states form-control">
-                                <option disabled selected >Chọn khoảng diện tích</option>
+                            <select name="" id="" class="select_option js-states form-control">
+                                <option value="0">Chọn khoảng diện tích</option>
                                 <option value="1">Dưới 50 m2</option>
                                 <option value="2">50 m2 - 100 m2</option>
                                 <option value="3">100 m2 - 150 m2</option>
                                 <option value="4">150 m2 - 300 m2</option>
-                                <option value="5">300 m2 trở lên</option>
+                                <option value="2">300 m2 trở lên</option>
                             </select>
                         </div>
                     </div>
                     <div class="khoicon top-21">
                         <p class="title chuden font-medium height-20">Dự án</p>
                         <div class="khunginput top-8">
-                            <input type="text" class="project_name" placeholder="Nhập tên và chọn dự án">
+                            <input type="text" placeholder="Nhập tên và chọn dự án">
                         </div>
                     </div>
-                    <div class="khoicon mausac top-21 relative box_input_infor">
+                    <div class="khoicon mausac top-21 relative">
                         <p class="title chuden font-medium height-20">Màu sắc <span class="chudo">*</span></p>
                         <div class="chonmau flex space top-8">
-                            <label for="den" class="cursor_p position_r btn_color">
+                        <label for="den" class="cursor_p position_r btn_color">
                                 <div class="den"></div>
-                                <input type="checkbox" name="color[]" value="den" class="den" id="den">
+                                <input type="checkbox" class="den" id="den">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
 
                             <label for="trang" class="cursor_p position_r btn_color">
                                 <div class="trang"></div>
-                                <input type="checkbox" name="color[]" value="trang" class="trang" id="trang">
+                                <input type="checkbox" class="trang" id="trang">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
 
                             <label for="do" class="cursor_p position_r btn_color ">
                                 <div class="do"></div>
-                                <input type="checkbox" name="color[]" value="do" class="do" id="do">
+                                <input type="checkbox" class="do" id="do">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
 
                             <label for="cam" class="cursor_p position_r btn_color">
                                 <div class="cam"></div>
-                                <input type="checkbox" name="color[]" value="cam" class="cam" id="cam">
+                                <input type="checkbox" class="cam" id="cam">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
 
                             <label for="vang" class="cursor_p position_r btn_color">
                                 <div class="vang"></div>
-                                <input type="checkbox" name="color[]" value="vang class="vang" id="vang">
+                                <input type="checkbox" class="vang" id="vang">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
 
                             <label for="hong" class="cursor_p position_r btn_color">
                                 <div class="hong"></div>
-                                <input type="checkbox" name="color[]" value="hong" class="hong" id="hong">
+                                <input type="checkbox" class="hong" id="hong">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
                             
                             <label for="xanhluc" class="cursor_p position_r btn_color">
                                 <div class="xanhluc"></div>
-                                <input type="checkbox" name="color[]" value="xanhluc" class="xanhluc" id="xanhluc">
+                                <input type="checkbox" class="xanhluc" id="xanhluc">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
                             
                             <label for="xamxanh" class="cursor_p position_r btn_color">
                                 <div class="xamxanh"></div>
-                                <input type="checkbox" name="color[]" value="xamxanh" class="xamxanh" id="xamxanh">
+                                <input type="checkbox" class="xamxanh" id="xamxanh">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
 
                             <label for="xanhmint" class="cursor_p position_r btn_color">
                                 <div class="xanhmint"></div>
-                                <input type="checkbox" name="color[]" value="xanhmint" class="xanhmint" id="xanhmint">
+                                <input type="checkbox" class="xanhmint" id="xanhmint">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
                             
                             <label for="xanhduong" class="cursor_p position_r btn_color">
                                 <div class="xanhduong"></div>
-                                <input type="checkbox" name="color[]" value="xanhduong class="xanhduong" id="xanhduong">
+                                <input type="checkbox" class="xanhduong" id="xanhduong">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
                             
                             <label for="tim" class="cursor_p position_r btn_color">
                                 <div class="tim"></div>
-                                <input type="checkbox" name="color[]" value="tim" class="tim" id="tim">
+                                <input type="checkbox" class="tim" id="tim">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
                             
                             <label for="xanhden" class="cursor_p position_r btn_color">
                                 <div class="xanhden"></div>
-                                <input type="checkbox" name="color[]" value="xanhden" class="xanhden" id="xanhden">
+                                <input type="checkbox" class="xanhden" id="xanhden">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
                             
                             <label for="xam" class="cursor_p position_r btn_color">
                                 <div class="xam"></div>
-                                <input type="checkbox" name="color[]" value="xam" class="xam" id="xam">
+                                <input type="checkbox" class="xam" id="xam">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
                             
                             <label for="be" class="cursor_p position_r btn_color">
                                 <div class="be"></div>
-                                <input type="checkbox" name="color[]"  value="be" class="be" id="be">
+                                <input type="checkbox" class="be" id="be">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
                            
                             <label for="nau" class="cursor_p position_r btn_color">
                                 <div class="nau"></div>
-                                <input type="checkbox" name="color[]" value="nau" class="nau" id="nau">
+                                <input type="checkbox" class="nau" id="nau">
                                 <img src="<? echo base_url(); ?>assets/images/check_sussess.png" class="img_success">
                             </label>
                             
@@ -284,42 +280,35 @@
                         <div class="khoibe">
                             <p class="title chuden font-medium height-20">Địa chỉ</p>
                             <div class="top-8">
-                                <select onchange="address(this,'districts','ajaxGetListDistricts','Chọn quận huyện','1')" name="city" id="select_city" class="select_option js-states form-control">
-                                    <option selected disabled>Chọn tỉnh thành phố</option>
-                                    <? foreach($city as $cit): ?>
-                                    <option value="<?= $cit['cit_id'] ?>"><?= $cit['cit_name'] ?></option>
-                                    <? endforeach ?>
+                                <select name="" id="" class="select_option js-states form-control">
+                                    <option value="0">Tỉnh thành</option>
                                 </select>
                             </div>
                         </div>
                         <div class="khoibe">
                             <p class="title chutrang height-20 dontlook">Don't look</p>
                             <div class="ttbd_khoi2 top-8">
-                                <select name="districts" id="" class="select_option districts js-states form-control">
-                                    <option selected disabled>Quận huyện</option>
+                                <select name="" id="" class="select_option js-states form-control">
+                                    <option value="0">Quận huyện</option>
                                 </select>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="loai_anh box_input_infor">
-                    <div class="flex center-height">
-                        <p class="title chuden font-medium height-20 right-16">Loại ảnh <span class="chudo">*</span></p>
-                        <div class="loai_anh_input flex center-height right-44">
-                            <input type="radio" value="1" name="type_img" class="right-8 type_img c-pointer">
-                            <p class="title chuden font-medium height-20">Ảnh thật</p>
-                        </div>
-                        <div class="loai_anh_input flex center-height">
-                            <input type="radio" value="2" name="type_img" class="right-8 type_img c-pointer">
-                            <p class="title chuden font-medium height-20">Ảnh 3D</p>
-                        </div>
+                <div class="loai_anh flex center-height">
+                    <p class="title chuden font-medium height-20 right-16">Loại ảnh <span class="chudo">*</span></p>
+                    <div class="loai_anh_input flex center-height right-44">
+                        <input type="radio" name="loai_anh" class="right-8 c-pointer">
+                        <p class="title chuden font-medium height-20">Ảnh thật</p>
+                    </div>
+                    <div class="loai_anh_input flex center-height">
+                        <input type="radio" name="loai_anh" class="right-8 c-pointer" checked>
+                        <p class="title chuden font-medium height-20">Ảnh 3D</p>
                     </div>
                 </div>
-                <div class="ttbd_tieude box_input_infor">
-                    <div class="input_infor_tag khunginput">
-                        <input type="text" name="title_news" class="title_news" placeholder="Nhập tiêu đề bài viết *">
-                    </div>
+                <div class="ttbd_tieude khunginput">
+                    <input type="text" placeholder="Nhập tiêu đề bài viết *">
                 </div>
                 <div class="ttbd_themanh relative">
                     <img src="<? echo base_url(); ?>assets/images/anh_rong.png" alt="" class="ttbd_post_anh">
@@ -360,7 +349,7 @@
                         <div class="relative hidden tdnd_des_img">
                             <img src="<? echo base_url(); ?>assets/images/anh_rong.png" alt="" class="tdnd_post_anh">
                             <div class="tdnd_khoi_button flex center-center absolute">
-                                <button type="button" class="tdnd_tieude_anh c-pointer">Thêm tiêu đề ảnh</button>
+                                <button class="tdnd_tieude_anh c-pointer">Thêm tiêu đề ảnh</button>
                                 <img src="<? echo base_url(); ?>assets/images/rotate-left.png" alt="" class="wh-24 tdnd_img_left right-10 c-pointer">
                                 <img src="<? echo base_url(); ?>assets/images/rotate-right.png" alt="" class="wh-24 tdnd_img_right right-10 c-pointer">
                                 <img src="<? echo base_url(); ?>assets/images/remove_img.png" alt="" class="wh-24 tdnd_remove c-pointer">
@@ -370,7 +359,7 @@
                 </div>
 
                 <div class="tdnd_mieuta_anh relative hidden">
-                    <input type="text" class="title_img" placeholder="Nhập tiêu đề ảnh">
+                    <input type="text" placeholder="Nhập tiêu đề ảnh">
                     <img src="<? echo base_url(); ?>assets/images/remove_img.png" alt="" class="wh-20 absolute c-pointer tdnd_tieude_remove">
                 </div>
 
@@ -412,103 +401,73 @@
 $(".select_option").select2({
     width: "100%",
 });
-var base_url 	= '<?php echo base_url(); ?>'; 
-jQuery.validator.addMethod("comparison", function (value, element) {
-    var pcompra = $("#pcompra").val();
-    return this.optional(element) || value > pcompra;
-});
+
 $("#postNews_Home").validate({
-        errorPlacement: function (error, element) {
+    errorPlacement: function (error, element) {
         error.appendTo(element.parents(".box_input_infor"));
         error.wrap("<span class='errors'>");
         element.parents('.box_input_infor').addClass('validate_input');
-        },
-        rules: {
-            ctrinh_type:    "required",
-            styles:         "required",
-            area:           "required",
-            Perform:        "required",
-            type_img:       "required",
-            "color[]": {
-            required: true,
-            minlength: 1
-          },
-            price_min:      "required",
-            title_news:     "required",
-            price_max:      {
-                                required: true,
-                                number: true,
-                                comparison: true
-                            },
-        },
-        messages: {
-            ctrinh_type:    "Vui lòng chọn loại công trình",
-            styles:         "Vui lòng chọn phong cách",
-            area:           "Vui lòng chọn khoảng diện tích",
-            Perform:        "Vui lòng chọn phương thức thực hiện",
-            "color[]": "Please select at least one checkbox",
-            price_min:      "Vui lòng nhập giá min",
-            type_img:       "Vui lòng chọn loại ảnh",
-            title_news:     "Vui lòng nhập tiêu đề bài viết",
-            price_max:      {
-                                required: '"Vui lòng nhập giá max"',
-                                comparison: 'Giá trị max phải lớn hơn giá trị min'
-                            }
+    },
+    rules: {
+        project_name: "required",
+        introduce: "required",
+        city: "required",
+        bds_type: "required",
+        districts: "required",
+        cdt_come_name: "required",
+        price_min: "required",
+        price_max: "required",
+        title_mb_project: "required",
+        part_name: "required",
+    },
+    messages: {
+        project_name: "Vui lòng nhập tên dự án",
+        introduce: "Vui lòng nhập nội dung giới thiệu",
+        city: "Vui lòng chọn thành phố",
+        bds_type: "Vui lòng chọn loại hình bất động sản",
+        districts: "Vui lòng chọn quận huyện",
+        cdt_come_name: "Vui lòng nhập tên công ty",
+        price_min: "Vui lòng nhập lại khoảng giá",
+        price_max: "Vui lòng nhập lại khoảng giá",
+        title_mb_project: "Vui lòng nhập tiêu đề dự án",
+        part_name: "Vui lòng nhập đầu mục dự án",
+    },
+    submitHandler: function() {
+        hienpopup('popup_thongtin');
+        $(".butt_hoantat").click(function(){
+            var project_name			= $('.project_name').val();
+            var introduce 				= $('.introduce').val();
+            var bds_type 				= $('.bds_type').find(':selected').val();
+            var select_city 		    = $('#select_city').find(':selected').val();
+            var districts 			    = $('.districts').find(':selected').val();
+            var wards 				    = $('.wards').find(':selected').val();
+            var street				    = $('.street').find(':selected').val();
+            var addr_detail 			= $('.addr_detail').val();
+            var post_time 			    = $('.post_time').val();
+            var banner_img 				= $('.banner_img')[0].files[0];
+            var cdt_come_name 			= $('.cdt_come_name').val();
+            var title_img_gtda = [];
 
-        },
-        submitHandler: function() {
-			var ctrinh_type = $(".ctrinh_type").val();
-            var styles      = $(".styles").val();
-            var area        = $(".area").val();
-            var Perform     = $(".Perform").val();
-            var list_color  = [];
-            $("input[name='color[]']:checked").each(function(){
-                list_color.push($(this).val());
-            })
-            list_color = JSON.stringify(list_color);    
-            var color       = $(".color").val();
-            var price_min   = $(".giamin").val();
-            var title_news  = $(".title_news").val();
-            var price_max   = $(".giamax").val();
-            var type_img    = $(".type_img").val();
-            var bedroom     = $(".radio_bedroom.active").find("input[name='bedroom']").val();
-            var time_build  = $(".time_build").val();
-            var project_name= $(".project_name").val();
-            var city        = $("#select_city").val();
-            var district    = $(".districts").val();
-            var banner_img  = $(".ttbd_click_anh")[0].files[0];
-            var title_img   = $(".title_img").val();
-            //----------
-            if($(".dtnd_click_anh").val() != "")
-            {
-                var desc_img_project        = $(".dtnd_click_anh")[0].files[0];
-            }
-            else
-            {
-                var desc_project            = $(".tdnd_des_text").val();
-            }
 
             var data = new FormData();
-            data.append('ctrinh_type', ctrinh_type);
-            data.append('styles', styles);
-            data.append('area', area);
-            data.append('Perform', Perform);
-            data.append('list_color', list_color);
-            data.append('price_min', price_min);
-            data.append('title_news', title_news);
-            data.append('price_max', price_max); 
-            data.append('type_img', type_img);
-            data.append('bedroom', bedroom);
-            data.append('time_build', time_build);
             data.append('project_name', project_name);
-            data.append('city', city);
-            data.append('district', district);
+            data.append('introduce', introduce);
+            data.append('bds_type', bds_type);
+            data.append('select_city', select_city);
+            data.append('districts', districts);
+            data.append('wards', wards);
+            data.append('street', street);
+            data.append('addr_detail', addr_detail);
+            data.append('post_time', post_time);
             data.append('banner_img', banner_img);
-            data.append('desc_img_project', desc_img_project);
-            data.append('desc_project', desc_project);
-            data.append('title_img', title_img);
+            data.append('cdt_come_name', cdt_come_name);
+            data.append('cdt_founding', cdt_founding);
+            data.append('cdt_phone', cdt_phone);
+            data.append('cdt_addr_com', cdt_addr_com);
+            data.append('cdt_project_num', cdt_project_num);
+
             $.ajax({
-			 	url: base_url+'PostNews/addNewsHome',
+			 	url: base_url+'PostNews/addNewsProject',
 			 	type: 'post',
 			 	cache: false,
 			 	contentType: false,
@@ -519,57 +478,28 @@ $("#postNews_Home").validate({
 			 	success: function(response) {
                     if (response.status == 1) {
                         alert(response.msg);
-                        window.location.href = 'quan-ly-tin-dang-thiet-ke.html';
+                        window.location.href = base_url+'admin/ManageNews/ManageNewsProject';
                     }
 			 	},
 			 	error: function(xhr) {
 			 		alert('Error');
 			 	}
 			});
-		}
-    });
-
-
-    //----------------Render districts
-    function address(value1,value2,value3,value4,value5)
-    {
-        var city_id = $(value1).val();
-        if (city_id > 0) {
-            $.ajax({
-                url: base_url+'PostNews/'+value3,
-                type: 'POST',
-                dataType: 'json',
-                data: {city: city_id},
-                success: function (response) {
-                    $html 	   = '<option value="">'+value4+'</option>';
-                    $.each(response, function(index, val) {
-                        if(value5 == 1)
-                        {
-                            $html += '<option value="'+val.cit_id+'">'+val.cit_name+'</option>'
-                        }
-                        else if(value5 == 2)
-                        {
-                            $html += '<option value="'+val.ward_id+'">'+val.ward_name+'</option>'
-                        }
-                        else if(value5 == 3)
-                        {
-                            $html += '<option value="'+val.street_id+'">'+val.street_name+'</option>'
-                        }
-                    });
-                    $("."+value2).html($html);
-                },
-            });
-        }  
-    }
-
-    function active_div(a){
-        $('.radio_bedroom').each(function(){
-            $(this).removeClass('active');
-        })
-        $('input[type=radio]').each(function(){
-            if($(this).prop("checked")) { $(this).parents('.radio_bedroom').addClass('active') }
         })
     }
+});
+
+$('.radio_bedroom').click(function(){
+    $('.radio_bedroom div').each(function(){
+        
+    })
+    $('.radio_bedroom input[type="radio"]').each(function(){
+        if($(this).is(":checked"));
+        {
+            $(this).parents('.radio_bedroom').find('div').addClass('active');
+        }
+    })
+})
 </script>
 
 </html>

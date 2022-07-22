@@ -6,21 +6,21 @@
     <meta name="robots" content="noindex,nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiện ích</title>
-    <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/css/style.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/css/style_sb_hd_sdn.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/css/style_d_sdn.css">
-    <link rel="stylesheet" href="<?= base_url() ?>assets/frontend/css/style_header_d.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style_sb_hd_sdn.css">
+    <link rel="stylesheet" href="../css/style_d_sdn.css">
+    <link rel="stylesheet" href="../css/style_header_d.css">
 
 </head>
 <body>
     <div class="body_tienich">
         <div class="tien_ich flex">
             <div class="tien_ich_khoi1">
-                <? require_once APPPATH.'views/site/includes/sidebar.php' ?>
+                <? include("../includes/sidebar.php") ?>
             </div>
             <div class="tien_ich_khoi2">
                 <div class="tien_ich_khoi2_header">
-                    <? require_once APPPATH.'views/site/includes/header_sdn.php' ?>
+                    <? include("../includes/header_sdn.php") ?>
                 </div>
                 <div class="tien_ich_khoi2_noidung">
                     <div class="khung_tienich">
@@ -29,7 +29,7 @@
                             <div class="khung_tienich_content_bg">
                                 <div class="khung_tienich_content_bg_suv">
                                     <div class="khung_tienich_content_bg_img mr_b24px">
-                                        <img src="<?= base_url() ?>/assets/images/img_sdn/tien_ich1.png" alt="">
+                                        <img src="../images/img_sdn/tien_ich1.png" alt="">
                                     </div>
                                     <div class="khung_tienich_content_bg_text1 fz18_5 mr_b16px">Giá trị ngôi nhà có thể mua</div>
                                     <div class="khung_tienich_content_bg_text2">
@@ -41,7 +41,7 @@
                             <div class="khung_tienich_content_bg">
                                 <div class="khung_tienich_content_bg_suv">
                                     <div class="khung_tienich_content_bg_img mr_b24px">
-                                        <img src="<?= base_url() ?>/assets/images/img_sdn/tien_ich2.png" alt="">
+                                        <img src="../images/img_sdn/tien_ich2.png" alt="">
                                     </div>
                                     <div class="khung_tienich_content_bg_text1 fz18_5 mr_b16px">So sánh dự án</div>
                                     <div class="khung_tienich_content_bg_text2">
@@ -53,7 +53,7 @@
                             <div class="khung_tienich_content_bg">
                                 <div class="khung_tienich_content_bg_suv">
                                     <div class="khung_tienich_content_bg_img mr_b24px">
-                                        <img src="<?= base_url() ?>/assets/images/img_sdn/tien_ich3.png" alt="">
+                                        <img src="../images/img_sdn/tien_ich3.png" alt="">
                                     </div>
                                     <div class="khung_tienich_content_bg_text1 fz18_5 mr_b16px">Mua hay thuê nhà</div>
                                     <div class="khung_tienich_content_bg_text2">
@@ -65,7 +65,7 @@
                             <div class="khung_tienich_content_bg">
                                 <div class="khung_tienich_content_bg_suv">
                                     <div class="khung_tienich_content_bg_img mr_b24px">
-                                        <img src="<?= base_url() ?>/assets/images/img_sdn/tien_ich4.png" alt="">
+                                        <img src="../images/img_sdn/tien_ich4.png" alt="">
                                     </div>
                                     <div class="khung_tienich_content_bg_text1 fz18_5 mr_b16px">Khám phá khu vực</div>
                                     <div class="khung_tienich_content_bg_text2">
@@ -80,7 +80,7 @@
             </div>
         </div>
         <div class="tien_ich_khoi3">
-            <? require_once APPPATH.'views/site/includes/da_footer.php' ?>
+            <? include("../includes/da_footer.php") ?>
         </div>
     </div>
 </body>
