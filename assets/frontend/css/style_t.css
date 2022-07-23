@@ -502,7 +502,14 @@
 .item_index > ul ul {margin-top: 8px;}
 .item_index ul > li {font-size: 16px;line-height: 22px;font-weight: 400;color: #474747;}
 .mt_a101 {margin-top: -101px}
-.pagination span {cursor: pointer;;color: #666666;float: left;padding: 7px 11px;text-decoration: none;font-size: 16px;background: #ffffff;border: 1px solid #cccccc;border-radius: 4px;transition: 0.3s; display: flex;align-items: center;justify-content: center}
+.pagination{display:flex}
+.page-item{margin-right:16px}
+.page-item:last-child{margin-right: unset;}
+.aria-hidden{display: none !important;}
+.sr-only{display: none !important;}
+.page_active{background: #3691d9;border-radius: 4px;}
+.page_active .page-link{color:#fff}
+.pagination span {cursor: pointer;color: #666666;padding: 7px 11px;text-decoration: none;font-size: 16px;border: 1px solid #cccccc;border-radius: 4px;transition: 0.3s; display: flex;align-items: center;justify-content: center}
 .pagination span + span {margin-left: 16px;}
 .pagination span.active {background-color: #3691d9;color: white !important;border-radius: 4px;border: 1px solid #3691d9;}
 .pagination span:hover:not(.active) {background-color: #ddd;}
@@ -1661,7 +1668,6 @@ div#circle {
 .st_like {cursor: pointer;}
 .st_like svg path {transition: all 0.2s ease}
 .index_infor .content > :is(p, span):not(:first-child) {margin-top: 6px;}
-.pagination span {color: #666666;float: left;padding: 7px 11px;text-decoration: none;font-size: 16px;background: #ffffff;border: 1px solid #cccccc;border-radius: 4px;transition: 0.3s;}
 .pagination span + span {margin-left: 16px;}
 .pagination span.active {background-color: #3691d9;color: white;border-radius: 4px;border: 1px solid #3691d9;}
 .pagination span:hover:not(.active) { background-color: #ddd;}
@@ -1861,7 +1867,7 @@ table.table thead tr th {text-align: left}
 .table_person table.table thead tr th {font-size: 16px; line-height: 19px; font-weight: 400}
 .no_members {background-repeat: no-repeat; background-size: 100% 100%;height: 667px;position: relative}
 .no_members::before {content: "";display: block;position: absolute;top: 0;left: 0; bottom:0; right: 0;background: linear-gradient(90.08deg, #F7F8FC 0.08%, rgba(255, 255, 255, 0) 99.94%);}
-.no_members > div{padding: 10px 30px 108px; z-index: 2;}
+.no_members > div{padding: 10px 30px 108px;}
 .bt_add {padding: 9.5px 5px}
 .drop_context {box-shadow: 1px 2px 10px 0px #2020201A;}
 .w_338 {width: 338px;}
@@ -3279,7 +3285,7 @@ input[type="text"]{    width: 100%;
   /* header */
   .header_content_1 {padding-left: 24px; padding-right: 24px;}
   .header_content_khung_timkiem {background-color: transparent; width: 100%; height: 100%; align-items: center; justify-content: flex-end} 
-  .header_content_khung_select, .border_right {display: none}
+  .header_content_khung_select {display: none}
   .header_content_DTDN_dangnhap,.header_content_khung_search input, .header_content_2 {display: none}
   .header_content_khung_icon_search {position: unset; padding-right: 8px}
   /* footer */

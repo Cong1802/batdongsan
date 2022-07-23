@@ -34,9 +34,9 @@
                             Thông tin đăng ký</div>
                         <div class="d_flex account_log-in__import space_b">
                             <div class="khung_input-left_tong w_50">
-								<p class="error_email size-12 chudo mr_t_16"></p>
+								<p class="error_phone size-12 chudo mr_t_16"></p>
                                 <div class="khung_input khung_input-left d_flex align_c no-top">
-                                    <input type="text" class="Acc_email" placeholder="Email *">
+                                    <input type="text" class="Acc_phone" placeholder="Nhập số điện thoại *">
                                 </div>
 								
 								<p class="error_pw size-12 chudo mr_t_16"></p>
@@ -49,15 +49,31 @@
                                     <input type="password" class="Acc_confirm_pw" placeholder="Nhập lại mật khẩu *">
                                 </div>
 								
-								<p class="error_phone size-12 chudo mr_t_16"></p>
-                                <div class="khung_input khung_input-left d_flex align_c no-top">
-                                    <input type="text" class="Acc_phone" placeholder="Nhập số điện thoại *">
-                                </div>
-								
 								<p class="error_fullname size-12 chudo mr_t_16"></p>
                                 <div class="khung_input khung_input-left d_flex align_c no-top">
                                     <input type="text" class="Acc_fullname" placeholder="Họ và tên *">
                                 </div>
+
+								<p class="error_gender size-12 chudo mr_t_16"></p>
+                                <div class="aleftt_gender d_flex  space_b">
+                                    <div class="account_gender-text d_flex align_c font_s14">Giới tính:</div>
+                                    <div class=" d_flex align_c">
+                                        <label><input name="radio" type="radio" value="0"
+                                                class="color_yelow cursor_p Acc_gender"></input></label>
+                                        <div class="account_log-in-Memorize-text font_s14 ml_10">Nam</div>
+                                    </div>
+                                    <div class=" d_flex align_c">
+                                        <label><input name="radio" type="radio" value="1"
+                                                class="color_yelow cursor_p Acc_gender"></input></label>
+                                        <div class="account_log-in-Memorize-text font_s14 ml_10">Nữ</div>
+                                    </div>
+                                    <div class="d_flex align_c">
+                                        <label><input name="radio" type="radio" value="2"
+                                                class="color_yelow cursor_p Acc_gender"></input></label>
+                                        <div class=" font_s14 ml_10">Khác</div>
+                                    </div>
+                                </div>
+								
                             </div>
                             <div class="khung_input-right_tong w_50">
 								<p class="error_city size-12 chudo mr_t_16"></p>
@@ -87,26 +103,6 @@
 								<p class="error_location size-12 chudo mr_t_16"></p>
                                 <div class="khung_input khung_input-right d_flex align_c no-top">
                                     <input type="text" class="Acc_address" placeholder="Địa chỉ chi tiết">
-                                </div>
-								
-								<p class="error_gender size-12 chudo mr_t_16"></p>
-                                <div class="aleftt_gender d_flex  space_b">
-                                    <div class="account_gender-text d_flex align_c font_s14">Giới tính:</div>
-                                    <div class=" d_flex align_c">
-                                        <label><input name="radio" type="radio" value="0"
-                                                class="color_yelow cursor_p Acc_gender"></input></label>
-                                        <div class="account_log-in-Memorize-text font_s14 ml_10">Nam</div>
-                                    </div>
-                                    <div class=" d_flex align_c">
-                                        <label><input name="radio" type="radio" value="1"
-                                                class="color_yelow cursor_p Acc_gender"></input></label>
-                                        <div class="account_log-in-Memorize-text font_s14 ml_10">Nữ</div>
-                                    </div>
-                                    <div class="d_flex align_c">
-                                        <label><input name="radio" type="radio" value="2"
-                                                class="color_yelow cursor_p Acc_gender"></input></label>
-                                        <div class=" font_s14 ml_10">Khác</div>
-                                    </div>
                                 </div>
 								
 								<p class="error_captcha size-12 chudo mr_t_16"></p>
@@ -178,7 +174,6 @@ $(".img-rest").click(function(){
 })
 
 var base_url 	= '<?php echo base_url(); ?>';
-var regex_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 var regex_password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(.{8,20}$)/;
 var regex_phone = /(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/;
 
@@ -225,7 +220,6 @@ $('.Acc_district').change(function() {
 function register_form_1() {
 	// validate
 	var flag = true;
-	var acc_email = $('.Acc_email').val();
 	var acc_pw = $('.Acc_pw').val();
 	var acc_confirm_pw = $('.Acc_confirm_pw').val();
     var acc_phone = $('.Acc_phone').val();
@@ -239,20 +233,20 @@ function register_form_1() {
 	var code_input = $('#code_input').val();
 	var userType = 1;
 	
-	if ($.trim(acc_email) == '') {
-		$('.error_email').removeClass('mr_t_16').addClass('line_h16').html('Email không được để trống');
+	if ($.trim(acc_phone) == '') {
+		$('.error_phone').removeClass('mr_t_16').addClass('line_h16').html('Số điện thoại không được để trống');
 		flag = false;
-	} else if ($.trim(acc_email) !== '' && regex_email.test(acc_email) == false) {
-		$('.error_email').removeClass('mr_t_16').addClass('line_h16').html('Email không đúng định dạng');
+	} else if ($.trim(acc_phone) !== '' && regex_phone.test(acc_phone) == false) {
+		$('.error_phone').removeClass('mr_t_16').addClass('line_h16').html('Số điện thoại không đúng định dạng');
 		flag = false;
 	} else {
 		$.ajax({
 			type: 'POST',
-			url: base_url+'account/checkEmail',
-			data: {email: acc_email},
+			url: base_url+'account/checkAccount',
+			data: {phone: acc_phone},
 			success: function (response) {
 				if (response > 0) {
-					$('.error_email').removeClass('mr_t_16').addClass('line_h16').html('Email đã được sử dụng');
+					$('.error_phone').removeClass('mr_t_16').addClass('line_h16').html('Số điện thoại đã được sử dụng');
 					flag = false;
 				} else {
 					$('.error_email').removeClass('line_h16').addClass('mr_t_16').html('');
@@ -285,16 +279,6 @@ function register_form_1() {
 		flag = false;
 	} else {
 		$('.error_confirm_pw').removeClass('line_h16').addClass('mr_t_16').html('');
-	}
-
-	if ($.trim(acc_phone) == '') {
-		$('.error_phone').removeClass('mr_t_16').addClass('line_h16').html('Số điện thoại không được để trống');
-		flag = false;
-	} else if ($.trim(acc_phone) !== '' && regex_phone.test(acc_phone) == false) {
-		$('.error_phone').removeClass('mr_t_16').addClass('line_h16').html('Số điện thoại không đúng định dạng');
-		flag = false;
-	} else {
-		$('.error_phone').removeClass('line_h16').addClass('mr_t_16').html('');
 	}
 
 	if (acc_fullname == '') {
@@ -349,28 +333,9 @@ function register_form_1() {
 	}
 
 	if (flag == true) {
-		$.ajax({
-			type: 'POST',
-			url: base_url+'account/sendOTP',
-			dataType: 'json',
-			data: {email: acc_email},
-			success: function(response) {
-				if (response == 1) {
-					console.log('success');
-				} else {
-					return false;
-					console.log('error 1');
-				}
-			},
-			error: function(xhr) {
-				console.log('error 2');
-			}
-		})
-		
 		var data = new FormData();
-		data.append('email', acc_email);
-		data.append('password', acc_pw);
 		data.append('phone', acc_phone);
+		data.append('password', acc_pw);
 		data.append('name', acc_fullname);
 		data.append('city', acc_city);
 		data.append('district', acc_district);
@@ -378,6 +343,7 @@ function register_form_1() {
 		data.append('address', acc_address);
 		data.append('gender', acc_gender);
 		data.append('usertype', userType);
+
 		$.ajax({
 			type: 'POST',
 			url: base_url+'account/ajaxRegisterBroker',
@@ -389,7 +355,7 @@ function register_form_1() {
 			enctype: 'multipart/form-data',
 			success: function(response) {
 				console.log('successful');
-				location.href = "trang-nhan-ma-otp-"+response+".html";
+				location.href = "tong-quan.html";
 			},
 			error: function(xhr) {
 				console.log('error Register');

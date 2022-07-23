@@ -33,9 +33,9 @@
                             Thông tin đăng ký</div>
                         <div class="d_flex account_log-in__import space_b">
                             <div class="khung_input-left_tong w_50">
-                                <p class="error_email size-12 chudo mr_t_16"></p>
+                                <p class="error_phone size-12 chudo mr_t_16"></p>
                                 <div class="khung_input khung_input-left d_flex align_c no-top">
-                                    <input type="text" class="Acc_email" placeholder="Email *">
+                                    <input type="text" class="Acc_phone" placeholder="Nhập số điện thoại *">
                                 </div>
 
                                 <p class="error_pw size-12 chudo mr_t_16"></p>
@@ -46,11 +46,6 @@
                                 <p class="error_confirm_pw size-12 chudo mr_t_16"></p>
                                 <div class="khung_input khung_input-left d_flex align_c no-top">
                                     <input type="password" class="Acc_confirm_pw" placeholder="Nhập lại mật khẩu *">
-                                </div>
-
-                                <p class="error_phone size-12 chudo mr_t_16"></p>
-                                <div class="khung_input khung_input-left d_flex align_c no-top">
-                                    <input type="text" class="Acc_phone" placeholder="Nhập số điện thoại *">
                                 </div>
 
                                 <p class="error_com size-12 chudo mr_t_16"></p>
@@ -175,7 +170,6 @@
     });
 
     var base_url = '<?php echo base_url(); ?>';
-    var regex_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     var regex_password = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])(.{8,20}$)/;
     var regex_phone = /(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/;
 
@@ -228,10 +222,9 @@
     function register_form_1() {
         // validate
         var flag = true;
-        var acc_email = $('.Acc_email').val();
+        var acc_phone = $('.Acc_phone').val();
         var acc_pw = $('.Acc_pw').val();
         var acc_confirm_pw = $('.Acc_confirm_pw').val();
-        var acc_phone = $('.Acc_phone').val();
         var acc_com = $('.Acc_com').val();
         var acc_field = $('.Acc_field').val();
         var acc_city = $('.Acc_city').val();
@@ -243,26 +236,25 @@
         var code_input = $('#code_input').val();
         var userType = 3;
 
-        if ($.trim(acc_email) == '') {
-            $('.error_email').removeClass('mr_t_16').addClass('line_h16').html('Email không được để trống');
+        if ($.trim(acc_phone) == '') {
+            $('.error_phone').removeClass('mr_t_16').addClass('line_h16').html('Số điện thoại không được để trống');
             flag = false;
-        } else if ($.trim(acc_email) !== '' && regex_email.test(acc_email) == false) {
-            $('.error_email').removeClass('mr_t_16').addClass('line_h16').html('Email không đúng định dạng');
+        } else if ($.trim(acc_phone) !== '' && regex_phone.test(acc_phone) == false) {
+            $('.error_phone').removeClass('mr_t_16').addClass('line_h16').html('Số điện thoại không đúng định dạng');
             flag = false;
         } else {
-            $.ajax({
+			$.ajax({
                 type: 'POST',
-                url: base_url + 'account/checkEmail',
+                url: base_url + 'account/checkAccount',
                 data: {
-                    email: acc_email
+                    phone: acc_phone
                 },
                 success: function(response) {
                     if (response > 0) {
-                        $('.error_email').removeClass('mr_t_16').addClass('line_h16').html(
-                            'Email đã được sử dụng');
+                        $('.error_phone').removeClass('mr_t_16').addClass('line_h16').html('Số điện thoại đã được sử dụng');
                         flag = false;
                     } else {
-                        $('.error_email').removeClass('line_h16').addClass('mr_t_16').html('');
+            			$('.error_phone').removeClass('line_h16').addClass('mr_t_16').html('');
                     }
                 },
                 async: false,
@@ -293,16 +285,6 @@
             flag = false;
         } else {
             $('.error_confirm_pw').removeClass('line_h16').addClass('mr_t_16').html('');
-        }
-
-        if ($.trim(acc_phone) == '') {
-            $('.error_phone').removeClass('mr_t_16').addClass('line_h16').html('Số điện thoại không được để trống');
-            flag = false;
-        } else if ($.trim(acc_phone) !== '' && regex_phone.test(acc_phone) == false) {
-            $('.error_phone').removeClass('mr_t_16').addClass('line_h16').html('Số điện thoại không đúng định dạng');
-            flag = false;
-        } else {
-            $('.error_phone').removeClass('line_h16').addClass('mr_t_16').html('');
         }
 
         if (acc_com == '') {
@@ -358,30 +340,9 @@
         }
 
         if (flag == true) {
-            $.ajax({
-                type: 'POST',
-                url: base_url + 'account/sendOTP',
-                dataType: 'json',
-                data: {
-                    email: acc_email
-                },
-                success: function(response) {
-                    if (response == 1) {
-                        console.log('success');
-                    } else {
-                        return false;
-                        console.log('error 1');
-                    }
-                },
-                error: function(xhr) {
-                    console.log('error 2');
-                }
-            })
-
             var data = new FormData();
-            data.append('email', acc_email);
-            data.append('password', acc_pw);
             data.append('phone', acc_phone);
+            data.append('password', acc_pw);
             data.append('com', acc_com);
             data.append('field', acc_field);
             data.append('city', acc_city);
@@ -401,7 +362,7 @@
                 enctype: 'multipart/form-data',
                 success: function(response) {
                     console.log('successful');
-                    location.href = "trang-nhan-ma-otp-" + response + ".html";
+                    location.href = "tong-quan.html";
                 },
                 error: function(xhr) {
                     console.log('error Register');

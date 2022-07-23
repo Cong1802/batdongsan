@@ -153,13 +153,6 @@
                     <div class="thongtin_khoi2_noidung_content mr_b32px">
                         <div class="thongtin_khoi2_noidung_content_suv">
                             <div class="thongtin_khoi2_noidung_content_text flex mr_b16px">
-                                <div class="thongtin_khoi2_noidung_content_text1">Email:</div>
-                                <div class="thongtin_khoi2_noidung_content_text2"><?= $userInfo['email'] ?></div>
-                            </div>
-                            <div class="border_ttcn"></div>
-                        </div>
-                        <div class="thongtin_khoi2_noidung_content_suv">
-                            <div class="thongtin_khoi2_noidung_content_text flex mr_b16px">
                                 <div class="thongtin_khoi2_noidung_content_text1">Số điện thoại:</div>
                                 <div class="thongtin_khoi2_noidung_content_text2"><?= $userInfo['phone'] ?></div>
                             </div>

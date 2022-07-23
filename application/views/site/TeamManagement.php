@@ -43,7 +43,7 @@
 						$dir = "upload/".$y."/".$m."/".$d;
 						$avt = $dir."/".$TeamManagement['user_avt'];
 						if (file_exists($avt)) {
-							echo '<img src="'.$avt.'" alt="">';
+							echo '<img src="'.base_url().$avt.'" alt="">';
 						} else {
 							echo '<img src="/assets/images/avatar_md.png" alt="">';
 						}
@@ -54,7 +54,7 @@
 						$dir1 = "upload/".$y1."/".$m1."/".$d1;
 						$avt1 = $dir1."/".$Boss['user_avt'];
 						if (file_exists($avt1)) {
-							echo '<img src="'.$avt1.'" alt="">';
+							echo '<img src="'.base_url().$avt1.'" alt="">';
 						} else {
 							echo '<img src="/assets/images/avatar_md.png" alt="">';
 						}
@@ -87,11 +87,7 @@
                                 <span>Số lượng thành viên:</span>
                                 <span>
 									<?
-									if ($checkRole['TeamRole'] == 1) {
-										echo $countMembers1;
-									} elseif ($checkRole['TeamRole'] == 2) {
-										echo $countMembers2;
-									}
+									echo $countMembers;
 									?>
 								</span>
                             </div>
@@ -128,27 +124,29 @@
                     <div class="d_flex align_c personals_search space_b">
                         <div class="d_flex align_c personals_searching">
                             <div class="bd-grayc br_8 d_flex align_c mn_w506 space_b search_ip">
-                                <input type="text" name="search"
-                                    placeholder="Tìm kiếm tên, số điện thoại, email nhân viên">
-                                <button class="btn">
+                                <input type="text" name="search" class="search_emp" value="<?= isset($_GET['key']) ? $_GET['key'] : '' ?>"
+                                    placeholder="Tìm kiếm tên, số điện thoại nhân viên">
+                                <button class="btn butt_search">
                                     <img src="/assets/images/search_blue.png" alt="">
                                 </button>
                             </div>
                             <div class="w_188_h40 ql_nhom_status_select">
-                                <select name="" id="" class="select_option">
-                                    <option value="">Trạng thái</option>
-                                    <option value="0">Hoạt động</option>
-                                    <option value="1">Chưa xác nhận</option>
+                                <select name="" id="" class="select_option select_role">
+                                    <option value="" disabled selected>Trạng thái</option>
+                                    <option value="2" <?= (isset($_GET['state']) && $_GET['state'] == 2) ? "selected" : '' ?>>Tất cả</option>
+                                    <option value="0" <?= (isset($_GET['state']) && $_GET['state'] == 0) ? "selected" : '' ?>>Chưa xác nhận</option>
+                                    <option value="1" <?= (isset($_GET['state']) && $_GET['state'] == 1) ? "selected" : '' ?>>Hoạt động</option>
                                 </select>
                             </div>
                         </div>
                         <!-- dành cho quản lý nhóm -->
                         <div class="h_40 ql_nhom_status_menu">
                             <div class="ql_nhom_status_select_375">
-                                <select name="" id="" class="select_option">
-                                    <option value="">Trạng thái</option>
-                                    <option value="0">Hoạt động</option>
-                                    <option value="1">Chưa xác nhận</option>
+                                <select name="" id="" class="select_option select_role">
+                                    <option value="" disabled selected>Trạng thái</option>
+                                    <option value="2" <?= (isset($_GET['state']) && $_GET['state'] == 2) ? "selected" : '' ?>>Tất cả</option>
+                                    <option value="0" <?= (isset($_GET['state']) && $_GET['state'] == 0) ? "selected" : '' ?>>Chưa xác nhận</option>
+                                    <option value="1" <?= (isset($_GET['state']) && $_GET['state'] == 1) ? "selected" : '' ?>>Hoạt động</option>
                                 </select>
                             </div>
                             <button class="btn br_8 d_flex align_c btn_blue mn_w180 pd_lr_19 h_40"
@@ -171,18 +169,17 @@
                                     <tr class="bg_blue_5 cl_ch_blue">
                                         <th class="stt">STT</th>
                                         <th>Nhân viên</th>
-                                        <th>Thông tin</th>
+                                        <th>Số điện thoại</th>
                                         <th>Số điểm</th>
                                         <th>Trạng thái</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <?php $i=0; foreach ($listMembers1 as $val) {$i++; ?>
+                                    <?php $i=0; foreach ($listMembers as $val) {$i++; ?>
                                     <tr>
                                         <td class="stt"><?= $i ?></td>
                                         <td><?= $val['name'] ?></td>
                                         <td class="d_flex align_s flex_column cl_t_8">
-                                            <span><?= $val['email'] ?></span>
                                             <span><?= $val['phone'] ?></span>
                                         </td>
                                         <td><?= $val['point'] ?></td>
@@ -196,19 +193,13 @@
                             </table>
                         </div>
 
-						<div class="pagination mt_32 d_flex flex_end hidden">
-							<span class="active"><img src="/assets/images/arrow_l_back_white.png" alt=""></span>
-							<span class="active">1</span>
-							<span>2</span>
-							<span>3</span>
-							<span>4</span>
-							<span class="active"><img src="/assets/images/arrow_r_back_white.png" alt=""></span>
+						<div class="pagination mt_32 d_flex flex_end">
+						<? echo $pagination ?>
 						</div>
                         <!-- // bảng dành cho nhân viên -->
 						<? } ?>
-
 						<? if ($checkRole['TeamRole'] == 1) { ?>
-						<? if ($countMembers1 > 0) { ?>
+						<? if ($countMembers > 0) { ?>
                         <!-- dành cho quản lý nhóm -->
                         <div class="box_main_table_list position_r manage">
                             <table class="table" id="scroll_tb">
@@ -217,7 +208,7 @@
                                         <th class="stt">STT</th>
                                         <th>Nhân viên</th>
                                         <th>Số tiền (VNĐ)</th>
-                                        <th>Thông tin</th>
+                                        <th>Số điện thoại</th>
                                         <th>Quản lý</th>
                                         <th>Trạng thái</th>
                                         <th>Xóa</th>
@@ -238,7 +229,7 @@
                                             </div>
                                         </td>
                                         <td>
-                                            <span class="block"><?= $val['email'] ?></span>
+                                            <span class="block"></span>
                                             <span class="block mt_8"><?= $val['phone'] ?></span>
                                         </td>
                                         <td>
@@ -277,16 +268,11 @@
                         </div>
 						<? } ?>
 
-						<div class="pagination mt_32 d_flex flex_end hidden">
-							<span class="active"><img src="/assets/images/arrow_l_back_white.png" alt=""></span>
-							<span class="active">1</span>
-							<span>2</span>
-							<span>3</span>
-							<span>4</span>
-							<span class="active"><img src="/assets/images/arrow_r_back_white.png" alt=""></span>
+						<div class="pagination mt_32 d_flex flex_end">
+						<? echo $pagination ?>
 						</div>
 
-						<? if ($countMembers1 == 0) { ?>
+						<? if ($countMembers == 0) { ?>
                         <div class="no_members "
                             style="background-image: url('/assets/images/white-empty-room 1.png');">
                             <div class="d_flex align_c flex_end flex_column position_r h_100 flex_center">
@@ -343,7 +329,7 @@
                     <form action="" method="post">
                         <div class="d_flex align_c mt_21 bd_b_gr">
                             <div class="h_40 w_100">
-                                <input type="text" id="info" placeholder="Nhập gmail hoặc số điện thoại"
+                                <input type="text" id="info" placeholder="Nhập số điện thoại"
                                     class="rs_input w_100 h_100 br_8 ipfzdf txtels">
                             </div>
                             <div class="cursor_p">
@@ -678,7 +664,6 @@
 					if (userInfo['info'] == 1) {
 						$('.add_user_id').attr('data-id', userInfo['id']);
 						$('.add_user_name').html(userInfo['name']);
-						$('.add_user_email').html(userInfo['email']);
 						$('.add_user_phone').html(userInfo['phone']);
 						if (userInfo['user_avt'] == '') {
 							$('.user_info').removeClass('no-top');
@@ -687,7 +672,7 @@
 						} else {
 							$('.user_info').removeClass('no-top');
 							$('.add_user_avt').addClass('wh_80');
-							$('.add_user_avt').html('<img src="'+userInfo['avt']+'" alt="" class="br_50p">');
+							$('.add_user_avt').html('<img src="<?= base_url() ?>'+userInfo['avt']+'" alt="" class="br_50p">');
 						}
 						$('.no-user').html('');
 						$('.fake_butt').addClass('hidden');
@@ -764,13 +749,12 @@
 			success: function(response) {
 				var info = JSON.parse(response);
 				$('.deal_name').html(info['name']);
-				$('.deal_email').html(info['email']);
 				$('.deal_phone').html(info['phone']);
 				$('#memberMoney').val(info['money']);
 				if (info['user_avt'] == '') {
 					$('.deal_avt').html('<img src="/assets/images/avatar_md.png" alt="">');
 				} else {
-					$('.deal_avt').html('<img src="'+info['avt']+'" alt="">');
+					$('.deal_avt').html('<img src="<?= base_url() ?>'+info['avt']+'" alt="">');
 				}
 			},
 			error: function(xhr) {
@@ -827,28 +811,174 @@
 		}
 	});
 
-    //     $('[data-toggle="select2"]').each(function(){
-    //   var placeholder = $(this).attr('data-placeholder')
-    //   placeholder = (placeholder === undefined) ? '' : placeholder;
+	$('.butt_search').click(function() {
+		search();
+	});
+	$(".search_emp").keypress(function(e){
+		if(e.which == 13) {
+			search();
+		}
+	})
 
-    //   $(this).select2({
-    //     theme: "bootstrap4",
-    //     placeholder: placeholder,
-    //     width: 'auto',
-    //     inheritClass: true
-    //   });
-    // });
-
-    // sizeTB('#scroll_tb tbody tr', '.result_table span', 3);
-    // sizeTB('#scroll_tb tbody tr', '#scroll_tb thead tr th', 5);
-
-    // window.onresize = function() {
-    //     sizeTB('#scroll_tb tbody tr', '.result_table span', 3);
-    //     sizeTB('#scroll_tb tbody tr', '#scroll_tb thead tr th', 5);
-    //     sizeTB('#scroll_tb', '.result_table', 1, false);
-    //     sizeTB('#scroll_tb', '#scroll_tb thead', 1, false);
-    // }
+	$('.select_role').change(function() {
+		search();
+	});
+	
+	function search() {
+		var link = "/quan-ly-doi-nhom-nhan-vien.html";
+		var keyword= $(".search_emp").val();
+		link += "?key=" + keyword;
+		var state = $(".select_role").val();
+		if(state != null)
+		{
+			link += "&state=" + state;
+		}
+		location.href= link;
+	}
+	
+	$(".page-link").each(function() {
+    var state = $(".select_role").val();
+    var keyword = $('.search_emp').val();
+        if (state != null) {
+			console.log(state);
+            $(this).find('a').attr("href", $(this).find('a').attr('href') + "?key=" + keyword + "&state=" + state);
+        }
+	});
     </script>
 </body>
 
 </html>
+<!-- 
+	$rowperpage  = 10;
+		if ($this->uri->segment(2)) {
+			$page = $this->uri->segment(2);
+		} else {
+			$page = 0;
+		}
+		if ($page != 0) {
+			$page        = ($page - 1) * $rowperpage;
+		}
+		$keyword = isset($_GET['key']) ? $_GET['key'] : ''; //tìm kiếm
+		$cit_id = isset($_GET['id_cit']) ? $_GET['id_cit'] : ''; //tìm kiếm
+		$stt = isset($_GET['stt']) ? $_GET['stt'] : ''; //tìm kiếm
+		$this->_data['count_AllSave'] 			=   $this->M_ManageNews->count_AllSave();
+		$this->_data['newsPurchase']			=	$this->M_ManageNews->getNewsPurchase($page, $rowperpage,$keyword,$stt,$cit_id);
+		$this->_data['count_save_purchase'] 	= 	$this->M_ManageNews->countSavePurchase();
+		$this->_data['count_all_purchase'] 		= 	$this->M_ManageNews->countAllPurchase();
+		$this->_data['count_all_lease'] 		= 	$this->M_ManageNews->countAllLease();
+		$this->_data['count_all_design'] 		=   $this->M_ManageNews->count_All_Design();
+		$this->_data['countAllProject'] 		=   $this->M_ManageNews->countAllProject();
+		$countAll = $this->M_ManageNews->countAll_getNewsPurchase($keyword,$stt,$cit_id);
+		$config['base_url']             = base_url() . 'quan-ly-tin-dang-mua-ban.html';
+		$config["total_rows"] 			= $countAll;
+		$config["per_page"] 			= $rowperpage;
+		$config['num_links'] 			= 2;
+		$config['use_page_numbers'] 	= TRUE;
+
+		$config['first_link'] 		= 'Đầu';
+		$config['last_link'] 		= 'Cuối';
+		$config['full_tag_open']    = '<div class="body_phantrang_img flex juss_tify_end"><nav><ul class="pagination body_phantrang_number flex">';
+		$config['full_tag_close']   = '</ul></nav></div>';
+		$config['num_tag_open']     = '<li class="page-item phantrang_number mr_r8px"><span class="page-link">';
+		$config['num_tag_close']    = '</span></li>';
+		$config['cur_tag_open']     = '<li class="page-item phantrang_number mr_r8px page_active"><span class="page-link">';
+		$config['cur_tag_close']    = '</span></li>';
+		$config['next_tag_open']    = '<li class="page-item phantrang_number mr_r8px"><span class="page-link">';
+		$config['next_tag_close']  	= '<span aria-hidden="true"></span></span></li>';
+		$config['prev_tag_open']    = '<li class="page-item phantrang_number mr_r8px"><span class="page-link">';
+		$config['prev_tag_close'] 	= '</span></li>';
+		$config['first_tag_open']   = '<li class="page-item phantrang_number mr_r8px"><span class="page-link">';
+		$config['first_tag_close'] 	= '</span></li>';
+		$config['last_tag_open']    = '<li class="page-item phantrang_number mr_r8px"><span class="page-link">';
+		$config['last_tag_close'] 	= '</span></li>';
+		// Initialize
+		$this->pagination->initialize($config);
+		$this->_data['pagination'] = $this->pagination->create_links();
+		$this->_data['canonical']				= base_url();
+		$this->_data['listcity'] 				= $this->M_ManageNews->getCity(0);
+		$this->load->helper(array('lich','lich2','lich3'));
+		$this->load->view('site/ManageNewsPurchase', $this->_data);
+		
+
+		//---------------------search
+
+$("#select_city").change(function(){
+    search();
+})
+$("#select_stt").change(function(){
+    search();
+})
+$(".input_search").keypress(function(e){
+    if(e.which == 13) {
+        search();
+    }
+})
+$(".abs_search").click(function(){
+    search();
+})
+
+function search()
+{
+    var link = "quan-ly-tin-dang-cho-thue.html";
+    var id_cit = $("#select_city").val();
+    var keyword= $(".input_search").val();
+    link += "?key=" + keyword;
+    if(id_cit != null)
+    {
+        link += "&id_cit=" + id_cit;
+    }
+    var id_stt = $("#select_stt").val();
+    if(id_stt != null)
+    {
+        link += "&stt=" + id_stt;
+    }
+    location.href= link;
+}
+
+//-------------------------
+$(".page-link").each(function() {
+    var stt = $("#select_stt").val();
+    var id_cit = $("#select_city").val();
+    var keyword = $('.search-pr').val();
+        if (keyword !== '' || id_cit != null || stt != null) {
+            $(this).find('a').attr("href", $(this).find('a').attr('href') + "?keyword=" + keyword + "&cit=" + citi_id + "&stt=" + stt);
+        }
+});
+
+
+//---------- tin đăng mua bán
+    public function getNewsPurchase($offset, $perpage,$keyword,$stt,$cit_id) {
+       
+        if ($stt != 0) {
+            $this->db->where('stt_news',$stt);
+        }
+        if ($cit_id != '') {
+            $this->db->where('select_city', $cit_id);
+        }
+        if ($keyword != '') {
+            $this->db->like('project_name', $keyword);
+        }
+        $this->db->where('type', 4);
+        $this->db->where('type_news', 1);
+        $this->db->limit($perpage, $offset);
+        $this->db->order_by('id_news', 'desc');
+        return $this->db->get('post_news')->result_array();
+    }
+    public function countAll_getNewsPurchase($keyword,$stt,$cit_id) {
+        $this->db->select('id_news');
+        if ($stt !== 0) {
+            $this->db->where('stt_news',$stt);
+        }   
+        if ($keyword !== '') {
+            $this->db->like('project_name', $keyword);
+        }
+       
+        if ($cit_id !== '') {
+            $this->db->like('select_city', $cit_id);
+        }
+        $this->db->where('type_news', 1);
+        $this->db->where('type', 4);
+        return $this->db->get('post_news')->num_rows();
+    }
+
+ -->

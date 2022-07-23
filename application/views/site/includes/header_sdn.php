@@ -18,7 +18,7 @@
     <div class="khoi_header flex align_item justify_c_sb">
         <!-- TK cho thuê, người bán. nhà môi giới -->
 		<? if ($userInfo['userType'] == 0 || $userInfo['userType'] == 1 || $userInfo['userType'] == 2) { ?>
-        <div class="khoi_header1 flex">
+        <div class="khoi_header1 flex" style="align-items: center;">
             <div class="img_menu_3_gach">
                 <img src="<? echo base_url() ?>assets/images/img_du_an/menu2.png" alt="">
             </div>
@@ -205,7 +205,7 @@
 							$avt = $dir."/".$userInfo['user_avt'];
 							if (file_exists($avt)) {
 							?>
-                            <img src="<?= $avt ?>" alt="">
+                            <img src="<?= base_url().$avt ?>" alt="">
 							<? } else { ?>
                             <img src="/assets/images/default_avt.svg" alt="">
 							<? } ?>
@@ -219,7 +219,7 @@
                                         <div class="popup_user_padding_khoi1_text">
                                             <div class="popup_user_padding_khoi1_text1 mr_b6px fz_16_5 elipsis1"><?= $userInfo['name'] ?></div>
                                             <div class="popup_user_padding_khoi1_text1 mr_b6px elipsis1">ID: <?= $userInfo['id'] ?></div>
-                                            <div class="popup_user_padding_khoi1_text1 elipsis1"><?= $userInfo['email'] ?></div>
+                                            <div class="popup_user_padding_khoi1_text1 elipsis1"><?= $userInfo['phone'] ?></div>
                                         </div>
                                     </div>
                                     <div class="border_user"></div>

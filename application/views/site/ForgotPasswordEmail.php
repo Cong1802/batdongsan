@@ -2,7 +2,7 @@
 <html lang="vi">
 
 <head>
-    <title>Nhập email</title>
+    <title>Quên mật khẩu</title>
     <meta charset="UTF-8">
     <meta name="robots" content="noindex,nofollow" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,12 +27,12 @@
                         <p class="font-medium size-14">Quay lại</p>
                     </div>
                     <div class="account_log-in account_otp-beside insert_email_wrapper w_100">
-                        <div class="account_title font_s24 text_c color_green font_w_600">Nhập Email</div>
-                        <div class="font_s16 text_l font_w500 color_grey line_h19 mr_t_32">Vui lòng nhập Email
+                        <div class="account_title font_s24 text_c color_green font_w_600">Nhập số điện thoại</div>
+                        <div class="font_s16 text_l font_w500 color_grey line_h19 mr_t_32">Vui lòng nhập số điện thoại
                             <span class="color_red">*</span></div>
-                        <p class="error_email size-12 chudo mr_t_16"></p>
+                        <p class="error_phone size-12 chudo mr_t_16"></p>
                         <div class="khung_input khung_input-email d_flex align_c no-top">
-                            <input type="text" class="email" placeholder="Nhập email">
+                            <input type="text" class="phone" placeholder="Nhập số điện thoại">
                             <div class="account_log_in-input-img icon_email">
                                 <img src="<? echo base_url(); ?>assets/images/email.svg" alt="" class="m_r_18">
                             </div>
@@ -53,29 +53,25 @@
 
 <script>
 	var base_url = '<?php echo base_url(); ?>';
-	var regex_email = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 	function otp_form_1() {
 		var flag = true;
-		var email = $('.email').val();
+		var phone = $('.phone').val();
 		
-		if ($.trim(email) == '') {
-            $('.error_email').removeClass('mr_t_16').addClass('line_h16').html('Email không được để trống');
-            flag = false;
-        } else if ($.trim(email) !== '' && regex_email.test(email) == false) {
-            $('.error_email').removeClass('mr_t_16').addClass('line_h16').html('Email không đúng định dạng');
+		if ($.trim(phone) == '') {
+            $('.error_phone').removeClass('mr_t_16').addClass('line_h16').html('Số điện thoại không được để trống');
             flag = false;
         } else {
 			$.ajax ({
 				type: 'POST',
-				url: base_url+'account/checkEmailForgot',
-				data: {email: email},
+				url: base_url+'account/checkPhoneForgot',
+				data: {phone: phone},
 				success: function(response) {
 					if (response == 0) {
-						$('.error_email').removeClass('mr_t_16').addClass('line_h16').html('Email không tồn tại');
+						$('.error_phone').removeClass('mr_t_16').addClass('line_h16').html('Số điện thoại không tồn tại');
 						flag = false;
 					} else {
-						$('.error_email').removeClass('line_h16').addClass('mr_t_16').html('');
+						$('.error_phone').removeClass('line_h16').addClass('mr_t_16').html('');
 					}
 				},
 				error: function (xhr) {
@@ -88,7 +84,7 @@
 			$.ajax ({
 				type: 'POST',
 				url: base_url+'account/sendForgotPasswordOTP',
-				data: {email: email},
+				data: {phone: phone},
 				success: function(response) {
 					if (response > 0) {
 						console.log(response);

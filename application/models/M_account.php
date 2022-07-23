@@ -14,18 +14,18 @@ class M_Account extends CI_Model
 	protected $column_order = array('id','name','phone','email','gender','cityID','districtID','wardID','address','userType','newTypeInterest','newType','password','active','createdDate');
     protected $order = array('id' => 'desc');
 	
-    public function checkBy($email)
+    public function checkBy($phone)
     {
 		$this->db->select(['id']);
-        $this->db->where('email', $email);
+        $this->db->where('phone', $phone);
 		return $this->db->get($this->_table)->num_rows();
     }
 	public function insert_id($data) {
 		$this->db->insert($this->_table, $data);
 		return $this->db->insert_id();
 	}
-	public function getEmailby($id) {
-		$this->db->select(['id','email']);
+	public function getPhoneby($id) {
+		$this->db->select(['id','phone']);
 		$this->db->where('id', $id);
 		return $this->db->get($this->_table)->row_array();
 	}
@@ -33,17 +33,16 @@ class M_Account extends CI_Model
 		$this->db->where('id', $id);
 		return $this->db->update($this->_table, $data);
 	}
-	public function checkLogin($email, $pw, $userType) {
+	public function checkLogin($phone, $pw, $userType) {
 		$this->db->select('id');
-		$this->db->where('email', $email);
+		$this->db->where('phone', $phone);
 		$this->db->where('password', $pw);
 		$this->db->where('userType', $userType);
-		$this->db->where('active', 1);
 		return $this->db->get($this->_table)->num_rows();
 	}
-	public function getInfoBy($email, $pw) {
+	public function getInfoBy($phone, $pw) {
 		$this->db->select('*');
-		$this->db->where('email', $email);
+		$this->db->where('phone', $phone);
 		$this->db->where('password', $pw);
 		return $this->db->get($this->_table)->row_array();
 	}
@@ -70,14 +69,14 @@ class M_Account extends CI_Model
 		return $this->db->get($this->_table3)->result_array();
 	}
 
-	public function checkEmailForgot($data) {
+	public function checkPhoneForgot($data) {
 		$this->db->select('id');
-		$this->db->where('email', $data);
+		$this->db->where('phone', $data);
 		return $this->db->get($this->_table)->num_rows();
 	}
 	public function getIdForgot($data) {
 		$this->db->select(['id']);
-		$this->db->where('email', $data);
+		$this->db->where('phone', $data);
 		return $this->db->get($this->_table)->row_array();
 	}
 
@@ -145,13 +144,8 @@ class M_Account extends CI_Model
 		$this->db->where('id', $id);
 		return $this->db->update($this->_table);
 	}
-	public function checkEmailTeamManagement($email) {
-		$this->db->select('id');
-		$this->db->where('email', $email);
-		return $this->db->get($this->_table)->num_rows();
-	}
 	public function getInfoByEmail($email) {
-		$this->db->select(['id', 'avtDate', 'user_avt', 'name', 'email', 'phone']);
+		$this->db->select(['id', 'avtDate', 'user_avt', 'name', 'phone']);
 		$this->db->where('email', $email);
 		return $this->db->get($this->_table)->row_array();
 	}
@@ -161,15 +155,19 @@ class M_Account extends CI_Model
 		return $this->db->get($this->_table)->num_rows();
 	}
 	public function getInfoByPhone($phone) {
-		$this->db->select(['id', 'avtDate', 'user_avt', 'name', 'email', 'phone']);
+		$this->db->select(['id', 'avtDate', 'user_avt', 'name', 'phone']);
 		$this->db->where('phone', $phone);
 		return $this->db->get($this->_table)->row_array();
 	}
 	public function getInfoByID($id) {
-		$this->db->select(['id', 'avtDate', 'user_avt', 'name', 'email', 'phone', 'money']);
+		$this->db->select(['id', 'avtDate', 'user_avt', 'name', 'phone', 'money']);
 		$this->db->join('wallet', 'users.id = wallet.userID');
 		$this->db->where('id', $id);
 		return $this->db->get($this->_table)->row_array();
+	}
+	public function update_role($data, $id) {
+		$this->db->where('id', $id);
+		return $this->db->update($this->_table, $data);
 	}
 }
 ?>

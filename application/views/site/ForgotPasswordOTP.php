@@ -27,8 +27,8 @@
                 </div>
                 <div class="account_log-in account_otp-beside w_100 quen_mk_otp">
                     <div class="account_title font_s24 text_c color_green font_w_600 mr_t_4_am">Nhập mã OTP</div>
-                    <div class="font_s14 m_t_b_24 text_l font_w500 color_grey mr_t_32">Mã xác thực gửi về Email
-                        “<?= $email ?>”</div>
+                    <div class="font_s14 m_t_b_24 text_l font_w500 color_grey mr_t_32">Mã xác thực gửi về số điện thoại
+                        “<?= $phone ?>”</div>
                     <div class="account_otp-beside-otp">
                         <form method="post" class="digit-group digit-group-otp font_s24 d_flex space_b">
                             <input type="text" class="digit" id="digit-1" name="digit-1" data-next="digit-2" />
@@ -69,11 +69,11 @@ $('.digit').keyup(function() {
 });
 
 $('.account_otp_number').click(function() {
-	var email = '<?= $email ?>';
+	var phone = '<?= $phone ?>';
 	$.ajax ({
 		type: 'POST',
 		url: base_url+'account/sendForgotPasswordOTP',
-		data: {email: email},
+		data: {phone: phone},
 		success: function(response) {
 			console.log('successful');
 		},

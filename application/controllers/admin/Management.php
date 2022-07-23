@@ -34,31 +34,100 @@ class Management extends CI_Controller
 		if (isset($_COOKIE['user_id']) && $_COOKIE['user_id'] !== '') {
 			$user_id 								= $_COOKIE['user_id'];
 			$this->_data['user_id']					= $_COOKIE['user_id'];
+			$rowperpage = 10;
+			if ($this->uri->segment(2)) {
+				$page = $this->uri->segment(2);
+			} else {
+				$page = 0;
+			}
+			if ($page != 0) {
+				$page        = ($page - 1) * $rowperpage;
+			}
+			$keyword = isset($_GET['key']) ? $_GET['key'] : ''; //tìm kiếm
+			$state = isset($_GET['state']) ? $_GET['state'] : 2; //tìm kiếm
 			$this->_data['userInfo']				= $this->M_Account->checkTypeUser($user_id);
 			$this->_data['wallet']					= $this->M_Wallet->WalletInfo($user_id);
 			$this->_data['checkRole']				= $this->M_Account->checkRole($user_id);
 			if ($this->_data['checkRole']['TeamRole'] == 1) {
 				// quan ly doi nhom
+				// lay idteam cua quan ly
 				$this->_data['count1']				= $this->M_TeamManagement->count1($user_id);
-				$this->_data['countMembers1']		= $this->M_TeamManagement->countMembers1($this->_data['count1']['teamID']);
-				$params = array();
-				$limit_per_page = 10;
-				$start_index = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
-				$total_records = $this->M_TeamManagement->get_total($this->_data['count1']['teamID']);
-				if ($total_records > 0) {
-					$this->_data['listMembers']			= $this->M_TeamManagement->listMembers($this->_data['count1']['teamID'],$limit_per_page, $start_index);
-				}
+				// dem so nhan vien cua team
+				$this->_data['countMembers']		= $this->M_TeamManagement->countMembers($this->_data['count1']['teamID'],$keyword,$state);
+				// list nhan vien
+				$this->_data['listMembers']			= $this->M_TeamManagement->listMembers($this->_data['count1']['teamID'],$rowperpage,$page,$keyword,$state);
+				$config['base_url'] 					= base_url().'quan-ly-doi-nhom-nhan-vien.html';
+				$allcount								= $this->_data['countMembers'];
+				$users_record							= $this->_data['listMembers'];
+				$config['use_page_numbers']				= TRUE;
+				$config['total_rows'] 					= $allcount;
+				$config['per_page']						= $rowperpage;
+				$config['first_link'] 					= 'Đầu'; 
+				$config['last_link'] 					= 'Cuối';
+				$config['full_tag_open']    			= '<div class="pagging text-center"><nav><ul class="pagination">';
+				$config['full_tag_close']   			= '</ul></nav></div>';
+				$config['num_tag_open']     			= '<li class="page-item"><span class="page-link">';
+				$config['num_tag_close']    			= '</span></li>';
+				$config['cur_tag_open']     			= '<li class="page-item page_active"><span class="page-link">';
+				$config['cur_tag_close']    			= '<span class="sr-only">(current)</span></span></li>';
+				$config['next_tag_open']    			= '<li class="page-item"><span class="page-link">';
+				$config['next_tag_close']  				= '<span class="aria-hidden" aria-hidden="true"></span></span></li>';
+				$config['prev_tag_open']    			= '<li class="page-item"><span class="page-link">';
+				$config['prev_tag_close'] 				= '</span></li>';
+				$config['first_tag_open']   			= '<li class="page-item"><span class="page-link">';
+				$config['first_tag_close'] 				= '</span></li>';
+				$config['last_tag_open']    			= '<li class="page-item"><span class="page-link">';
+				$config['last_tag_close'] 				= '</span></li>';
+				
+				$this->pagination->initialize($config);
+				$data['result'] = $users_record;
+				$this->_data['pagination'] = $this->pagination->create_links();
+				// thong tin user
+				$this->_data['TeamManagement']			= $this->M_TeamManagement->getInfoTeamManager($user_id);
+				// thong tin quan ly cua user
+				$this->_data['Boss']					= $this->M_TeamManagement->getInfoBoss($user_id);
 			} elseif ($this->_data['checkRole']['TeamRole'] == 2) {
 				// nhan vien doi nhom
+				// lay idteam cua nhan vien
 				$this->_data['count2']				= $this->M_TeamManagement->count2($user_id);
-				$this->_data['countMembers2']		= $this->M_TeamManagement->countMembers2($this->_data['count2']['tmTeamID']);
-				$this->_data['listMembers1']		= $this->M_TeamManagement->listMembers1($this->_data['count2']['tmTeamID']);
+				// dem so nhan vien cua team
+				$this->_data['countMembers']		= $this->M_TeamManagement->countMembers($this->_data['count2']['tmTeamID'],$keyword,$state);
+				// list nhan vien
+				$this->_data['listMembers']			= $this->M_TeamManagement->listMembers($this->_data['count2']['tmTeamID'],$rowperpage,$page,$keyword,$state);
+				$config['base_url'] 					= base_url().'quan-ly-doi-nhom-nhan-vien.html';
+				$allcount								= $this->_data['countMembers'];
+				$users_record							= $this->_data['listMembers'];
+				$config['use_page_numbers']				= TRUE;
+				$config['total_rows'] 					= $allcount;
+				$config['per_page']						= 10;
+				$config['first_link'] 					= 'Đầu'; 
+				$config['last_link'] 					= 'Cuối';
+				$config['full_tag_open']    			= '<div class="pagging text-center"><nav><ul class="pagination">';
+				$config['full_tag_close']   			= '</ul></nav></div>';
+				$config['num_tag_open']     			= '<li class="page-item"><span class="page-link">';
+				$config['num_tag_close']    			= '</span></li>';
+				$config['cur_tag_open']     			= '<li class="page-item page_active"><span class="page-link">';
+				$config['cur_tag_close']    			= '<span class="sr-only">(current)</span></span></li>';
+				$config['next_tag_open']    			= '<li class="page-item"><span class="page-link">';
+				$config['next_tag_close']  				= '<span class="aria-hidden" aria-hidden="true"></span></span></li>';
+				$config['prev_tag_open']    			= '<li class="page-item"><span class="page-link">';
+				$config['prev_tag_close'] 				= '</span></li>';
+				$config['first_tag_open']   			= '<li class="page-item"><span class="page-link">';
+				$config['first_tag_close'] 				= '</span></li>';
+				$config['last_tag_open']    			= '<li class="page-item"><span class="page-link">';
+				$config['last_tag_close'] 				= '</span></li>';
+				
+				$this->pagination->initialize($config);
+				$data['result'] = $users_record;
+				$this->_data['pagination'] = $this->pagination->create_links();
+				// thong tin user
+				$this->_data['TeamManagement']			= $this->M_TeamManagement->getInfoTeamManager($user_id);
+				// thong tin quan ly cua user
+				$this->_data['Boss']					= $this->M_TeamManagement->getInfoBoss($user_id);
+			} else {
+
 			}
-			$this->_data['TeamManagement']			= $this->M_TeamManagement->getInfoTeamManager($user_id);
-			$this->_data['Boss']					= $this->M_TeamManagement->getInfoBoss($user_id);
 			$this->_data['canonical']				= base_url();
-			$this->pagination->initialize($this->_data);
-			$params['links'] = $this->pagination->create_links();
 			$this->load->view('site/TeamManagement', $this->_data);
 		} else {
 			redirect('/');
@@ -67,56 +136,30 @@ class Management extends CI_Controller
 	public function searchUser() {
 		$info										= $_POST['info'];
 		$user_id									= $_POST['user_id'];
-		$this->_data['checkEmail']					= $this->M_Account->checkEmailTeamManagement($info);
-		if ($this->_data['checkEmail'] > 0) {
-			$this->_data['getInfo']					= $this->M_Account->getInfoByEmail($info);
+		$this->_data['checkPhone']					= $this->M_Account->checkPhoneTeamManagement($info);
+		if ($this->_data['checkPhone'] > 0) {
+			$this->_data['getInfo']					= $this->M_Account->getInfoByPhone($info);
 			if ($user_id == $this->_data['getInfo']['id']) {
 				echo 2;
 			} else {
-				$avtDate								= $this->_data['getInfo']['avtDate'];
-				$avtUser								= $this->_data['getInfo']['user_avt'];
-				$y										= date('Y', $avtDate);
-				$m										= date('m', $avtDate);
-				$d										= date('d', $avtDate);
-				$dir									= "upload/".$y."/".$m."/".$d;
+				$avtDate							= $this->_data['getInfo']['avtDate'];
+				$avtUser							= $this->_data['getInfo']['user_avt'];
+				$y									= date('Y', $avtDate);
+				$m									= date('m', $avtDate);
+				$d									= date('d', $avtDate);
+				$dir								= "upload/".$y."/".$m."/".$d;
 				$avt = $dir."/".$avtUser;
-				$user['info']							= 1;
-				$user['id']								= $this->_data['getInfo']['id'];
-				$user['user_avt']						= $this->_data['getInfo']['user_avt'];
-				$user['avt']							= $avt;
-				$user['name']							= $this->_data['getInfo']['name'];
-				$user['email']							= $this->_data['getInfo']['email'];
-				$user['phone']							= $this->_data['getInfo']['phone'];
+				$user['info']						= 1;
+				$user['id']							= $this->_data['getInfo']['id'];
+				$user['user_avt']					= $this->_data['getInfo']['user_avt'];
+				$user['avt']						= $avt;
+				$user['name']						= $this->_data['getInfo']['name'];
+				$user['phone']						= $this->_data['getInfo']['phone'];
 				$data = json_encode($user);
 				echo $data;
 			}
 		} else {
-			$this->_data['checkPhone']				= $this->M_Account->checkPhoneTeamManagement($info);
-			if ($this->_data['checkPhone'] > 0) {
-				$this->_data['getInfo']				= $this->M_Account->getInfoByPhone($info);
-				if ($user_id == $this->_data['getInfo']['id']) {
-					echo 2;
-				} else {
-					$avtDate						= $this->_data['getInfo']['avtDate'];
-					$avtUser						= $this->_data['getInfo']['user_avt'];
-					$y								= date('Y', $avtDate);
-					$m								= date('m', $avtDate);
-					$d								= date('d', $avtDate);
-					$dir							= "upload/".$y."/".$m."/".$d;
-					$avt = $dir."/".$avtUser;
-					$user['info']					= 1;
-					$user['id']						= $this->_data['getInfo']['id'];
-					$user['user_avt']				= $this->_data['getInfo']['user_avt'];
-					$user['avt']					= $avt;
-					$user['name']					= $this->_data['getInfo']['name'];
-					$user['email']					= $this->_data['getInfo']['email'];
-					$user['phone']					= $this->_data['getInfo']['phone'];
-					$data = json_encode($user);
-					echo $data;
-				}
-			} else {
-				echo 0;
-			}
+			echo 0;
 		}
 	}
 	public function addMember() {
@@ -148,7 +191,6 @@ class Management extends CI_Controller
 		$user['avt']								= $avt;
 		$user['money']								= $this->_data['getInfoByID']['money'];
 		$user['name']								= $this->_data['getInfoByID']['name'];
-		$user['email']								= $this->_data['getInfoByID']['email'];
 		$user['phone']								= $this->_data['getInfoByID']['phone'];
 		$data = json_encode($user);
 		echo $data;
@@ -166,6 +208,7 @@ class Management extends CI_Controller
 	public function del_member() {
 		$id											= $_POST['id'];
 		$delete_user								= $this->M_TeamManagement->del_member($id);
+		$update_role								= $this->M_Account->update_role(['TeamRole' => 0],$id);
 		echo 1;
 	}
 }

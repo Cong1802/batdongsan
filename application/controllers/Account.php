@@ -20,50 +20,49 @@ class Account extends CI_Controller
 		$this->load->library('Globals');
 	}
 	public function AccountLogin() {
-		$this->_data['canonical']				= base_url();
+		$this->_data['canonical']					= base_url();
 		$this->load->view('site/AcountLogin', $this->_data);
 	}
     public function AccountRegister() {
 		$this->_data['canonical']				= base_url();
 		$this->load->view('site/AccountRegister', $this->_data);
 	}
-	public function checkEmail() {
-		$email = $_POST['email'];
-		$check = $this->M_Account->checkBy($email);
+	public function checkAccount() {
+		$phone = $_POST['phone'];
+		$check = $this->M_Account->checkBy($phone);
 		if ($check > 0) {
 			echo 1;
 		} else {
 			echo 0;
 		}
 	}
-	public function sendOTP() {
-		$email = $_POST['email'];
-		if ($email !== '') {
-			$otp_code	= mt_rand(100000,999999); 
-			$subject	= '[batdongsan3s] Kích hoạt tài khoản đăng ký';
-			$body		= 'Mã xác nhận OTP của bạn là: '.$otp_code;
-			$send_email	= $this->globals->sendEmail($email, $subject, $body);
+	// public function sendOTP() {
+	// 	$email = $_POST['email'];
+	// 	if ($email !== '') {
+	// 		$otp_code	= mt_rand(100000,999999); 
+	// 		$subject	= '[batdongsan3s] Kích hoạt tài khoản đăng ký';
+	// 		$body		= 'Mã xác nhận OTP của bạn là: '.$otp_code;
+	// 		$send_email	= $this->globals->sendEmail($email, $subject, $body);
 
-			if ($send_email) {
-				$check	= $this->M_otp->checkEmail($email);
-				if ($check > 0) {
-					$update = $this->M_otp->update($email, ['code' => $otp_code, 'updatedDate' => date('Y-m-d')]);
-				} else {
-					$insert = $this->M_otp->insert(['email' => $email, 'code' => $otp_code, 'createdDate' => date('Y-m-d')]);
-				}
-				return 1;
-				echo 1;
-			}
-		} else {
-			return 0;
-			echo 0;
-		}
-	}
+	// 		if ($send_email) {
+	// 			$check	= $this->M_otp->checkEmail($email);
+	// 			if ($check > 0) {
+	// 				$update = $this->M_otp->update($email, ['code' => $otp_code, 'updatedDate' => date('Y-m-d')]);
+	// 			} else {
+	// 				$insert = $this->M_otp->insert(['email' => $email, 'code' => $otp_code, 'createdDate' => date('Y-m-d')]);
+	// 			}
+	// 			return 1;
+	// 			echo 1;
+	// 		}
+	// 	} else {
+	// 		return 0;
+	// 		echo 0;
+	// 	}
+	// }
 	public function ajaxRegister() {
 		$data = [
-			'email'				=> $_POST['email'],
-			'password'			=> md5($_POST['password']),
 			'phone'				=> $_POST['phone'],
+			'password'			=> md5($_POST['password']),
 			'name'				=> $_POST['name'],
 			'newTypeInterest'	=> $_POST['type_interest'],
 			'newType'			=> $_POST['type_real_estate'],
@@ -73,7 +72,7 @@ class Account extends CI_Controller
 			'address'			=> $_POST['address'],
 			'gender'			=> $_POST['gender'],
 			'userType'			=> $_POST['usertype'],
-			'createdDate'		=> date('Y-m-d')
+			'createdDate'		=> date('Y-m-d'),
 		];
 		$insert_id = $this->M_Account->insert_id($data);
 		$wallet = [
@@ -81,18 +80,18 @@ class Account extends CI_Controller
 			'createdDate'		=> date('Y-m-d')
 		];
 		$insert_wallet = $this->M_Wallet->insertWallet($wallet);
+		set_cookie('user_id', $insert_id, time() + 7*6000);
 		echo $insert_id;
 	}
     public function AccountRegisterBroker() {
-		$this->_data['list_city']				= $this->M_Account->listProvince();
-		$this->_data['canonical']				= base_url();
+		$this->_data['list_city']					= $this->M_Account->listProvince();
+		$this->_data['canonical']					= base_url();
 		$this->load->view('site/AccountRegisterBroker', $this->_data);
 	}
 	public function ajaxRegisterBroker() {
 		$data = [
-			'email'				=> $_POST['email'],
-			'password'			=> md5($_POST['password']),
 			'phone'				=> $_POST['phone'],
+			'password'			=> md5($_POST['password']),
 			'name'				=> $_POST['name'],
 			'cityID'			=> $_POST['city'],
 			'districtID'		=> $_POST['district'],
@@ -100,7 +99,7 @@ class Account extends CI_Controller
 			'address'			=> $_POST['address'],
 			'gender'			=> $_POST['gender'],
 			'userType'			=> $_POST['usertype'],
-			'createdDate'		=> date('Y-m-d')
+			'createdDate'		=> date('Y-m-d'),
 		];
 		$insert_id = $this->M_Account->insert_id($data);
 		$wallet = [
@@ -108,83 +107,83 @@ class Account extends CI_Controller
 			'createdDate'		=> date('Y-m-d')
 		];
 		$insert_wallet = $this->M_Wallet->insertWallet($wallet);
+		set_cookie('user_id', $insert_id, time() + 7*6000);
 		echo $insert_id;
 	}
     public function AccountRegisterBuyer() {
-		$this->_data['list_city']				= $this->M_Account->listProvince();
-		$this->_data['canonical']				= base_url();
+		$this->_data['list_city']					= $this->M_Account->listProvince();
+		$this->_data['canonical']					= base_url();
 		$this->load->view('site/AccountRegisterBuyer', $this->_data);
 	}
 	public function getListDistrict() {
-		$id										= $_POST['id'];
-		$list_districts							= $this->M_Account->listDistrictBy($id);
+		$id											= $_POST['id'];
+		$list_districts								= $this->M_Account->listDistrictBy($id);
 		echo json_encode($list_districts);
 	}
 	public function getListWard() {
-		$id										= $_POST['id'];
-		$list_wards								= $this->M_Account->listWardBy($id);
+		$id											= $_POST['id'];
+		$list_wards									= $this->M_Account->listWardBy($id);
 		echo json_encode($list_wards);
 	}
     public function AccountRegisterSeller() {
-		$this->_data['list_city']				= $this->M_Account->listProvince();
-		$this->_data['canonical']				= base_url();
+		$this->_data['list_city']					= $this->M_Account->listProvince();
+		$this->_data['canonical']					= base_url();
 		$this->load->view('site/AccountRegisterSeller', $this->_data);
 	}
-	public function getEmailRegister() {
-		$id_user								= $_POST['id_user'];
-		$otp									= $_POST['otp'];
-		$email									= $this->M_Account->getEmailby($id_user);
-		$getOTP									= $this->M_otp->checkOTP($email['email']);
-		if ($otp != $getOTP['code']) {
-			echo 1;
-		} else {
-			$active								= $this->M_Account->activeUser(['active' => 1],$id_user);
-			echo 2;
-		}
-	}
+	// public function getEmailRegister() {
+	// 	$id_user								= $_POST['id_user'];
+	// 	$otp									= $_POST['otp'];
+	// 	$email									= $this->M_Account->getEmailby($id_user);
+	// 	$getOTP									= $this->M_otp->checkOTP($email['email']);
+	// 	if ($otp != $getOTP['code']) {
+	// 		echo 1;
+	// 	} else {
+	// 		$active								= $this->M_Account->activeUser(['active' => 1],$id_user);
+	// 		echo 2;
+	// 	}
+	// }
     public function PageOTP($id) {
-		$this->_data['id_user']					= $id;
-		$this->_data['canonical']				= base_url();
+		$this->_data['id_user']						= $id;
+		$this->_data['canonical']					= base_url();
 		$this->load->view('site/PageOTP', $this->_data);
 	}
     public function Login($id) {
 		$this->_data['type']						= $id;
-		$this->_data['canonical']				= base_url();
+		$this->_data['canonical']					= base_url();
 		$this->load->view('site/Login', $this->_data);
 	}
 	public function getLogin() {
-		$array_response							= ['status' => 0, 'msg' => ''];
-		if (isset($_POST['email']) && isset($_POST['password'])) {
-			$email								= $_POST['email'];
-			$password							= $_POST['password'];
-			$userType							= $_POST['userType'];
-			$check_login						= $this->M_Account->checkLogin($email, md5($password), $userType);
+		$array_response								= ['status' => 0, 'msg' => ''];
+		if (isset($_POST['phone']) && isset($_POST['password'])) {
+			$phone									= $_POST['phone'];
+			$password								= $_POST['password'];
+			$userType								= $_POST['userType'];
+			$check_login							= $this->M_Account->checkLogin($phone, md5($password), $userType);
 			if ($check_login > 0) {
-				$info_user						= $this->M_Account->getInfoBy($email, md5($password));
+				$info_user							= $this->M_Account->getInfoBy($phone, md5($password));
 				// $this->session->set_userdata('user', $info_user);
 				set_cookie('user_id', $info_user['id'], time() + 7*6000);
-				$array_response					= ['status' => 1, 'msg' => 'Đăng nhập thành công'];
+				$array_response						= ['status' => 1, 'msg' => 'Đăng nhập thành công'];
 			}
 			echo json_encode($array_response);
 		}
 	}
 	public function LogOut() {
-		if (isset($_SESSION['user'])) {
-			// delete_cookie('user_id');
-			session_destroy();
+		if (isset($_COOKIE['user_id'])) {
+			delete_cookie('user_id');
+			// session_destroy();
 		}
 		redirect('/');
 	}
     public function AccountRegisterEnterprise() {
-		$this->_data['list_city']				= $this->M_Account->listProvince();
-		$this->_data['canonical']				= base_url();
+		$this->_data['list_city']					= $this->M_Account->listProvince();
+		$this->_data['canonical']					= base_url();
 		$this->load->view('site/AccountRegisterEnterprise', $this->_data);
 	}
 	public function ajaxRegisterEnterprise() {
 		$data = [
-			'email'				=> $_POST['email'],
-			'password'			=> md5($_POST['password']),
 			'phone'				=> $_POST['phone'],
+			'password'			=> md5($_POST['password']),
 			'companyName'		=> $_POST['com'],
 			'cityID'			=> $_POST['city'],
 			'field'				=> $_POST['field'],
@@ -193,7 +192,7 @@ class Account extends CI_Controller
 			'taxCode'			=> $_POST['taxCode'],
 			'address'			=> $_POST['address'],
 			'userType'			=> $_POST['usertype'],
-			'createdDate'		=> date('Y-m-d')
+			'createdDate'		=> date('Y-m-d'),
 		];
 		$insert_id = $this->M_Account->insert_id($data);
 		$wallet = [
@@ -201,61 +200,80 @@ class Account extends CI_Controller
 			'createdDate'		=> date('Y-m-d')
 		];
 		$insert_wallet = $this->M_Wallet->insertWallet($wallet);
+		set_cookie('user_id', $insert_id, time() + 7*6000);
 		echo $insert_id;
 	}
 	public function UpdatePassword($id) {
-		$this->_data['id']						= $id;
-		$this->_data['canonical']				= base_url();
+		$this->_data['id']							= $id;
+		$this->_data['canonical']					= base_url();
 		$this->load->view('site/UpdatePassword', $this->_data);
 	}
     public function ForgotPasswordOTP($id) {
-		$this->_data['id_user']					= $id;
-		$getEmail = $this->M_Account->getEmailby($id);
-		$this->_data['email']					= $getEmail['email'];
-		$this->_data['canonical']				= base_url();
+		$this->_data['id_user']						= $id;
+		$getPhone = $this->M_Account->getPhoneby($id);
+		$this->_data['phone']						= $getPhone['phone'];
+		$this->_data['canonical']					= base_url();
 		$this->load->view('site/ForgotPasswordOTP', $this->_data);
 	}
 	public function sendForgotPasswordOTP() {
-		$email									= $_POST['email'];
-		if ($email != '') {
+		$phone										= $_POST['phone'];
+		if ($phone != '') {
 			$otp_code	= mt_rand(100000,999999); 
-			$subject	= '[batdongsan3s] Kích hoạt tài khoản đăng ký';
-			$body		= 'Mã xác nhận OTP của bạn là: '.$otp_code;
-			$send_email	= $this->globals->sendEmail($email, $subject, $body);
 
-			if ($send_email) {
-				$update = $this->M_otp->update($email, ['code' => $otp_code, 'updatedDate' => date('Y-m-d')]);
-				$getID	= $this->M_Account->getIdForgot($email);
+			$ch = curl_init('http://rest.esms.vn/MainService.svc/json/SendMultipleMessage_V4_post_json/');
+			$payload = '{
+				"ApiKey": "CD013D8EF367403A13DB9695679A32",
+				"Content": "TIMVIEC365 mã OTP nhà tuyển dụng tại https://timviec365.vn/ : '.$otp_code.'",
+				"Phone": "'.$phone.'",
+				"SecretKey": "80A7A1845725B74E5766A5BFB0B167",
+				"IsUnicode": "1",
+				"Brandname": "TIMVIEC365",
+				"SmsType": "2"
+				}';
+			curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
+			curl_setopt( $ch, CURLOPT_HTTPHEADER, array('Content-Type:application/json'));
+			curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
+			$result = curl_exec($ch);
+			curl_close($ch);
+
+			if ($payload) {
+				$checkOTP = $this->M_otp->checkPhoneOTP($phone);
+				if ($checkOTP > 0) {
+					$update = $this->M_otp->update($phone, ['code' => $otp_code, 'updatedDate' => date('Y-m-d')]);
+				} else {
+					$insertOTP = $this->M_otp->insertOTP(['phone' => $phone, 'code' => $otp_code, 'type' => 1, 'createdDate' => date('Y-m-d')]);
+				}
+				$getID	= $this->M_Account->getIdForgot($phone);
 				echo $getID['id'];
 			}
 		} else {
 			echo 0;
 		}
 	}
-	public function checkEmailForgot() {
-		$email									= $_POST['email'];
-		$check = $this->M_Account->checkEmailForgot($email);
+	public function checkPhoneForgot() {
+		$phone										= $_POST['phone'];
+		$check = $this->M_Account->checkPhoneForgot($phone);
 		echo $check;
 	}
     public function ForgotPasswordEmail() {
-		$this->_data['canonical']				= base_url();
+		$this->_data['canonical']					= base_url();
 		$this->load->view('site/ForgotPasswordEmail', $this->_data);
 	}
 	public function ForgotPasswordUpdate() {
-		$id										= $_POST['id'];
-		$password								= md5($_POST['password']);
+		$id											= $_POST['id'];
+		$password									= md5($_POST['password']);
 		$update = $this->M_Account->ForgotPasswordUpdate($id, ['password' => $password, 'updatedDate' => date('Y-m-d')]);
 	}
 	public function checkOTPforgotPW() {
-		$id										= $_POST['id'];
-		$otp									= $_POST['otp'];
-		$email									= $this->M_Account->getEmailby($id);
-		$getOTP									= $this->M_otp->checkOTP($email['email']);
+		$id											= $_POST['id'];
+		$otp										= $_POST['otp'];
+		$phone										= $this->M_Account->getPhoneby($id);
+		$getOTP										= $this->M_otp->checkOTP($phone['phone']);
 
 		if ($otp != $getOTP['code']) {
 			echo 1;
 		} else {
-			echo $email['id'];
+			echo $phone['id'];
 		}
 	}
 	public function Profile() {
@@ -266,6 +284,7 @@ class Account extends CI_Controller
 			$this->_data['city']					= $this->M_City->getList();
 			$this->_data['district']				= $this->M_City->getDistrict();
 			$this->_data['ward']					= $this->M_City->getWard();
+			$this->_data['wallet']					= $this->M_Wallet->WalletInfo($id);
 			$this->load->view('site/Profile', $this->_data);
 		} else {
 			redirect('/');

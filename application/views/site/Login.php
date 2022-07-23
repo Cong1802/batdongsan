@@ -30,9 +30,9 @@
                         <div class="account_title font_s24 text_c color_green font_w_600">Đăng nhập</div>
                         <div class="font_s16 text_c font_w500 color_grey mt_10 mr_t_32 line_h19">Chào mừng bạn trở lại
                             với BATDONGSAN3S!</div>
-                        <p class="error_email chudo size-12 mr_t_32"></p>
+                        <p class="error_phone chudo size-12 mr_t_32"></p>
                         <div class="khung_input khung_input-email d_flex align_c account_log-in_input_dk_dn no-top">
-                            <input type="text" class="input_email" placeholder="Nhập email">
+                            <input type="text" class="input_phone" placeholder="Nhập số điện thoại">
                             <div class="account_log_in-input-img icon_email">
                                 <img src="<? echo base_url(); ?>assets/images/email.svg" alt="" class="m_r_18">
                             </div>
@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <div class="account_log-in_text text_r">
-                            <a href="quen-mat-khau-nhap-email.html" class="color_yelow font_s14">Quên mật khẩu?</a>
+                            <a href="quen-mat-khau-nhap-sdt.html" class="color_yelow font_s14">Quên mật khẩu?</a>
                         </div>
                         <button type="button" onclick="login_form(); return false;"
                             class="btn_blue bg_green border_none" style="width: 100%"> Đăng nhập </button>
@@ -76,10 +76,8 @@
 <script type="text/javascript" src="<? echo base_url();?>assets/js/js_quang.js"></script>
 <script>
 var base_url = '<?php echo base_url(); ?>';
-var regex_email =
-    /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-$('.input_email').keyup(function(e) {
+$('.input_phone').keyup(function(e) {
 	if (e.keyCode == 13) {
 		login_form();
 	}
@@ -92,17 +90,14 @@ $('.input_pw').keyup(function(en) {
 function login_form() {
     var flag = true;
 	var userType = <?= $type-1 ?>;
-    var email = $('.input_email').val();
+    var phone = $('.input_phone').val();
 	var password = $('.input_pw').val();
 
-    if ($.trim(email) == '') {
-		$('.error_email').removeClass('mr_t_32').addClass('mr_t_16').addClass('line_h16').html('Email không được để trống');
+    if ($.trim(phone) == '') {
+		$('.error_phone').removeClass('mr_t_32').addClass('mr_t_16').addClass('line_h16').html('Số điện thoại không được để trống');
 		flag = false;
-    } else if ($.trim(email !== '') && regex_email.test(email) == false) {
-		$('.error_email').removeClass('mr_t_32').addClass('mr_t_16').addClass('line_h16').html('Email không đúng định dạng');
-		flag = false;
-	} else {
-		$('.error_email').removeClass('line_h16').removeClass('mr_t_16').addClass('mr_t_32').html('');
+    } else {
+		$('.error_phone').removeClass('line_h16').removeClass('mr_t_16').addClass('mr_t_32').html('');
 	}
 
 	if ($.trim(password) == '') {
@@ -122,14 +117,14 @@ function login_form() {
 			dataType: 'json',
 			data: {
 				userType: userType,
-				email: email,
+				phone: phone,
 				password: password
 			},
 			success: function(response) {
 				if (response.status > 0) {
 					location.href = "tong-quan.html";
 				} else {
-					$('.error_email').removeClass('mr_t_32').addClass('mr_t_16').addClass('line_h16').html('Tài khoản hoặc mật khẩu không đúng');
+					$('.error_phone').removeClass('mr_t_32').addClass('mr_t_16').addClass('line_h16').html('Số điện thoại hoặc mật khẩu không đúng');
 					$('.error_pw').removeClass('mr_t_32').addClass('mr_t_16').addClass('line_h16').html('Tài khoản hoặc mật khẩu không đúng');
 				}
 			},

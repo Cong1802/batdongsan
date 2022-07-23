@@ -16,14 +16,23 @@
 			$this->db->insert($this->_table,$data);
 			return $this->db->insert_id();
 		}
-		public function update($email,$data) {
-			$this->db->where('email', $email);
+		public function update($phone,$data) {
+			$this->db->where('phone', $phone);
 			return $this->db->update($this->_table, $data);
 		}
-		public function checkOTP($email) {
+		public function checkOTP($phone) {
 			$this->db->select('code');
-			$this->db->where('email', $email);
+			$this->db->where('phone', $phone);
 			return $this->db->get($this->_table)->row_array();
+		}
+		public function checkPhoneOTP($phone) {
+			$this->db->select('id');
+			$this->db->where('phone', $phone);
+			return $this->db->get($this->_table)->num_rows();
+		}
+		public function insertOTP($data) {
+			$this->db->insert($this->_table,$data);
+			return $this->db->insert_id();
 		}
 	}
 ?>

@@ -61,7 +61,7 @@
                         </div>
                         <div class="account_wish-btn d_flex flex_center mr_t_24">
                             <div class="account_wish-btn-a qmk_wish-btn-a bg_green d_flex flex_center align_c">
-                                <a href="trang-dang-nhap.html" class="color_white font_s16 text_c"> Đăng nhập ngay </a>
+                                <a href="trang-tai-khoan-dang-nhap.html" class="color_white font_s16 text_c"> Đăng nhập ngay </a>
                             </div>
                         </div>
                     </div>

@@ -61,7 +61,7 @@ $route['trang-dang-ky-doanh-nghiep.html']  				= 'Account/AccountRegisterEnterpr
 $route['trang-dang-ky-nguoi-ban-cho-thue.html'] 		= 'Account/AccountRegisterSeller';
 $route['trang-nhan-ma-otp-(:num).html']  				= 'Account/PageOTP/$1';
 $route['quen-mat-khau-nhan-otp-(:num).html']  			= 'Account/ForgotPasswordOTP/$1/$2';
-$route['quen-mat-khau-nhap-email.html']         		= 'Account/ForgotPasswordEmail';
+$route['quen-mat-khau-nhap-sdt.html']         			= 'Account/ForgotPasswordEmail';
 $route['quen-mat-khau-update-mat-khau-(:num).html']   	= 'Account/UpdatePassword/$1';
 $route['thong-tin-ca-nhan.html']			    		= 'Account/Profile';
 $route['thay-doi-mat-khau.html']						= 'Account/ChangePassword';
@@ -134,6 +134,7 @@ $route['mua-goi-ghim-tin-dang.html']		    		= 'admin/Wallet/BuyPacketNews';
 
 // quản lý
 $route['quan-ly-doi-nhom-nhan-vien.html']				= 'admin/Management/TeamManagement';
+$route['quan-ly-doi-nhom-nhan-vien.html/(:any)']				= 'admin/Management/TeamManagement/$1';
 
 // quản lý tin
 $route['quan-ly-tin-dang-mua-ban.html']		    		= 'admin/ManageNews/ManageNewsPurchase';
